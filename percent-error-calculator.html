@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Percent Error Calculator | CalcHub</title>
+<meta name="description" content="Compare a measured value with the true value as a percentage.">
+<link rel="canonical" href="https://YOURDOMAIN.com/percent-error-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can percent error be negative?", "acceptedAnswer": {"@type": "Answer", "text": "The standard formula uses an absolute value, so it is never negative. The signed error shows direction."}}, {"@type": "Question", "name": "What is a good percent error?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the field. In school labs, under 5% is usually considered good."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Percent Error Calculator</h1>
+<p class="muted">Compare a measured value with the true value as a percentage.</p>
+<form class="card" data-calc="1">
+<label for="exp">Measured (experimental) value</label><input id="exp" type="number" step="any" value="9.6">
+<label for="tru">True (accepted) value</label><input id="tru" type="number" step="any" value="9.81">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Percent error = |measured - true| / |true| x 100. It shows how far a measurement is from the accepted value as a share of that value.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Can percent error be negative?</summary><p>The standard formula uses an absolute value, so it is never negative. The signed error shows direction.</p></details>
+<details><summary>What is a good percent error?</summary><p>It depends on the field. In school labs, under 5% is usually considered good.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="percentage-calculator.html"><b>Percentage Calculator</b></a><a href="percent-change-calculator.html"><b>Percent Change Calculator</b></a><a href="percentage-difference-calculator.html"><b>Percentage Difference Calculator</b></a><a href="average-calculator.html"><b>Average Calculator (Mean, Median, Mode)</b></a><a href="standard-deviation-calculator.html"><b>Standard Deviation Calculator</b></a><a href="quadratic-formula-calculator.html"><b>Quadratic Formula Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({exp,tru}){
+if(tru===0)return 'The true value cannot be zero.';const e=Math.abs(exp-tru)/Math.abs(tru)*100;return [['Percent error',PCT(e,4)],['Absolute error',N(Math.abs(exp-tru),6)],['Signed error',N(exp-tru,6)]];
+});</script>
+</body></html>

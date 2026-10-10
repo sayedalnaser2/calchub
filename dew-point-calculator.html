@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dew Point Calculator | CalcHub</title>
+<meta name="description" content="Calculate the dew point from air temperature and relative humidity.">
+<link rel="canonical" href="https://YOURDOMAIN.com/dew-point-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What dew point feels uncomfortable?", "acceptedAnswer": {"@type": "Answer", "text": "Above about 65 \u00b0F most people find the air muggy."}}, {"@type": "Question", "name": "Why can dew point be better than humidity?", "acceptedAnswer": {"@type": "Answer", "text": "It measures actual moisture in the air, while relative humidity changes with temperature."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Dew Point Calculator</h1>
+<p class="muted">Calculate the dew point from air temperature and relative humidity.</p>
+<form class="card" data-calc="1">
+<label for="t">Air temperature (°F)</label><input id="t" type="number" step="any" value="80">
+<label for="rh">Relative humidity (%)</label><input id="rh" type="number" step="any" value="65">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The dew point is the temperature at which air becomes saturated and dew forms. It is calculated with the Magnus formula using constants a = 17.62 and b = 243.12 for temperatures in °C.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What dew point feels uncomfortable?</summary><p>Above about 65 °F most people find the air muggy.</p></details>
+<details><summary>Why can dew point be better than humidity?</summary><p>It measures actual moisture in the air, while relative humidity changes with temperature.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="horsepower-calculator.html"><b>Horsepower from Torque Calculator</b></a><a href="gear-ratio-calculator.html"><b>Gear Ratio Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a><a href="density-calculator.html"><b>Density Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({t,rh}){
+if(rh<=0||rh>100)return 'Humidity must be between 0 and 100.';const c=(t-32)*5/9,a=17.62,b=243.12;const g=Math.log(rh/100)+a*c/(b+c);const d=b*g/(a-g);const f=d*9/5+32;const feel=f<50?'Dry and comfortable':f<60?'Comfortable':f<65?'Slightly humid':f<70?'Muggy':'Oppressive';return [['Dew point',N(f,1)+' °F'],['In Celsius',N(d,1)+' °C'],['Comfort',feel]];
+});</script>
+</body></html>

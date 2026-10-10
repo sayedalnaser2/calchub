@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gear Ratio Calculator | CalcHub</title>
+<meta name="description" content="Calculate gear ratio and output speed from the tooth counts of two gears.">
+<link rel="canonical" href="https://YOURDOMAIN.com/gear-ratio-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a higher ratio mean?", "acceptedAnswer": {"@type": "Answer", "text": "More torque and lower output speed."}}, {"@type": "Question", "name": "Do real gears lose power?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, typically a few percent to friction per mesh."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Gear Ratio Calculator</h1>
+<p class="muted">Calculate gear ratio and output speed from the tooth counts of two gears.</p>
+<form class="card" data-calc="1">
+<label for="drv">Driving gear teeth</label><input id="drv" type="number" step="any" value="15">
+<label for="drn">Driven gear teeth</label><input id="drn" type="number" step="any" value="45">
+<label for="inr">Input speed (RPM)</label><input id="inr" type="number" step="any" value="1800">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Gear ratio = driven teeth / driving teeth. Output speed equals input speed divided by the ratio, while torque rises by the ratio in an ideal, lossless system.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What does a higher ratio mean?</summary><p>More torque and lower output speed.</p></details>
+<details><summary>Do real gears lose power?</summary><p>Yes, typically a few percent to friction per mesh.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a><a href="density-calculator.html"><b>Density Calculator</b></a><a href="force-calculator.html"><b>Force Calculator (F = ma)</b></a><a href="half-life-calculator.html"><b>Half-Life Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({drv,drn,inr}){
+const r=drn/drv;return [['Gear ratio',N(r,4)+' : 1'],['Output speed',N(inr/r,2)+' RPM'],['Torque multiplication',N(r,3)+'x (ideal)'],['Type',r>1?'Reduction (slower, more torque)':r<1?'Overdrive (faster, less torque)':'1:1']];
+});</script>
+</body></html>

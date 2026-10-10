@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tire Size Calculator | CalcHub</title>
+<meta name="description" content="Work out tire diameter, circumference and revolutions per mile from a tire size.">
+<link rel="canonical" href="https://YOURDOMAIN.com/tire-size-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does tire diameter matter?", "acceptedAnswer": {"@type": "Answer", "text": "A different diameter changes speedometer accuracy and gearing."}}, {"@type": "Question", "name": "How much difference is safe?", "acceptedAnswer": {"@type": "Answer", "text": "Staying within about 3% of the original overall diameter is a common guideline."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Tire Size Calculator</h1>
+<p class="muted">Work out tire diameter, circumference and revolutions per mile from a tire size.</p>
+<form class="card" data-calc="1">
+<label for="w">Section width (mm)</label><input id="w" type="number" step="any" value="225">
+<label for="ar">Aspect ratio (%)</label><input id="ar" type="number" step="any" value="45">
+<label for="rim">Rim diameter (inches)</label><input id="rim" type="number" step="any" value="17">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>For a size such as 225/45R17, the sidewall equals width x aspect ratio. Overall diameter is the rim diameter plus two sidewalls. Circumference is pi times diameter, and a mile is 63,360 inches.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why does tire diameter matter?</summary><p>A different diameter changes speedometer accuracy and gearing.</p></details>
+<details><summary>How much difference is safe?</summary><p>Staying within about 3% of the original overall diameter is a common guideline.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="screen-size-calculator.html"><b>Screen Size and PPI Calculator</b></a><a href="recipe-scaler-calculator.html"><b>Recipe Scaler Calculator</b></a><a href="age-calculator.html"><b>Age Calculator</b></a><a href="date-difference-calculator.html"><b>Days Between Dates Calculator</b></a><a href="add-days-to-date-calculator.html"><b>Date Calculator (Add or Subtract Days)</b></a><a href="days-until-calculator.html"><b>Days Until Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({w,ar,rim}){
+const side=w*ar/100;const dmm=rim*25.4+2*side;const din=dmm/25.4;const circ=Math.PI*din;return [['Overall diameter',N(din,2)+' in ('+N(dmm,0)+' mm)'],['Sidewall height',N(side,1)+' mm'],['Circumference',N(circ,2)+' in'],['Revolutions per mile',N(63360/circ,0)]];
+});</script>
+</body></html>

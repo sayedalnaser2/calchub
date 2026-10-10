@@ -66,7 +66,56 @@ def tc(s):
     return t
 
 
-def pair_spec(kind, a, b):
+KIND_INFO = {
+ "length": ("length", "length-converter", "Length measures the distance between two points. The meter is the SI base unit; inches, feet, yards and miles are US customary and imperial units, all defined exactly in terms of the meter (1 inch = 2.54 cm exactly)."),
+ "mass": ("weight and mass", "weight-converter", "Mass measures the amount of matter in an object. The kilogram is the SI base unit; ounces, pounds and stone are customary units defined exactly in terms of the kilogram (1 lb = 0.45359237 kg)."),
+ "volume": ("volume", "volume-converter", "Volume measures how much space a liquid or container holds. The liter is the common metric unit; gallons, quarts, pints, cups and spoons here are US customary units, which differ from imperial ones."),
+ "area": ("area", "area-converter", "Area measures a flat surface. The square meter is the SI unit; square feet and acres are widely used for property, flooring and land."),
+ "speed": ("speed", "speed-converter", "Speed is distance travelled per unit of time. Meters per second is the SI unit; miles per hour and kilometers per hour are used on roads, and knots at sea and in aviation."),
+ "time": ("time", "time-converter", "Time is measured in seconds in the SI system. Months and years here use average lengths (a year is 365.2425 days), so results for them are averages."),
+ "data": ("digital storage", "data-storage-converter", "These conversions use decimal (SI) prefixes where 1 KB = 1,000 bytes. Some operating systems use binary multiples of 1,024 instead, so reported sizes can differ slightly."),
+ "pressure": ("pressure", "pressure-converter", "Pressure is force per unit area. The pascal is the SI unit; psi is common for tires and plumbing, bar and atm in weather and engineering, and mmHg in medicine."),
+ "energy": ("energy", "energy-converter", "Energy is measured in joules in the SI system. Calories describe food energy, kilowatt hours appear on electricity bills, and BTU is used for heating and cooling."),
+ "power": ("power", None, "Power is the rate of energy use. The watt is the SI unit; horsepower is common for engines and BTU per hour for heating and cooling equipment."),
+ "force": ("force", None, "Force is measured in newtons in the SI system. Pound-force and kilogram-force are common in engineering and everyday weight contexts."),
+ "angle": ("angle", None, "Angles can be measured in degrees (360 per full turn), radians (2π per full turn) or gradians (400 per full turn)."),
+}
+SPEC_UNITS = {}
+
+
+def _tbl(rows, h1, h2):
+    body = "".join(f"<tr><td>{x}</td><td>{y}</td></tr>" for x, y in rows)
+    return f'<table class="ref"><thead><tr><th>{h1}</th><th>{h2}</th></tr></thead><tbody>{body}</tbody></table>'
+
+
+def pair_extra(kind, a, b, units):
+    ka, na, aa, sa, fa = a
+    kb, nb, ab, sb, fb = b
+    F = fa / fb
+    label, general, blurb = KIND_INFO[kind]
+    vals = [1, 2, 5, 10, 20, 25, 50, 100, 250, 500, 1000]
+    fwd = _tbl([(f"{v:,} {aa}", f"{fmt(v * F)} {ab}") for v in vals], na.title(), nb.title())
+    rev = _tbl([(f"{v:,} {ab}", f"{fmt(v / F)} {aa}") for v in vals], nb.title(), na.title())
+    ex = 12.5
+    out = (f"<h2>{tc(na)} to {tc(nb)} formula</h2>\n"
+           f"<p><b>{nb.capitalize()} = {na} &times; {fmt(F)}</b></p>\n"
+           f"<p>Worked example: convert {ex} {na} to {nb}. Multiply {ex} &times; {fmt(F)} = <b>{fmt(ex * F)} {ab}</b>. "
+           f"To go the other way, multiply {nb} by {fmt(1 / F)} (or divide by {fmt(F)}).</p>\n"
+           f"<h2>{tc(na)} to {tc(nb)} conversion table</h2>\n{fwd}\n"
+           f"<h2>{tc(nb)} to {tc(na)} conversion table</h2>\n{rev}\n"
+           f"<h2>About {label} units</h2>\n<p>{blurb}</p>\n")
+    return out
+
+
+def pair_related(kind, a, b, units):
+    rel = [f"{slugify(b[1])}-to-{slugify(a[1])}"]
+    rel += [f"{slugify(a[1])}-to-{slugify(u[1])}" for u in units if u[0] not in (a[0], b[0])]
+    rel += [f"{slugify(u[1])}-to-{slugify(b[1])}" for u in units if u[0] not in (a[0], b[0])]
+    general = KIND_INFO[kind][1]
+    return ([general] if general else []) + rel
+
+
+def pair_spec(kind, a, b, units=None):
     ka, na, aa, sa, fa = a
     kb, nb, ab, sb, fb = b
     F = fa / fb
@@ -80,7 +129,9 @@ def pair_spec(kind, a, b):
              f"and one {sb} equals {fmt(1 / F)} {na}. The table shows common values.")
     faqs = [(f"How many {nb} are in one {sa}?", f"There are {fmt(F)} {nb} in one {sa}."),
             (f"How many {na} are in one {sb}?", f"There are {fmt(1 / F)} {na} in one {sb}.")]
-    return C("conversion", slug, title, desc, [("v", f"Value in {na} ({aa})", 1)], body, about, faqs)
+    extra = pair_extra(kind, a, b, units) if units else ""
+    related = pair_related(kind, a, b, units) if units else None
+    return C("conversion", slug, title, desc, [("v", f"Value in {na} ({aa})", 1)], body, about, faqs, extra, related)
 
 
 def temp_specs():
@@ -113,7 +164,7 @@ for kind, (base, units) in TABLES.items():
     for a in units:
         for b in units:
             if a[0] != b[0]:
-                PAIRS.append(pair_spec(kind, a, b))
+                PAIRS.append(pair_spec(kind, a, b, units))
 PAIRS += temp_specs()
 
 # --- Handwritten everyday / tools -------------------------------------------------------

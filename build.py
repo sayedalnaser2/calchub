@@ -11,6 +11,7 @@ from specs_h2 import SPECS as H2
 from specs_m2 import SPECS as M2
 from specs_c2 import SPECS as C2
 from specs_k2 import SPECS as K2
+from specs_n2 import SPECS as N2
 
 DOMAIN = "https://YOURDOMAIN.com"
 SITE = "CalcHub"
@@ -26,7 +27,7 @@ CATS = [
     ("science", "Science", "Physics and science calculators: Ohm's law, energy, density and more."),
 ]
 CAT = {c[0]: c for c in CATS}
-SPECS = F + HM + O + F2 + H2 + M2 + C2 + K2
+SPECS = F + HM + O + F2 + H2 + M2 + C2 + K2 + N2
 e = html.escape
 
 
@@ -81,6 +82,9 @@ def calc_page(s):
     related = [x for x in SPECS if x["cat"] == s["cat"] and x["slug"] != s["slug"]]
     idx = [x["slug"] for x in SPECS if x["cat"] == s["cat"]].index(s["slug"])
     related = (related[idx:] + related[:idx])[:6]
+    if s.get("related"):
+        by = {x["slug"]: x for x in SPECS}
+        related = [by[r] for r in s["related"] if r in by and r != s["slug"]][:12]
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in s["faqs"]]}
     ld = f'<script type="application/ld+json">{json.dumps(faq_ld)}</script>\n'
@@ -92,6 +96,7 @@ def calc_page(s):
     p += '\n<button type="submit">Calculate</button>\n<div class="result" id="out" aria-live="polite"></div>\n</form>\n'
     p += '<div class="ad"><!-- ad slot --></div>\n'
     p += f'<h2>How it works</h2>\n<p>{e(s["about"])}</p>\n'
+    p += s.get("extra", "")
     p += "<h2>Frequently asked questions</h2>\n" + "".join(
         f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>\n" for q, a in s["faqs"])
     p += "<h2>Related calculators</h2>\n<div class=\"grid\">" + "".join(

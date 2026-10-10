@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roofing Calculator | CalcHub</title>
+<meta name="description" content="Estimate roof area, roofing squares and shingle bundles from the house footprint and pitch.">
+<link rel="canonical" href="https://YOURDOMAIN.com/roofing-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a roofing square?", "acceptedAnswer": {"@type": "Answer", "text": "A roofing square is 100 square feet of roof."}}, {"@type": "Question", "name": "Does this cover hips and valleys?", "acceptedAnswer": {"@type": "Answer", "text": "Not exactly. Complex roofs need extra waste, so add 5-10% more."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Roofing Calculator</h1>
+<p class="muted">Estimate roof area, roofing squares and shingle bundles from the house footprint and pitch.</p>
+<form class="card" data-calc="1">
+<label for="l">Building length (ft)</label><input id="l" type="number" step="any" value="40">
+<label for="w">Building width (ft)</label><input id="w" type="number" step="any" value="30">
+<label for="rise">Pitch: rise per 12 in run</label><input id="rise" type="number" step="any" value="6">
+<label for="ovh">Eave overhang (ft)</label><input id="ovh" type="number" step="any" value="1">
+<label for="waste">Waste allowance (%)</label><input id="waste" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Footprint area including overhangs is multiplied by sqrt(1 + (rise/12)^2) to account for the slope. One roofing square covers 100 sq ft, and most asphalt shingles come three bundles to a square. This assumes a simple gable roof.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a roofing square?</summary><p>A roofing square is 100 square feet of roof.</p></details>
+<details><summary>Does this cover hips and valleys?</summary><p>Not exactly. Complex roofs need extra waste, so add 5-10% more.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a><a href="tile-calculator.html"><b>Tile Calculator</b></a><a href="gravel-calculator.html"><b>Gravel Calculator</b></a><a href="board-feet-calculator.html"><b>Board Feet Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,rise,ovh,waste}){
+const a=(l+2*ovh)*(w+2*ovh)*Math.sqrt(1+Math.pow(rise/12,2));const aw=a*(1+waste/100);const sq=aw/100;return [['Roof area (with waste)',N(aw,0)+' sq ft'],['Roofing squares',N(sq,1)],['Bundles of shingles (3 per square)',Math.ceil(sq*3)],['Raw roof area',N(a,0)+' sq ft']];
+});</script>
+</body></html>

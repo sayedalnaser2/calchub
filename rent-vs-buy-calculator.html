@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rent vs Buy Calculator | CalcHub</title>
+<meta name="description" content="Compare the net cost of renting with buying a home over a set number of years.">
+<link rel="canonical" href="https://YOURDOMAIN.com/rent-vs-buy-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does this include closing and selling costs?", "acceptedAnswer": {"@type": "Answer", "text": "No. Selling costs are often 5-8% of the price and would favor renting over short periods."}}, {"@type": "Question", "name": "Why compare over several years?", "acceptedAnswer": {"@type": "Answer", "text": "Buying usually pays off only after several years because of up-front and selling costs."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Rent vs Buy Calculator</h1>
+<p class="muted">Compare the net cost of renting with buying a home over a set number of years.</p>
+<form class="card" data-calc="1">
+<label for="price">Home price ($)</label><input id="price" type="number" step="any" value="400000">
+<label for="dp">Down payment (%)</label><input id="dp" type="number" step="any" value="20">
+<label for="rate">Mortgage rate (%)</label><input id="rate" type="number" step="any" value="6.5">
+<label for="term">Loan term (years)</label><input id="term" type="number" step="any" value="30">
+<label for="tax">Property tax + insurance (% of price per year)</label><input id="tax" type="number" step="any" value="1.5">
+<label for="mnt">Maintenance (% of price per year)</label><input id="mnt" type="number" step="any" value="1">
+<label for="app">Home appreciation (% per year)</label><input id="app" type="number" step="any" value="3">
+<label for="rent">Monthly rent ($)</label><input id="rent" type="number" step="any" value="2200">
+<label for="rinc">Rent increase (% per year)</label><input id="rinc" type="number" step="any" value="3">
+<label for="yrs">Years to compare</label><input id="yrs" type="number" step="any" value="7">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Net cost of buying is the down payment plus mortgage payments plus yearly tax, insurance and upkeep, minus the equity you hold at the end (future value less the remaining loan). Renting totals the rent, raised each year. It ignores tax benefits, selling costs and investment returns on the down payment, so treat it as a rough guide.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does this include closing and selling costs?</summary><p>No. Selling costs are often 5-8% of the price and would favor renting over short periods.</p></details>
+<details><summary>Why compare over several years?</summary><p>Buying usually pays off only after several years because of up-front and selling costs.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="closing-cost-calculator.html"><b>Closing Cost Calculator</b></a><a href="mortgage-calculator.html"><b>Mortgage Calculator</b></a><a href="loan-calculator.html"><b>Loan Calculator</b></a><a href="compound-interest-calculator.html"><b>Compound Interest Calculator</b></a><a href="credit-card-payoff-calculator.html"><b>Credit Card Payoff Calculator</b></a><a href="simple-interest-calculator.html"><b>Simple Interest Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({price,dp,rate,term,tax,mnt,app,rent,rinc,yrs}){
+const L=price*(1-dp/100),r=rate/1200,n=term*12,k=Math.min(yrs*12,n);const p=r===0?L/n:L*r/(1-Math.pow(1+r,-n));const bal=r===0?L-p*k:L*Math.pow(1+r,k)-p*(Math.pow(1+r,k)-1)/r;const val=price*Math.pow(1+app/100,yrs);const own=price*(tax+mnt)/100*yrs;const buy=price*dp/100+p*k+own-(val-bal);let rt=0;for(let y=0;y<yrs;y++)rt+=rent*12*Math.pow(1+rinc/100,y);return [['Net cost of buying',M(buy)],['Total cost of renting',M(rt)],['Cheaper option',buy<rt?'Buying':'Renting'],['Home value after '+yrs+' yrs',M(val)],['Loan balance then',M(bal)],['Monthly mortgage payment',M(p)]];
+});</script>
+</body></html>

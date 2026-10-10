@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heat Index Calculator | CalcHub</title>
+<meta name="description" content="Find how hot it feels when humidity is combined with temperature.">
+<link rel="canonical" href="https://YOURDOMAIN.com/heat-index-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does humidity matter?", "acceptedAnswer": {"@type": "Answer", "text": "High humidity slows sweat evaporation, so your body cools less effectively."}}, {"@type": "Question", "name": "Is full sun hotter than the heat index?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Direct sunlight can add up to about 15 \u00b0F to the heat index."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Heat Index Calculator</h1>
+<p class="muted">Find how hot it feels when humidity is combined with temperature.</p>
+<form class="card" data-calc="1">
+<label for="t">Air temperature (°F)</label><input id="t" type="number" step="any" value="92">
+<label for="rh">Relative humidity (%)</label><input id="rh" type="number" step="any" value="60">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The heat index uses the Rothfusz regression from the US National Weather Service, combining air temperature and relative humidity. It is meant for 80 °F and above, in shade.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why does humidity matter?</summary><p>High humidity slows sweat evaporation, so your body cools less effectively.</p></details>
+<details><summary>Is full sun hotter than the heat index?</summary><p>Yes. Direct sunlight can add up to about 15 °F to the heat index.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="dew-point-calculator.html"><b>Dew Point Calculator</b></a><a href="horsepower-calculator.html"><b>Horsepower from Torque Calculator</b></a><a href="gear-ratio-calculator.html"><b>Gear Ratio Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({t,rh}){
+if(t<80)return 'The heat index formula applies at 80 °F or above.';const hi=-42.379+2.04901523*t+10.14333127*rh-.22475541*t*rh-.00683783*t*t-.05481717*rh*rh+.00122874*t*t*rh+.00085282*t*rh*rh-.00000199*t*t*rh*rh;const lvl=hi<91?'Caution':hi<103?'Extreme caution':hi<125?'Danger':'Extreme danger';return [['Heat index',N(hi,1)+' °F'],['In Celsius',N((hi-32)*5/9,1)+' °C'],['Risk level',lvl]];
+});</script>
+</body></html>
