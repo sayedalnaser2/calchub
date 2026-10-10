@@ -48,13 +48,78 @@ TABLES = {
 }
 
 
+TABLES["length"][1].extend([
+  ("nm", "nanometers", "nm", "nanometer", 1e-9), ("um", "micrometers", "µm", "micrometer", 1e-6), ("nmi", "nautical miles", "nmi", "nautical mile", 1852),
+  ("furlong", "furlongs", "furlongs", "furlong", 201.168), ("mil", "mils", "mil", "mil", 2.54e-5), ("ly", "light years", "ly", "light year", 9.4607304725808e15),
+  ("fathom", "fathoms", "fathoms", "fathom", 1.8288)])
+TABLES["mass"][1].extend([
+  ("ug", "micrograms", "µg", "microgram", 1e-9), ("ct", "carats", "ct", "carat", 2e-4), ("gr", "grains", "gr", "grain", 6.479891e-5),
+  ("ston", "short tons", "short tons", "short ton", 907.18474), ("lton", "long tons", "long tons", "long ton", 1016.0469088), ("slug", "slugs", "slugs", "slug", 14.59390294)])
+TABLES["volume"][1].extend([
+  ("m3", "cubic meters", "m³", "cubic meter", 1000), ("cm3", "cubic centimeters", "cm³", "cubic centimeter", .001), ("cuin", "cubic inches", "in³", "cubic inch", .016387064),
+  ("cuft", "cubic feet", "ft³", "cubic foot", 28.316846592), ("cuyd", "cubic yards", "yd³", "cubic yard", 764.554857984),
+  ("igal", "imperial gallons", "imp gal", "imperial gallon", 4.54609), ("iqt", "imperial quarts", "imp qt", "imperial quart", 1.1365225),
+  ("ipt", "imperial pints", "imp pt", "imperial pint", .56826125), ("bbl", "oil barrels", "bbl", "oil barrel", 158.987294928)])
+TABLES["area"][1].extend([
+  ("sqmm", "square millimeters", "mm²", "square millimeter", 1e-6), ("sqcm", "square centimeters", "cm²", "square centimeter", 1e-4),
+  ("sqmi", "square miles", "mi²", "square mile", 2589988.110336)])
+TABLES["speed"][1].extend([
+  ("mach", "mach", "Mach", "Mach", 340.29), ("cms", "centimeters per second", "cm/s", "centimeter per second", .01),
+  ("kmps", "kilometers per second", "km/s", "kilometer per second", 1000)])
+TABLES["time"][1].extend([
+  ("ms", "milliseconds", "ms", "millisecond", 1e-3), ("us", "microseconds", "µs", "microsecond", 1e-6), ("ns", "nanoseconds", "ns", "nanosecond", 1e-9),
+  ("decade", "decades", "decades", "decade", 315569520), ("century", "centuries", "centuries", "century", 3155695200)])
+TABLES["data"][1].extend([
+  ("bit", "bits", "bits", "bit", .125), ("Kbit", "kilobits", "Kb", "kilobit", 125), ("Mbit", "megabits", "Mb", "megabit", 125000), ("Gbit", "gigabits", "Gb", "gigabit", 1.25e8),
+  ("PB", "petabytes", "PB", "petabyte", 1e15), ("KiB", "kibibytes", "KiB", "kibibyte", 1024), ("MiB", "mebibytes", "MiB", "mebibyte", 1048576),
+  ("GiB", "gibibytes", "GiB", "gibibyte", 1073741824), ("TiB", "tebibytes", "TiB", "tebibyte", 1099511627776)])
+TABLES["pressure"][1].extend([
+  ("torr", "torr", "Torr", "torr", 133.322368421), ("inHg", "inches of mercury", "inHg", "inch of mercury", 3386.389),
+  ("MPa", "megapascals", "MPa", "megapascal", 1e6), ("mbar", "millibars", "mbar", "millibar", 100)])
+TABLES["energy"][1].extend([
+  ("MJ", "megajoules", "MJ", "megajoule", 1e6), ("GJ", "gigajoules", "GJ", "gigajoule", 1e9), ("therm", "therms", "therms", "therm", 105480400),
+  ("ftlb", "foot-pounds", "ft-lb", "foot-pound", 1.3558179483314)])
+TABLES["power"][1].extend([
+  ("mW", "milliwatts", "mW", "milliwatt", 1e-3), ("MW", "megawatts", "MW", "megawatt", 1e6),
+  ("ftlbs", "foot-pounds per second", "ft-lb/s", "foot-pound per second", 1.3558179483314), ("PS", "metric horsepower", "PS", "metric horsepower", 735.49875)])
+TABLES["force"][1].extend([
+  ("dyn", "dynes", "dyn", "dyne", 1e-5), ("ozf", "ounce-force", "ozf", "ounce-force", .27801385), ("kip", "kips", "kip", "kip", 4448.2216152605)])
+TABLES["angle"][1].extend([
+  ("amin", "arcminutes", "arcmin", "arcminute", 3.141592653589793 / 10800), ("asec", "arcseconds", "arcsec", "arcsecond", 3.141592653589793 / 648000),
+  ("turn", "turns", "turns", "turn", 2 * 3.141592653589793)])
+TABLES["frequency"] = ("Hz", [
+  ("Hz", "hertz", "Hz", "hertz", 1), ("kHz", "kilohertz", "kHz", "kilohertz", 1e3), ("MHz", "megahertz", "MHz", "megahertz", 1e6),
+  ("GHz", "gigahertz", "GHz", "gigahertz", 1e9), ("rpm", "revolutions per minute", "rpm", "revolution per minute", 1 / 60)])
+TABLES["torque"] = ("Nm", [
+  ("Nm", "newton meters", "N·m", "newton meter", 1), ("lbft", "pound-feet", "lb-ft", "pound-foot", 1.3558179483314),
+  ("lbin", "pound-inches", "lb-in", "pound-inch", .1129848290276), ("kgfm", "kilogram-force meters", "kgf·m", "kilogram-force meter", 9.80665),
+  ("ozin", "ounce-inches", "oz-in", "ounce-inch", .00706155176), ("Nmm", "newton millimeters", "N·mm", "newton millimeter", .001)])
+TABLES["density"] = ("kgm3", [
+  ("kgm3", "kilograms per cubic meter", "kg/m³", "kilogram per cubic meter", 1), ("gcm3", "grams per cubic centimeter", "g/cm³", "gram per cubic centimeter", 1000),
+  ("lbft3", "pounds per cubic foot", "lb/ft³", "pound per cubic foot", 16.01846337), ("lbin3", "pounds per cubic inch", "lb/in³", "pound per cubic inch", 27679.9047),
+  ("lbgal", "pounds per gallon", "lb/gal", "pound per gallon", 119.826427)])
+TABLES["flow"] = ("m3s", [
+  ("lpm", "liters per minute", "L/min", "liter per minute", 1 / 60000), ("gpm", "gallons per minute", "gal/min", "gallon per minute", 6.30901964e-5),
+  ("m3h", "cubic meters per hour", "m³/h", "cubic meter per hour", 1 / 3600), ("cfm", "cubic feet per minute", "cfm", "cubic foot per minute", 4.719474432e-4),
+  ("lps", "liters per second", "L/s", "liter per second", 1e-3), ("m3s", "cubic meters per second", "m³/s", "cubic meter per second", 1)])
+TABLES["accel"] = ("mps2", [
+  ("mps2", "meters per second squared", "m/s²", "meter per second squared", 1), ("g", "standard gravities", "g", "standard gravity", 9.80665),
+  ("fps2", "feet per second squared", "ft/s²", "foot per second squared", .3048)])
+
+
 def fmt(x):
+    from decimal import Decimal
     if x == 0:
         return "0"
-    if abs(x) >= 1e6 or abs(x) < 1e-4:
+    if abs(x) < 1e-4 or abs(x) >= 1e15:
         return f"{x:.6g}"
-    s = f"{x:.8g}"
-    return s
+    d = Decimal(f"{x:.8g}")
+    s = format(d, "f")
+    if "." in s:
+        a, b = s.split(".")
+        b = b.rstrip("0")
+        return f"{int(a):,}" + ("." + b if b else "")
+    return f"{int(s):,}"
 
 
 def slugify(s):
@@ -80,7 +145,22 @@ KIND_INFO = {
  "force": ("force", None, "Force is measured in newtons in the SI system. Pound-force and kilogram-force are common in engineering and everyday weight contexts."),
  "angle": ("angle", None, "Angles can be measured in degrees (360 per full turn), radians (2π per full turn) or gradians (400 per full turn)."),
 }
-SPEC_UNITS = {}
+KIND_INFO.update({
+ "frequency": ("frequency", None, "Frequency counts cycles per second. The hertz is the SI unit; rpm counts rotations per minute and is used for engines, motors and fans."),
+ "torque": ("torque", None, "Torque is rotational force. The newton meter is the SI unit; pound-feet are common for engines and wheel nuts, and pound-inches or ounce-inches for small fasteners and motors."),
+ "density": ("density", None, "Density is mass per unit volume. Water is about 1,000 kg/m³ (1 g/cm³ or 62.4 lb/ft³) at 4 °C."),
+ "flow": ("flow rate", None, "Flow rate is the volume of fluid moving per unit of time. Liters per minute and gallons per minute are common for pumps and plumbing, and cfm for air handling."),
+ "accel": ("acceleration", None, "Acceleration is the rate of change of speed. Standard gravity (g) is exactly 9.80665 m/s²."),
+ "temperature": ("temperature", "temperature-converter", "Celsius and Kelvin share the same step size, while a Fahrenheit degree is 5/9 as large. Water freezes at 0 °C (32 °F, 273.15 K) and boils at 100 °C (212 °F, 373.15 K) at sea level."),
+})
+GROUP_NAMES = {"length": "Length", "mass": "Weight and Mass", "volume": "Volume", "area": "Area", "speed": "Speed", "time": "Time", "data": "Digital Storage",
+               "pressure": "Pressure", "energy": "Energy", "power": "Power", "force": "Force", "angle": "Angle", "frequency": "Frequency",
+               "torque": "Torque", "density": "Density", "flow": "Flow Rate", "accel": "Acceleration", "temperature": "Temperature"}
+
+
+def kind_group(kind):
+    return (f"{kind}-conversions", f"{GROUP_NAMES[kind]} Conversions",
+            f"All {GROUP_NAMES[kind].lower()} unit conversions with formulas and reference tables.")
 
 
 def _tbl(rows, h1, h2):
@@ -122,16 +202,27 @@ def pair_spec(kind, a, b, units=None):
     title = f"{tc(na)} to {tc(nb)} Converter"
     slug = f"{slugify(na)}-to-{slugify(nb)}"
     desc = f"Convert {na} to {nb} instantly. 1 {aa} = {fmt(F)} {ab}."
-    body = ("const F=%r;const r=v*F;return [[N(v,6)+' %s =',N(r,10)+' %s'],"
-            "['Formula','%s = %s × '+N(F,10)],['Reverse','1 %s = '+N(1/F,10)+' %s']," % (F, aa, ab, ab, aa, ab, aa)
-            + "...[1,2,5,10,25,50,100,1000].map(x=>[N(x)+' %s',N(x*F,8)+' %s'])];" % (aa, ab))
+    body = ("const F=%r;const r=v*F;return [[SF(v)+' %s =',SF(r)+' %s'],"
+            "['Formula','%s = %s × '+SF(F)],['Reverse','1 %s = '+SF(1/F)+' %s']," % (F, aa, ab, ab, aa, ab, aa)
+            + "...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' %s',SF(x*F)+' %s'])];" % (aa, ab))
     about = (f"To convert {na} to {nb}, multiply the number of {na} by {fmt(F)}. One {sa} equals {fmt(F)} {nb}, "
              f"and one {sb} equals {fmt(1 / F)} {na}. The table shows common values.")
     faqs = [(f"How many {nb} are in one {sa}?", f"There are {fmt(F)} {nb} in one {sa}."),
             (f"How many {na} are in one {sb}?", f"There are {fmt(1 / F)} {na} in one {sb}.")]
     extra = pair_extra(kind, a, b, units) if units else ""
     related = pair_related(kind, a, b, units) if units else None
-    return C("conversion", slug, title, desc, [("v", f"Value in {na} ({aa})", 1)], body, about, faqs, extra, related)
+    return C("conversion", slug, title, desc, [("v", f"Value in {na} ({aa})", 1)], body, about, faqs, extra, related, kind_group(kind))
+
+
+def temp_extra(a, b, na, nb, aa, ab, f, t):
+    pts = {"C": [-40, -20, 0, 10, 20, 25, 30, 37, 50, 100, 150, 200], "F": [-40, 0, 32, 50, 68, 72, 86, 98.6, 212, 350, 400, 450],
+           "K": [0, 100, 200, 250, 273.15, 293.15, 300, 310.15, 373.15, 500, 1000]}[a]
+    def conv(v):
+        c = {"C": v, "F": (v - 32) * 5 / 9, "K": v - 273.15}[a]
+        return {"C": c, "F": c * 9 / 5 + 32, "K": c + 273.15}[b]
+    rows = "".join(f"<tr><td>{v:g} {aa}</td><td>{conv(v):.2f}".rstrip("0").rstrip(".") + f" {ab}</td></tr>" for v in pts)
+    return (f"<h2>{na} to {nb} conversion table</h2>\n<table class=\"ref\"><thead><tr><th>{na}</th><th>{nb}</th></tr></thead><tbody>{rows}</tbody></table>\n"
+            f"<h2>About temperature scales</h2>\n<p>{KIND_INFO['temperature'][2]}</p>\n")
 
 
 def temp_specs():
@@ -155,7 +246,10 @@ def temp_specs():
                          [("v", f"Temperature in {aa}", 100 if a == "C" else 212 if a == "F" else 373.15)], body,
                          f"The conversion formula is {formulas[(a, b)]}. The table lists reference points such as freezing and boiling.",
                          [(f"What is the formula for {na} to {nb}?", formulas[(a, b)] + "."),
-                          ("What temperature is the same in Celsius and Fahrenheit?", "-40 degrees is the same in both scales.")]))
+                          ("What temperature is the same in Celsius and Fahrenheit?", "-40 degrees is the same in both scales.")],
+                         temp_extra(a, b, na, nb, aa, ab, f, t),
+                         [f"{names[b][0].lower()}-to-{names[a][0].lower()}"] + [f"{names[x][0].lower()}-to-{names[y][0].lower()}" for x in "CFK" for y in "CFK" if x != y and (x, y) not in ((a, b), (b, a))] + ["temperature-converter"],
+                         kind_group("temperature")))
     return out
 
 

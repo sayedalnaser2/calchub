@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>North Carolina Sales Tax Calculator | CalcHub</title>
+<meta name="description" content="Calculate sales tax and total price in North Carolina using the 4.75% state base rate (add your local rate for an exact total).">
+<link rel="canonical" href="https://YOURDOMAIN.com/north-carolina-sales-tax-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the sales tax rate in North Carolina?", "acceptedAnswer": {"@type": "Answer", "text": "The state base rate is 4.75%; local taxes may add more."}}, {"@type": "Question", "name": "How much is sales tax on $100 in North Carolina?", "acceptedAnswer": {"@type": "Answer", "text": "At the base rate, $4.75."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a> › <a href="sales-tax-by-state.html">Sales Tax Calculators by State</a></p>
+<h1>North Carolina Sales Tax Calculator</h1>
+<p class="muted">Calculate sales tax and total price in North Carolina using the 4.75% state base rate (add your local rate for an exact total).</p>
+<form class="card" data-calc="1">
+<label for="p">Price before tax ($)</label><input id="p" type="number" step="any" value="100">
+<label for="rate">Sales tax rate (%)</label><input id="rate" type="number" step="any" value="4.75">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Sales tax = price x rate. North Carolina charges a statewide base sales tax of 4.75%. This calculator starts from the state base rate; change the rate to include county or city taxes.</p>
+<h2>North Carolina sales tax on common purchases</h2>
+<table class="ref"><thead><tr><th>Price</th><th>Sales tax</th><th>Total</th></tr></thead><tbody><tr><td>$10</td><td>$0.47</td><td>$10.48</td></tr><tr><td>$25</td><td>$1.19</td><td>$26.19</td></tr><tr><td>$50</td><td>$2.38</td><td>$52.38</td></tr><tr><td>$100</td><td>$4.75</td><td>$104.75</td></tr><tr><td>$250</td><td>$11.88</td><td>$261.88</td></tr><tr><td>$500</td><td>$23.75</td><td>$523.75</td></tr><tr><td>$1,000</td><td>$47.50</td><td>$1,047.50</td></tr></tbody></table>
+<p>North Carolina charges a statewide base sales tax of 4.75%. Cities and counties often add local taxes on top, and some items such as groceries, clothing or medicine may be taxed differently. Enter your combined local rate above for an exact figure, and check the state revenue department for current rules.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the sales tax rate in North Carolina?</summary><p>The state base rate is 4.75%; local taxes may add more.</p></details>
+<details><summary>How much is sales tax on $100 in North Carolina?</summary><p>At the base rate, $4.75.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="north-dakota-sales-tax-calculator.html"><b>North Dakota Sales Tax Calculator</b></a><a href="ohio-sales-tax-calculator.html"><b>Ohio Sales Tax Calculator</b></a><a href="oklahoma-sales-tax-calculator.html"><b>Oklahoma Sales Tax Calculator</b></a><a href="oregon-sales-tax-calculator.html"><b>Oregon Sales Tax Calculator</b></a><a href="pennsylvania-sales-tax-calculator.html"><b>Pennsylvania Sales Tax Calculator</b></a><a href="rhode-island-sales-tax-calculator.html"><b>Rhode Island Sales Tax Calculator</b></a><a href="south-carolina-sales-tax-calculator.html"><b>South Carolina Sales Tax Calculator</b></a><a href="south-dakota-sales-tax-calculator.html"><b>South Dakota Sales Tax Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({p,rate}){
+return [['Sales tax',M(p*rate/100)],['Total price',M(p*(1+rate/100))],['Tax rate',PCT(rate,3)]];
+});</script>
+</body></html>

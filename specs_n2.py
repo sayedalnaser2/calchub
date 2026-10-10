@@ -1,7 +1,7 @@
 from spec import C
 
 SPECS = [
-C("finance", "hourly-to-salary-calculator", "Hourly to Salary Calculator",
+C("finance", "hourly-to-salary-calculator", "Hourly Wage to Annual Salary Calculator",
   "Convert an hourly wage into weekly, monthly and annual pay.",
   [("rate", "Hourly rate ($)", 25), ("hrs", "Hours per week", 40), ("wks", "Weeks worked per year", 52)],
   r"""const y=rate*hrs*wks;return [['Annual salary',M(y)],['Monthly',M(y/12)],['Biweekly',M(y/26)],['Weekly',M(rate*hrs)],['Daily (5 days)',M(rate*hrs/5)]];""",

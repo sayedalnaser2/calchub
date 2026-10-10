@@ -37,3 +37,5 @@ nav{display:flex;flex-wrap:wrap;gap:4px 0}
 .ref th,.ref td{padding:8px 14px;text-align:left;border-bottom:1px solid var(--line)}
 .ref th{background:rgba(127,127,127,.08);font-size:.9rem}
 .ref tr:last-child td{border-bottom:0}
+.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px 18px;margin:12px 0}
+.links a{padding:4px 0;font-size:.95rem}

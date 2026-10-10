@@ -2,6 +2,9 @@
 const $=id=>document.getElementById(id);
 const M=x=>Number.isFinite(x)?x.toLocaleString('en-US',{style:'currency',currency:'USD'}):'—';
 const N=(x,d=2)=>Number.isFinite(x)?x.toLocaleString('en-US',{maximumFractionDigits:d}):'—';
+const SF=x=>{if(!Number.isFinite(x))return '—';if(x===0)return '0';const a=Math.abs(x);
+  if(a>=1e-4&&a<1e12)return Number(x.toPrecision(10)).toLocaleString('en-US',{maximumFractionDigits:12});
+  return x.toExponential(6).replace(/\.?0+e/,'e');};
 const PCT=(x,d=2)=>Number.isFinite(x)?N(x,d)+'%':'—';
 const PMT=(P,apr,n)=>{const r=apr/1200;return r===0?P/n:P*r/(1-Math.pow(1+r,-n));};
 const D=s=>{const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d);};

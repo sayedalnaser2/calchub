@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Jersey Sales Tax Calculator | CalcHub</title>
+<meta name="description" content="Calculate sales tax and total price in New Jersey using the 6.625% state base rate (add your local rate for an exact total).">
+<link rel="canonical" href="https://YOURDOMAIN.com/new-jersey-sales-tax-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the sales tax rate in New Jersey?", "acceptedAnswer": {"@type": "Answer", "text": "The state base rate is 6.625%; local taxes may add more."}}, {"@type": "Question", "name": "How much is sales tax on $100 in New Jersey?", "acceptedAnswer": {"@type": "Answer", "text": "At the base rate, $6.62."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a> › <a href="sales-tax-by-state.html">Sales Tax Calculators by State</a></p>
+<h1>New Jersey Sales Tax Calculator</h1>
+<p class="muted">Calculate sales tax and total price in New Jersey using the 6.625% state base rate (add your local rate for an exact total).</p>
+<form class="card" data-calc="1">
+<label for="p">Price before tax ($)</label><input id="p" type="number" step="any" value="100">
+<label for="rate">Sales tax rate (%)</label><input id="rate" type="number" step="any" value="6.625">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Sales tax = price x rate. New Jersey charges a statewide base sales tax of 6.625%. This calculator starts from the state base rate; change the rate to include county or city taxes.</p>
+<h2>New Jersey sales tax on common purchases</h2>
+<table class="ref"><thead><tr><th>Price</th><th>Sales tax</th><th>Total</th></tr></thead><tbody><tr><td>$10</td><td>$0.66</td><td>$10.66</td></tr><tr><td>$25</td><td>$1.66</td><td>$26.66</td></tr><tr><td>$50</td><td>$3.31</td><td>$53.31</td></tr><tr><td>$100</td><td>$6.62</td><td>$106.62</td></tr><tr><td>$250</td><td>$16.56</td><td>$266.56</td></tr><tr><td>$500</td><td>$33.12</td><td>$533.12</td></tr><tr><td>$1,000</td><td>$66.25</td><td>$1,066.25</td></tr></tbody></table>
+<p>New Jersey charges a statewide base sales tax of 6.625%. Cities and counties often add local taxes on top, and some items such as groceries, clothing or medicine may be taxed differently. Enter your combined local rate above for an exact figure, and check the state revenue department for current rules.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the sales tax rate in New Jersey?</summary><p>The state base rate is 6.625%; local taxes may add more.</p></details>
+<details><summary>How much is sales tax on $100 in New Jersey?</summary><p>At the base rate, $6.62.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="new-mexico-sales-tax-calculator.html"><b>New Mexico Sales Tax Calculator</b></a><a href="new-york-sales-tax-calculator.html"><b>New York Sales Tax Calculator</b></a><a href="north-carolina-sales-tax-calculator.html"><b>North Carolina Sales Tax Calculator</b></a><a href="north-dakota-sales-tax-calculator.html"><b>North Dakota Sales Tax Calculator</b></a><a href="ohio-sales-tax-calculator.html"><b>Ohio Sales Tax Calculator</b></a><a href="oklahoma-sales-tax-calculator.html"><b>Oklahoma Sales Tax Calculator</b></a><a href="oregon-sales-tax-calculator.html"><b>Oregon Sales Tax Calculator</b></a><a href="pennsylvania-sales-tax-calculator.html"><b>Pennsylvania Sales Tax Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({p,rate}){
+return [['Sales tax',M(p*rate/100)],['Total price',M(p*(1+rate/100))],['Tax rate',PCT(rate,3)]];
+});</script>
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>$50,000 Compound Interest Calculator | CalcHub</title>
+<meta name="description" content="See what $50,000 grows to with monthly compounding.">
+<link rel="canonical" href="https://YOURDOMAIN.com/50000-compound-interest-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long to double $50,000?", "acceptedAnswer": {"@type": "Answer", "text": "Divide 72 by the annual rate for a quick estimate: about 10 years at 7%."}}, {"@type": "Question", "name": "Does compounding frequency matter?", "acceptedAnswer": {"@type": "Answer", "text": "Slightly. More frequent compounding earns a little more."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a> › <a href="investment-growth-calculators.html">Investment Growth Calculators</a></p>
+<h1>$50,000 Compound Interest Calculator</h1>
+<p class="muted">See what $50,000 grows to with monthly compounding.</p>
+<form class="card" data-calc="1">
+<label for="amt">Starting amount ($)</label><input id="amt" type="number" step="any" value="50000">
+<label for="rate">Annual interest rate (%)</label><input id="rate" type="number" step="any" value="7">
+<label for="yrs">Years</label><input id="yrs" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>With monthly compounding, FV = P x (1 + r/12)^(12 x years). $50,000 at 7% for 10 years grows to about $100,483.</p>
+<h2>What $50,000 grows to</h2>
+<table class="ref"><thead><tr><th>Time</th><th>4%</th><th>6%</th><th>8%</th><th>10%</th></tr></thead><tbody><tr><td>5 years</td><td>$61,050</td><td>$67,443</td><td>$74,492</td><td>$82,265</td></tr><tr><td>10 years</td><td>$74,542</td><td>$90,970</td><td>$110,982</td><td>$135,352</td></tr><tr><td>20 years</td><td>$111,129</td><td>$165,510</td><td>$246,340</td><td>$366,404</td></tr><tr><td>30 years</td><td>$165,675</td><td>$301,129</td><td>$546,786</td><td>$991,870</td></tr></tbody></table>
+<h2>Frequently asked questions</h2>
+<details><summary>How long to double $50,000?</summary><p>Divide 72 by the annual rate for a quick estimate: about 10 years at 7%.</p></details>
+<details><summary>Does compounding frequency matter?</summary><p>Slightly. More frequent compounding earns a little more.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="75000-compound-interest-calculator.html"><b>$75,000 Compound Interest Calculator</b></a><a href="100000-compound-interest-calculator.html"><b>$100,000 Compound Interest Calculator</b></a><a href="150000-compound-interest-calculator.html"><b>$150,000 Compound Interest Calculator</b></a><a href="200000-compound-interest-calculator.html"><b>$200,000 Compound Interest Calculator</b></a><a href="250000-compound-interest-calculator.html"><b>$250,000 Compound Interest Calculator</b></a><a href="500000-compound-interest-calculator.html"><b>$500,000 Compound Interest Calculator</b></a><a href="1000000-compound-interest-calculator.html"><b>$1,000,000 Compound Interest Calculator</b></a><a href="investing-25-a-month-calculator.html"><b>Investing $25 a Month: How Much Will You Have?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({amt,rate,yrs}){
+const fv=amt*Math.pow(1+rate/1200,yrs*12);return [['Future value',M(fv)],['Growth earned',M(fv-amt)],['Growth multiple',N(fv/amt,2)+'x']];
+});</script>
+</body></html>

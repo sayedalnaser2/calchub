@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connecticut Sales Tax Calculator | CalcHub</title>
+<meta name="description" content="Calculate sales tax and total price in Connecticut using the 6.35% state base rate (add your local rate for an exact total).">
+<link rel="canonical" href="https://YOURDOMAIN.com/connecticut-sales-tax-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the sales tax rate in Connecticut?", "acceptedAnswer": {"@type": "Answer", "text": "The state base rate is 6.35%; local taxes may add more."}}, {"@type": "Question", "name": "How much is sales tax on $100 in Connecticut?", "acceptedAnswer": {"@type": "Answer", "text": "At the base rate, $6.35."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a> › <a href="sales-tax-by-state.html">Sales Tax Calculators by State</a></p>
+<h1>Connecticut Sales Tax Calculator</h1>
+<p class="muted">Calculate sales tax and total price in Connecticut using the 6.35% state base rate (add your local rate for an exact total).</p>
+<form class="card" data-calc="1">
+<label for="p">Price before tax ($)</label><input id="p" type="number" step="any" value="100">
+<label for="rate">Sales tax rate (%)</label><input id="rate" type="number" step="any" value="6.35">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Sales tax = price x rate. Connecticut charges a statewide base sales tax of 6.35%. This calculator starts from the state base rate; change the rate to include county or city taxes.</p>
+<h2>Connecticut sales tax on common purchases</h2>
+<table class="ref"><thead><tr><th>Price</th><th>Sales tax</th><th>Total</th></tr></thead><tbody><tr><td>$10</td><td>$0.64</td><td>$10.63</td></tr><tr><td>$25</td><td>$1.59</td><td>$26.59</td></tr><tr><td>$50</td><td>$3.17</td><td>$53.17</td></tr><tr><td>$100</td><td>$6.35</td><td>$106.35</td></tr><tr><td>$250</td><td>$15.88</td><td>$265.88</td></tr><tr><td>$500</td><td>$31.75</td><td>$531.75</td></tr><tr><td>$1,000</td><td>$63.50</td><td>$1,063.50</td></tr></tbody></table>
+<p>Connecticut charges a statewide base sales tax of 6.35%. Cities and counties often add local taxes on top, and some items such as groceries, clothing or medicine may be taxed differently. Enter your combined local rate above for an exact figure, and check the state revenue department for current rules.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the sales tax rate in Connecticut?</summary><p>The state base rate is 6.35%; local taxes may add more.</p></details>
+<details><summary>How much is sales tax on $100 in Connecticut?</summary><p>At the base rate, $6.35.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="delaware-sales-tax-calculator.html"><b>Delaware Sales Tax Calculator</b></a><a href="florida-sales-tax-calculator.html"><b>Florida Sales Tax Calculator</b></a><a href="georgia-sales-tax-calculator.html"><b>Georgia Sales Tax Calculator</b></a><a href="hawaii-sales-tax-calculator.html"><b>Hawaii Sales Tax Calculator</b></a><a href="idaho-sales-tax-calculator.html"><b>Idaho Sales Tax Calculator</b></a><a href="illinois-sales-tax-calculator.html"><b>Illinois Sales Tax Calculator</b></a><a href="indiana-sales-tax-calculator.html"><b>Indiana Sales Tax Calculator</b></a><a href="iowa-sales-tax-calculator.html"><b>Iowa Sales Tax Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({p,rate}){
+return [['Sales tax',M(p*rate/100)],['Total price',M(p*(1+rate/100))],['Tax rate',PCT(rate,3)]];
+});</script>
+</body></html>

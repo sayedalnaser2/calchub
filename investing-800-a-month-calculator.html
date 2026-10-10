@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Investing $800 a Month: How Much Will You Have? | CalcHub</title>
+<meta name="description" content="$800 invested every month grows to $975,977 in 30 years at 7%.">
+<link rel="canonical" href="https://YOURDOMAIN.com/investing-800-a-month-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much is $800 a month after 30 years?", "acceptedAnswer": {"@type": "Answer", "text": "About $975,977 at 7% a year."}}, {"@type": "Question", "name": "What return should I assume?", "acceptedAnswer": {"@type": "Answer", "text": "Long-run stock market averages are often quoted around 7% after inflation to 10% before it, but actual returns vary widely."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a> › <a href="investment-growth-calculators.html">Investment Growth Calculators</a></p>
+<h1>Investing $800 a Month: How Much Will You Have?</h1>
+<p class="muted">$800 invested every month grows to $975,977 in 30 years at 7%.</p>
+<form class="card" data-calc="1">
+<label for="mo">Monthly investment ($)</label><input id="mo" type="number" step="any" value="800">
+<label for="rate">Annual return (%)</label><input id="rate" type="number" step="any" value="7">
+<label for="yrs">Years</label><input id="yrs" type="number" step="any" value="30">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The future value of regular deposits is M x ((1 + r)^k - 1) / r with a monthly rate r and k months. $800 a month for 30 years at 7% grows to about $975,977, of which $288,000 is your own money.</p>
+<h2>What $800 a month grows to</h2>
+<table class="ref"><thead><tr><th>Time</th><th>5% return</th><th>7% return</th><th>10% return</th></tr></thead><tbody><tr><td>5 years</td><td>$54,405</td><td>$57,274</td><td>$61,950</td></tr><tr><td>10 years</td><td>$124,226</td><td>$138,468</td><td>$163,876</td></tr><tr><td>20 years</td><td>$328,827</td><td>$416,741</td><td>$607,495</td></tr><tr><td>30 years</td><td>$665,807</td><td>$975,977</td><td>$1,808,390</td></tr><tr><td>40 years</td><td>$1,220,816</td><td>$2,099,851</td><td>$5,059,264</td></tr></tbody></table>
+<p>Returns are illustrations with monthly compounding, not guarantees. Real investments fluctuate.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How much is $800 a month after 30 years?</summary><p>About $975,977 at 7% a year.</p></details>
+<details><summary>What return should I assume?</summary><p>Long-run stock market averages are often quoted around 7% after inflation to 10% before it, but actual returns vary widely.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="investing-1000-a-month-calculator.html"><b>Investing $1,000 a Month: How Much Will You Have?</b></a><a href="investing-1200-a-month-calculator.html"><b>Investing $1,200 a Month: How Much Will You Have?</b></a><a href="investing-1500-a-month-calculator.html"><b>Investing $1,500 a Month: How Much Will You Have?</b></a><a href="investing-2000-a-month-calculator.html"><b>Investing $2,000 a Month: How Much Will You Have?</b></a><a href="investing-2500-a-month-calculator.html"><b>Investing $2,500 a Month: How Much Will You Have?</b></a><a href="investing-3000-a-month-calculator.html"><b>Investing $3,000 a Month: How Much Will You Have?</b></a><a href="1000-compound-interest-calculator.html"><b>$1,000 Compound Interest Calculator</b></a><a href="2500-compound-interest-calculator.html"><b>$2,500 Compound Interest Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({mo,rate,yrs}){
+const r=rate/1200,k=yrs*12;const fv=r===0?mo*k:mo*(Math.pow(1+r,k)-1)/r;return [['Future value',M(fv)],['Total contributed',M(mo*k)],['Growth earned',M(fv-mo*k)]];
+});</script>
+</body></html>

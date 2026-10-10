@@ -12,6 +12,7 @@ from specs_m2 import SPECS as M2
 from specs_c2 import SPECS as C2
 from specs_k2 import SPECS as K2
 from specs_n2 import SPECS as N2
+from gen_scale import SPECS as G
 
 DOMAIN = "https://YOURDOMAIN.com"
 SITE = "CalcHub"
@@ -27,7 +28,7 @@ CATS = [
     ("science", "Science", "Physics and science calculators: Ohm's law, energy, density and more."),
 ]
 CAT = {c[0]: c for c in CATS}
-SPECS = F + HM + O + F2 + H2 + M2 + C2 + K2 + N2
+SPECS = F + HM + O + F2 + H2 + M2 + C2 + K2 + N2 + G
 e = html.escape
 
 
@@ -82,6 +83,10 @@ def calc_page(s):
     related = [x for x in SPECS if x["cat"] == s["cat"] and x["slug"] != s["slug"]]
     idx = [x["slug"] for x in SPECS if x["cat"] == s["cat"]].index(s["slug"])
     related = (related[idx:] + related[:idx])[:6]
+    if s.get("group") and not s.get("related"):
+        mem = [x for x in SPECS if x.get("group") and x["group"][0] == s["group"][0]]
+        i = [x["slug"] for x in mem].index(s["slug"])
+        related = (mem[i + 1:] + mem[:i])[:8]
     if s.get("related"):
         by = {x["slug"]: x for x in SPECS}
         related = [by[r] for r in s["related"] if r in by and r != s["slug"]][:12]
@@ -90,7 +95,10 @@ def calc_page(s):
     ld = f'<script type="application/ld+json">{json.dumps(faq_ld)}</script>\n'
     ids = ",".join(i[0] for i in s["inputs"])
     p = head(f'{s["title"]} | {SITE}', s["desc"], s["slug"] + ".html", ld)
-    p += f'<p class="muted"><a href="index.html">Home</a> › <a href="{cat[0]}.html">{cat[1]}</a></p>\n'
+    crumb = f'<a href="index.html">Home</a> › <a href="{cat[0]}.html">{cat[1]}</a>'
+    if s.get("group"):
+        crumb += f' › <a href="{s["group"][0]}.html">{e(s["group"][1])}</a>'
+    p += f'<p class="muted">{crumb}</p>\n'
     p += f'<h1>{e(s["title"])}</h1>\n<p class="muted">{e(s["desc"])}</p>\n'
     p += '<form class="card" data-calc="1">\n' + "\n".join(field(i) for i in s["inputs"])
     p += '\n<button type="submit">Calculate</button>\n<div class="result" id="out" aria-live="polite"></div>\n</form>\n'
@@ -110,6 +118,28 @@ def card(s):
     return f'<a href="{s["slug"]}.html" data-t="{e((s["title"] + " " + s["desc"]).lower())}"><b>{e(s["title"])}</b>{e(s["desc"])}</a>'
 
 
+def groups():
+    g = {}
+    for s in SPECS:
+        if s.get("group"):
+            slug, title, blurb = s["group"]
+            g.setdefault(slug, dict(title=title, blurb=blurb, cat=s["cat"], members=[]))["members"].append(s)
+    return g
+
+
+def hub_card(slug, g):
+    return f'<a href="{slug}.html" data-t="{e((g["title"] + " " + g["blurb"]).lower())}"><b>{e(g["title"])}</b>{len(g["members"])} calculators · {e(g["blurb"])}</a>'
+
+
+def cat_cards(cat):
+    gs = groups()
+    return [card(s) for s in SPECS if s["cat"] == cat and not s.get("group")] + [hub_card(k, g) for k, g in gs.items() if g["cat"] == cat]
+
+
+def cat_count(cat):
+    return sum(1 for s in SPECS if s["cat"] == cat)
+
+
 def write(name, content):
     with open(os.path.join(OUT, name), "w", encoding="utf-8", newline="\n") as f:
         f.write(content)
@@ -127,36 +157,47 @@ def main():
         write(s["slug"] + ".html", calc_page(s))
     # category pages
     for slug, name, blurb in CATS:
-        items = [s for s in SPECS if s["cat"] == slug]
         p = head(f"{name} Calculators – Free Online | {SITE}", blurb, slug + ".html")
-        p += f'<p class="muted"><a href="index.html">Home</a></p>\n<h1>{name} Calculators</h1>\n<p class="muted">{blurb}</p>\n'
-        p += '<div class="grid">' + "".join(card(s) for s in items) + "</div>\n<div class=\"ad\"></div>\n" + foot() + "</body></html>\n"
+        p += f'<p class="muted"><a href="index.html">Home</a></p>\n<h1>{name if name.endswith("Converters") else name + " Calculators"}</h1>\n<p class="muted">{cat_count(slug)} calculators. {blurb}</p>\n'
+        p += '<div class="grid">' + "".join(cat_cards(slug)) + "</div>\n<div class=\"ad\"></div>\n" + foot() + "</body></html>\n"
         write(slug + ".html", p)
+    # group hub pages
+    for slug, g in groups().items():
+        c = CAT[g["cat"]]
+        p = head(f'{g["title"]} | {SITE}', f'{g["blurb"]} {len(g["members"])} free calculators.', slug + ".html")
+        p += f'<p class="muted"><a href="index.html">Home</a> › <a href="{c[0]}.html">{c[1]}</a></p>\n<h1>{e(g["title"])}</h1>\n<p class="muted">{len(g["members"])} calculators. {e(g["blurb"])}</p>\n'
+        p += '<div class="links">' + "".join(f'<a href="{m["slug"]}.html">{e(m["title"])}</a>' for m in g["members"]) + "</div>\n<div class=\"ad\"></div>\n" + foot() + "</body></html>\n"
+        write(slug + ".html", p)
+    # search index
+    write("search.js", "const IDX=" + json.dumps([[x["slug"], x["title"]] for x in SPECS] + [[k, g["title"]] for k, g in groups().items()], separators=(",", ":"), ensure_ascii=False) + ";\n")
     # home
     p = head(f"{SITE} – Free Online Calculators for Money, Health, Math & More",
              f"{len(SPECS)} free online calculators: mortgage, loan, BMI, percentage, unit converters, dates and more. Instant results, no sign-up.",
              "")
     p += f'<h1>Free Online Calculators</h1>\n<p class="muted">{len(SPECS)} calculators. Instant results, no sign-up, nothing stored.</p>\n'
-    p += '<input class="search" id="q" type="search" placeholder="Search calculators (e.g. mortgage, BMI, percentage)…" aria-label="Search calculators">\n'
+    p += '<input class="search" id="q" type="search" placeholder="Search calculators (e.g. mortgage, BMI, percentage)…" aria-label="Search calculators">\n<div id="results" class="links"></div>\n'
     for slug, name, blurb in CATS:
-        items = [s for s in SPECS if s["cat"] == slug]
-        p += f'<section class="cat"><h2><a href="{slug}.html">{name}</a></h2><div class="grid">' + "".join(card(s) for s in items[:12]) + "</div>" + (f'<p><a href="{slug}.html">View all {len(items)} {name.lower()} calculators →</a></p>' if len(items) > 12 else "") + "</section>\n"
+        cards = cat_cards(slug)
+        p += f'<section class="cat"><h2><a href="{slug}.html">{name}</a></h2><div class="grid">' + "".join(cards[:12]) + "</div>" + f'<p><a href="{slug}.html">View all {cat_count(slug)} {name.lower()} calculators →</a></p>' + "</section>\n"
     p += '<div class="ad"></div>\n' + foot()
-    p += """<script>
-const q=document.getElementById('q');
-q.addEventListener('input',()=>{const t=q.value.trim().toLowerCase();
-document.querySelectorAll('.grid a').forEach(a=>{a.style.display=!t||a.dataset.t.includes(t)?'':'none';});
-document.querySelectorAll('.cat').forEach(c=>{c.style.display=[...c.querySelectorAll('a[data-t]')].some(a=>a.style.display!=='none')?'':'none';});});
+    p += """<script src="search.js"></script>
+<script>
+const q=document.getElementById('q'),res=document.getElementById('results');
+q.addEventListener('input',()=>{const w=q.value.trim().toLowerCase().split(/\\s+/).filter(Boolean);
+document.querySelectorAll('.cat').forEach(c=>{c.style.display=w.length?'none':'';});
+if(!w.length){res.innerHTML='';return;}
+const m=IDX.filter(([s,t])=>w.every(x=>t.toLowerCase().includes(x)||s.includes(x))).slice(0,60);
+res.innerHTML=m.length?m.map(([s,t])=>'<a href="'+s+'.html">'+t.replace(/</g,'&lt;')+'</a>').join(''):'<p class="muted">No matches.</p>';});
 </script>
 </body></html>
 """
     write("index.html", p)
     # sitemap + robots
-    urls = [""] + [c[0] + ".html" for c in CATS] + [s["slug"] + ".html" for s in SPECS] + ["privacy.html"]
+    urls = [""] + [c[0] + ".html" for c in CATS] + [k + ".html" for k in groups()] + [s["slug"] + ".html" for s in SPECS] + ["privacy.html"]
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
           "".join(f"<url><loc>{DOMAIN}/{u}</loc></url>\n" for u in urls) + "</urlset>\n")
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
-    print(f"Built {len(SPECS)} calculators, {len(CATS)} category pages.")
+    print(f"Built {len(SPECS)} calculators, {len(CATS)} category pages, {len(groups())} hub pages.")
 
 
 if __name__ == "__main__":
