@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quadratic Formula Calculator | CalcHub</title>
+<meta name="description" content="Solve ax² + bx + c = 0 and find the roots, including complex ones.">
+<link rel="canonical" href="https://YOURDOMAIN.com/quadratic-formula-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the discriminant tell me?", "acceptedAnswer": {"@type": "Answer", "text": "It is b\u00b2 - 4ac. Its sign tells you how many real solutions the equation has."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Quadratic Formula Calculator</h1>
+<p class="muted">Solve ax² + bx + c = 0 and find the roots, including complex ones.</p>
+<form class="card" data-calc="1">
+<label for="a">a</label><input id="a" type="number" step="any" value="1">
+<label for="b">b</label><input id="b" type="number" step="any" value="-3">
+<label for="c">c</label><input id="c" type="number" step="any" value="2">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The quadratic formula x = (-b ± √(b² - 4ac)) / 2a gives the solutions. A positive discriminant means two real roots, zero means one repeated root and negative means two complex roots.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What does the discriminant tell me?</summary><p>It is b² - 4ac. Its sign tells you how many real solutions the equation has.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="pythagorean-theorem-calculator.html"><b>Pythagorean Theorem Calculator</b></a><a href="circle-calculator.html"><b>Circle Calculator</b></a><a href="triangle-area-calculator.html"><b>Triangle Area Calculator</b></a><a href="gcd-lcm-calculator.html"><b>GCD and LCM Calculator</b></a><a href="prime-factorization-calculator.html"><b>Prime Factorization Calculator</b></a><a href="permutation-combination-calculator.html"><b>Permutation and Combination Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,b,c}){
+if(a===0)return 'a cannot be 0 in a quadratic equation.';
+const d=b*b-4*a*c;
+if(d>=0){const r=Math.sqrt(d);return [['Roots',N((-b+r)/(2*a),6)+' and '+N((-b-r)/(2*a),6)],['Discriminant',N(d,6)],['Vertex x',N(-b/(2*a),6)]];}
+const re=-b/(2*a),im=Math.sqrt(-d)/(2*a);
+return [['Complex roots',N(re,6)+' ± '+N(Math.abs(im),6)+'i'],['Discriminant',N(d,6)],['Vertex x',N(re,6)]];
+});</script>
+</body></html>

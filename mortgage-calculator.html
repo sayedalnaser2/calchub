@@ -1,35 +1,43 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mortgage Calculator – Monthly Payment with Taxes &amp; Insurance | CalcHub</title>
-<meta name="description" content="Free mortgage calculator. Estimate your monthly payment including principal, interest, property tax and home insurance, plus total interest paid.">
+<title>Mortgage Calculator | CalcHub</title>
+<meta name="description" content="Estimate your monthly mortgage payment including property tax and home insurance.">
 <link rel="canonical" href="https://YOURDOMAIN.com/mortgage-calculator.html">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much house can I afford?", "acceptedAnswer": {"@type": "Answer", "text": "A common guideline is to keep housing costs under about 28% of gross monthly income and total debts under 36%."}}, {"@type": "Question", "name": "Is a 15-year or 30-year mortgage better?", "acceptedAnswer": {"@type": "Answer", "text": "A 15-year loan has higher payments but far less total interest. A 30-year loan has lower payments and more flexibility. Compare both above."}}, {"@type": "Question", "name": "Does a bigger down payment help?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It lowers the loan amount, the payment and total interest, and 20% or more usually avoids PMI."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
 </head><body>
-<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a>
-<nav><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="compound-interest-calculator.html">Savings</a><a href="credit-card-payoff-calculator.html">Debt</a></nav></div></header>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
 <h1>Mortgage Calculator</h1>
-<p class="muted">Estimate your monthly mortgage payment, including property tax and insurance.</p>
-<form class="card" data-calc="mortgage">
-<label for="price">Home price ($)</label><input id="price" type="number" value="350000">
-<label for="down">Down payment ($)</label><input id="down" type="number" value="70000">
-<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="0.01" value="6.5">
-<label for="years">Loan term (years)</label><select id="years"><option>30</option><option>20</option><option>15</option><option>10</option></select>
-<label for="tax">Property tax ($ per year)</label><input id="tax" type="number" value="3500">
-<label for="ins">Home insurance ($ per year)</label><input id="ins" type="number" value="1200">
+<p class="muted">Estimate your monthly mortgage payment including property tax and home insurance.</p>
+<form class="card" data-calc="1">
+<label for="price">Home price ($)</label><input id="price" type="number" step="any" value="350000">
+<label for="down">Down payment ($)</label><input id="down" type="number" step="any" value="70000">
+<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="any" value="6.5">
+<label for="years">Loan term</label><select id="years"><option value="30" selected>30 years</option><option value="20">20 years</option><option value="15">15 years</option><option value="10">10 years</option></select>
+<label for="tax">Property tax ($ per year)</label><input id="tax" type="number" step="any" value="3500">
+<label for="ins">Home insurance ($ per year)</label><input id="ins" type="number" step="any" value="1200">
 <button type="submit">Calculate</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
-<h2>How your mortgage payment is calculated</h2>
-<p>Your monthly principal and interest depends on the loan amount (home price minus down payment), the interest rate and the term. Lenders usually add property tax and homeowners insurance into the monthly payment (called escrow). If your down payment is under 20%, you may also pay private mortgage insurance (PMI), which this estimate does not include.</p>
+<h2>How it works</h2>
+<p>Monthly principal and interest comes from the loan amount (price minus down payment), the interest rate and the term. Property tax and homeowners insurance are added as one-twelfth of the yearly cost, which is how most lenders collect them in escrow. Private mortgage insurance (PMI) is not included.</p>
 <h2>Frequently asked questions</h2>
-<details><summary>How much house can I afford?</summary><p>A common guideline is keeping total housing costs under about 28% of gross monthly income, and total debts under 36%.</p></details>
-<details><summary>Is a 15-year or 30-year mortgage better?</summary><p>A 15-year loan has higher monthly payments but far less total interest. A 30-year loan has lower payments and more flexibility. Try both terms above to compare.</p></details>
-<details><summary>Does a larger down payment help?</summary><p>Yes. It lowers the loan amount, the monthly payment and total interest, and 20% or more usually avoids PMI.</p></details>
-<p><a href="loan-calculator.html">Loan calculator</a> · <a href="compound-interest-calculator.html">Compound interest calculator</a></p>
+<details><summary>How much house can I afford?</summary><p>A common guideline is to keep housing costs under about 28% of gross monthly income and total debts under 36%.</p></details>
+<details><summary>Is a 15-year or 30-year mortgage better?</summary><p>A 15-year loan has higher payments but far less total interest. A 30-year loan has lower payments and more flexibility. Compare both above.</p></details>
+<details><summary>Does a bigger down payment help?</summary><p>Yes. It lowers the loan amount, the payment and total interest, and 20% or more usually avoids PMI.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="loan-calculator.html"><b>Loan Calculator</b></a><a href="compound-interest-calculator.html"><b>Compound Interest Calculator</b></a><a href="credit-card-payoff-calculator.html"><b>Credit Card Payoff Calculator</b></a><a href="simple-interest-calculator.html"><b>Simple Interest Calculator</b></a><a href="savings-goal-calculator.html"><b>Savings Goal Calculator</b></a><a href="retirement-calculator.html"><b>Retirement Savings Calculator</b></a></div>
 </main>
-<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Estimates only, not financial advice.</div></footer>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
+<script>CalcPage(function({price,down,rate,years,tax,ins}){
+const P=Math.max(price-down,0),n=years*12,pi=PMT(P,rate,n);
+return [['Monthly payment',M(pi+tax/12+ins/12)],['Principal and interest',M(pi)],['Property tax',M(tax/12)],['Home insurance',M(ins/12)],['Loan amount',M(P)],['Total interest over the loan',M(pi*n-P)]];
+});</script>
 </body></html>

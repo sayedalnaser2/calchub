@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simple Interest Calculator | CalcHub</title>
+<meta name="description" content="Calculate simple interest and the total amount owed or earned.">
+<link rel="canonical" href="https://YOURDOMAIN.com/simple-interest-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between simple and compound interest?", "acceptedAnswer": {"@type": "Answer", "text": "Simple interest is earned on the principal only. Compound interest is also earned on previously added interest, so it grows faster."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Simple Interest Calculator</h1>
+<p class="muted">Calculate simple interest and the total amount owed or earned.</p>
+<form class="card" data-calc="1">
+<label for="principal">Principal ($)</label><input id="principal" type="number" step="any" value="10000">
+<label for="rate">Annual rate (%)</label><input id="rate" type="number" step="any" value="5">
+<label for="years">Time (years)</label><input id="years" type="number" step="any" value="3">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Simple interest uses the formula I = P x r x t, where interest is calculated only on the original principal and never on accumulated interest.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the difference between simple and compound interest?</summary><p>Simple interest is earned on the principal only. Compound interest is also earned on previously added interest, so it grows faster.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="savings-goal-calculator.html"><b>Savings Goal Calculator</b></a><a href="retirement-calculator.html"><b>Retirement Savings Calculator</b></a><a href="auto-loan-calculator.html"><b>Auto Loan Calculator</b></a><a href="sales-tax-calculator.html"><b>Sales Tax Calculator</b></a><a href="tip-calculator.html"><b>Tip Calculator</b></a><a href="discount-calculator.html"><b>Discount Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({principal,rate,years}){
+const i=principal*rate/100*years;
+return [['Interest',M(i)],['Total amount',M(principal+i)]];
+});</script>
+</body></html>

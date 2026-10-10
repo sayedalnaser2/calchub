@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gravel Calculator | CalcHub</title>
+<meta name="description" content="Estimate cubic yards and tons of gravel for a driveway or garden bed.">
+<link rel="canonical" href="https://YOURDOMAIN.com/gravel-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How deep should gravel be?", "acceptedAnswer": {"@type": "Answer", "text": "A driveway typically uses 4-6 inches, and a path or garden bed 2-3 inches."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Gravel Calculator</h1>
+<p class="muted">Estimate cubic yards and tons of gravel for a driveway or garden bed.</p>
+<form class="card" data-calc="1">
+<label for="l">Length (ft)</label><input id="l" type="number" step="any" value="20">
+<label for="w">Width (ft)</label><input id="w" type="number" step="any" value="10">
+<label for="d">Depth (in)</label><input id="d" type="number" step="any" value="3">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Volume is length x width x depth in cubic yards. Gravel weighs about 1.4 tons per cubic yard, depending on type and moisture.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How deep should gravel be?</summary><p>A driveway typically uses 4-6 inches, and a path or garden bed 2-3 inches.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="board-feet-calculator.html"><b>Board Feet Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a><a href="tile-calculator.html"><b>Tile Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,d}){
+const cy=l*w*d/12/27;
+return [['Gravel needed',N(cy,2)+' cubic yards'],['Weight (approx.)',N(cy*1.4,2)+' tons'],['With 10% extra',N(cy*1.1,2)+' cubic yards']];
+});</script>
+</body></html>

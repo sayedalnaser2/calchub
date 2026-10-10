@@ -1,33 +1,42 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Compound Interest Calculator – Savings &amp; Investment Growth | CalcHub</title>
-<meta name="description" content="Free compound interest calculator with monthly contributions. See how your savings or investments grow over time.">
+<title>Compound Interest Calculator | CalcHub</title>
+<meta name="description" content="See how savings or investments grow with compound interest and monthly deposits.">
 <link rel="canonical" href="https://YOURDOMAIN.com/compound-interest-calculator.html">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What return rate should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Savings accounts have recently paid roughly 3-5%. Long-run stock market averages are often quoted near 7% after inflation, but returns are never guaranteed."}}, {"@type": "Question", "name": "Does compounding frequency matter?", "acceptedAnswer": {"@type": "Answer", "text": "Slightly. Daily compounding earns a little more than yearly, but rate and time matter far more."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
 </head><body>
-<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a>
-<nav><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="compound-interest-calculator.html">Savings</a><a href="credit-card-payoff-calculator.html">Debt</a></nav></div></header>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
 <h1>Compound Interest Calculator</h1>
-<p class="muted">See how a starting balance plus regular deposits grows over time.</p>
-<form class="card" data-calc="compound">
-<label for="principal">Starting amount ($)</label><input id="principal" type="number" value="5000">
-<label for="contrib">Monthly contribution ($)</label><input id="contrib" type="number" value="300">
-<label for="rate">Annual interest rate (%)</label><input id="rate" type="number" step="0.01" value="7">
-<label for="years">Years to grow</label><input id="years" type="number" value="20">
-<label for="freq">Compounding</label><select id="freq"><option value="12">Monthly</option><option value="365">Daily</option><option value="4">Quarterly</option><option value="1">Yearly</option></select>
+<p class="muted">See how savings or investments grow with compound interest and monthly deposits.</p>
+<form class="card" data-calc="1">
+<label for="principal">Starting amount ($)</label><input id="principal" type="number" step="any" value="5000">
+<label for="contrib">Monthly contribution ($)</label><input id="contrib" type="number" step="any" value="300">
+<label for="rate">Annual interest rate (%)</label><input id="rate" type="number" step="any" value="7">
+<label for="years">Years to grow</label><input id="years" type="number" step="any" value="20">
+<label for="freq">Compounding</label><select id="freq"><option value="12" selected>Monthly</option><option value="365">Daily</option><option value="4">Quarterly</option><option value="1">Yearly</option></select>
 <button type="submit">Calculate</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
-<h2>What is compound interest?</h2>
-<p>Compound interest means you earn interest on your interest. The longer your money stays invested and the more often it compounds, the faster it grows. Starting early matters more than the size of the deposits.</p>
+<h2>How it works</h2>
+<p>Compound interest means you earn interest on your interest. Each month the balance grows by the effective monthly rate and your deposit is added. The longer the money stays invested, the faster it grows.</p>
 <h2>Frequently asked questions</h2>
-<details><summary>What return rate should I use?</summary><p>High-yield savings accounts have paid roughly 3–5% recently; the long-run stock market average is often quoted near 7% after inflation adjustments vary. Returns are never guaranteed.</p></details>
-<details><summary>Does compounding frequency matter?</summary><p>Slightly. Daily compounding earns a little more than yearly, but the rate and time invested matter far more.</p></details>
-<p><a href="loan-calculator.html">Loan calculator</a> · <a href="mortgage-calculator.html">Mortgage calculator</a></p>
+<details><summary>What return rate should I use?</summary><p>Savings accounts have recently paid roughly 3-5%. Long-run stock market averages are often quoted near 7% after inflation, but returns are never guaranteed.</p></details>
+<details><summary>Does compounding frequency matter?</summary><p>Slightly. Daily compounding earns a little more than yearly, but rate and time matter far more.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="credit-card-payoff-calculator.html"><b>Credit Card Payoff Calculator</b></a><a href="simple-interest-calculator.html"><b>Simple Interest Calculator</b></a><a href="savings-goal-calculator.html"><b>Savings Goal Calculator</b></a><a href="retirement-calculator.html"><b>Retirement Savings Calculator</b></a><a href="auto-loan-calculator.html"><b>Auto Loan Calculator</b></a><a href="sales-tax-calculator.html"><b>Sales Tax Calculator</b></a></div>
 </main>
-<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Estimates only, not financial advice.</div></footer>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
+<script>CalcPage(function({principal,contrib,rate,years,freq}){
+let bal=principal,paid=principal;const mr=Math.pow(1+rate/100/freq,freq/12)-1;
+for(let i=0;i<Math.round(years*12);i++){bal=bal*(1+mr)+contrib;paid+=contrib;}
+return [['Future balance',M(bal)],['Total contributed',M(paid)],['Interest earned',M(bal-paid)]];
+});</script>
 </body></html>

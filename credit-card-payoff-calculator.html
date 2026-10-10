@@ -1,31 +1,41 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Credit Card Payoff Calculator – How Long to Pay Off Debt | CalcHub</title>
-<meta name="description" content="Free credit card payoff calculator. Find out how many months it takes to pay off your balance and how much interest you'll pay.">
+<title>Credit Card Payoff Calculator | CalcHub</title>
+<meta name="description" content="Find out how long it takes to pay off a credit card and how much interest you will pay.">
 <link rel="canonical" href="https://YOURDOMAIN.com/credit-card-payoff-calculator.html">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does the minimum payment take so long?", "acceptedAnswer": {"@type": "Answer", "text": "Minimums are often only slightly above the monthly interest, so very little reduces the balance."}}, {"@type": "Question", "name": "Should I use a balance transfer?", "acceptedAnswer": {"@type": "Answer", "text": "A 0% intro APR transfer can save interest if you pay it off before the promotion ends and the fee is reasonable."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
 </head><body>
-<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a>
-<nav><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="compound-interest-calculator.html">Savings</a><a href="credit-card-payoff-calculator.html">Debt</a></nav></div></header>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
 <h1>Credit Card Payoff Calculator</h1>
-<p class="muted">See how long it takes to become debt free with a fixed monthly payment.</p>
-<form class="card" data-calc="payoff">
-<label for="balance">Card balance ($)</label><input id="balance" type="number" value="6000">
-<label for="apr">Interest rate (% APR)</label><input id="apr" type="number" step="0.01" value="22">
-<label for="pay">Monthly payment ($)</label><input id="pay" type="number" value="250">
+<p class="muted">Find out how long it takes to pay off a credit card and how much interest you will pay.</p>
+<form class="card" data-calc="1">
+<label for="balance">Card balance ($)</label><input id="balance" type="number" step="any" value="6000">
+<label for="apr">Interest rate (% APR)</label><input id="apr" type="number" step="any" value="22">
+<label for="pay">Monthly payment ($)</label><input id="pay" type="number" step="any" value="250">
 <button type="submit">Calculate</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
-<h2>Paying off credit card debt faster</h2>
-<p>Credit card interest compounds, so small increases in your monthly payment can shorten payoff by years. Try raising the payment above and watch total interest fall. Two common strategies: the <b>avalanche</b> method (pay the highest rate first) saves the most money; the <b>snowball</b> method (pay the smallest balance first) builds momentum.</p>
+<h2>How it works</h2>
+<p>Credit card interest is charged monthly on the remaining balance. This calculator applies your fixed payment each month until the balance reaches zero. Two popular strategies are avalanche (highest rate first, saves the most money) and snowball (smallest balance first, builds momentum).</p>
 <h2>Frequently asked questions</h2>
-<details><summary>Why does a minimum payment take so long?</summary><p>Minimums are often just slightly above the monthly interest, so very little reduces the balance.</p></details>
-<details><summary>Should I consider a balance transfer?</summary><p>A 0% intro APR transfer can save interest if you pay it off before the promo ends and the transfer fee is reasonable.</p></details>
-<p><a href="loan-calculator.html">Loan calculator</a> · <a href="compound-interest-calculator.html">Compound interest calculator</a></p>
+<details><summary>Why does the minimum payment take so long?</summary><p>Minimums are often only slightly above the monthly interest, so very little reduces the balance.</p></details>
+<details><summary>Should I use a balance transfer?</summary><p>A 0% intro APR transfer can save interest if you pay it off before the promotion ends and the fee is reasonable.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="simple-interest-calculator.html"><b>Simple Interest Calculator</b></a><a href="savings-goal-calculator.html"><b>Savings Goal Calculator</b></a><a href="retirement-calculator.html"><b>Retirement Savings Calculator</b></a><a href="auto-loan-calculator.html"><b>Auto Loan Calculator</b></a><a href="sales-tax-calculator.html"><b>Sales Tax Calculator</b></a><a href="tip-calculator.html"><b>Tip Calculator</b></a></div>
 </main>
-<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Estimates only, not financial advice.</div></footer>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
+<script>CalcPage(function({balance,apr,pay}){
+const r=apr/1200;let b=balance,months=0,interest=0;
+if(pay<=b*r)return 'Your payment is too low to ever pay this off. It must be above the monthly interest of '+M(b*r)+'.';
+while(b>0&&months<1200){const i=b*r;interest+=i;b=b+i-pay;months++;}
+return [['Time to pay off',Math.floor(months/12)+' years '+months%12+' months'],['Total interest',M(interest)],['Number of payments',months]];
+});</script>
 </body></html>

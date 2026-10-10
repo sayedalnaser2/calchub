@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BMI Calculator | CalcHub</title>
+<meta name="description" content="Calculate your body mass index and see which weight category you fall in.">
+<link rel="canonical" href="https://YOURDOMAIN.com/bmi-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is BMI accurate?", "acceptedAnswer": {"@type": "Answer", "text": "BMI is a quick screening tool. It does not distinguish muscle from fat, so athletes can score high without excess body fat."}}, {"@type": "Question", "name": "Does BMI differ for children?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Children and teens use age and sex percentiles rather than the adult cutoffs shown here."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>BMI Calculator</h1>
+<p class="muted">Calculate your body mass index and see which weight category you fall in.</p>
+<form class="card" data-calc="1">
+<label for="units">Units</label><select id="units"><option value="1" selected>Metric (kg, cm)</option><option value="2">Imperial (lb, in)</option></select>
+<label for="weight">Weight (kg or lb)</label><input id="weight" type="number" step="any" value="70">
+<label for="height">Height (cm or in)</label><input id="height" type="number" step="any" value="175">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>BMI is weight in kilograms divided by height in metres squared. A BMI of 18.5-24.9 is classed as healthy, 25-29.9 as overweight and 30 or more as obesity.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is BMI accurate?</summary><p>BMI is a quick screening tool. It does not distinguish muscle from fat, so athletes can score high without excess body fat.</p></details>
+<details><summary>Does BMI differ for children?</summary><p>Yes. Children and teens use age and sex percentiles rather than the adult cutoffs shown here.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="bmr-calculator.html"><b>BMR Calculator</b></a><a href="calorie-calculator.html"><b>Calorie Calculator (TDEE)</b></a><a href="body-fat-calculator.html"><b>Body Fat Calculator</b></a><a href="ideal-weight-calculator.html"><b>Ideal Weight Calculator</b></a><a href="water-intake-calculator.html"><b>Water Intake Calculator</b></a><a href="due-date-calculator.html"><b>Pregnancy Due Date Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({units,weight,height}){
+const bmi=units==1?weight/Math.pow(height/100,2):703*weight/(height*height);
+const cat=bmi<18.5?'Underweight':bmi<25?'Healthy weight':bmi<30?'Overweight':'Obesity';
+return [['Your BMI',N(bmi,1)],['Category',cat]];
+});</script>
+</body></html>

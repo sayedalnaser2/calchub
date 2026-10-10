@@ -25,3 +25,11 @@ button{margin-top:16px;padding:12px 22px;border:0;border-radius:8px;background:v
 .muted,footer{color:var(--muted);font-size:.88rem}
 details{border-bottom:1px solid var(--line);padding:10px 0}
 summary{cursor:pointer;font-weight:600}
+.search{margin:12px 0 8px;padding:12px 14px;font-size:1.05rem}
+.grid span{display:block}
+.grid a{font-size:.9rem;color:var(--muted)}
+.grid a b{font-size:1rem}
+.cat h2 a{color:var(--text);text-decoration:none}
+.cat h2 a:hover{color:var(--brand)}
+nav{display:flex;flex-wrap:wrap;gap:4px 0}
+.result .muted{font-size:.9rem}

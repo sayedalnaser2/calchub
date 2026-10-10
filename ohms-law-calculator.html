@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ohm&#x27;s Law Calculator | CalcHub</title>
+<meta name="description" content="Find current and power from voltage and resistance.">
+<link rel="canonical" href="https://YOURDOMAIN.com/ohms-law-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Ohm's law?", "acceptedAnswer": {"@type": "Answer", "text": "It states that the current through a conductor is proportional to the voltage across it and inversely proportional to its resistance."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Ohm&#x27;s Law Calculator</h1>
+<p class="muted">Find current and power from voltage and resistance.</p>
+<form class="card" data-calc="1">
+<label for="v">Voltage (V)</label><input id="v" type="number" step="any" value="12">
+<label for="r">Resistance (Ω)</label><input id="r" type="number" step="any" value="6">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Ohm&#x27;s law: V = I x R. Power is P = V x I. Given voltage and resistance, current is I = V / R.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is Ohm&#x27;s law?</summary><p>It states that the current through a conductor is proportional to the voltage across it and inversely proportional to its resistance.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a><a href="density-calculator.html"><b>Density Calculator</b></a><a href="force-calculator.html"><b>Force Calculator (F = ma)</b></a><a href="half-life-calculator.html"><b>Half-Life Calculator</b></a><a href="weight-on-other-planets-calculator.html"><b>Weight on Other Planets Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({v,r}){
+const i=v/r;
+return [['Current',N(i,4)+' A'],['Power',N(v*i,4)+' W'],['Energy per hour',N(v*i/1000,4)+' kWh']];
+});</script>
+</body></html>

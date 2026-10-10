@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Standard Deviation Calculator | CalcHub</title>
+<meta name="description" content="Calculate sample and population standard deviation and variance.">
+<link rel="canonical" href="https://YOURDOMAIN.com/standard-deviation-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Sample or population?", "acceptedAnswer": {"@type": "Answer", "text": "If your numbers are every member of the group, use population. If they are a sample, use sample (divides by n-1)."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Standard Deviation Calculator</h1>
+<p class="muted">Calculate sample and population standard deviation and variance.</p>
+<form class="card" data-calc="1">
+<label for="list">Numbers (separated by commas or spaces)</label><input id="list" type="text" value="10, 12, 23, 23, 16, 23, 21, 16">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Standard deviation measures how spread out numbers are around the mean. Use the sample version when your data is a sample of a larger group and the population version when it is the whole group.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Sample or population?</summary><p>If your numbers are every member of the group, use population. If they are a sample, use sample (divides by n-1).</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="quadratic-formula-calculator.html"><b>Quadratic Formula Calculator</b></a><a href="pythagorean-theorem-calculator.html"><b>Pythagorean Theorem Calculator</b></a><a href="circle-calculator.html"><b>Circle Calculator</b></a><a href="triangle-area-calculator.html"><b>Triangle Area Calculator</b></a><a href="gcd-lcm-calculator.html"><b>GCD and LCM Calculator</b></a><a href="prime-factorization-calculator.html"><b>Prime Factorization Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({list}){
+const a=NUMS(list),n=a.length;if(n<2)return 'Enter at least two numbers.';
+const mean=a.reduce((x,y)=>x+y,0)/n,ss=a.reduce((x,y)=>x+(y-mean)*(y-mean),0);
+return [['Sample standard deviation',N(Math.sqrt(ss/(n-1)),6)],['Population standard deviation',N(Math.sqrt(ss/n),6)],['Sample variance',N(ss/(n-1),6)],['Population variance',N(ss/n,6)],['Mean',N(mean,6)],['Count',n]];
+});</script>
+</body></html>

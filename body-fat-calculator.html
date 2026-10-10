@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Body Fat Calculator | CalcHub</title>
+<meta name="description" content="Estimate body fat percentage with the US Navy tape-measure method.">
+<link rel="canonical" href="https://YOURDOMAIN.com/body-fat-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I measure correctly?", "acceptedAnswer": {"@type": "Answer", "text": "Use a flexible tape, measure on bare skin, keep it level and snug but not tight, and measure the waist at the navel."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Body Fat Calculator</h1>
+<p class="muted">Estimate body fat percentage with the US Navy tape-measure method.</p>
+<form class="card" data-calc="1">
+<label for="sex">Sex</label><select id="sex"><option value="1" selected>Male</option><option value="2">Female</option></select>
+<label for="height">Height (cm)</label><input id="height" type="number" step="any" value="175">
+<label for="neck">Neck (cm)</label><input id="neck" type="number" step="any" value="38">
+<label for="waist">Waist at navel (cm)</label><input id="waist" type="number" step="any" value="85">
+<label for="hip">Hip (cm, women only)</label><input id="hip" type="number" step="any" value="95">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The US Navy method estimates body fat from height and circumference measurements of the neck, waist and (for women) hips. It is convenient but less accurate than DEXA scans.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I measure correctly?</summary><p>Use a flexible tape, measure on bare skin, keep it level and snug but not tight, and measure the waist at the navel.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="ideal-weight-calculator.html"><b>Ideal Weight Calculator</b></a><a href="water-intake-calculator.html"><b>Water Intake Calculator</b></a><a href="due-date-calculator.html"><b>Pregnancy Due Date Calculator</b></a><a href="macro-calculator.html"><b>Macro Calculator</b></a><a href="pace-calculator.html"><b>Running Pace Calculator</b></a><a href="heart-rate-calculator.html"><b>Target Heart Rate Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({sex,height,neck,waist,hip}){
+let bf;
+if(sex==1){if(waist<=neck)return 'Waist must be larger than neck.';bf=495/(1.0324-0.19077*Math.log10(waist-neck)+0.15456*Math.log10(height))-450;}
+else{if(waist+hip<=neck)return 'Check your measurements.';bf=495/(1.29579-0.35004*Math.log10(waist+hip-neck)+0.22100*Math.log10(height))-450;}
+const c=sex==1?(bf<6?'Essential':bf<14?'Athletic':bf<18?'Fit':bf<25?'Average':'Above average'):(bf<14?'Essential':bf<21?'Athletic':bf<25?'Fit':bf<32?'Average':'Above average');
+return [['Body fat',PCT(bf,1)],['Category',c]];
+});</script>
+</body></html>

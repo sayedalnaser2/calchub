@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROI Calculator | CalcHub</title>
+<meta name="description" content="Calculate return on investment and annualized return.">
+<link rel="canonical" href="https://YOURDOMAIN.com/roi-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good ROI?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the asset and risk. The stock market has historically averaged around 7-10% per year before inflation."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>ROI Calculator</h1>
+<p class="muted">Calculate return on investment and annualized return.</p>
+<form class="card" data-calc="1">
+<label for="invested">Amount invested ($)</label><input id="invested" type="number" step="any" value="10000">
+<label for="final">Final value ($)</label><input id="final" type="number" step="any" value="15000">
+<label for="years">Years held</label><input id="years" type="number" step="any" value="3">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>ROI is (final value - amount invested) / amount invested. Annualized return shows the equivalent steady yearly growth rate over the holding period.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a good ROI?</summary><p>It depends on the asset and risk. The stock market has historically averaged around 7-10% per year before inflation.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="inflation-calculator.html"><b>Inflation Calculator</b></a><a href="salary-calculator.html"><b>Hourly to Salary Calculator</b></a><a href="break-even-calculator.html"><b>Break-Even Calculator</b></a><a href="margin-calculator.html"><b>Profit Margin &amp; Markup Calculator</b></a><a href="cagr-calculator.html"><b>CAGR Calculator</b></a><a href="rule-of-72-calculator.html"><b>Rule of 72 Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({invested,final,years}){
+const roi=(final-invested)/invested*100,ann=(Math.pow(final/invested,1/years)-1)*100;
+return [['Return on investment',PCT(roi)],['Profit',M(final-invested)],['Annualized return',PCT(ann)]];
+});</script>
+</body></html>

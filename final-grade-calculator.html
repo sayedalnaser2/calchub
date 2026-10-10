@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Final Grade Calculator | CalcHub</title>
+<meta name="description" content="Find the score you need on a final exam to reach your target course grade.">
+<link rel="canonical" href="https://YOURDOMAIN.com/final-grade-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What if I need more than 100%?", "acceptedAnswer": {"@type": "Answer", "text": "Unless extra credit is offered, that grade is out of reach. Aim for the highest achievable grade."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Final Grade Calculator</h1>
+<p class="muted">Find the score you need on a final exam to reach your target course grade.</p>
+<form class="card" data-calc="1">
+<label for="cur">Current grade (%)</label><input id="cur" type="number" step="any" value="85">
+<label for="w">Final exam weight (%)</label><input id="w" type="number" step="any" value="30">
+<label for="want">Desired course grade (%)</label><input id="want" type="number" step="any" value="90">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Your course grade is current grade x (1 - final weight) + final score x final weight. The calculator solves for the final score.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What if I need more than 100%?</summary><p>Unless extra credit is offered, that grade is out of reach. Aim for the highest achievable grade.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="day-of-week-calculator.html"><b>Day of the Week Calculator</b></a><a href="age-calculator.html"><b>Age Calculator</b></a><a href="date-difference-calculator.html"><b>Days Between Dates Calculator</b></a><a href="add-days-to-date-calculator.html"><b>Date Calculator (Add or Subtract Days)</b></a><a href="days-until-calculator.html"><b>Days Until Calculator</b></a><a href="time-duration-calculator.html"><b>Hours Between Times Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({cur,w,want}){
+const need=(want-cur*(1-w/100))/(w/100);
+return [['Score needed on final',PCT(need,1)],['Feasible?',need>100?'Above 100% - target may be out of reach':need<0?'You already have it':'Yes']];
+});</script>
+</body></html>

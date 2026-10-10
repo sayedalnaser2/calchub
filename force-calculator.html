@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Force Calculator (F = ma) | CalcHub</title>
+<meta name="description" content="Calculate force from mass and acceleration using Newton&#x27;s second law.">
+<link rel="canonical" href="https://YOURDOMAIN.com/force-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the weight of an object?", "acceptedAnswer": {"@type": "Answer", "text": "Weight is the gravitational force on it: mass x 9.81 m/s\u00b2 on Earth."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Force Calculator (F = ma)</h1>
+<p class="muted">Calculate force from mass and acceleration using Newton&#x27;s second law.</p>
+<form class="card" data-calc="1">
+<label for="m">Mass (kg)</label><input id="m" type="number" step="any" value="10">
+<label for="a">Acceleration (m/s²)</label><input id="a" type="number" step="any" value="9.81">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Newton&#x27;s second law states F = m x a. One newton accelerates one kilogram at one metre per second squared.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the weight of an object?</summary><p>Weight is the gravitational force on it: mass x 9.81 m/s² on Earth.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="half-life-calculator.html"><b>Half-Life Calculator</b></a><a href="weight-on-other-planets-calculator.html"><b>Weight on Other Planets Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a><a href="density-calculator.html"><b>Density Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({m,a}){
+const f=m*a;
+return [['Force',N(f,4)+' N'],['In pound-force',N(f*0.224809,4)+' lbf'],['In kilogram-force',N(f/9.80665,4)+' kgf']];
+});</script>
+</body></html>

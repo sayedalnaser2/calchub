@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Area Converter | CalcHub</title>
+<meta name="description" content="Convert between square metres, square kilometres, hectares, acres, square feet and more.">
+<link rel="canonical" href="https://YOURDOMAIN.com/area-converter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many square feet are in an acre?", "acceptedAnswer": {"@type": "Answer", "text": "An acre is 43,560 square feet."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a></p>
+<h1>Area Converter</h1>
+<p class="muted">Convert between square metres, square kilometres, hectares, acres, square feet and more.</p>
+<form class="card" data-calc="1">
+<label for="v">Value</label><input id="v" type="number" step="any" value="1">
+<label for="a">From</label><select id="a"><option value="m2">Square metres (m2)</option><option value="km2">Square kilometres (km2)</option><option value="ha">Hectares (ha)</option><option value="acre" selected>Acres (acre)</option><option value="ft2">Square feet (ft2)</option><option value="yd2">Square yards (yd2)</option><option value="in2">Square inches (in2)</option><option value="mi2">Square miles (mi2)</option><option value="cm2">Square centimetres (cm2)</option></select>
+<label for="b">To</label><select id="b"><option value="m2" selected>Square metres (m2)</option><option value="km2">Square kilometres (km2)</option><option value="ha">Hectares (ha)</option><option value="acre">Acres (acre)</option><option value="ft2">Square feet (ft2)</option><option value="yd2">Square yards (yd2)</option><option value="in2">Square inches (in2)</option><option value="mi2">Square miles (mi2)</option><option value="cm2">Square centimetres (cm2)</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Areas are converted through square metres.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How many square feet are in an acre?</summary><p>An acre is 43,560 square feet.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="data-storage-converter.html"><b>Data Storage Converter</b></a><a href="time-converter.html"><b>Time Converter</b></a><a href="pressure-converter.html"><b>Pressure Converter</b></a><a href="energy-converter.html"><b>Energy Converter</b></a><a href="temperature-converter.html"><b>Temperature Converter</b></a><a href="fuel-economy-converter.html"><b>Fuel Economy Converter (MPG to L/100km)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({v,a,b}){
+const f={"m2": 1, "km2": 1000000.0, "ha": 10000.0, "acre": 4046.8564224, "ft2": 0.09290304, "yd2": 0.83612736, "in2": 0.00064516, "mi2": 2589988.110336, "cm2": 0.0001};const r=v*f[a]/f[b];return [[N(v,8)+' '+a+' =',N(r,10)+' '+b],['Multiply by',N(f[a]/f[b],12)]];
+});</script>
+</body></html>

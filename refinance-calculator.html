@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Refinance Break-Even Calculator | CalcHub</title>
+<meta name="description" content="Find out how many months it takes for refinancing to pay for itself.">
+<link rel="canonical" href="https://YOURDOMAIN.com/refinance-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does this include the longer loan term?", "acceptedAnswer": {"@type": "Answer", "text": "No. If you restart a 30-year term, you may pay more interest overall even with a lower payment."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Refinance Break-Even Calculator</h1>
+<p class="muted">Find out how many months it takes for refinancing to pay for itself.</p>
+<form class="card" data-calc="1">
+<label for="cur">Current monthly payment ($)</label><input id="cur" type="number" step="any" value="1800">
+<label for="newp">New monthly payment ($)</label><input id="newp" type="number" step="any" value="1650">
+<label for="closing">Closing costs ($)</label><input id="closing" type="number" step="any" value="4500">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Divide the closing costs by your monthly savings to find the months needed to recoup them. If you will move before then, refinancing may not pay off.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does this include the longer loan term?</summary><p>No. If you restart a 30-year term, you may pay more interest overall even with a lower payment.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="house-affordability-calculator.html"><b>House Affordability Calculator</b></a><a href="mortgage-calculator.html"><b>Mortgage Calculator</b></a><a href="loan-calculator.html"><b>Loan Calculator</b></a><a href="compound-interest-calculator.html"><b>Compound Interest Calculator</b></a><a href="credit-card-payoff-calculator.html"><b>Credit Card Payoff Calculator</b></a><a href="simple-interest-calculator.html"><b>Simple Interest Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({cur,newp,closing}){
+const s=cur-newp;
+if(s<=0)return 'The new payment must be lower than the current one to break even.';
+const m=closing/s;
+return [['Break-even point',Math.ceil(m)+' months ('+N(m/12,1)+' years)'],['Monthly savings',M(s)],['Savings after 5 years',M(s*60-closing)]];
+});</script>
+</body></html>

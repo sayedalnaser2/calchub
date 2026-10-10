@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BMR Calculator | CalcHub</title>
+<meta name="description" content="Estimate the calories your body burns at rest using the Mifflin-St Jeor equation.">
+<link rel="canonical" href="https://YOURDOMAIN.com/bmr-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is BMR?", "acceptedAnswer": {"@type": "Answer", "text": "Basal metabolic rate is the energy your body needs at complete rest to keep organs working, breathing and circulating blood."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>BMR Calculator</h1>
+<p class="muted">Estimate the calories your body burns at rest using the Mifflin-St Jeor equation.</p>
+<form class="card" data-calc="1">
+<label for="sex">Sex</label><select id="sex"><option value="1" selected>Male</option><option value="2">Female</option></select>
+<label for="age">Age (years)</label><input id="age" type="number" step="any" value="30">
+<label for="weight">Weight (kg)</label><input id="weight" type="number" step="any" value="70">
+<label for="height">Height (cm)</label><input id="height" type="number" step="any" value="175">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The Mifflin-St Jeor equation estimates resting energy use from weight, height, age and sex. It is among the most accurate predictive formulas for most adults.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is BMR?</summary><p>Basal metabolic rate is the energy your body needs at complete rest to keep organs working, breathing and circulating blood.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="calorie-calculator.html"><b>Calorie Calculator (TDEE)</b></a><a href="body-fat-calculator.html"><b>Body Fat Calculator</b></a><a href="ideal-weight-calculator.html"><b>Ideal Weight Calculator</b></a><a href="water-intake-calculator.html"><b>Water Intake Calculator</b></a><a href="due-date-calculator.html"><b>Pregnancy Due Date Calculator</b></a><a href="macro-calculator.html"><b>Macro Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({sex,age,weight,height}){
+const b=10*weight+6.25*height-5*age+(sex==1?5:-161);
+return [['Basal metabolic rate',N(b,0)+' kcal/day'],['Per hour',N(b/24,0)+' kcal']];
+});</script>
+</body></html>

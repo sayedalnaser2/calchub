@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auto Loan Calculator | CalcHub</title>
+<meta name="description" content="Estimate your monthly car payment including sales tax, down payment and trade-in.">
+<link rel="canonical" href="https://YOURDOMAIN.com/auto-loan-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What loan term is best for a car?", "acceptedAnswer": {"@type": "Answer", "text": "Shorter terms cost less in interest. Terms over 60-72 months often leave you owing more than the car is worth early on."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Auto Loan Calculator</h1>
+<p class="muted">Estimate your monthly car payment including sales tax, down payment and trade-in.</p>
+<form class="card" data-calc="1">
+<label for="price">Vehicle price ($)</label><input id="price" type="number" step="any" value="30000">
+<label for="down">Down payment ($)</label><input id="down" type="number" step="any" value="3000">
+<label for="trade">Trade-in value ($)</label><input id="trade" type="number" step="any" value="0">
+<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="any" value="7">
+<label for="months">Loan term (months)</label><input id="months" type="number" step="any" value="60">
+<label for="tax">Sales tax (%)</label><input id="tax" type="number" step="any" value="7">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The amount financed is the vehicle price minus your trade-in and down payment, plus sales tax (calculated here on the price after trade-in). The payment is then calculated like any fixed-rate loan.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What loan term is best for a car?</summary><p>Shorter terms cost less in interest. Terms over 60-72 months often leave you owing more than the car is worth early on.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="sales-tax-calculator.html"><b>Sales Tax Calculator</b></a><a href="tip-calculator.html"><b>Tip Calculator</b></a><a href="discount-calculator.html"><b>Discount Calculator</b></a><a href="roi-calculator.html"><b>ROI Calculator</b></a><a href="inflation-calculator.html"><b>Inflation Calculator</b></a><a href="salary-calculator.html"><b>Hourly to Salary Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({price,down,trade,rate,months,tax}){
+const taxAmt=Math.max(price-trade,0)*tax/100,P=Math.max(price-trade-down+taxAmt,0),m=PMT(P,rate,months);
+return [['Monthly payment',M(m)],['Amount financed',M(P)],['Sales tax',M(taxAmt)],['Total interest',M(m*months-P)],['Total cost of loan',M(m*months+down+trade)]];
+});</script>
+</body></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Date Calculator (Add or Subtract Days) | CalcHub</title>
+<meta name="description" content="Find the date that is a number of days before or after a given date.">
+<link rel="canonical" href="https://YOURDOMAIN.com/add-days-to-date-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I add months instead of days?", "acceptedAnswer": {"@type": "Answer", "text": "Use the days-between-dates calculator to check your target, or add roughly 30.44 days per month."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Date Calculator (Add or Subtract Days)</h1>
+<p class="muted">Find the date that is a number of days before or after a given date.</p>
+<form class="card" data-calc="1">
+<label for="date">Start date</label><input id="date" type="date" value="" data-today="1">
+<label for="days">Number of days</label><input id="days" type="number" step="any" value="30">
+<label for="op">Operation</label><select id="op"><option value="1" selected>Add days</option><option value="-1">Subtract days</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The calculator moves the calendar forward or backward by the number of days entered, handling month and year changes and leap years automatically.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I add months instead of days?</summary><p>Use the days-between-dates calculator to check your target, or add roughly 30.44 days per month.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="days-until-calculator.html"><b>Days Until Calculator</b></a><a href="time-duration-calculator.html"><b>Hours Between Times Calculator</b></a><a href="gpa-calculator.html"><b>GPA Calculator</b></a><a href="fuel-cost-calculator.html"><b>Fuel Cost Calculator</b></a><a href="electricity-cost-calculator.html"><b>Electricity Cost Calculator</b></a><a href="unit-price-calculator.html"><b>Unit Price Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({date,days,op}){
+const x=D(date);x.setDate(x.getDate()+op*Math.round(days));
+return [['Resulting date',DS(x)],['Weeks',N(days/7,1)]];
+});</script>
+</body></html>

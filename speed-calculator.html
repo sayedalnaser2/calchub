@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Speed, Distance and Time Calculator | CalcHub</title>
+<meta name="description" content="Calculate average speed from distance and travel time.">
+<link rel="canonical" href="https://YOURDOMAIN.com/speed-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I find distance or time?", "acceptedAnswer": {"@type": "Answer", "text": "Rearrange: distance = speed x time and time = distance / speed."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Speed, Distance and Time Calculator</h1>
+<p class="muted">Calculate average speed from distance and travel time.</p>
+<form class="card" data-calc="1">
+<label for="dist">Distance (km)</label><input id="dist" type="number" step="any" value="100">
+<label for="h">Hours</label><input id="h" type="number" step="any" value="1">
+<label for="m">Minutes</label><input id="m" type="number" step="any" value="30">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Speed = distance / time. Enter the total time in hours and minutes.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I find distance or time?</summary><p>Rearrange: distance = speed x time and time = distance / speed.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a><a href="density-calculator.html"><b>Density Calculator</b></a><a href="force-calculator.html"><b>Force Calculator (F = ma)</b></a><a href="half-life-calculator.html"><b>Half-Life Calculator</b></a><a href="weight-on-other-planets-calculator.html"><b>Weight on Other Planets Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({dist,h,m}){
+const t=h+m/60;if(t<=0)return 'Time must be greater than zero.';
+return [['Average speed',N(dist/t,2)+' km/h'],['In miles per hour',N(dist/t/1.609344,2)+' mph'],['In metres per second',N(dist/t/3.6,2)+' m/s']];
+});</script>
+</body></html>

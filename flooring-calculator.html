@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flooring Calculator | CalcHub</title>
+<meta name="description" content="Work out how much flooring to buy including waste, and what it will cost.">
+<link rel="canonical" href="https://YOURDOMAIN.com/flooring-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I buy extra flooring?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Extra boxes cover cuts, damage and future repairs, and dye lots can differ between batches."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Flooring Calculator</h1>
+<p class="muted">Work out how much flooring to buy including waste, and what it will cost.</p>
+<form class="card" data-calc="1">
+<label for="l">Room length (ft)</label><input id="l" type="number" step="any" value="15">
+<label for="w">Room width (ft)</label><input id="w" type="number" step="any" value="12">
+<label for="waste">Waste allowance (%)</label><input id="waste" type="number" step="any" value="10">
+<label for="price">Price ($ per sq ft)</label><input id="price" type="number" step="any" value="3.5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Room area is length x width. Add 5-10% for cuts and mistakes, and 15% or more for diagonal patterns.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Should I buy extra flooring?</summary><p>Yes. Extra boxes cover cuts, damage and future repairs, and dye lots can differ between batches.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="tile-calculator.html"><b>Tile Calculator</b></a><a href="gravel-calculator.html"><b>Gravel Calculator</b></a><a href="board-feet-calculator.html"><b>Board Feet Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,waste,price}){
+const a=l*w,b=a*(1+waste/100);
+return [['Flooring to buy',N(b,1)+' sq ft'],['Room area',N(a,1)+' sq ft'],['Estimated cost',M(b*price)]];
+});</script>
+</body></html>

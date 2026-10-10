@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Days Until Calculator | CalcHub</title>
+<meta name="description" content="Count down the days until a date such as a birthday, holiday or deadline.">
+<link rel="canonical" href="https://YOURDOMAIN.com/days-until-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does this include weekends?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All calendar days are counted. Use the days-between-dates calculator for business days."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Days Until Calculator</h1>
+<p class="muted">Count down the days until a date such as a birthday, holiday or deadline.</p>
+<form class="card" data-calc="1">
+<label for="target">Target date</label><input id="target" type="date" value="2027-01-01">
+<label for="from">From</label><input id="from" type="date" value="" data-today="1">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The result is the number of whole days between today (or another start date) and your target date.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does this include weekends?</summary><p>Yes. All calendar days are counted. Use the days-between-dates calculator for business days.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="time-duration-calculator.html"><b>Hours Between Times Calculator</b></a><a href="gpa-calculator.html"><b>GPA Calculator</b></a><a href="fuel-cost-calculator.html"><b>Fuel Cost Calculator</b></a><a href="electricity-cost-calculator.html"><b>Electricity Cost Calculator</b></a><a href="unit-price-calculator.html"><b>Unit Price Calculator</b></a><a href="final-grade-calculator.html"><b>Final Grade Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({target,from}){
+const a=D(from),b=D(target),d=Math.round((b-a)/864e5);
+return [[d>=0?'Days remaining':'Days ago',N(Math.abs(d),0)],['Weeks',N(Math.abs(d)/7,1)],['Target date',DS(b)]];
+});</script>
+</body></html>

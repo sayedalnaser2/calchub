@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Energy Converter | CalcHub</title>
+<meta name="description" content="Convert between joules, kilojoules, calories, food calories, watt-hours and more.">
+<link rel="canonical" href="https://YOURDOMAIN.com/energy-converter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a food Calorie the same as a kcal?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The 'Calorie' on food labels is a kilocalorie (1,000 calories)."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a></p>
+<h1>Energy Converter</h1>
+<p class="muted">Convert between joules, kilojoules, calories, food calories, watt-hours and more.</p>
+<form class="card" data-calc="1">
+<label for="v">Value</label><input id="v" type="number" step="any" value="1">
+<label for="a">From</label><select id="a"><option value="J">Joules (J)</option><option value="kJ">Kilojoules (kJ)</option><option value="cal">Calories (cal)</option><option value="kcal" selected>Food calories (kcal)</option><option value="Wh">Watt-hours (Wh)</option><option value="kWh">Kilowatt-hours (kWh)</option><option value="BTU">BTU</option></select>
+<label for="b">To</label><select id="b"><option value="J">Joules (J)</option><option value="kJ" selected>Kilojoules (kJ)</option><option value="cal">Calories (cal)</option><option value="kcal">Food calories (kcal)</option><option value="Wh">Watt-hours (Wh)</option><option value="kWh">Kilowatt-hours (kWh)</option><option value="BTU">BTU</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Energy is converted through joules.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is a food Calorie the same as a kcal?</summary><p>Yes. The &#x27;Calorie&#x27; on food labels is a kilocalorie (1,000 calories).</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="temperature-converter.html"><b>Temperature Converter</b></a><a href="fuel-economy-converter.html"><b>Fuel Economy Converter (MPG to L/100km)</b></a><a href="length-converter.html"><b>Length Converter</b></a><a href="weight-converter.html"><b>Weight and Mass Converter</b></a><a href="volume-converter.html"><b>Volume Converter</b></a><a href="speed-converter.html"><b>Speed Converter</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({v,a,b}){
+const f={"J": 1, "kJ": 1000, "cal": 4.184, "kcal": 4184, "Wh": 3600, "kWh": 3600000.0, "BTU": 1055.05585262};const r=v*f[a]/f[b];return [[N(v,8)+' '+a+' =',N(r,10)+' '+b],['Multiply by',N(f[a]/f[b],12)]];
+});</script>
+</body></html>

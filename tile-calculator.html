@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tile Calculator | CalcHub</title>
+<meta name="description" content="Calculate how many tiles you need for a floor or wall.">
+<link rel="canonical" href="https://YOURDOMAIN.com/tile-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does grout spacing matter?", "acceptedAnswer": {"@type": "Answer", "text": "Slightly. Wide grout lines reduce the number of tiles, but the difference is usually within the waste allowance."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Tile Calculator</h1>
+<p class="muted">Calculate how many tiles you need for a floor or wall.</p>
+<form class="card" data-calc="1">
+<label for="l">Area length (ft)</label><input id="l" type="number" step="any" value="10">
+<label for="w">Area width (ft)</label><input id="w" type="number" step="any" value="8">
+<label for="tw">Tile width (in)</label><input id="tw" type="number" step="any" value="12">
+<label for="th">Tile height (in)</label><input id="th" type="number" step="any" value="12">
+<label for="waste">Waste allowance (%)</label><input id="waste" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Divide the area by the area of one tile and add a waste allowance for cuts and breakage.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does grout spacing matter?</summary><p>Slightly. Wide grout lines reduce the number of tiles, but the difference is usually within the waste allowance.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="gravel-calculator.html"><b>Gravel Calculator</b></a><a href="board-feet-calculator.html"><b>Board Feet Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,tw,th,waste}){
+const area=l*w*144,tile=tw*th,n=Math.ceil(area/tile*(1+waste/100));
+return [['Tiles to buy',N(n,0)],['Area',N(l*w,1)+' sq ft'],['Tiles without waste',N(Math.ceil(area/tile),0)]];
+});</script>
+</body></html>

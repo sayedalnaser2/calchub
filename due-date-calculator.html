@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pregnancy Due Date Calculator | CalcHub</title>
+<meta name="description" content="Estimate your due date from the first day of your last period.">
+<link rel="canonical" href="https://YOURDOMAIN.com/due-date-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate is the due date?", "acceptedAnswer": {"@type": "Answer", "text": "It is an estimate. An early ultrasound gives a more precise date, and your doctor or midwife will confirm it."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Pregnancy Due Date Calculator</h1>
+<p class="muted">Estimate your due date from the first day of your last period.</p>
+<form class="card" data-calc="1">
+<label for="lmp">First day of last period</label><input id="lmp" type="date" value="" data-today="1">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Naegele&#x27;s rule adds 280 days (40 weeks) to the first day of your last menstrual period. Only about 5% of babies arrive on the exact due date.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How accurate is the due date?</summary><p>It is an estimate. An early ultrasound gives a more precise date, and your doctor or midwife will confirm it.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="macro-calculator.html"><b>Macro Calculator</b></a><a href="pace-calculator.html"><b>Running Pace Calculator</b></a><a href="heart-rate-calculator.html"><b>Target Heart Rate Calculator</b></a><a href="one-rep-max-calculator.html"><b>One Rep Max Calculator</b></a><a href="bmi-calculator.html"><b>BMI Calculator</b></a><a href="bmr-calculator.html"><b>BMR Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({lmp}){
+const l=D(lmp),add=d=>{const x=new Date(l);x.setDate(x.getDate()+d);return DS(x);};
+const days=Math.floor((new Date()-l)/864e5);
+return [['Estimated due date',add(280)],['Conception (approx.)',add(14)],['End of first trimester',add(91)],['Start of third trimester',add(189)],['Today you are',days>=0?Math.floor(days/7)+' weeks '+days%7+' days':'in the future']];
+});</script>
+</body></html>

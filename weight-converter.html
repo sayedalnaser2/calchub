@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weight and Mass Converter | CalcHub</title>
+<meta name="description" content="Convert between kilograms, grams, milligrams, pounds, ounces and more.">
+<link rel="canonical" href="https://YOURDOMAIN.com/weight-converter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many pounds are in a kilogram?", "acceptedAnswer": {"@type": "Answer", "text": "One kilogram is about 2.2046 pounds."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a></p>
+<h1>Weight and Mass Converter</h1>
+<p class="muted">Convert between kilograms, grams, milligrams, pounds, ounces and more.</p>
+<form class="card" data-calc="1">
+<label for="v">Value</label><input id="v" type="number" step="any" value="1">
+<label for="a">From</label><select id="a"><option value="kg">Kilograms (kg)</option><option value="g">Grams (g)</option><option value="mg">Milligrams (mg)</option><option value="lb" selected>Pounds (lb)</option><option value="oz">Ounces (oz)</option><option value="st">Stone (st)</option><option value="t">Metric tonnes (t)</option></select>
+<label for="b">To</label><select id="b"><option value="kg" selected>Kilograms (kg)</option><option value="g">Grams (g)</option><option value="mg">Milligrams (mg)</option><option value="lb">Pounds (lb)</option><option value="oz">Ounces (oz)</option><option value="st">Stone (st)</option><option value="t">Metric tonnes (t)</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Values are converted through kilograms. One pound is defined as exactly 0.45359237 kg.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How many pounds are in a kilogram?</summary><p>One kilogram is about 2.2046 pounds.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="volume-converter.html"><b>Volume Converter</b></a><a href="speed-converter.html"><b>Speed Converter</b></a><a href="area-converter.html"><b>Area Converter</b></a><a href="data-storage-converter.html"><b>Data Storage Converter</b></a><a href="time-converter.html"><b>Time Converter</b></a><a href="pressure-converter.html"><b>Pressure Converter</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({v,a,b}){
+const f={"kg": 1, "g": 0.001, "mg": 1e-06, "lb": 0.45359237, "oz": 0.028349523125, "st": 6.35029318, "t": 1000};const r=v*f[a]/f[b];return [[N(v,8)+' '+a+' =',N(r,10)+' '+b],['Multiply by',N(f[a]/f[b],12)]];
+});</script>
+</body></html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Percentage Difference Calculator | CalcHub</title>
+<meta name="description" content="Compare two values by percentage difference, independent of which is larger.">
+<link rel="canonical" href="https://YOURDOMAIN.com/percentage-difference-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Percentage difference vs percent change?", "acceptedAnswer": {"@type": "Answer", "text": "Percent change has a baseline (old to new). Percentage difference treats both values symmetrically."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Percentage Difference Calculator</h1>
+<p class="muted">Compare two values by percentage difference, independent of which is larger.</p>
+<form class="card" data-calc="1">
+<label for="a">First value</label><input id="a" type="number" step="any" value="80">
+<label for="b">Second value</label><input id="b" type="number" step="any" value="100">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Percentage difference divides the absolute difference by the average of the two values. Use it when neither value is the clear starting point.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Percentage difference vs percent change?</summary><p>Percent change has a baseline (old to new). Percentage difference treats both values symmetrically.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="average-calculator.html"><b>Average Calculator (Mean, Median, Mode)</b></a><a href="standard-deviation-calculator.html"><b>Standard Deviation Calculator</b></a><a href="quadratic-formula-calculator.html"><b>Quadratic Formula Calculator</b></a><a href="pythagorean-theorem-calculator.html"><b>Pythagorean Theorem Calculator</b></a><a href="circle-calculator.html"><b>Circle Calculator</b></a><a href="triangle-area-calculator.html"><b>Triangle Area Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,b}){
+return [['Percentage difference',PCT(Math.abs(a-b)/((a+b)/2)*100,4)],['Absolute difference',N(Math.abs(a-b),4)],['Average of the two',N((a+b)/2,4)]];
+});</script>
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Average Calculator (Mean, Median, Mode) | CalcHub</title>
+<meta name="description" content="Find the mean, median, mode, range and sum of a list of numbers.">
+<link rel="canonical" href="https://YOURDOMAIN.com/average-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When should I use median instead of mean?", "acceptedAnswer": {"@type": "Answer", "text": "The median is better when data has extreme outliers, such as income or house prices."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Average Calculator (Mean, Median, Mode)</h1>
+<p class="muted">Find the mean, median, mode, range and sum of a list of numbers.</p>
+<form class="card" data-calc="1">
+<label for="list">Numbers (separated by commas or spaces)</label><input id="list" type="text" value="4, 8, 15, 16, 23, 42">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The mean is the sum divided by the count. The median is the middle value when sorted. The mode is the most frequent value. The range is the largest minus the smallest.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When should I use median instead of mean?</summary><p>The median is better when data has extreme outliers, such as income or house prices.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="standard-deviation-calculator.html"><b>Standard Deviation Calculator</b></a><a href="quadratic-formula-calculator.html"><b>Quadratic Formula Calculator</b></a><a href="pythagorean-theorem-calculator.html"><b>Pythagorean Theorem Calculator</b></a><a href="circle-calculator.html"><b>Circle Calculator</b></a><a href="triangle-area-calculator.html"><b>Triangle Area Calculator</b></a><a href="gcd-lcm-calculator.html"><b>GCD and LCM Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({list}){
+const a=NUMS(list);if(!a.length)return 'Enter at least one number.';
+const s=[...a].sort((x,y)=>x-y),n=a.length,sum=a.reduce((x,y)=>x+y,0);
+const med=n%2?s[(n-1)/2]:(s[n/2-1]+s[n/2])/2;
+const cnt={};a.forEach(v=>cnt[v]=(cnt[v]||0)+1);const mx=Math.max(...Object.values(cnt));
+const mode=mx===1?'No mode':Object.keys(cnt).filter(k=>cnt[k]===mx).join(', ');
+return [['Mean (average)',N(sum/n,6)],['Median',N(med,6)],['Mode',mode],['Range',N(s[n-1]-s[0],6)],['Sum',N(sum,6)],['Count',n],['Smallest',N(s[0],6)],['Largest',N(s[n-1],6)]];
+});</script>
+</body></html>

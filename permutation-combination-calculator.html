@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Permutation and Combination Calculator | CalcHub</title>
+<meta name="description" content="Calculate nPr and nCr for choosing r items from n.">
+<link rel="canonical" href="https://YOURDOMAIN.com/permutation-combination-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When do I use combinations vs permutations?", "acceptedAnswer": {"@type": "Answer", "text": "Use permutations when order matters (race places) and combinations when it does not (lottery numbers)."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Permutation and Combination Calculator</h1>
+<p class="muted">Calculate nPr and nCr for choosing r items from n.</p>
+<form class="card" data-calc="1">
+<label for="n">Total items (n)</label><input id="n" type="number" step="any" value="10">
+<label for="r">Items chosen (r)</label><input id="r" type="number" step="any" value="3">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A permutation counts ordered arrangements, nPr = n!/(n-r)!. A combination counts unordered selections, nCr = n!/(r!(n-r)!).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When do I use combinations vs permutations?</summary><p>Use permutations when order matters (race places) and combinations when it does not (lottery numbers).</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="slope-calculator.html"><b>Slope Calculator</b></a><a href="number-base-converter.html"><b>Binary, Hex and Octal Converter</b></a><a href="volume-calculator.html"><b>Volume Calculator</b></a><a href="percentage-calculator.html"><b>Percentage Calculator</b></a><a href="percent-change-calculator.html"><b>Percent Change Calculator</b></a><a href="percentage-difference-calculator.html"><b>Percentage Difference Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({n,r}){
+n=Math.round(n);r=Math.round(r);if(r<0||r>n||n>170)return 'Use 0 ≤ r ≤ n ≤ 170.';
+let p=1;for(let i=0;i<r;i++)p*=(n-i);let f=1;for(let i=2;i<=r;i++)f*=i;
+return [['Combinations nCr',N(p/f,0)],['Permutations nPr',N(p,0)]];
+});</script>
+</body></html>

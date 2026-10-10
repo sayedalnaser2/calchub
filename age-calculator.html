@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Age Calculator | CalcHub</title>
+<meta name="description" content="Calculate exact age in years, months and days, plus days until the next birthday.">
+<link rel="canonical" href="https://YOURDOMAIN.com/age-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I calculate age on a future date?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Change the 'Age at date' field to any date."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Age Calculator</h1>
+<p class="muted">Calculate exact age in years, months and days, plus days until the next birthday.</p>
+<form class="card" data-calc="1">
+<label for="birth">Date of birth</label><input id="birth" type="date" value="1990-01-01">
+<label for="asof">Age at date</label><input id="asof" type="date" value="" data-today="1">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The calculator subtracts the birth date from the chosen date, borrowing days and months where needed, so the result matches how people normally state their age.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Can I calculate age on a future date?</summary><p>Yes. Change the &#x27;Age at date&#x27; field to any date.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="date-difference-calculator.html"><b>Days Between Dates Calculator</b></a><a href="add-days-to-date-calculator.html"><b>Date Calculator (Add or Subtract Days)</b></a><a href="days-until-calculator.html"><b>Days Until Calculator</b></a><a href="time-duration-calculator.html"><b>Hours Between Times Calculator</b></a><a href="gpa-calculator.html"><b>GPA Calculator</b></a><a href="fuel-cost-calculator.html"><b>Fuel Cost Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({birth,asof}){
+const b=D(birth),t=D(asof);if(t<b)return 'The date is before the birth date.';
+let y=t.getFullYear()-b.getFullYear(),m=t.getMonth()-b.getMonth(),d=t.getDate()-b.getDate();
+if(d<0){m--;d+=new Date(t.getFullYear(),t.getMonth(),0).getDate();}
+if(m<0){y--;m+=12;}
+const days=Math.round((t-b)/864e5);
+let nb=new Date(t.getFullYear(),b.getMonth(),b.getDate());if(nb<t)nb=new Date(t.getFullYear()+1,b.getMonth(),b.getDate());
+return [['Age',y+' years, '+m+' months, '+d+' days'],['Total days',N(days,0)],['Total weeks',N(Math.floor(days/7),0)],['Next birthday in',Math.round((nb-t)/864e5)+' days'],['Born on a',DS(b).split(',')[0]]];
+});</script>
+</body></html>

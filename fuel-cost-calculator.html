@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fuel Cost Calculator | CalcHub</title>
+<meta name="description" content="Estimate the fuel cost of a trip from distance, mpg and gas price.">
+<link rel="canonical" href="https://YOURDOMAIN.com/fuel-cost-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How can I lower fuel costs?", "acceptedAnswer": {"@type": "Answer", "text": "Keep tires inflated, avoid hard acceleration, remove roof racks and slow down on highways."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Fuel Cost Calculator</h1>
+<p class="muted">Estimate the fuel cost of a trip from distance, mpg and gas price.</p>
+<form class="card" data-calc="1">
+<label for="dist">Trip distance (miles)</label><input id="dist" type="number" step="any" value="300">
+<label for="mpg">Fuel economy (mpg)</label><input id="mpg" type="number" step="any" value="28">
+<label for="price">Fuel price ($ per gallon)</label><input id="price" type="number" step="any" value="3.5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Fuel used is distance divided by fuel economy. Multiply by the price per gallon for the trip cost.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How can I lower fuel costs?</summary><p>Keep tires inflated, avoid hard acceleration, remove roof racks and slow down on highways.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="electricity-cost-calculator.html"><b>Electricity Cost Calculator</b></a><a href="unit-price-calculator.html"><b>Unit Price Calculator</b></a><a href="final-grade-calculator.html"><b>Final Grade Calculator</b></a><a href="day-of-week-calculator.html"><b>Day of the Week Calculator</b></a><a href="age-calculator.html"><b>Age Calculator</b></a><a href="date-difference-calculator.html"><b>Days Between Dates Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({dist,mpg,price}){
+const g=dist/mpg;
+return [['Trip fuel cost',M(g*price)],['Fuel needed',N(g,2)+' gallons'],['Cost per mile',M(g*price/dist)]];
+});</script>
+</body></html>

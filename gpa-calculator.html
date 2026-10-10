@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GPA Calculator | CalcHub</title>
+<meta name="description" content="Calculate your grade point average from course grades and credit hours.">
+<link rel="canonical" href="https://YOURDOMAIN.com/gpa-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Weighted vs unweighted GPA?", "acceptedAnswer": {"@type": "Answer", "text": "Unweighted uses a 4.0 scale for all classes. Weighted GPAs give extra points for honors or AP classes. This calculator is unweighted."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>GPA Calculator</h1>
+<p class="muted">Calculate your grade point average from course grades and credit hours.</p>
+<form class="card" data-calc="1">
+<label for="g1">Course 1 grade</label><select id="g1"><option value="4" selected>A (4.0)</option><option value="3.7">A- (3.7)</option><option value="3.3">B+ (3.3)</option><option value="3">B (3.0)</option><option value="2.7">B- (2.7)</option><option value="2.3">C+ (2.3)</option><option value="2">C (2.0)</option><option value="1.7">C- (1.7)</option><option value="1.3">D+ (1.3)</option><option value="1">D (1.0)</option><option value="0">F (0.0)</option></select>
+<label for="c1">Course 1 credits (0 if unused)</label><input id="c1" type="number" step="any" value="3">
+<label for="g2">Course 2 grade</label><select id="g2"><option value="4" selected>A (4.0)</option><option value="3.7">A- (3.7)</option><option value="3.3">B+ (3.3)</option><option value="3">B (3.0)</option><option value="2.7">B- (2.7)</option><option value="2.3">C+ (2.3)</option><option value="2">C (2.0)</option><option value="1.7">C- (1.7)</option><option value="1.3">D+ (1.3)</option><option value="1">D (1.0)</option><option value="0">F (0.0)</option></select>
+<label for="c2">Course 2 credits (0 if unused)</label><input id="c2" type="number" step="any" value="3">
+<label for="g3">Course 3 grade</label><select id="g3"><option value="4" selected>A (4.0)</option><option value="3.7">A- (3.7)</option><option value="3.3">B+ (3.3)</option><option value="3">B (3.0)</option><option value="2.7">B- (2.7)</option><option value="2.3">C+ (2.3)</option><option value="2">C (2.0)</option><option value="1.7">C- (1.7)</option><option value="1.3">D+ (1.3)</option><option value="1">D (1.0)</option><option value="0">F (0.0)</option></select>
+<label for="c3">Course 3 credits (0 if unused)</label><input id="c3" type="number" step="any" value="3">
+<label for="g4">Course 4 grade</label><select id="g4"><option value="4" selected>A (4.0)</option><option value="3.7">A- (3.7)</option><option value="3.3">B+ (3.3)</option><option value="3">B (3.0)</option><option value="2.7">B- (2.7)</option><option value="2.3">C+ (2.3)</option><option value="2">C (2.0)</option><option value="1.7">C- (1.7)</option><option value="1.3">D+ (1.3)</option><option value="1">D (1.0)</option><option value="0">F (0.0)</option></select>
+<label for="c4">Course 4 credits (0 if unused)</label><input id="c4" type="number" step="any" value="3">
+<label for="g5">Course 5 grade</label><select id="g5"><option value="4">A (4.0)</option><option value="3.7">A- (3.7)</option><option value="3.3">B+ (3.3)</option><option value="3">B (3.0)</option><option value="2.7">B- (2.7)</option><option value="2.3">C+ (2.3)</option><option value="2">C (2.0)</option><option value="1.7">C- (1.7)</option><option value="1.3">D+ (1.3)</option><option value="1">D (1.0)</option><option value="0" selected>F (0.0)</option></select>
+<label for="c5">Course 5 credits (0 if unused)</label><input id="c5" type="number" step="any" value="0">
+<label for="g6">Course 6 grade</label><select id="g6"><option value="4">A (4.0)</option><option value="3.7">A- (3.7)</option><option value="3.3">B+ (3.3)</option><option value="3">B (3.0)</option><option value="2.7">B- (2.7)</option><option value="2.3">C+ (2.3)</option><option value="2">C (2.0)</option><option value="1.7">C- (1.7)</option><option value="1.3">D+ (1.3)</option><option value="1">D (1.0)</option><option value="0" selected>F (0.0)</option></select>
+<label for="c6">Course 6 credits (0 if unused)</label><input id="c6" type="number" step="any" value="0">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>GPA is the sum of (grade points x credit hours) divided by total credit hours. Set credits to 0 for unused rows.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Weighted vs unweighted GPA?</summary><p>Unweighted uses a 4.0 scale for all classes. Weighted GPAs give extra points for honors or AP classes. This calculator is unweighted.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="fuel-cost-calculator.html"><b>Fuel Cost Calculator</b></a><a href="electricity-cost-calculator.html"><b>Electricity Cost Calculator</b></a><a href="unit-price-calculator.html"><b>Unit Price Calculator</b></a><a href="final-grade-calculator.html"><b>Final Grade Calculator</b></a><a href="day-of-week-calculator.html"><b>Day of the Week Calculator</b></a><a href="age-calculator.html"><b>Age Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({g1,c1,g2,c2,g3,c3,g4,c4,g5,c5,g6,c6}){
+const g=[g1,g2,g3,g4,g5,g6],c=[c1,c2,c3,c4,c5,c6];let pts=0,cr=0;
+for(let i=0;i<6;i++){pts+=g[i]*c[i];cr+=c[i];}
+if(!cr)return 'Enter credits for at least one course.';
+return [['GPA',N(pts/cr,2)],['Total credits',cr],['Quality points',N(pts,2)]];
+});</script>
+</body></html>

@@ -1,31 +1,39 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Loan Calculator – Monthly Payment &amp; Total Interest | CalcHub</title>
-<meta name="description" content="Free loan calculator for car, personal and student loans. See your monthly payment, total interest and total cost instantly.">
+<title>Loan Calculator | CalcHub</title>
+<meta name="description" content="Calculate the monthly payment and total interest on any fixed-rate loan.">
 <link rel="canonical" href="https://YOURDOMAIN.com/loan-calculator.html">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How can I lower my loan cost?", "acceptedAnswer": {"@type": "Answer", "text": "Improve your credit score before applying, compare lenders, choose a shorter term if you can afford it, and make extra principal payments."}}, {"@type": "Question", "name": "What is APR?", "acceptedAnswer": {"@type": "Answer", "text": "The annual percentage rate is the yearly cost of borrowing, including interest and some fees."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
 </head><body>
-<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a>
-<nav><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="compound-interest-calculator.html">Savings</a><a href="credit-card-payoff-calculator.html">Debt</a></nav></div></header>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
 <h1>Loan Calculator</h1>
-<p class="muted">Works for auto loans, personal loans, student loans and more.</p>
-<form class="card" data-calc="loan">
-<label for="amount">Loan amount ($)</label><input id="amount" type="number" value="20000">
-<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="0.01" value="8">
-<label for="months">Term (months)</label><input id="months" type="number" value="60">
+<p class="muted">Calculate the monthly payment and total interest on any fixed-rate loan.</p>
+<form class="card" data-calc="1">
+<label for="amount">Loan amount ($)</label><input id="amount" type="number" step="any" value="20000">
+<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="any" value="8">
+<label for="months">Term (months)</label><input id="months" type="number" step="any" value="60">
 <button type="submit">Calculate</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
-<h2>How loan payments work</h2>
-<p>Each payment covers interest on the remaining balance plus part of the principal. Early payments are mostly interest; later ones are mostly principal. A shorter term or lower rate cuts the total interest you pay.</p>
+<h2>How it works</h2>
+<p>Each payment covers interest on the remaining balance plus part of the principal. Early payments are mostly interest and later ones mostly principal. A shorter term or lower rate reduces the total interest.</p>
 <h2>Frequently asked questions</h2>
-<details><summary>How can I lower my loan cost?</summary><p>Improve your credit score before applying, compare lenders, choose a shorter term if you can afford the payment, and make extra payments toward principal.</p></details>
+<details><summary>How can I lower my loan cost?</summary><p>Improve your credit score before applying, compare lenders, choose a shorter term if you can afford it, and make extra principal payments.</p></details>
 <details><summary>What is APR?</summary><p>The annual percentage rate is the yearly cost of borrowing, including interest and some fees.</p></details>
-<p><a href="mortgage-calculator.html">Mortgage calculator</a> · <a href="credit-card-payoff-calculator.html">Credit card payoff calculator</a></p>
+<h2>Related calculators</h2>
+<div class="grid"><a href="compound-interest-calculator.html"><b>Compound Interest Calculator</b></a><a href="credit-card-payoff-calculator.html"><b>Credit Card Payoff Calculator</b></a><a href="simple-interest-calculator.html"><b>Simple Interest Calculator</b></a><a href="savings-goal-calculator.html"><b>Savings Goal Calculator</b></a><a href="retirement-calculator.html"><b>Retirement Savings Calculator</b></a><a href="auto-loan-calculator.html"><b>Auto Loan Calculator</b></a></div>
 </main>
-<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Estimates only, not financial advice.</div></footer>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
+<script>CalcPage(function({amount,rate,months}){
+const m=PMT(amount,rate,months);
+return [['Monthly payment',M(m)],['Total interest',M(m*months-amount)],['Total repaid',M(m*months)]];
+});</script>
 </body></html>

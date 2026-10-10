@@ -1,51 +1,38 @@
+// Shared runtime + helpers used by every calculator page.
 const $=id=>document.getElementById(id);
-const money=n=>n.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:2});
-const num=id=>parseFloat($(id).value)||0;
-const rows=l=>l.map(([k,v])=>`<div class="row"><span>${k}</span><b>${v}</b></div>`).join('');
+const M=x=>Number.isFinite(x)?x.toLocaleString('en-US',{style:'currency',currency:'USD'}):'—';
+const N=(x,d=2)=>Number.isFinite(x)?x.toLocaleString('en-US',{maximumFractionDigits:d}):'—';
+const PCT=(x,d=2)=>Number.isFinite(x)?N(x,d)+'%':'—';
+const PMT=(P,apr,n)=>{const r=apr/1200;return r===0?P/n:P*r/(1-Math.pow(1+r,-n));};
+const D=s=>{const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d);};
+const DS=d=>d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+const todayStr=()=>{const t=new Date();return t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');};
+const NUMS=s=>s.split(/[\s,;]+/).filter(x=>x!==''&&!isNaN(x)).map(Number);
 
-function payment(P,annualRate,months){
-  const r=annualRate/100/12;
-  return r===0?P/months:P*r/(1-Math.pow(1+r,-months));
-}
-
-const calcs={
-  mortgage(){
-    const price=num('price'),down=num('down'),rate=num('rate'),yrs=num('years');
-    const tax=num('tax')/12,ins=num('ins')/12;
-    const P=Math.max(price-down,0),n=yrs*12;
-    const pi=payment(P,rate,n),total=pi+tax+ins;
-    return `<div class="big">${money(total)}<small style="font-size:1rem"> /month</small></div>`+rows([
-      ['Principal &amp; interest',money(pi)],['Property tax',money(tax)],['Home insurance',money(ins)],
-      ['Loan amount',money(P)],['Total interest over loan',money(pi*n-P)],['Total paid (P&amp;I)',money(pi*n)]]);
-  },
-  loan(){
-    const P=num('amount'),rate=num('rate'),n=num('months');
-    const m=payment(P,rate,n);
-    return `<div class="big">${money(m)}<small style="font-size:1rem"> /month</small></div>`+rows([
-      ['Total interest',money(m*n-P)],['Total repaid',money(m*n)]]);
-  },
-  compound(){
-    const P=num('principal'),c=num('contrib'),rate=num('rate')/100,yrs=num('years'),f=num('freq');
-    let bal=P,contributed=P;
-    const steps=Math.round(yrs*12);
-    const mr=Math.pow(1+rate/f,f/12)-1;
-    for(let i=0;i<steps;i++){bal=bal*(1+mr)+c;contributed+=c;}
-    return `<div class="big">${money(bal)}</div>`+rows([
-      ['Total contributed',money(contributed)],['Interest earned',money(bal-contributed)]]);
-  },
-  payoff(){
-    let bal=num('balance');const apr=num('apr')/100/12,pay=num('pay');
-    if(pay<=bal*apr) return '<b>Payment is too low to ever pay this off. Increase it above the monthly interest ('+money(bal*apr)+').</b>';
-    let months=0,interest=0;
-    while(bal>0&&months<1200){const i=bal*apr;interest+=i;bal=bal+i-pay;months++;}
-    return `<div class="big">${Math.floor(months/12)} yrs ${months%12} mo</div>`+rows([
-      ['Total interest paid',money(interest)],['Number of payments',months]]);
-  }
-};
-
-document.querySelectorAll('form[data-calc]').forEach(f=>{
-  const run=e=>{e&&e.preventDefault();$('out').innerHTML=calcs[f.dataset.calc]();$('out').hidden=false;};
-  f.addEventListener('submit',run);
-  f.addEventListener('input',run);
+function CalcPage(fn){
+  const form=document.querySelector('form[data-calc]'),out=$('out');
+  form.querySelectorAll('input[data-today]').forEach(i=>{i.value=todayStr();});
+  const read=()=>{
+    const v={};let bad=false;
+    form.querySelectorAll('input,select').forEach(el=>{
+      if(el.tagName==='SELECT'){v[el.id]=isNaN(el.value)?el.value:Number(el.value);}
+      else if(['date','time','text'].includes(el.type)){v[el.id]=el.value;if(!el.value)bad=true;}
+      else{const n=parseFloat(el.value);v[el.id]=n;if(isNaN(n))bad=true;}
+    });
+    return bad?null:v;
+  };
+  const run=e=>{
+    if(e)e.preventDefault();
+    const v=read();
+    if(!v){out.innerHTML='<p class="muted">Fill in every field to see the result.</p>';return;}
+    let res;
+    try{res=fn(v);}catch(err){res='Could not calculate. Please check your numbers.';}
+    if(typeof res==='string'){out.innerHTML='<p><b>'+res+'</b></p>';return;}
+    const [h,...rest]=res;
+    out.innerHTML='<div class="muted">'+h[0]+'</div><div class="big">'+h[1]+'</div>'+
+      rest.map(([k,x])=>'<div class="row"><span>'+k+'</span><b>'+x+'</b></div>').join('');
+  };
+  form.addEventListener('submit',run);
+  form.addEventListener('input',run);
   run();
-});
+}

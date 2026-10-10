@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Board Feet Calculator | CalcHub</title>
+<meta name="description" content="Calculate board feet of lumber and the total price.">
+<link rel="canonical" href="https://YOURDOMAIN.com/board-feet-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are nominal sizes accurate?", "acceptedAnswer": {"@type": "Answer", "text": "No. A '2x4' is actually 1.5 x 3.5 inches, but lumber is usually priced by its nominal size."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Board Feet Calculator</h1>
+<p class="muted">Calculate board feet of lumber and the total price.</p>
+<form class="card" data-calc="1">
+<label for="t">Thickness (in)</label><input id="t" type="number" step="any" value="2">
+<label for="w">Width (in)</label><input id="w" type="number" step="any" value="6">
+<label for="l">Length (ft)</label><input id="l" type="number" step="any" value="8">
+<label for="q">Quantity</label><input id="q" type="number" step="any" value="10">
+<label for="price">Price per board foot ($)</label><input id="price" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>One board foot is a piece 1 inch thick, 12 inches wide and 12 inches long (144 cubic inches). Board feet = thickness (in) x width (in) x length (ft) / 12.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Are nominal sizes accurate?</summary><p>No. A &#x27;2x4&#x27; is actually 1.5 x 3.5 inches, but lumber is usually priced by its nominal size.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a><a href="tile-calculator.html"><b>Tile Calculator</b></a><a href="gravel-calculator.html"><b>Gravel Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({t,w,l,q,price}){
+const bf=t*w*l/12*q;
+return [['Board feet',N(bf,2)],['Total cost',M(bf*price)],['Per board',N(t*w*l/12,2)+' bf']];
+});</script>
+</body></html>

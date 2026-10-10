@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Retirement Savings Calculator | CalcHub</title>
+<meta name="description" content="Project your retirement savings and the income they could support.">
+<link rel="canonical" href="https://YOURDOMAIN.com/retirement-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the 4% rule reliable?", "acceptedAnswer": {"@type": "Answer", "text": "It is a rule of thumb based on historical US data for a 30-year retirement. Your own timeline, taxes and market conditions may differ."}}, {"@type": "Question", "name": "Is the result adjusted for inflation?", "acceptedAnswer": {"@type": "Answer", "text": "No. Use a return rate after inflation (for example 4-5% instead of 7%) to see results in today's dollars."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Retirement Savings Calculator</h1>
+<p class="muted">Project your retirement savings and the income they could support.</p>
+<form class="card" data-calc="1">
+<label for="age">Current age</label><input id="age" type="number" step="any" value="30">
+<label for="retireAge">Retirement age</label><input id="retireAge" type="number" step="any" value="65">
+<label for="savings">Current savings ($)</label><input id="savings" type="number" step="any" value="20000">
+<label for="monthly">Monthly contribution ($)</label><input id="monthly" type="number" step="any" value="500">
+<label for="rate">Expected annual return (%)</label><input id="rate" type="number" step="any" value="7">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Your current savings and each monthly contribution compound until retirement. The 4% rule suggests withdrawing 4% of the balance in the first year of retirement as a sustainable starting income.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is the 4% rule reliable?</summary><p>It is a rule of thumb based on historical US data for a 30-year retirement. Your own timeline, taxes and market conditions may differ.</p></details>
+<details><summary>Is the result adjusted for inflation?</summary><p>No. Use a return rate after inflation (for example 4-5% instead of 7%) to see results in today&#x27;s dollars.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="auto-loan-calculator.html"><b>Auto Loan Calculator</b></a><a href="sales-tax-calculator.html"><b>Sales Tax Calculator</b></a><a href="tip-calculator.html"><b>Tip Calculator</b></a><a href="discount-calculator.html"><b>Discount Calculator</b></a><a href="roi-calculator.html"><b>ROI Calculator</b></a><a href="inflation-calculator.html"><b>Inflation Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({age,retireAge,savings,monthly,rate}){
+const n=Math.max(retireAge-age,0)*12,r=rate/1200,g=Math.pow(1+r,n);
+const bal=savings*g+(r?monthly*(g-1)/r:monthly*n),paid=savings+monthly*n;
+return [['Savings at retirement',M(bal)],['Total contributed',M(paid)],['Investment growth',M(bal-paid)],['Income, 4% rule (yearly)',M(bal*0.04)],['Income, 4% rule (monthly)',M(bal*0.04/12)]];
+});</script>
+</body></html>

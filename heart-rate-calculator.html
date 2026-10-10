@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Target Heart Rate Calculator | CalcHub</title>
+<meta name="description" content="Find your heart rate training zones with the Karvonen method.">
+<link rel="canonical" href="https://YOURDOMAIN.com/heart-rate-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I measure resting heart rate?", "acceptedAnswer": {"@type": "Answer", "text": "Count your pulse for 60 seconds first thing in the morning before getting out of bed."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Target Heart Rate Calculator</h1>
+<p class="muted">Find your heart rate training zones with the Karvonen method.</p>
+<form class="card" data-calc="1">
+<label for="age">Age (years)</label><input id="age" type="number" step="any" value="30">
+<label for="rest">Resting heart rate (bpm)</label><input id="rest" type="number" step="any" value="60">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Maximum heart rate is estimated as 220 minus your age. The Karvonen method uses heart rate reserve (max minus resting) to set each training zone.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I measure resting heart rate?</summary><p>Count your pulse for 60 seconds first thing in the morning before getting out of bed.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="one-rep-max-calculator.html"><b>One Rep Max Calculator</b></a><a href="bmi-calculator.html"><b>BMI Calculator</b></a><a href="bmr-calculator.html"><b>BMR Calculator</b></a><a href="calorie-calculator.html"><b>Calorie Calculator (TDEE)</b></a><a href="body-fat-calculator.html"><b>Body Fat Calculator</b></a><a href="ideal-weight-calculator.html"><b>Ideal Weight Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({age,rest}){
+const mx=220-age,z=p=>N(rest+(mx-rest)*p,0);
+return [['Estimated max heart rate',mx+' bpm'],['Zone 1 - recovery (50-60%)',z(.5)+' - '+z(.6)+' bpm'],['Zone 2 - fat burn (60-70%)',z(.6)+' - '+z(.7)+' bpm'],['Zone 3 - aerobic (70-80%)',z(.7)+' - '+z(.8)+' bpm'],['Zone 4 - threshold (80-90%)',z(.8)+' - '+z(.9)+' bpm'],['Zone 5 - maximum (90-100%)',z(.9)+' - '+z(1)+' bpm']];
+});</script>
+</body></html>

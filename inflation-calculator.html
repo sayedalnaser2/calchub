@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inflation Calculator | CalcHub</title>
+<meta name="description" content="See how inflation changes what your money can buy in the future.">
+<link rel="canonical" href="https://YOURDOMAIN.com/inflation-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What inflation rate should I use?", "acceptedAnswer": {"@type": "Answer", "text": "US inflation has averaged roughly 3% over the long term. Use a higher or lower figure to test scenarios."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Inflation Calculator</h1>
+<p class="muted">See how inflation changes what your money can buy in the future.</p>
+<form class="card" data-calc="1">
+<label for="amount">Amount today ($)</label><input id="amount" type="number" step="any" value="1000">
+<label for="rate">Average inflation rate (%)</label><input id="rate" type="number" step="any" value="3">
+<label for="years">Years</label><input id="years" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>At a steady inflation rate, prices grow by that percentage each year, so the same money buys less over time.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What inflation rate should I use?</summary><p>US inflation has averaged roughly 3% over the long term. Use a higher or lower figure to test scenarios.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="salary-calculator.html"><b>Hourly to Salary Calculator</b></a><a href="break-even-calculator.html"><b>Break-Even Calculator</b></a><a href="margin-calculator.html"><b>Profit Margin &amp; Markup Calculator</b></a><a href="cagr-calculator.html"><b>CAGR Calculator</b></a><a href="rule-of-72-calculator.html"><b>Rule of 72 Calculator</b></a><a href="debt-to-income-calculator.html"><b>Debt-to-Income Ratio Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({amount,rate,years}){
+const g=Math.pow(1+rate/100,years);
+return [['Cost of the same goods later',M(amount*g)],['Purchasing power of today\'s money later',M(amount/g)],['Total price increase',PCT((g-1)*100)]];
+});</script>
+</body></html>

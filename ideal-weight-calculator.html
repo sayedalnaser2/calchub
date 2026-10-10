@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ideal Weight Calculator | CalcHub</title>
+<meta name="description" content="Estimate a healthy weight range for your height using standard formulas.">
+<link rel="canonical" href="https://YOURDOMAIN.com/ideal-weight-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which formula is best?", "acceptedAnswer": {"@type": "Answer", "text": "None is perfect. Treat them as rough guides and use the BMI range for a broader healthy window."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Ideal Weight Calculator</h1>
+<p class="muted">Estimate a healthy weight range for your height using standard formulas.</p>
+<form class="card" data-calc="1">
+<label for="sex">Sex</label><select id="sex"><option value="1" selected>Male</option><option value="2">Female</option></select>
+<label for="height">Height (cm)</label><input id="height" type="number" step="any" value="175">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Several formulas estimate ideal weight from height and sex. The healthy BMI range gives a wider and often more useful target.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Which formula is best?</summary><p>None is perfect. Treat them as rough guides and use the BMI range for a broader healthy window.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="water-intake-calculator.html"><b>Water Intake Calculator</b></a><a href="due-date-calculator.html"><b>Pregnancy Due Date Calculator</b></a><a href="macro-calculator.html"><b>Macro Calculator</b></a><a href="pace-calculator.html"><b>Running Pace Calculator</b></a><a href="heart-rate-calculator.html"><b>Target Heart Rate Calculator</b></a><a href="one-rep-max-calculator.html"><b>One Rep Max Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({sex,height}){
+const over=Math.max(height/2.54-60,0);
+const dev=(sex==1?50:45.5)+2.3*over,rob=(sex==1?52:49)+(sex==1?1.9:1.7)*over,mil=(sex==1?56.2:53.1)+(sex==1?1.41:1.36)*over;
+const f=k=>N(k,1)+' kg ('+N(k*2.20462,0)+' lb)';
+return [['Devine formula',f(dev)],['Robinson formula',f(rob)],['Miller formula',f(mil)],['Healthy BMI range (18.5-24.9)',f(18.5*Math.pow(height/100,2))+' to '+f(24.9*Math.pow(height/100,2))]];
+});</script>
+</body></html>

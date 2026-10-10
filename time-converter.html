@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Time Converter | CalcHub</title>
+<meta name="description" content="Convert between milliseconds, seconds, minutes, hours, days and more.">
+<link rel="canonical" href="https://YOURDOMAIN.com/time-converter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many seconds are in a day?", "acceptedAnswer": {"@type": "Answer", "text": "86,400 seconds."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a></p>
+<h1>Time Converter</h1>
+<p class="muted">Convert between milliseconds, seconds, minutes, hours, days and more.</p>
+<form class="card" data-calc="1">
+<label for="v">Value</label><input id="v" type="number" step="any" value="1">
+<label for="a">From</label><select id="a"><option value="ms">Milliseconds (ms)</option><option value="s">Seconds (s)</option><option value="min">Minutes (min)</option><option value="h" selected>Hours (h)</option><option value="day">Days (day)</option><option value="week">Weeks (week)</option><option value="month">Months (avg)</option><option value="year">Years (avg)</option></select>
+<label for="b">To</label><select id="b"><option value="ms">Milliseconds (ms)</option><option value="s">Seconds (s)</option><option value="min" selected>Minutes (min)</option><option value="h">Hours (h)</option><option value="day">Days (day)</option><option value="week">Weeks (week)</option><option value="month">Months (avg)</option><option value="year">Years (avg)</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Times are converted through seconds. A month is the average of 30.44 days and a year is 365.2425 days.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How many seconds are in a day?</summary><p>86,400 seconds.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="pressure-converter.html"><b>Pressure Converter</b></a><a href="energy-converter.html"><b>Energy Converter</b></a><a href="temperature-converter.html"><b>Temperature Converter</b></a><a href="fuel-economy-converter.html"><b>Fuel Economy Converter (MPG to L/100km)</b></a><a href="length-converter.html"><b>Length Converter</b></a><a href="weight-converter.html"><b>Weight and Mass Converter</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({v,a,b}){
+const f={"ms": 0.001, "s": 1, "min": 60, "h": 3600, "day": 86400, "week": 604800, "month": 2629746, "year": 31556952};const r=v*f[a]/f[b];return [[N(v,8)+' '+a+' =',N(r,10)+' '+b],['Multiply by',N(f[a]/f[b],12)]];
+});</script>
+</body></html>

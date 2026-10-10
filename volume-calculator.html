@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Volume Calculator | CalcHub</title>
+<meta name="description" content="Calculate the volume of a sphere, cylinder, cone or cube.">
+<link rel="canonical" href="https://YOURDOMAIN.com/volume-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What units does the volume use?", "acceptedAnswer": {"@type": "Answer", "text": "Cubic units matching your input. If you enter centimetres the result is in cm\u00b3, and 1,000 cm\u00b3 equals one litre."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Volume Calculator</h1>
+<p class="muted">Calculate the volume of a sphere, cylinder, cone or cube.</p>
+<form class="card" data-calc="1">
+<label for="shape">Shape</label><select id="shape"><option value="1" selected>Sphere (radius a)</option><option value="2">Cylinder (radius a, height h)</option><option value="3">Cone (radius a, height h)</option><option value="4">Cube (side a)</option></select>
+<label for="a">Radius or side (a)</label><input id="a" type="number" step="any" value="5">
+<label for="h">Height (h)</label><input id="h" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Sphere: 4/3 πr³. Cylinder: πr²h. Cone: ⅓πr²h. Cube: a³. Height is ignored for the sphere and cube.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What units does the volume use?</summary><p>Cubic units matching your input. If you enter centimetres the result is in cm³, and 1,000 cm³ equals one litre.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="percentage-calculator.html"><b>Percentage Calculator</b></a><a href="percent-change-calculator.html"><b>Percent Change Calculator</b></a><a href="percentage-difference-calculator.html"><b>Percentage Difference Calculator</b></a><a href="average-calculator.html"><b>Average Calculator (Mean, Median, Mode)</b></a><a href="standard-deviation-calculator.html"><b>Standard Deviation Calculator</b></a><a href="quadratic-formula-calculator.html"><b>Quadratic Formula Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({shape,a,h}){
+const P=Math.PI,v={1:4/3*P*a*a*a,2:P*a*a*h,3:P*a*a*h/3,4:a*a*a}[shape];
+return [['Volume',N(v,6)+' cubic units'],['In litres (if units are cm)',N(v/1000,6)]];
+});</script>
+</body></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>One Rep Max Calculator | CalcHub</title>
+<meta name="description" content="Estimate your one-rep max (1RM) from a lighter set of repetitions.">
+<link rel="canonical" href="https://YOURDOMAIN.com/one-rep-max-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to test a true 1RM?", "acceptedAnswer": {"@type": "Answer", "text": "Testing a true max carries injury risk. Estimating from a submaximal set with a spotter is safer."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>One Rep Max Calculator</h1>
+<p class="muted">Estimate your one-rep max (1RM) from a lighter set of repetitions.</p>
+<form class="card" data-calc="1">
+<label for="w">Weight lifted</label><input id="w" type="number" step="any" value="100">
+<label for="reps">Repetitions</label><input id="reps" type="number" step="any" value="5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The Epley and Brzycki formulas estimate the maximum weight you could lift once from a set of several reps. Estimates are most reliable under 10 reps.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is it safe to test a true 1RM?</summary><p>Testing a true max carries injury risk. Estimating from a submaximal set with a spotter is safer.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="bmi-calculator.html"><b>BMI Calculator</b></a><a href="bmr-calculator.html"><b>BMR Calculator</b></a><a href="calorie-calculator.html"><b>Calorie Calculator (TDEE)</b></a><a href="body-fat-calculator.html"><b>Body Fat Calculator</b></a><a href="ideal-weight-calculator.html"><b>Ideal Weight Calculator</b></a><a href="water-intake-calculator.html"><b>Water Intake Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({w,reps}){
+if(reps<1||reps>36)return 'Use between 1 and 36 reps.';
+const ep=w*(1+reps/30),br=w*36/(37-reps);
+return [['Estimated 1RM (average)',N((ep+br)/2,1)],['Epley formula',N(ep,1)],['Brzycki formula',N(br,1)],['85% of 1RM',N((ep+br)/2*.85,1)],['70% of 1RM',N((ep+br)/2*.7,1)]];
+});</script>
+</body></html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rule of 72 Calculator | CalcHub</title>
+<meta name="description" content="Estimate how long it takes to double your money at a given rate.">
+<link rel="canonical" href="https://YOURDOMAIN.com/rule-of-72-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate is the rule of 72?", "acceptedAnswer": {"@type": "Answer", "text": "It is very close for rates between 4% and 12% and gets less precise outside that range."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Rule of 72 Calculator</h1>
+<p class="muted">Estimate how long it takes to double your money at a given rate.</p>
+<form class="card" data-calc="1">
+<label for="rate">Annual return (%)</label><input id="rate" type="number" step="any" value="6">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Divide 72 by the annual rate for a quick estimate of the years needed to double. The exact figure uses logarithms.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How accurate is the rule of 72?</summary><p>It is very close for rates between 4% and 12% and gets less precise outside that range.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="debt-to-income-calculator.html"><b>Debt-to-Income Ratio Calculator</b></a><a href="refinance-calculator.html"><b>Refinance Break-Even Calculator</b></a><a href="house-affordability-calculator.html"><b>House Affordability Calculator</b></a><a href="mortgage-calculator.html"><b>Mortgage Calculator</b></a><a href="loan-calculator.html"><b>Loan Calculator</b></a><a href="compound-interest-calculator.html"><b>Compound Interest Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({rate}){
+return [['Years to double (rule of 72)',N(72/rate,1)],['Exact years to double',N(Math.log(2)/Math.log(1+rate/100),1)],['Years to triple',N(Math.log(3)/Math.log(1+rate/100),1)]];
+});</script>
+</body></html>

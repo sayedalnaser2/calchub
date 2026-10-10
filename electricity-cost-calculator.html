@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Electricity Cost Calculator | CalcHub</title>
+<meta name="description" content="Find out what an appliance costs to run per day, month and year.">
+<link rel="canonical" href="https://YOURDOMAIN.com/electricity-cost-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where do I find an appliance's wattage?", "acceptedAnswer": {"@type": "Answer", "text": "It is on the label or in the manual. You can also measure it with a plug-in power meter."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Electricity Cost Calculator</h1>
+<p class="muted">Find out what an appliance costs to run per day, month and year.</p>
+<form class="card" data-calc="1">
+<label for="watts">Power (watts)</label><input id="watts" type="number" step="any" value="1500">
+<label for="hours">Hours used per day</label><input id="hours" type="number" step="any" value="4">
+<label for="price">Electricity price ($ per kWh)</label><input id="price" type="number" step="any" value="0.16">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Energy in kilowatt-hours equals watts / 1000 x hours. Multiply by your electricity rate for the cost.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Where do I find an appliance&#x27;s wattage?</summary><p>It is on the label or in the manual. You can also measure it with a plug-in power meter.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="unit-price-calculator.html"><b>Unit Price Calculator</b></a><a href="final-grade-calculator.html"><b>Final Grade Calculator</b></a><a href="day-of-week-calculator.html"><b>Day of the Week Calculator</b></a><a href="age-calculator.html"><b>Age Calculator</b></a><a href="date-difference-calculator.html"><b>Days Between Dates Calculator</b></a><a href="add-days-to-date-calculator.html"><b>Date Calculator (Add or Subtract Days)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({watts,hours,price}){
+const k=watts/1000*hours;
+return [['Monthly cost',M(k*price*30)],['Daily cost',M(k*price)],['Yearly cost',M(k*price*365)],['Energy per day',N(k,2)+' kWh']];
+});</script>
+</body></html>

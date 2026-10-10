@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data Storage Converter | CalcHub</title>
+<meta name="description" content="Convert between bytes, kilobytes, megabytes, gigabytes, terabytes and more.">
+<link rel="canonical" href="https://YOURDOMAIN.com/data-storage-converter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does my 1 TB drive show less space?", "acceptedAnswer": {"@type": "Answer", "text": "Drives are sold in decimal units (1 TB = 10^12 bytes) while Windows reports binary units, so it shows about 931 GiB."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a></p>
+<h1>Data Storage Converter</h1>
+<p class="muted">Convert between bytes, kilobytes, megabytes, gigabytes, terabytes and more.</p>
+<form class="card" data-calc="1">
+<label for="v">Value</label><input id="v" type="number" step="any" value="1">
+<label for="a">From</label><select id="a"><option value="B">Bytes (B)</option><option value="KB">Kilobytes (KB, 1000)</option><option value="MB">Megabytes (MB)</option><option value="GB" selected>Gigabytes (GB)</option><option value="TB">Terabytes (TB)</option><option value="PB">Petabytes (PB)</option><option value="KiB">Kibibytes (KiB, 1024)</option><option value="MiB">Mebibytes (MiB)</option><option value="GiB">Gibibytes (GiB)</option><option value="TiB">Tebibytes (TiB)</option><option value="bit">Bits (bit)</option></select>
+<label for="b">To</label><select id="b"><option value="B">Bytes (B)</option><option value="KB">Kilobytes (KB, 1000)</option><option value="MB" selected>Megabytes (MB)</option><option value="GB">Gigabytes (GB)</option><option value="TB">Terabytes (TB)</option><option value="PB">Petabytes (PB)</option><option value="KiB">Kibibytes (KiB, 1024)</option><option value="MiB">Mebibytes (MiB)</option><option value="GiB">Gibibytes (GiB)</option><option value="TiB">Tebibytes (TiB)</option><option value="bit">Bits (bit)</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>KB, MB and GB use powers of 1000 as drive makers do. KiB, MiB and GiB use powers of 1024 as many operating systems do.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why does my 1 TB drive show less space?</summary><p>Drives are sold in decimal units (1 TB = 10^12 bytes) while Windows reports binary units, so it shows about 931 GiB.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="pressure-converter.html"><b>Pressure Converter</b></a><a href="energy-converter.html"><b>Energy Converter</b></a><a href="temperature-converter.html"><b>Temperature Converter</b></a><a href="fuel-economy-converter.html"><b>Fuel Economy Converter (MPG to L/100km)</b></a><a href="length-converter.html"><b>Length Converter</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({v,a,b}){
+const f={"B": 1, "KB": 1000.0, "MB": 1000000.0, "GB": 1000000000.0, "TB": 1000000000000.0, "PB": 1000000000000000.0, "KiB": 1024, "MiB": 1048576, "GiB": 1073741824, "TiB": 1099511627776, "bit": 0.125};const r=v*f[a]/f[b];return [[N(v,8)+' '+a+' =',N(r,10)+' '+b],['Multiply by',N(f[a]/f[b],12)]];
+});</script>
+</body></html>
