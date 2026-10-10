@@ -1,0 +1,27 @@
+:root{--bg:#f6f8fb;--card:#fff;--text:#1b2433;--muted:#5b6678;--brand:#0b6bcb;--line:#e1e6ee}
+@media (prefers-color-scheme:dark){:root{--bg:#10151d;--card:#182030;--text:#e8edf5;--muted:#9aa7bb;--brand:#4aa3ff;--line:#2a3447}}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+header,footer{padding:16px}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.logo{font-weight:800;font-size:1.3rem;color:var(--brand);text-decoration:none}
+nav a{margin-left:14px;color:var(--text);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--brand)}
+h1{font-size:1.9rem;line-height:1.2;margin:.6em 0 .3em}
+h2{margin-top:1.8em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.grid a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;text-decoration:none;color:var(--text)}
+.grid a:hover{border-color:var(--brand)}
+.grid b{display:block;color:var(--brand);margin-bottom:4px}
+label{display:block;font-weight:600;margin:12px 0 4px;font-size:.93rem}
+input,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font-size:1rem;background:var(--bg);color:var(--text)}
+button{margin-top:16px;padding:12px 22px;border:0;border-radius:8px;background:var(--brand);color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
+.result{margin-top:18px;padding:16px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}
+.big{font-size:2rem;font-weight:800;color:var(--brand)}
+.row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed var(--line)}
+.ad{min-height:90px;margin:18px 0;text-align:center;color:var(--muted);font-size:.8rem}
+.muted,footer{color:var(--muted);font-size:.88rem}
+details{border-bottom:1px solid var(--line);padding:10px 0}
+summary{cursor:pointer;font-weight:600}

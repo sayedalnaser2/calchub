@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loan Calculator – Monthly Payment &amp; Total Interest | CalcHub</title>
+<meta name="description" content="Free loan calculator for car, personal and student loans. See your monthly payment, total interest and total cost instantly.">
+<link rel="canonical" href="https://YOURDOMAIN.com/loan-calculator.html">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a>
+<nav><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="compound-interest-calculator.html">Savings</a><a href="credit-card-payoff-calculator.html">Debt</a></nav></div></header>
+<main class="wrap">
+<h1>Loan Calculator</h1>
+<p class="muted">Works for auto loans, personal loans, student loans and more.</p>
+<form class="card" data-calc="loan">
+<label for="amount">Loan amount ($)</label><input id="amount" type="number" value="20000">
+<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="0.01" value="8">
+<label for="months">Term (months)</label><input id="months" type="number" value="60">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How loan payments work</h2>
+<p>Each payment covers interest on the remaining balance plus part of the principal. Early payments are mostly interest; later ones are mostly principal. A shorter term or lower rate cuts the total interest you pay.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How can I lower my loan cost?</summary><p>Improve your credit score before applying, compare lenders, choose a shorter term if you can afford the payment, and make extra payments toward principal.</p></details>
+<details><summary>What is APR?</summary><p>The annual percentage rate is the yearly cost of borrowing, including interest and some fees.</p></details>
+<p><a href="mortgage-calculator.html">Mortgage calculator</a> · <a href="credit-card-payoff-calculator.html">Credit card payoff calculator</a></p>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Estimates only, not financial advice.</div></footer>
+<script src="calc.js"></script>
+</body></html>
