@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mass-Energy Equivalence (E = mc²) Calculator | CalcHub</title>
+<meta name="description" content="Calculate the energy equivalent of a mass.">
+<link rel="canonical" href="https://YOURDOMAIN.com/mass-energy-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can all mass be converted?", "acceptedAnswer": {"@type": "Answer", "text": "No. Only a small fraction is released in nuclear reactions."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Mass-Energy Equivalence (E = mc²) Calculator</h1>
+<p class="muted">Calculate the energy equivalent of a mass.</p>
+<form class="card" data-calc="1">
+<label for="m">Mass (kg)</label><input id="m" type="number" step="any" value="0.001">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Einstein&#x27;s relation E = mc² gives the rest energy of a mass. One gram corresponds to about 21.5 kilotons of TNT.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Can all mass be converted?</summary><p>No. Only a small fraction is released in nuclear reactions.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a><a href="density-calculator.html"><b>Density Calculator</b></a><a href="force-calculator.html"><b>Force Calculator (F = ma)</b></a><a href="half-life-calculator.html"><b>Half-Life Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({m}){
+const E=m*299792458**2;return [['Energy',E.toExponential(4)+' J'],['In kilowatt-hours',(E/3.6e6).toExponential(4)+' kWh'],['In tons of TNT',(E/4.184e9).toExponential(4)]];
+});</script>
+</body></html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Time Calculator (Add or Subtract Time) | CalcHub</title>
+<meta name="description" content="Add or subtract hours and minutes.">
+<link rel="canonical" href="https://YOURDOMAIN.com/time-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I add times that cross an hour?", "acceptedAnswer": {"@type": "Answer", "text": "Add the minutes, carry every 60 minutes into one hour."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Time Calculator (Add or Subtract Time)</h1>
+<p class="muted">Add or subtract hours and minutes.</p>
+<form class="card" data-calc="1">
+<label for="h1">Hours (1st)</label><input id="h1" type="number" step="any" value="5">
+<label for="m1">Minutes (1st)</label><input id="m1" type="number" step="any" value="45">
+<label for="op">Operation</label><select id="op"><option value="1" selected>+ Add</option><option value="-1">− Subtract</option></select>
+<label for="h2">Hours (2nd)</label><input id="h2" type="number" step="any" value="2">
+<label for="m2">Minutes (2nd)</label><input id="m2" type="number" step="any" value="30">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Both times are converted to minutes, combined, then converted back to hours and minutes.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I add times that cross an hour?</summary><p>Add the minutes, carry every 60 minutes into one hour.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="hours-to-decimal-calculator.html"><b>Hours and Minutes to Decimal Calculator</b></a><a href="week-number-calculator.html"><b>Week Number Calculator</b></a><a href="business-days-calculator.html"><b>Business Days Calculator</b></a><a href="zodiac-sign-calculator.html"><b>Zodiac Sign Calculator</b></a><a href="chinese-zodiac-calculator.html"><b>Chinese Zodiac Calculator</b></a><a href="word-counter.html"><b>Word Counter</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({h1,m1,op,h2,m2}){
+const t=(h1*60+m1)+op*(h2*60+m2),a=Math.abs(t);return [['Result',(t<0?'-':'')+Math.floor(a/60)+' h '+a%60+' min'],['Decimal hours',N(t/60,4)],['Total minutes',t]];
+});</script>
+</body></html>

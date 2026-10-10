@@ -6,6 +6,11 @@ import html, json, os, glob
 from specs_finance import SPECS as F
 from specs_health_math import SPECS as HM
 from specs_other import SPECS as O
+from specs_f2 import SPECS as F2
+from specs_h2 import SPECS as H2
+from specs_m2 import SPECS as M2
+from specs_c2 import SPECS as C2
+from specs_k2 import SPECS as K2
 
 DOMAIN = "https://YOURDOMAIN.com"
 SITE = "CalcHub"
@@ -21,7 +26,7 @@ CATS = [
     ("science", "Science", "Physics and science calculators: Ohm's law, energy, density and more."),
 ]
 CAT = {c[0]: c for c in CATS}
-SPECS = F + HM + O
+SPECS = F + HM + O + F2 + H2 + M2 + C2 + K2
 e = html.escape
 
 
@@ -62,6 +67,8 @@ def field(i):
         today = ' data-today="1"' if default == "today" else ""
         val = "" if default == "today" else default
         ctl = f'<input id="{id_}" type="{extra}" value="{val}"{today}>'
+    elif extra == "textarea":
+        ctl = f'<textarea id="{id_}" rows="5">{e(str(default))}</textarea>'
     elif extra == "text":
         ctl = f'<input id="{id_}" type="text" value="{e(str(default))}">'
     else:
@@ -128,7 +135,7 @@ def main():
     p += '<input class="search" id="q" type="search" placeholder="Search calculators (e.g. mortgage, BMI, percentage)…" aria-label="Search calculators">\n'
     for slug, name, blurb in CATS:
         items = [s for s in SPECS if s["cat"] == slug]
-        p += f'<section class="cat"><h2><a href="{slug}.html">{name}</a></h2><div class="grid">' + "".join(card(s) for s in items) + "</div></section>\n"
+        p += f'<section class="cat"><h2><a href="{slug}.html">{name}</a></h2><div class="grid">' + "".join(card(s) for s in items[:12]) + "</div>" + (f'<p><a href="{slug}.html">View all {len(items)} {name.lower()} calculators →</a></p>' if len(items) > 12 else "") + "</section>\n"
     p += '<div class="ad"></div>\n' + foot()
     p += """<script>
 const q=document.getElementById('q');

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Base Converter (Any Base 2-36) | CalcHub</title>
+<meta name="description" content="Convert a number between any two bases from 2 to 36.">
+<link rel="canonical" href="https://YOURDOMAIN.com/base-converter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What digits does base 16 use?", "acceptedAnswer": {"@type": "Answer", "text": "0-9 and A-F."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Base Converter (Any Base 2-36)</h1>
+<p class="muted">Convert a number between any two bases from 2 to 36.</p>
+<form class="card" data-calc="1">
+<label for="val">Number</label><input id="val" type="text" value="FF">
+<label for="from">From base</label><input id="from" type="number" step="any" value="16">
+<label for="to">To base</label><input id="to" type="number" step="any" value="2">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The number is parsed in the source base into a value and then written in the target base using digits 0-9 and A-Z.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What digits does base 16 use?</summary><p>0-9 and A-F.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="percentage-calculator.html"><b>Percentage Calculator</b></a><a href="percent-change-calculator.html"><b>Percent Change Calculator</b></a><a href="percentage-difference-calculator.html"><b>Percentage Difference Calculator</b></a><a href="average-calculator.html"><b>Average Calculator (Mean, Median, Mode)</b></a><a href="standard-deviation-calculator.html"><b>Standard Deviation Calculator</b></a><a href="quadratic-formula-calculator.html"><b>Quadratic Formula Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({val,from,to}){
+const f=Math.round(from),t=Math.round(to);if(f<2||f>36||t<2||t>36)return 'Bases must be between 2 and 36.';const v=parseInt(val.trim(),f);if(isNaN(v))return 'That is not valid in base '+f+'.';return [['Result (base '+t+')',v.toString(t).toUpperCase()],['Decimal',v]];
+});</script>
+</body></html>

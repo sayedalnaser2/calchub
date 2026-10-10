@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Insulation Calculator | CalcHub</title>
+<meta name="description" content="Estimate insulation batts or square footage needed.">
+<link rel="canonical" href="https://YOURDOMAIN.com/insulation-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What R-value do I need?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on climate zone and location; attics need more than walls."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Insulation Calculator</h1>
+<p class="muted">Estimate insulation batts or square footage needed.</p>
+<form class="card" data-calc="1">
+<label for="a">Area to insulate (sq ft)</label><input id="a" type="number" step="any" value="800">
+<label for="cov">Coverage per bundle (sq ft)</label><input id="cov" type="number" step="any" value="88">
+<label for="price">Price per bundle ($)</label><input id="price" type="number" step="any" value="55">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Divide the area plus 5% waste by the coverage of each bundle.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What R-value do I need?</summary><p>It depends on climate zone and location; attics need more than walls.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="tile-grout-calculator.html"><b>Grout Calculator</b></a><a href="lumber-weight-calculator.html"><b>Rebar and Material Weight Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a><a href="tile-calculator.html"><b>Tile Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,cov,price}){
+const b=Math.ceil(a*1.05/cov);return [['Bundles needed',b],['Estimated cost',M(b*price)],['Area with 5% waste',N(a*1.05,0)+' sq ft']];
+});</script>
+</body></html>

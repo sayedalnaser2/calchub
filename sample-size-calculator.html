@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sample Size Calculator | CalcHub</title>
+<meta name="description" content="Find the number of respondents needed for a survey.">
+<link rel="canonical" href="https://YOURDOMAIN.com/sample-size-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does a bigger population need a much bigger sample?", "acceptedAnswer": {"@type": "Answer", "text": "No. Beyond a few thousand, the required sample barely changes."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Sample Size Calculator</h1>
+<p class="muted">Find the number of respondents needed for a survey.</p>
+<form class="card" data-calc="1">
+<label for="cl">Confidence level</label><select id="cl"><option value="1.645">90%</option><option value="1.96" selected>95%</option><option value="2.576">99%</option></select>
+<label for="moe">Margin of error (%)</label><input id="moe" type="number" step="any" value="5">
+<label for="p">Expected proportion (%)</label><input id="p" type="number" step="any" value="50">
+<label for="pop">Population size (0 = very large)</label><input id="pop" type="number" step="any" value="0">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>n = z² x p(1-p) / e², with a finite-population correction when the population is known. Using p = 50% gives the largest, safest sample.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does a bigger population need a much bigger sample?</summary><p>No. Beyond a few thousand, the required sample barely changes.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="margin-of-error-calculator.html"><b>Margin of Error Calculator</b></a><a href="linear-regression-calculator.html"><b>Linear Regression Calculator</b></a><a href="weighted-average-calculator.html"><b>Weighted Average Calculator</b></a><a href="geometric-mean-calculator.html"><b>Geometric Mean Calculator</b></a><a href="rounding-calculator.html"><b>Rounding Calculator</b></a><a href="modulo-calculator.html"><b>Modulo Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({cl,moe,p,pop}){
+const e=moe/100,q=p/100;let n=cl*cl*q*(1-q)/(e*e);if(pop>0)n=n/(1+(n-1)/pop);return [['Sample size needed',N(Math.ceil(n),0)],['Without population correction',N(Math.ceil(cl*cl*q*(1-q)/(e*e)),0)]];
+});</script>
+</body></html>

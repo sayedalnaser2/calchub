@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>pH Calculator | CalcHub</title>
+<meta name="description" content="Convert between pH and hydrogen ion concentration.">
+<link rel="canonical" href="https://YOURDOMAIN.com/ph-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is neutral pH?", "acceptedAnswer": {"@type": "Answer", "text": "7 at 25 \u00b0C."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>pH Calculator</h1>
+<p class="muted">Convert between pH and hydrogen ion concentration.</p>
+<form class="card" data-calc="1">
+<label for="ph">pH</label><input id="ph" type="number" step="any" value="4.5">
+<label for="h">[H+] concentration (mol/L)</label><input id="h" type="number" step="any" value="0.001">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>pH = -log10[H+]. At 25 °C, pH + pOH = 14.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is neutral pH?</summary><p>7 at 25 °C.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="molar-mass-calculator.html"><b>Molar Mass Calculator</b></a><a href="projectile-motion-calculator.html"><b>Projectile Motion Calculator</b></a><a href="free-fall-calculator.html"><b>Free Fall Calculator</b></a><a href="escape-velocity-calculator.html"><b>Escape Velocity Calculator</b></a><a href="gravitational-force-calculator.html"><b>Gravitational Force Calculator</b></a><a href="centripetal-force-calculator.html"><b>Centripetal Force Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({ph,h}){
+const H=Math.pow(10,-ph);return [['[H+] from pH',H.toExponential(4)+' mol/L'],['[OH-]',(1e-14/H).toExponential(4)+' mol/L'],['pOH',N(14-ph,4)],['pH from [H+]',h>0?N(-Math.log10(h),4):'Enter a positive value'],['Nature',ph<7?'Acidic':ph>7?'Basic':'Neutral']];
+});</script>
+</body></html>

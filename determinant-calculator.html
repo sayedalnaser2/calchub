@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matrix Determinant Calculator (3×3) | CalcHub</title>
+<meta name="description" content="Calculate the determinant of a 3 by 3 matrix.">
+<link rel="canonical" href="https://YOURDOMAIN.com/determinant-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the determinant tell me?", "acceptedAnswer": {"@type": "Answer", "text": "Whether the matrix is invertible and how it scales volume."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Matrix Determinant Calculator (3×3)</h1>
+<p class="muted">Calculate the determinant of a 3 by 3 matrix.</p>
+<form class="card" data-calc="1">
+<label for="a">a11</label><input id="a" type="number" step="any" value="2">
+<label for="b">a12</label><input id="b" type="number" step="any" value="0">
+<label for="c">a13</label><input id="c" type="number" step="any" value="1">
+<label for="d">a21</label><input id="d" type="number" step="any" value="1">
+<label for="e">a22</label><input id="e" type="number" step="any" value="3">
+<label for="f">a23</label><input id="f" type="number" step="any" value="2">
+<label for="g">a31</label><input id="g" type="number" step="any" value="1">
+<label for="h">a32</label><input id="h" type="number" step="any" value="1">
+<label for="i">a33</label><input id="i" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The determinant of a 3×3 matrix is found by cofactor expansion along the first row. A zero determinant means the matrix has no inverse.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What does the determinant tell me?</summary><p>Whether the matrix is invertible and how it scales volume.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="system-of-equations-calculator.html"><b>System of Equations Calculator (2×2)</b></a><a href="proportion-calculator.html"><b>Proportion Calculator</b></a><a href="ratio-calculator.html"><b>Ratio Calculator</b></a><a href="random-number-generator.html"><b>Random Number Generator</b></a><a href="dice-roller.html"><b>Dice Roller</b></a><a href="coin-flip.html"><b>Coin Flip</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,b,c,d,e,f,g,h,i}){
+const det=a*(e*i-f*h)-b*(d*i-f*g)+c*(d*h-e*g);return [['Determinant',N(det,8)],['Invertible?',det!==0?'Yes':'No (singular)']];
+});</script>
+</body></html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rebar and Material Weight Calculator | CalcHub</title>
+<meta name="description" content="Estimate steel rebar weight by size and length.">
+<link rel="canonical" href="https://YOURDOMAIN.com/lumber-weight-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I include laps?", "acceptedAnswer": {"@type": "Answer", "text": "Add 10-15% for overlap splices."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Rebar and Material Weight Calculator</h1>
+<p class="muted">Estimate steel rebar weight by size and length.</p>
+<form class="card" data-calc="1">
+<label for="size">Rebar size</label><select id="size"><option value="3">#3 (3/8 in)</option><option value="4" selected>#4 (1/2 in)</option><option value="5">#5 (5/8 in)</option><option value="6">#6 (3/4 in)</option><option value="8">#8 (1 in)</option></select>
+<label for="len">Total length (ft)</label><input id="len" type="number" step="any" value="200">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Rebar weight per foot is fixed by bar size. Multiply by total length.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Do I include laps?</summary><p>Add 10-15% for overlap splices.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a><a href="tile-calculator.html"><b>Tile Calculator</b></a><a href="gravel-calculator.html"><b>Gravel Calculator</b></a><a href="board-feet-calculator.html"><b>Board Feet Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({size,len}){
+const lbft={3:.376,4:.668,5:1.043,6:1.502,8:2.670}[size];return [['Total weight',N(lbft*len,1)+' lb'],['Weight per foot',N(lbft,3)+' lb'],['20 ft bars needed',N(Math.ceil(len/20),0)]];
+});</script>
+</body></html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>eGFR Calculator (Kidney Function) | CalcHub</title>
+<meta name="description" content="Estimate GFR from creatinine using the CKD-EPI 2021 equation.">
+<link rel="canonical" href="https://YOURDOMAIN.com/egfr-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is normal eGFR?", "acceptedAnswer": {"@type": "Answer", "text": "90 or more is typically normal. Persistent values under 60 may indicate kidney disease; talk to a doctor."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>eGFR Calculator (Kidney Function)</h1>
+<p class="muted">Estimate GFR from creatinine using the CKD-EPI 2021 equation.</p>
+<form class="card" data-calc="1">
+<label for="sex">Sex</label><select id="sex"><option value="1" selected>Male</option><option value="2">Female</option></select>
+<label for="age">Age</label><input id="age" type="number" step="any" value="50">
+<label for="cr">Serum creatinine (mg/dL)</label><input id="cr" type="number" step="any" value="1.0">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The CKD-EPI 2021 equation estimates kidney filtration from creatinine, age and sex. This is an educational estimate, not medical advice.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is normal eGFR?</summary><p>90 or more is typically normal. Persistent values under 60 may indicate kidney disease; talk to a doctor.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="a1c-calculator.html"><b>A1C to Average Glucose Calculator</b></a><a href="cholesterol-ratio-calculator.html"><b>Cholesterol Ratio and LDL Calculator</b></a><a href="child-height-predictor.html"><b>Child Height Predictor</b></a><a href="dog-age-calculator.html"><b>Dog Age Calculator</b></a><a href="cat-age-calculator.html"><b>Cat Age Calculator</b></a><a href="pregnancy-weight-gain-calculator.html"><b>Pregnancy Weight Gain Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({sex,age,cr}){
+const k=sex==2?0.7:0.9,a=sex==2?-0.241:-0.302,e=142*Math.pow(Math.min(cr/k,1),a)*Math.pow(Math.max(cr/k,1),-1.2)*Math.pow(0.9938,age)*(sex==2?1.012:1);
+const st=e>=90?'G1 (normal or high)':e>=60?'G2 (mildly decreased)':e>=45?'G3a':e>=30?'G3b':e>=15?'G4':'G5';
+return [['eGFR',N(e,0)+' mL/min/1.73m²'],['CKD stage',st]];
+});</script>
+</body></html>

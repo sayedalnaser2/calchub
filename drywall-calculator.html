@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drywall Calculator | CalcHub</title>
+<meta name="description" content="Estimate sheets of drywall for walls and ceilings.">
+<link rel="canonical" href="https://YOURDOMAIN.com/drywall-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What thickness should I use?", "acceptedAnswer": {"@type": "Answer", "text": "1/2 inch for walls, 5/8 inch for ceilings or fire-rated assemblies."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Drywall Calculator</h1>
+<p class="muted">Estimate sheets of drywall for walls and ceilings.</p>
+<form class="card" data-calc="1">
+<label for="l">Room length (ft)</label><input id="l" type="number" step="any" value="14">
+<label for="w">Room width (ft)</label><input id="w" type="number" step="any" value="12">
+<label for="h">Wall height (ft)</label><input id="h" type="number" step="any" value="8">
+<label for="ceil">Include ceiling?</label><select id="ceil"><option value="1" selected>Yes</option><option value="0">No</option></select>
+<label for="sh">Sheet size</label><select id="sh"><option value="32" selected>4 x 8 ft</option><option value="36">4 x 9 ft</option><option value="48">4 x 12 ft</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Total surface area is divided by the sheet area, plus 10% for cuts. Door and window openings are not deducted, to be safe.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What thickness should I use?</summary><p>1/2 inch for walls, 5/8 inch for ceilings or fire-rated assemblies.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="wallpaper-calculator.html"><b>Wallpaper Calculator</b></a><a href="fence-calculator.html"><b>Fence Calculator</b></a><a href="deck-board-calculator.html"><b>Deck Board Calculator</b></a><a href="stair-calculator.html"><b>Stair Calculator</b></a><a href="roof-area-calculator.html"><b>Roof Area and Shingle Calculator</b></a><a href="brick-calculator.html"><b>Brick Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,h,ceil,sh}){
+const walls=2*(l+w)*h,ce=ceil?l*w:0,tot=walls+ce;return [['Sheets needed (+10% waste)',N(Math.ceil(tot*1.1/sh),0)],['Total area',N(tot,0)+' sq ft'],['Joint compound (approx.)',N(Math.ceil(tot/ 400),0)+' gallons'],['Screws (approx.)',N(Math.ceil(tot*1.1/sh)*32,0)]];
+});</script>
+</body></html>

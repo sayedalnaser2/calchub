@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simplify Fractions Calculator | CalcHub</title>
+<meta name="description" content="Reduce a fraction to its lowest terms.">
+<link rel="canonical" href="https://YOURDOMAIN.com/simplify-fractions-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is a fraction fully simplified?", "acceptedAnswer": {"@type": "Answer", "text": "When the numerator and denominator share no common factor except 1."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Simplify Fractions Calculator</h1>
+<p class="muted">Reduce a fraction to its lowest terms.</p>
+<form class="card" data-calc="1">
+<label for="n">Numerator</label><input id="n" type="number" step="any" value="36">
+<label for="d">Denominator</label><input id="d" type="number" step="any" value="48">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Divide the numerator and denominator by their greatest common divisor to reach lowest terms.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When is a fraction fully simplified?</summary><p>When the numerator and denominator share no common factor except 1.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="decimal-to-fraction-calculator.html"><b>Decimal to Fraction Calculator</b></a><a href="scientific-notation-calculator.html"><b>Scientific Notation Converter</b></a><a href="log-calculator.html"><b>Log Calculator</b></a><a href="exponent-calculator.html"><b>Exponent Calculator</b></a><a href="square-root-calculator.html"><b>Square Root Calculator</b></a><a href="factorial-calculator.html"><b>Factorial Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({n,d}){
+if(!d)return 'Denominator cannot be zero.';const g=GCD(n,d);return [['Simplified',n/g+'/'+d/g],['Divided by (GCD)',g],['Decimal',N(n/d,8)],['Percent',PCT(n/d*100,4)]];
+});</script>
+</body></html>

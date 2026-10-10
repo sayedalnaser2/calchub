@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>System of Equations Calculator (2×2) | CalcHub</title>
+<meta name="description" content="Solve two linear equations with two unknowns.">
+<link rel="canonical" href="https://YOURDOMAIN.com/system-of-equations-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What if the determinant is zero?", "acceptedAnswer": {"@type": "Answer", "text": "The lines are parallel (no solution) or the same line (infinite solutions)."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>System of Equations Calculator (2×2)</h1>
+<p class="muted">Solve two linear equations with two unknowns.</p>
+<form class="card" data-calc="1">
+<label for="a1">a1 (x coefficient, eq 1)</label><input id="a1" type="number" step="any" value="2">
+<label for="b1">b1 (y coefficient, eq 1)</label><input id="b1" type="number" step="any" value="1">
+<label for="c1">c1 (constant, eq 1)</label><input id="c1" type="number" step="any" value="8">
+<label for="a2">a2 (x coefficient, eq 2)</label><input id="a2" type="number" step="any" value="1">
+<label for="b2">b2 (y coefficient, eq 2)</label><input id="b2" type="number" step="any" value="-1">
+<label for="c2">c2 (constant, eq 2)</label><input id="c2" type="number" step="any" value="1">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>For a1x + b1y = c1 and a2x + b2y = c2, Cramer&#x27;s rule gives x and y as ratios of determinants.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What if the determinant is zero?</summary><p>The lines are parallel (no solution) or the same line (infinite solutions).</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="proportion-calculator.html"><b>Proportion Calculator</b></a><a href="ratio-calculator.html"><b>Ratio Calculator</b></a><a href="random-number-generator.html"><b>Random Number Generator</b></a><a href="dice-roller.html"><b>Dice Roller</b></a><a href="coin-flip.html"><b>Coin Flip</b></a><a href="probability-calculator.html"><b>Probability Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a1,b1,c1,a2,b2,c2}){
+const d=a1*b2-a2*b1;if(d===0)return 'No unique solution (lines are parallel or identical).';return [['x',N((c1*b2-c2*b1)/d,8)],['y',N((a1*c2-a2*c1)/d,8)],['Determinant',N(d,6)]];
+});</script>
+</body></html>

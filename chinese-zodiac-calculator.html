@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chinese Zodiac Calculator | CalcHub</title>
+<meta name="description" content="Find your Chinese zodiac animal and element from your birth year.">
+<link rel="canonical" href="https://YOURDOMAIN.com/chinese-zodiac-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When does the Chinese year start?", "acceptedAnswer": {"@type": "Answer", "text": "On the lunar new year, between late January and mid-February."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Chinese Zodiac Calculator</h1>
+<p class="muted">Find your Chinese zodiac animal and element from your birth year.</p>
+<form class="card" data-calc="1">
+<label for="y">Birth year</label><input id="y" type="number" step="any" value="1990">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The Chinese zodiac cycles through 12 animals and 5 elements. The year is based on the lunar new year, so early-year births can belong to the prior sign.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When does the Chinese year start?</summary><p>On the lunar new year, between late January and mid-February.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="word-counter.html"><b>Word Counter</b></a><a href="download-time-calculator.html"><b>Download Time Calculator</b></a><a href="aspect-ratio-calculator.html"><b>Aspect Ratio Calculator</b></a><a href="ppi-calculator.html"><b>PPI Calculator (Pixel Density)</b></a><a href="mileage-reimbursement-calculator.html"><b>Mileage Reimbursement Calculator</b></a><a href="car-depreciation-calculator.html"><b>Car Depreciation Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({y}){
+y=Math.round(y);const an=['Rat','Ox','Tiger','Rabbit','Dragon','Snake','Horse','Goat','Monkey','Rooster','Dog','Pig'],el=['Wood','Fire','Earth','Metal','Water'];return [['Animal',an[((y-4)%12+12)%12]],['Element',el[Math.floor((((y-4)%10)+10)%10/2)]],['Note','People born in January or early February may belong to the previous lunar year']];
+});</script>
+</body></html>

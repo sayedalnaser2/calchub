@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Area Calculator | CalcHub</title>
+<meta name="description" content="Calculate the area of common shapes.">
+<link rel="canonical" href="https://YOURDOMAIN.com/area-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What unit is the answer in?", "acceptedAnswer": {"@type": "Answer", "text": "Square units matching your inputs, e.g. cm\u00b2 if you enter cm."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Area Calculator</h1>
+<p class="muted">Calculate the area of common shapes.</p>
+<form class="card" data-calc="1">
+<label for="shape">Shape</label><select id="shape"><option value="1" selected>Rectangle (a × b)</option><option value="2">Triangle (base a, height b)</option><option value="3">Trapezoid (bases a &amp; b, height h)</option><option value="4">Parallelogram (base a, height b)</option><option value="5">Ellipse (semi-axes a, b)</option><option value="6">Rhombus (diagonals a, b)</option></select>
+<label for="a">a</label><input id="a" type="number" step="any" value="6">
+<label for="b">b</label><input id="b" type="number" step="any" value="4">
+<label for="h">h (trapezoid only)</label><input id="h" type="number" step="any" value="3">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Rectangle: a x b. Triangle: ½bh. Trapezoid: ½(a+b)h. Parallelogram: bh. Ellipse: πab. Rhombus: ½d1d2.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What unit is the answer in?</summary><p>Square units matching your inputs, e.g. cm² if you enter cm.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="rectangle-calculator.html"><b>Rectangle Calculator</b></a><a href="surface-area-calculator.html"><b>Surface Area Calculator</b></a><a href="arc-length-calculator.html"><b>Arc Length Calculator</b></a><a href="trigonometry-calculator.html"><b>Trigonometry Calculator</b></a><a href="triangle-calculator.html"><b>Triangle Angle Calculator (SSS)</b></a><a href="regular-polygon-calculator.html"><b>Regular Polygon Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({shape,a,b,h}){
+const P=Math.PI,v={1:a*b,2:a*b/2,3:(a+b)/2*h,4:a*b,5:P*a*b,6:a*b/2}[shape];return [['Area',N(v,6)+' square units']];
+});</script>
+</body></html>

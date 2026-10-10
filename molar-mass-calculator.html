@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Molar Mass Calculator | CalcHub</title>
+<meta name="description" content="Calculate the molar mass of a chemical formula.">
+<link rel="canonical" href="https://YOURDOMAIN.com/molar-mass-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does it handle hydrates?", "acceptedAnswer": {"@type": "Answer", "text": "Not with a dot. Expand them manually, e.g. CuSO4 plus H2O counts."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Molar Mass Calculator</h1>
+<p class="muted">Calculate the molar mass of a chemical formula.</p>
+<form class="card" data-calc="1">
+<label for="f">Chemical formula</label><input id="f" type="text" value="C6H12O6">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Molar mass is the sum of each element&#x27;s atomic mass times its count. Parentheses multiply the group inside them.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does it handle hydrates?</summary><p>Not with a dot. Expand them manually, e.g. CuSO4 plus H2O counts.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="projectile-motion-calculator.html"><b>Projectile Motion Calculator</b></a><a href="free-fall-calculator.html"><b>Free Fall Calculator</b></a><a href="escape-velocity-calculator.html"><b>Escape Velocity Calculator</b></a><a href="gravitational-force-calculator.html"><b>Gravitational Force Calculator</b></a><a href="centripetal-force-calculator.html"><b>Centripetal Force Calculator</b></a><a href="work-power-calculator.html"><b>Work and Power Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({f}){
+const A={H:1.008,He:4.0026,Li:6.94,Be:9.0122,B:10.81,C:12.011,N:14.007,O:15.999,F:18.998,Ne:20.180,Na:22.990,Mg:24.305,Al:26.982,Si:28.085,P:30.974,S:32.06,Cl:35.45,Ar:39.948,K:39.098,Ca:40.078,Sc:44.956,Ti:47.867,V:50.942,Cr:51.996,Mn:54.938,Fe:55.845,Co:58.933,Ni:58.693,Cu:63.546,Zn:65.38,Ga:69.723,Ge:72.630,As:74.922,Se:78.971,Br:79.904,Kr:83.798,Rb:85.468,Sr:87.62,Ag:107.868,Cd:112.414,Sn:118.71,I:126.904,Xe:131.293,Cs:132.905,Ba:137.327,W:183.84,Pt:195.084,Au:196.967,Hg:200.592,Pb:207.2,U:238.029};
+let i=0;const s=f.trim();function parse(){const c={};while(i<s.length){const ch=s[i];if(ch==='('){i++;const inner=parse();let n='';while(/\d/.test(s[i]||''))n+=s[i++];const k=n?+n:1;for(const e in inner)c[e]=(c[e]||0)+inner[e]*k;}else if(ch===')'){i++;return c;}else if(/[A-Z]/.test(ch)){let e=ch;i++;while(/[a-z]/.test(s[i]||''))e+=s[i++];let n='';while(/\d/.test(s[i]||''))n+=s[i++];if(!(e in A))throw new Error('Unknown element '+e);c[e]=(c[e]||0)+(n?+n:1);}else throw new Error('bad');}return c;}
+let c;try{c=parse();}catch(e){return 'Could not read formula. Use e.g. H2O, NaCl, Ca(OH)2.';}
+let tot=0;const rows=[];for(const e in c){const m=A[e]*c[e];tot+=m;rows.push([e+' × '+c[e],N(m,4)+' g/mol']);}
+return [['Molar mass',N(tot,4)+' g/mol'],...rows];
+});</script>
+</body></html>

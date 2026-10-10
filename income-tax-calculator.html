@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Federal Income Tax Calculator | CalcHub</title>
+<meta name="description" content="Estimate your US federal income tax, marginal rate and effective rate.">
+<link rel="canonical" href="https://YOURDOMAIN.com/income-tax-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Marginal vs effective rate?", "acceptedAnswer": {"@type": "Answer", "text": "Marginal is the rate on your next dollar. Effective is total tax divided by total income."}}, {"@type": "Question", "name": "Does it include state tax?", "acceptedAnswer": {"@type": "Answer", "text": "No. State taxes vary widely."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Federal Income Tax Calculator</h1>
+<p class="muted">Estimate your US federal income tax, marginal rate and effective rate.</p>
+<form class="card" data-calc="1">
+<label for="inc">Annual taxable income before deduction ($)</label><input id="inc" type="number" step="any" value="85000">
+<label for="st">Filing status</label><select id="st"><option value="1" selected>Single</option><option value="2">Married filing jointly</option><option value="3">Head of household</option></select>
+<label for="ded">Extra deductions ($)</label><input id="ded" type="number" step="any" value="0">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The standard deduction is subtracted from income, then each slice is taxed at its bracket rate. The marginal rate applies only to the last dollars earned. Figures use 2025 US federal rules and are estimates only.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Marginal vs effective rate?</summary><p>Marginal is the rate on your next dollar. Effective is total tax divided by total income.</p></details>
+<details><summary>Does it include state tax?</summary><p>No. State taxes vary widely.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="self-employment-tax-calculator.html"><b>Self-Employment Tax Calculator</b></a><a href="capital-gains-tax-calculator.html"><b>Capital Gains Tax Calculator</b></a><a href="overtime-pay-calculator.html"><b>Overtime Pay Calculator</b></a><a href="raise-calculator.html"><b>Raise Calculator</b></a><a href="commission-calculator.html"><b>Commission Calculator</b></a><a href="vat-calculator.html"><b>VAT Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({inc,st,ded}){
+const ti=Math.max(inc-STD[st]-ded,0),t=FEDTAX(ti,st);
+return [['Estimated federal tax',M(t)],['Taxable income',M(ti)],['Marginal rate',PCT(MARG(ti,st)*100,0)],['Effective rate',PCT(t/inc*100,2)],['Income after federal tax',M(inc-t)]];
+});</script>
+</body></html>

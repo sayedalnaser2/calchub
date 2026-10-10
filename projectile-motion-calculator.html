@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projectile Motion Calculator | CalcHub</title>
+<meta name="description" content="Calculate range, max height and flight time of a projectile.">
+<link rel="canonical" href="https://YOURDOMAIN.com/projectile-motion-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which angle gives maximum range?", "acceptedAnswer": {"@type": "Answer", "text": "45 degrees on level ground."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Projectile Motion Calculator</h1>
+<p class="muted">Calculate range, max height and flight time of a projectile.</p>
+<form class="card" data-calc="1">
+<label for="v">Launch speed (m/s)</label><input id="v" type="number" step="any" value="25">
+<label for="a">Launch angle (degrees)</label><input id="a" type="number" step="any" value="45">
+<label for="h0">Launch height (m)</label><input id="h0" type="number" step="any" value="0">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Motion splits into constant horizontal velocity and vertical motion under gravity (9.81 m/s²). Air resistance is ignored.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Which angle gives maximum range?</summary><p>45 degrees on level ground.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="free-fall-calculator.html"><b>Free Fall Calculator</b></a><a href="escape-velocity-calculator.html"><b>Escape Velocity Calculator</b></a><a href="gravitational-force-calculator.html"><b>Gravitational Force Calculator</b></a><a href="centripetal-force-calculator.html"><b>Centripetal Force Calculator</b></a><a href="work-power-calculator.html"><b>Work and Power Calculator</b></a><a href="acceleration-calculator.html"><b>Acceleration Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({v,a,h0}){
+const g=9.81,t=a*Math.PI/180,vy=v*Math.sin(t),vx=v*Math.cos(t),tf=(vy+Math.sqrt(vy*vy+2*g*h0))/g;return [['Range',N(vx*tf,3)+' m'],['Maximum height',N(h0+vy*vy/(2*g),3)+' m'],['Flight time',N(tf,3)+' s'],['Impact speed',N(Math.hypot(vx,vy-g*tf),3)+' m/s']];
+});</script>
+</body></html>

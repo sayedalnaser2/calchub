@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test Grade Calculator | CalcHub</title>
+<meta name="description" content="Convert test points to a percentage and letter grade.">
+<link rel="canonical" href="https://YOURDOMAIN.com/test-grade-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are letter scales the same everywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Schools differ, so check your syllabus."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Test Grade Calculator</h1>
+<p class="muted">Convert test points to a percentage and letter grade.</p>
+<form class="card" data-calc="1">
+<label for="c">Points earned</label><input id="c" type="number" step="any" value="42">
+<label for="t">Total points</label><input id="t" type="number" step="any" value="50">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Percentage = points earned / total points x 100, mapped to a standard letter scale.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Are letter scales the same everywhere?</summary><p>No. Schools differ, so check your syllabus.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="recipe-scaler.html"><b>Recipe Scaler</b></a><a href="ev-charging-cost-calculator.html"><b>EV Charging Cost Calculator</b></a><a href="volumetric-weight-calculator.html"><b>Volumetric Weight Calculator</b></a><a href="cups-to-grams-calculator.html"><b>Cups to Grams Calculator</b></a><a href="age-calculator.html"><b>Age Calculator</b></a><a href="date-difference-calculator.html"><b>Days Between Dates Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({c,t}){
+const p=c/t*100;const L=p>=97?'A+':p>=93?'A':p>=90?'A-':p>=87?'B+':p>=83?'B':p>=80?'B-':p>=77?'C+':p>=73?'C':p>=70?'C-':p>=67?'D+':p>=60?'D':'F';return [['Percentage',PCT(p,2)],['Letter grade',L],['Points missed',t-c]];
+});</script>
+</body></html>

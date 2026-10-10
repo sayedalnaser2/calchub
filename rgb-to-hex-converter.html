@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RGB to HEX Color Converter | CalcHub</title>
+<meta name="description" content="Convert RGB values to a HEX color code.">
+<link rel="canonical" href="https://YOURDOMAIN.com/rgb-to-hex-converter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are web-safe colors?", "acceptedAnswer": {"@type": "Answer", "text": "An old 216-color palette; modern screens show all 16.7 million."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a></p>
+<h1>RGB to HEX Color Converter</h1>
+<p class="muted">Convert RGB values to a HEX color code.</p>
+<form class="card" data-calc="1">
+<label for="r">Red (0-255)</label><input id="r" type="number" step="any" value="52">
+<label for="g">Green (0-255)</label><input id="g" type="number" step="any" value="152">
+<label for="b">Blue (0-255)</label><input id="b" type="number" step="any" value="219">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Each channel 0-255 is written as two hexadecimal digits and joined.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What are web-safe colors?</summary><p>An old 216-color palette; modern screens show all 16.7 million.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="cooking-temperature-converter.html"><b>Oven Temperature Converter</b></a><a href="shoe-size-converter.html"><b>Shoe Size Converter</b></a><a href="length-converter.html"><b>Length Converter</b></a><a href="weight-converter.html"><b>Weight and Mass Converter</b></a><a href="volume-converter.html"><b>Volume Converter</b></a><a href="speed-converter.html"><b>Speed Converter</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({r,g,b}){
+const c=v=>Math.max(0,Math.min(255,Math.round(v))).toString(16).padStart(2,'0').toUpperCase();return [['HEX','#'+c(r)+c(g)+c(b)],['RGB','rgb('+Math.round(r)+', '+Math.round(g)+', '+Math.round(b)+')']];
+});</script>
+</body></html>

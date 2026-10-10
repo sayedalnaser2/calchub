@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arithmetic and Geometric Series Calculator | CalcHub</title>
+<meta name="description" content="Find the sum of arithmetic and geometric series.">
+<link rel="canonical" href="https://YOURDOMAIN.com/sum-of-series-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When does an infinite geometric series converge?", "acceptedAnswer": {"@type": "Answer", "text": "Only when the absolute value of the ratio is below 1."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Arithmetic and Geometric Series Calculator</h1>
+<p class="muted">Find the sum of arithmetic and geometric series.</p>
+<form class="card" data-calc="1">
+<label for="a1">First term</label><input id="a1" type="number" step="any" value="2">
+<label for="d">Common difference (arithmetic)</label><input id="d" type="number" step="any" value="3">
+<label for="r">Common ratio (geometric)</label><input id="r" type="number" step="any" value="2">
+<label for="n">Number of terms</label><input id="n" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Arithmetic: S = n(a₁ + aₙ)/2. Geometric: S = a₁(rⁿ - 1)/(r - 1), and a₁/(1 - r) if |r| &lt; 1 for infinite terms.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When does an infinite geometric series converge?</summary><p>Only when the absolute value of the ratio is below 1.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="inverse-trig-calculator.html"><b>Inverse Trigonometry Calculator</b></a><a href="base-converter.html"><b>Base Converter (Any Base 2-36)</b></a><a href="percentage-calculator.html"><b>Percentage Calculator</b></a><a href="percent-change-calculator.html"><b>Percent Change Calculator</b></a><a href="percentage-difference-calculator.html"><b>Percentage Difference Calculator</b></a><a href="average-calculator.html"><b>Average Calculator (Mean, Median, Mode)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a1,d,r,n}){
+n=Math.round(n);const an=a1+(n-1)*d,s=n*(a1+an)/2,gs=r===1?a1*n:a1*(Math.pow(r,n)-1)/(r-1);return [['Arithmetic sum',N(s,6)],['nth arithmetic term',N(an,6)],['Geometric sum',N(gs,6)],['nth geometric term',N(a1*Math.pow(r,n-1),6)],['Infinite geometric sum',Math.abs(r)<1?N(a1/(1-r),6):'Diverges']];
+});</script>
+</body></html>

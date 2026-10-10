@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Watts, Amps and Volts Calculator | CalcHub</title>
+<meta name="description" content="Convert between watts, amps and volts for DC or AC circuits.">
+<link rel="canonical" href="https://YOURDOMAIN.com/watts-amps-volts-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does a 15 A circuit limit loads?", "acceptedAnswer": {"@type": "Answer", "text": "15 A at 120 V is 1,800 W; continuous loads should stay under 80%."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Watts, Amps and Volts Calculator</h1>
+<p class="muted">Convert between watts, amps and volts for DC or AC circuits.</p>
+<form class="card" data-calc="1">
+<label for="w">Power (W)</label><input id="w" type="number" step="any" value="1500">
+<label for="v">Voltage (V)</label><input id="v" type="number" step="any" value="120">
+<label for="pf">Power factor (AC)</label><input id="pf" type="number" step="any" value="1">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>I = P / (V x PF). For three-phase, I = P / (√3 x V x PF).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why does a 15 A circuit limit loads?</summary><p>15 A at 120 V is 1,800 W; continuous loads should stay under 80%.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="voltage-drop-calculator.html"><b>Voltage Drop Calculator</b></a><a href="battery-life-calculator.html"><b>Battery Life Calculator</b></a><a href="decibel-calculator.html"><b>Decibel Calculator</b></a><a href="snells-law-calculator.html"><b>Snell&#x27;s Law Calculator</b></a><a href="specific-heat-calculator.html"><b>Specific Heat Calculator</b></a><a href="torque-calculator.html"><b>Torque Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({w,v,pf}){
+return [['Current (single phase)',N(w/(v*pf),3)+' A'],['Current (3-phase)',N(w/(Math.sqrt(3)*v*pf),3)+' A'],['Resistance (V²/P)',N(v*v/w,3)+' Ω']];
+});</script>
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Binomial Probability Calculator | CalcHub</title>
+<meta name="description" content="Calculate exact and cumulative binomial probabilities.">
+<link rel="canonical" href="https://YOURDOMAIN.com/binomial-probability-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When do I use it?", "acceptedAnswer": {"@type": "Answer", "text": "For repeated yes/no trials such as coin flips or pass/fail tests."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Binomial Probability Calculator</h1>
+<p class="muted">Calculate exact and cumulative binomial probabilities.</p>
+<form class="card" data-calc="1">
+<label for="n">Trials (n)</label><input id="n" type="number" step="any" value="10">
+<label for="k">Successes (k)</label><input id="k" type="number" step="any" value="3">
+<label for="p">Success probability (0-1)</label><input id="p" type="number" step="any" value="0.5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The binomial distribution gives the probability of exactly k successes in n independent trials with success probability p.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When do I use it?</summary><p>For repeated yes/no trials such as coin flips or pass/fail tests.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="z-score-calculator.html"><b>Z-Score Calculator</b></a><a href="p-value-calculator.html"><b>P-Value Calculator</b></a><a href="confidence-interval-calculator.html"><b>Confidence Interval Calculator</b></a><a href="sample-size-calculator.html"><b>Sample Size Calculator</b></a><a href="margin-of-error-calculator.html"><b>Margin of Error Calculator</b></a><a href="linear-regression-calculator.html"><b>Linear Regression Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({n,k,p}){
+n=Math.round(n);k=Math.round(k);if(k<0||k>n||p<0||p>1||n>1000)return 'Check inputs (0 ≤ k ≤ n ≤ 1000, 0 ≤ p ≤ 1).';
+const pm=j=>{let c=0;for(let i=1;i<=j;i++)c+=Math.log(n-j+i)-Math.log(i);return Math.exp(c+(j?j*Math.log(p):0)+((n-j)?(n-j)*Math.log(1-p):0));};
+let le=0;for(let j=0;j<=k;j++)le+=pm(j);const eq=pm(k);
+return [['P(X = k)',N(eq,8)],['P(X ≤ k)',N(le,8)],['P(X ≥ k)',N(1-le+eq,8)],['Mean',N(n*p,4)],['Standard deviation',N(Math.sqrt(n*p*(1-p)),4)]];
+});</script>
+</body></html>

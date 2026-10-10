@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amortization Calculator | CalcHub</title>
+<meta name="description" content="See your loan payoff time and interest saved, with optional extra monthly payments.">
+<link rel="canonical" href="https://YOURDOMAIN.com/amortization-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do extra payments really save that much?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Early in a loan most of each payment is interest, so extra principal payments compound into large savings."}}, {"@type": "Question", "name": "Should extra payments go to principal?", "acceptedAnswer": {"@type": "Answer", "text": "Tell your lender to apply them to principal only, otherwise they may be held as a prepayment of next month."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Amortization Calculator</h1>
+<p class="muted">See your loan payoff time and interest saved, with optional extra monthly payments.</p>
+<form class="card" data-calc="1">
+<label for="bal">Loan amount ($)</label><input id="bal" type="number" step="any" value="250000">
+<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="any" value="6.5">
+<label for="years">Term (years)</label><input id="years" type="number" step="any" value="30">
+<label for="extra">Extra payment per month ($)</label><input id="extra" type="number" step="any" value="200">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Each month interest is charged on the remaining balance and the rest of the payment reduces principal. Extra payments cut the balance sooner, which lowers all future interest.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Do extra payments really save that much?</summary><p>Yes. Early in a loan most of each payment is interest, so extra principal payments compound into large savings.</p></details>
+<details><summary>Should extra payments go to principal?</summary><p>Tell your lender to apply them to principal only, otherwise they may be held as a prepayment of next month.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="mortgage-payoff-calculator.html"><b>Mortgage Payoff Calculator</b></a><a href="student-loan-calculator.html"><b>Student Loan Calculator</b></a><a href="emi-calculator.html"><b>EMI Calculator</b></a><a href="sip-calculator.html"><b>SIP Calculator</b></a><a href="fd-calculator.html"><b>Fixed Deposit (FD) Calculator</b></a><a href="apr-calculator.html"><b>APR Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({bal,rate,years,extra}){
+const n=years*12,r=rate/1200,m=PMT(bal,rate,n);
+let b=bal,k=0,tot=0;
+while(b>0.005&&k<n+600){const i=b*r;tot+=i;let p=m+extra-i;if(p>b)p=b;b-=p;k++;}
+const base=m*n-bal,d=new Date();d.setMonth(d.getMonth()+k);
+return [['Payoff time',Math.floor(k/12)+' years '+k%12+' months'],['Monthly payment (required)',M(m)],['Total interest with extra payments',M(tot)],['Interest saved',M(Math.max(base-tot,0))],['Months saved',Math.max(n-k,0)],['Payoff date',d.toLocaleDateString('en-US',{month:'long',year:'numeric'})]];
+});</script>
+</body></html>

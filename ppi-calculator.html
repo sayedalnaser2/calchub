@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PPI Calculator (Pixel Density) | CalcHub</title>
+<meta name="description" content="Calculate screen pixel density and physical size.">
+<link rel="canonical" href="https://YOURDOMAIN.com/ppi-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What PPI looks sharp?", "acceptedAnswer": {"@type": "Answer", "text": "Around 110 at arm's length for monitors, 300+ for phones."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>PPI Calculator (Pixel Density)</h1>
+<p class="muted">Calculate screen pixel density and physical size.</p>
+<form class="card" data-calc="1">
+<label for="w">Width (pixels)</label><input id="w" type="number" step="any" value="2560">
+<label for="h">Height (pixels)</label><input id="h" type="number" step="any" value="1440">
+<label for="d">Diagonal (inches)</label><input id="d" type="number" step="any" value="27">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>PPI = √(width² + height²) / diagonal. Higher PPI means sharper images.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What PPI looks sharp?</summary><p>Around 110 at arm&#x27;s length for monitors, 300+ for phones.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="mileage-reimbursement-calculator.html"><b>Mileage Reimbursement Calculator</b></a><a href="car-depreciation-calculator.html"><b>Car Depreciation Calculator</b></a><a href="mpg-calculator.html"><b>MPG Calculator</b></a><a href="weighted-grade-calculator.html"><b>Weighted Grade Calculator</b></a><a href="test-grade-calculator.html"><b>Test Grade Calculator</b></a><a href="recipe-scaler.html"><b>Recipe Scaler</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({w,h,d}){
+const dp=Math.hypot(w,h),ppi=dp/d,ww=w/ppi,hh=h/ppi;return [['Pixel density',N(ppi,1)+' PPI'],['Physical width',N(ww,2)+' in ('+N(ww*2.54,1)+' cm)'],['Physical height',N(hh,2)+' in ('+N(hh*2.54,1)+' cm)'],['Total pixels',N(w*h/1e6,2)+' MP']];
+});</script>
+</body></html>

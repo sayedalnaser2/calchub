@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paycheck Calculator | CalcHub</title>
+<meta name="description" content="Estimate your take-home pay after federal tax, Social Security, Medicare and state tax.">
+<link rel="canonical" href="https://YOURDOMAIN.com/paycheck-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is my real paycheck different?", "acceptedAnswer": {"@type": "Answer", "text": "Health insurance, local taxes, other deductions and withholding choices all change it."}}, {"@type": "Question", "name": "Does this include credits?", "acceptedAnswer": {"@type": "Answer", "text": "No. Tax credits such as the child tax credit are not included."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Paycheck Calculator</h1>
+<p class="muted">Estimate your take-home pay after federal tax, Social Security, Medicare and state tax.</p>
+<form class="card" data-calc="1">
+<label for="gross">Annual gross salary ($)</label><input id="gross" type="number" step="any" value="75000">
+<label for="freq">Pay frequency</label><select id="freq"><option value="52">Weekly</option><option value="26" selected>Bi-weekly</option><option value="24">Semi-monthly</option><option value="12">Monthly</option></select>
+<label for="st">Filing status</label><select id="st"><option value="1" selected>Single</option><option value="2">Married filing jointly</option><option value="3">Head of household</option></select>
+<label for="k">Pre-tax 401(k) (% of salary)</label><input id="k" type="number" step="any" value="5">
+<label for="state">State income tax (% estimate)</label><input id="state" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Taxable income is gross pay minus pre-tax retirement contributions and the standard deduction. Federal tax uses 2025 brackets; Social Security is 6.2% up to the wage base and Medicare 1.45%. Figures use 2025 US federal rules and are estimates only.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why is my real paycheck different?</summary><p>Health insurance, local taxes, other deductions and withholding choices all change it.</p></details>
+<details><summary>Does this include credits?</summary><p>No. Tax credits such as the child tax credit are not included.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="income-tax-calculator.html"><b>Federal Income Tax Calculator</b></a><a href="self-employment-tax-calculator.html"><b>Self-Employment Tax Calculator</b></a><a href="capital-gains-tax-calculator.html"><b>Capital Gains Tax Calculator</b></a><a href="overtime-pay-calculator.html"><b>Overtime Pay Calculator</b></a><a href="raise-calculator.html"><b>Raise Calculator</b></a><a href="commission-calculator.html"><b>Commission Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({gross,freq,st,k,state}){
+const pre=gross*k/100,ti=Math.max(gross-pre-STD[st],0),fed=FEDTAX(ti,st),ss=.062*Math.min(gross,176100),med=.0145*gross,stt=(gross-pre)*state/100;
+const net=gross-pre-fed-ss-med-stt;
+return [['Take-home per paycheck',M(net/freq)],['Annual take-home',M(net)],['Federal income tax',M(fed)],['Social Security',M(ss)],['Medicare',M(med)],['State tax (est.)',M(stt)],['401(k)',M(pre)],['Effective total tax rate',PCT((fed+ss+med+stt)/gross*100,1)]];
+});</script>
+</body></html>

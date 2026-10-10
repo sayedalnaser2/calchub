@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VO2 Max Calculator | CalcHub</title>
+<meta name="description" content="Estimate VO2 max from the Cooper 12-minute test or heart rate.">
+<link rel="canonical" href="https://YOURDOMAIN.com/vo2-max-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good VO2 max?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on age and sex. Around 40-50 ml/kg/min is good for many adults."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>VO2 Max Calculator</h1>
+<p class="muted">Estimate VO2 max from the Cooper 12-minute test or heart rate.</p>
+<form class="card" data-calc="1">
+<label for="d">Cooper test distance in 12 min (m)</label><input id="d" type="number" step="any" value="2400">
+<label for="age">Age</label><input id="age" type="number" step="any" value="30">
+<label for="rest">Resting heart rate (bpm)</label><input id="rest" type="number" step="any" value="60">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The Cooper test estimates VO2 max from the distance covered in 12 minutes. The heart-rate method uses the ratio of max to resting heart rate.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a good VO2 max?</summary><p>It depends on age and sex. Around 40-50 ml/kg/min is good for many adults.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="steps-to-miles-calculator.html"><b>Steps to Miles Calculator</b></a><a href="weight-loss-calculator.html"><b>Weight Loss Calculator</b></a><a href="calorie-deficit-calculator.html"><b>Calorie Deficit Calculator</b></a><a href="egfr-calculator.html"><b>eGFR Calculator (Kidney Function)</b></a><a href="a1c-calculator.html"><b>A1C to Average Glucose Calculator</b></a><a href="cholesterol-ratio-calculator.html"><b>Cholesterol Ratio and LDL Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({d,age,rest}){
+const c=(d-504.9)/44.73,mhr=220-age,h=15.3*mhr/rest;return [['VO2 max (Cooper test)',N(c,1)+' ml/kg/min'],['VO2 max (heart rate method)',N(h,1)+' ml/kg/min']];
+});</script>
+</body></html>

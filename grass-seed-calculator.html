@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grass Seed Calculator | CalcHub</title>
+<meta name="description" content="Estimate pounds of grass seed for a new lawn or overseeding.">
+<link rel="canonical" href="https://YOURDOMAIN.com/grass-seed-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When should I seed?", "acceptedAnswer": {"@type": "Answer", "text": "Cool-season grasses: early fall. Warm-season grasses: late spring."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Grass Seed Calculator</h1>
+<p class="muted">Estimate pounds of grass seed for a new lawn or overseeding.</p>
+<form class="card" data-calc="1">
+<label for="a">Lawn area (sq ft)</label><input id="a" type="number" step="any" value="5000">
+<label for="rate">Seeding rate (lb per 1,000 sq ft)</label><select id="rate"><option value="2">Overseed (2 lb)</option><option value="4" selected>New lawn (4 lb)</option><option value="6">Heavy / shade mix (6 lb)</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Seed = area / 1,000 x rate. Rates vary by species; follow your seed label.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When should I seed?</summary><p>Cool-season grasses: early fall. Warm-season grasses: late spring.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="pool-volume-calculator.html"><b>Pool Volume Calculator</b></a><a href="ac-btu-calculator.html"><b>AC BTU Calculator</b></a><a href="concrete-block-calculator.html"><b>Concrete Block Calculator</b></a><a href="stud-calculator.html"><b>Wall Stud Calculator</b></a><a href="insulation-calculator.html"><b>Insulation Calculator</b></a><a href="tile-grout-calculator.html"><b>Grout Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,rate}){
+return [['Seed needed',N(a/1000*rate,1)+' lb'],['With 10% extra',N(a/1000*rate*1.1,1)+' lb']];
+});</script>
+</body></html>

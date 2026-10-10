@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Depreciation Calculator | CalcHub</title>
+<meta name="description" content="Calculate straight-line and double-declining depreciation.">
+<link rel="canonical" href="https://YOURDOMAIN.com/depreciation-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which method should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Straight-line is simplest. Accelerated methods front-load deductions. Follow your accountant or tax rules."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Depreciation Calculator</h1>
+<p class="muted">Calculate straight-line and double-declining depreciation.</p>
+<form class="card" data-calc="1">
+<label for="cost">Asset cost ($)</label><input id="cost" type="number" step="any" value="30000">
+<label for="salv">Salvage value ($)</label><input id="salv" type="number" step="any" value="3000">
+<label for="life">Useful life (years)</label><input id="life" type="number" step="any" value="5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Straight-line spreads cost minus salvage evenly over the life. Double-declining applies twice the straight-line rate to the remaining book value each year.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Which method should I use?</summary><p>Straight-line is simplest. Accelerated methods front-load deductions. Follow your accountant or tax rules.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="car-lease-calculator.html"><b>Car Lease Calculator</b></a><a href="rent-affordability-calculator.html"><b>Rent Affordability Calculator</b></a><a href="biweekly-mortgage-calculator.html"><b>Biweekly Mortgage Calculator</b></a><a href="heloc-calculator.html"><b>HELOC Payment Calculator</b></a><a href="dividend-yield-calculator.html"><b>Dividend Yield Calculator</b></a><a href="stock-profit-calculator.html"><b>Stock Profit Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({cost,salv,life}){
+const sl=(cost-salv)/life,r=2/life;let b=cost;const d=[];for(let y=1;y<=3;y++){const x=Math.min(b*r,Math.max(b-salv,0));d.push(x);b-=x;}
+return [['Straight-line per year',M(sl)],['Straight-line per month',M(sl/12)],['Double-declining year 1',M(d[0])],['Double-declining year 2',M(d[1])],['Double-declining year 3',M(d[2])]];
+});</script>
+</body></html>

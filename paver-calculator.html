@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paver Calculator | CalcHub</title>
+<meta name="description" content="Estimate pavers and base material for a patio.">
+<link rel="canonical" href="https://YOURDOMAIN.com/paver-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How thick should the base be?", "acceptedAnswer": {"@type": "Answer", "text": "4-6 inches of compacted gravel for patios; 8-12 inches for driveways."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Paver Calculator</h1>
+<p class="muted">Estimate pavers and base material for a patio.</p>
+<form class="card" data-calc="1">
+<label for="l">Patio length (ft)</label><input id="l" type="number" step="any" value="15">
+<label for="w">Patio width (ft)</label><input id="w" type="number" step="any" value="12">
+<label for="pl">Paver length (in)</label><input id="pl" type="number" step="any" value="8">
+<label for="pw">Paver width (in)</label><input id="pw" type="number" step="any" value="4">
+<label for="waste">Waste (%)</label><input id="waste" type="number" step="any" value="10">
+<label for="base">Base depth (in)</label><input id="base" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Pavers = area / paver area plus waste. Base gravel and bedding sand are calculated from the area and depth.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How thick should the base be?</summary><p>4-6 inches of compacted gravel for patios; 8-12 inches for driveways.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="sod-calculator.html"><b>Sod Calculator</b></a><a href="grass-seed-calculator.html"><b>Grass Seed Calculator</b></a><a href="pool-volume-calculator.html"><b>Pool Volume Calculator</b></a><a href="ac-btu-calculator.html"><b>AC BTU Calculator</b></a><a href="concrete-block-calculator.html"><b>Concrete Block Calculator</b></a><a href="stud-calculator.html"><b>Wall Stud Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,pl,pw,waste,base}){
+const a=l*w,n=Math.ceil(a*144/(pl*pw)*(1+waste/100));return [['Pavers needed',N(n,0)],['Area',N(a,0)+' sq ft'],['Base gravel',N(a*base/12/27*1.1,2)+' cubic yards'],['Sand (1 in bedding)',N(a/12/27*1.1,2)+' cubic yards']];
+});</script>
+</body></html>

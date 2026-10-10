@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waist-to-Height Ratio Calculator | CalcHub</title>
+<meta name="description" content="Check your waist-to-height ratio, a simple health indicator.">
+<link rel="canonical" href="https://YOURDOMAIN.com/waist-to-height-ratio-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it better than BMI?", "acceptedAnswer": {"@type": "Answer", "text": "It captures abdominal fat, which BMI misses, but neither is a diagnosis."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Waist-to-Height Ratio Calculator</h1>
+<p class="muted">Check your waist-to-height ratio, a simple health indicator.</p>
+<form class="card" data-calc="1">
+<label for="waist">Waist (cm)</label><input id="waist" type="number" step="any" value="85">
+<label for="h">Height (cm)</label><input id="h" type="number" step="any" value="175">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Keeping your waist under half your height is a widely used guideline for lower health risk.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is it better than BMI?</summary><p>It captures abdominal fat, which BMI misses, but neither is a diagnosis.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="lean-body-mass-calculator.html"><b>Lean Body Mass Calculator</b></a><a href="body-surface-area-calculator.html"><b>Body Surface Area Calculator</b></a><a href="sleep-calculator.html"><b>Sleep Calculator</b></a><a href="bac-calculator.html"><b>Blood Alcohol Content (BAC) Calculator</b></a><a href="vo2-max-calculator.html"><b>VO2 Max Calculator</b></a><a href="steps-to-miles-calculator.html"><b>Steps to Miles Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({waist,h}){
+const r=waist/h;return [['Waist-to-height ratio',N(r,3)],['Category',r<.4?'Underweight range':r<.5?'Healthy':r<.6?'Increased risk':'High risk'],['Healthy waist for your height (< 0.5)',N(h*.5,0)+' cm']];
+});</script>
+</body></html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Centripetal Force Calculator | CalcHub</title>
+<meta name="description" content="Calculate the force needed for circular motion.">
+<link rel="canonical" href="https://YOURDOMAIN.com/centripetal-force-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What provides the force on a car?", "acceptedAnswer": {"@type": "Answer", "text": "Tire friction with the road."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Centripetal Force Calculator</h1>
+<p class="muted">Calculate the force needed for circular motion.</p>
+<form class="card" data-calc="1">
+<label for="m">Mass (kg)</label><input id="m" type="number" step="any" value="1200">
+<label for="v">Speed (m/s)</label><input id="v" type="number" step="any" value="20">
+<label for="r">Radius (m)</label><input id="r" type="number" step="any" value="50">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>F = mv²/r. It points toward the center of the circle.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What provides the force on a car?</summary><p>Tire friction with the road.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="work-power-calculator.html"><b>Work and Power Calculator</b></a><a href="acceleration-calculator.html"><b>Acceleration Calculator</b></a><a href="wavelength-frequency-calculator.html"><b>Wavelength and Frequency Calculator</b></a><a href="coulombs-law-calculator.html"><b>Coulomb&#x27;s Law Calculator</b></a><a href="resistor-calculator.html"><b>Resistor Calculator (Series and Parallel)</b></a><a href="led-resistor-calculator.html"><b>LED Resistor Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({m,v,r}){
+return [['Centripetal force',N(m*v*v/r,2)+' N'],['Centripetal acceleration',N(v*v/r,3)+' m/s²'],['In g',N(v*v/r/9.81,3)],['Period',N(2*Math.PI*r/v,3)+' s']];
+});</script>
+</body></html>

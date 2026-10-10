@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Regular Polygon Calculator | CalcHub</title>
+<meta name="description" content="Calculate area, perimeter and angles of a regular polygon.">
+<link rel="canonical" href="https://YOURDOMAIN.com/regular-polygon-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the apothem?", "acceptedAnswer": {"@type": "Answer", "text": "The distance from the center to the midpoint of a side."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Regular Polygon Calculator</h1>
+<p class="muted">Calculate area, perimeter and angles of a regular polygon.</p>
+<form class="card" data-calc="1">
+<label for="n">Number of sides</label><input id="n" type="number" step="any" value="6">
+<label for="s">Side length</label><input id="s" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Area = ½ x perimeter x apothem, where the apothem is s / (2 tan(π/n)). Interior angle = (n-2) x 180° / n.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the apothem?</summary><p>The distance from the center to the midpoint of a side.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="roman-numeral-converter.html"><b>Roman Numeral Converter</b></a><a href="factors-calculator.html"><b>Factors Calculator</b></a><a href="prime-number-calculator.html"><b>Prime Number Checker</b></a><a href="vector-calculator.html"><b>Vector Calculator (3D)</b></a><a href="complex-number-calculator.html"><b>Complex Number Calculator</b></a><a href="quartile-calculator.html"><b>Quartile and IQR Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({n,s}){
+n=Math.round(n);if(n<3)return 'A polygon needs at least 3 sides.';const ap=s/(2*Math.tan(Math.PI/n));return [['Area',N(n*s*ap/2,6)],['Perimeter',N(n*s,6)],['Interior angle',N((n-2)*180/n,4)+'°'],['Sum of interior angles',(n-2)*180+'°'],['Apothem',N(ap,6)]];
+});</script>
+</body></html>

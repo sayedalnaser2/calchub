@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pregnancy Weight Gain Calculator | CalcHub</title>
+<meta name="description" content="See the recommended weight gain range for your pre-pregnancy BMI.">
+<link rel="canonical" href="https://YOURDOMAIN.com/pregnancy-weight-gain-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do twins change it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Recommendations are higher for multiple pregnancies; ask your provider."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Pregnancy Weight Gain Calculator</h1>
+<p class="muted">See the recommended weight gain range for your pre-pregnancy BMI.</p>
+<form class="card" data-calc="1">
+<label for="w">Pre-pregnancy weight (kg)</label><input id="w" type="number" step="any" value="65">
+<label for="h">Height (cm)</label><input id="h" type="number" step="any" value="165">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The US Institute of Medicine recommends different ranges by pre-pregnancy BMI. This is an educational estimate, not medical advice.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Do twins change it?</summary><p>Yes. Recommendations are higher for multiple pregnancies; ask your provider.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="race-time-predictor.html"><b>Race Time Predictor</b></a><a href="heart-rate-reserve-calculator.html"><b>Heart Rate Reserve Calculator</b></a><a href="bmi-prime-calculator.html"><b>BMI Prime Calculator</b></a><a href="carb-calculator.html"><b>Carbohydrate Calculator</b></a><a href="fat-intake-calculator.html"><b>Daily Fat Intake Calculator</b></a><a href="fiber-intake-calculator.html"><b>Fiber Intake Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({w,h}){
+const b=w/Math.pow(h/100,2),r=b<18.5?[12.5,18]:b<25?[11.5,16]:b<30?[7,11.5]:[5,9];return [['Pre-pregnancy BMI',N(b,1)],['Recommended total gain',N(r[0],1)+' - '+N(r[1],1)+' kg'],['In pounds',N(r[0]*2.205,0)+' - '+N(r[1]*2.205,0)+' lb']];
+});</script>
+</body></html>

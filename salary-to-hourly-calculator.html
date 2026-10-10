@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salary to Hourly Calculator | CalcHub</title>
+<meta name="description" content="Convert an annual salary into an hourly, daily and weekly wage.">
+<link rel="canonical" href="https://YOURDOMAIN.com/salary-to-hourly-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What about paid holidays?", "acceptedAnswer": {"@type": "Answer", "text": "Paid time off is included in the 52 weeks. Remove unpaid weeks to see an effective rate."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Salary to Hourly Calculator</h1>
+<p class="muted">Convert an annual salary into an hourly, daily and weekly wage.</p>
+<form class="card" data-calc="1">
+<label for="sal">Annual salary ($)</label><input id="sal" type="number" step="any" value="65000">
+<label for="hrs">Hours per week</label><input id="hrs" type="number" step="any" value="40">
+<label for="wks">Weeks per year</label><input id="wks" type="number" step="any" value="52">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Hourly wage = annual salary / (hours per week x weeks per year). 2,080 hours (40 x 52) is the standard full-time year.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What about paid holidays?</summary><p>Paid time off is included in the 52 weeks. Remove unpaid weeks to see an effective rate.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="markup-calculator.html"><b>Markup Calculator</b></a><a href="ltv-calculator.html"><b>Loan-to-Value (LTV) Calculator</b></a><a href="bonus-tax-calculator.html"><b>Bonus Tax Calculator</b></a><a href="property-tax-calculator.html"><b>Property Tax Calculator</b></a><a href="home-equity-calculator.html"><b>Home Equity Calculator</b></a><a href="savings-calculator.html"><b>Savings Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({sal,hrs,wks}){
+const h=sal/(hrs*wks);return [['Hourly wage',M(h)],['Daily (8h)',M(h*8)],['Weekly',M(sal/wks)],['Monthly',M(sal/12)]];
+});</script>
+</body></html>

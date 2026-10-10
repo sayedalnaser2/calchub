@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voltage Drop Calculator | CalcHub</title>
+<meta name="description" content="Estimate voltage drop in a copper wire run.">
+<link rel="canonical" href="https://YOURDOMAIN.com/voltage-drop-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why use thicker wire?", "acceptedAnswer": {"@type": "Answer", "text": "It has lower resistance, so less drop and heat."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Voltage Drop Calculator</h1>
+<p class="muted">Estimate voltage drop in a copper wire run.</p>
+<form class="card" data-calc="1">
+<label for="i">Current (A)</label><input id="i" type="number" step="any" value="20">
+<label for="len">One-way length (ft)</label><input id="len" type="number" step="any" value="100">
+<label for="awg">Wire gauge (AWG)</label><select id="awg"><option value="14">14 AWG</option><option value="12" selected>12 AWG</option><option value="10">10 AWG</option><option value="8">8 AWG</option><option value="6">6 AWG</option><option value="4">4 AWG</option><option value="2">2 AWG</option></select>
+<label for="v">Supply voltage (V)</label><input id="v" type="number" step="any" value="120">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Drop = 2 x length x resistance per foot x current. Copper wire resistance depends on gauge. Aim for 3% or less.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why use thicker wire?</summary><p>It has lower resistance, so less drop and heat.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="battery-life-calculator.html"><b>Battery Life Calculator</b></a><a href="decibel-calculator.html"><b>Decibel Calculator</b></a><a href="snells-law-calculator.html"><b>Snell&#x27;s Law Calculator</b></a><a href="specific-heat-calculator.html"><b>Specific Heat Calculator</b></a><a href="torque-calculator.html"><b>Torque Calculator</b></a><a href="solar-savings-calculator.html"><b>Solar Panel Savings Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({i,len,awg,v}){
+const r={14:2.525,12:1.588,10:0.9989,8:0.6282,6:0.3951,4:0.2485,2:0.1563}[awg],d=2*len*r/1000*i;return [['Voltage drop',N(d,2)+' V'],['Percent drop',PCT(d/v*100,2)],['Voltage at load',N(v-d,2)+' V'],['Guideline',d/v*100<=3?'Within 3% target':'Above 3%: use thicker wire']];
+});</script>
+</body></html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dilution Calculator (C1V1 = C2V2) | CalcHub</title>
+<meta name="description" content="Find the volume needed to dilute a stock solution.">
+<link rel="canonical" href="https://YOURDOMAIN.com/dilution-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Add solute to solvent or the reverse?", "acceptedAnswer": {"@type": "Answer", "text": "Add acid to water, never water to concentrated acid."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Dilution Calculator (C1V1 = C2V2)</h1>
+<p class="muted">Find the volume needed to dilute a stock solution.</p>
+<form class="card" data-calc="1">
+<label for="c1">Stock concentration (C1)</label><input id="c1" type="number" step="any" value="10">
+<label for="c2">Target concentration (C2)</label><input id="c2" type="number" step="any" value="2">
+<label for="v2">Final volume (V2, mL)</label><input id="v2" type="number" step="any" value="100">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The dilution equation C1V1 = C2V2 keeps the amount of solute constant. Add solvent to reach the final volume.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Add solute to solvent or the reverse?</summary><p>Add acid to water, never water to concentrated acid.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="ph-calculator.html"><b>pH Calculator</b></a><a href="molar-mass-calculator.html"><b>Molar Mass Calculator</b></a><a href="projectile-motion-calculator.html"><b>Projectile Motion Calculator</b></a><a href="free-fall-calculator.html"><b>Free Fall Calculator</b></a><a href="escape-velocity-calculator.html"><b>Escape Velocity Calculator</b></a><a href="gravitational-force-calculator.html"><b>Gravitational Force Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({c1,c2,v2}){
+if(c2>c1)return 'Target concentration cannot exceed stock.';const v1=c2*v2/c1;return [['Stock volume to use (V1)',N(v1,4)+' mL'],['Solvent to add',N(v2-v1,4)+' mL'],['Dilution factor',N(c1/c2,3)+'x']];
+});</script>
+</body></html>

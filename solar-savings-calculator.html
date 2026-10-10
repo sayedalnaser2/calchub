@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solar Panel Savings Calculator | CalcHub</title>
+<meta name="description" content="Estimate annual production, savings and payback of a solar system.">
+<link rel="canonical" href="https://YOURDOMAIN.com/solar-savings-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do rates matter?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Higher electricity prices shorten payback."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Solar Panel Savings Calculator</h1>
+<p class="muted">Estimate annual production, savings and payback of a solar system.</p>
+<form class="card" data-calc="1">
+<label for="kw">System size (kW)</label><input id="kw" type="number" step="any" value="7">
+<label for="sun">Peak sun hours per day</label><input id="sun" type="number" step="any" value="4.5">
+<label for="price">Electricity price ($/kWh)</label><input id="price" type="number" step="any" value="0.17">
+<label for="cost">System cost after incentives ($)</label><input id="cost" type="number" step="any" value="17000">
+<label for="eff">System efficiency (%)</label><input id="eff" type="number" step="any" value="80">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Production = size x peak sun hours x 365 x efficiency. Savings equal production times the electricity price. Real output declines slightly each year.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Do rates matter?</summary><p>Yes. Higher electricity prices shorten payback.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="mass-energy-calculator.html"><b>Mass-Energy Equivalence (E = mc²) Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a><a href="density-calculator.html"><b>Density Calculator</b></a><a href="force-calculator.html"><b>Force Calculator (F = ma)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({kw,sun,price,cost,eff}){
+const kwh=kw*sun*365*eff/100,sav=kwh*price;return [['Annual production',N(kwh,0)+' kWh'],['Annual savings',M(sav)],['Payback period',N(cost/sav,1)+' years'],['25-year savings',M(sav*25-cost)]];
+});</script>
+</body></html>

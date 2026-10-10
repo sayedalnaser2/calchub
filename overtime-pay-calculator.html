@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overtime Pay Calculator | CalcHub</title>
+<meta name="description" content="Calculate overtime earnings at time-and-a-half or double time.">
+<link rel="canonical" href="https://YOURDOMAIN.com/overtime-pay-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who gets overtime?", "acceptedAnswer": {"@type": "Answer", "text": "Most hourly (non-exempt) US employees. Some salaried roles are exempt, depending on duties and salary level."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Overtime Pay Calculator</h1>
+<p class="muted">Calculate overtime earnings at time-and-a-half or double time.</p>
+<form class="card" data-calc="1">
+<label for="rate">Hourly rate ($)</label><input id="rate" type="number" step="any" value="22">
+<label for="reg">Regular hours</label><input id="reg" type="number" step="any" value="40">
+<label for="ot">Overtime hours</label><input id="ot" type="number" step="any" value="8">
+<label for="mult">Overtime multiplier</label><select id="mult"><option value="1.5" selected>Time and a half (1.5x)</option><option value="2">Double time (2x)</option><option value="1.25">1.25x</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Overtime pay equals overtime hours x hourly rate x the multiplier. In the US, non-exempt workers get 1.5x for hours over 40 per week.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Who gets overtime?</summary><p>Most hourly (non-exempt) US employees. Some salaried roles are exempt, depending on duties and salary level.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="raise-calculator.html"><b>Raise Calculator</b></a><a href="commission-calculator.html"><b>Commission Calculator</b></a><a href="vat-calculator.html"><b>VAT Calculator</b></a><a href="gst-calculator.html"><b>GST Calculator</b></a><a href="reverse-sales-tax-calculator.html"><b>Reverse Sales Tax Calculator</b></a><a href="annuity-calculator.html"><b>Annuity Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({rate,reg,ot,mult}){
+const o=rate*mult*ot,r=rate*reg;return [['Total pay',M(o+r)],['Regular pay',M(r)],['Overtime pay',M(o)],['Overtime hourly rate',M(rate*mult)]];
+});</script>
+</body></html>

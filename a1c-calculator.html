@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A1C to Average Glucose Calculator | CalcHub</title>
+<meta name="description" content="Convert HbA1c to estimated average blood glucose.">
+<link rel="canonical" href="https://YOURDOMAIN.com/a1c-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What A1C is normal?", "acceptedAnswer": {"@type": "Answer", "text": "Below 5.7% is normal. 5.7-6.4% is prediabetes and 6.5% or higher suggests diabetes."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>A1C to Average Glucose Calculator</h1>
+<p class="muted">Convert HbA1c to estimated average blood glucose.</p>
+<form class="card" data-calc="1">
+<label for="a1c">HbA1c (%)</label><input id="a1c" type="number" step="any" value="6.5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>eAG (mg/dL) = 28.7 x A1C - 46.7. This is an educational estimate, not medical advice.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What A1C is normal?</summary><p>Below 5.7% is normal. 5.7-6.4% is prediabetes and 6.5% or higher suggests diabetes.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="cholesterol-ratio-calculator.html"><b>Cholesterol Ratio and LDL Calculator</b></a><a href="child-height-predictor.html"><b>Child Height Predictor</b></a><a href="dog-age-calculator.html"><b>Dog Age Calculator</b></a><a href="cat-age-calculator.html"><b>Cat Age Calculator</b></a><a href="pregnancy-weight-gain-calculator.html"><b>Pregnancy Weight Gain Calculator</b></a><a href="race-time-predictor.html"><b>Race Time Predictor</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a1c}){
+const e=28.7*a1c-46.7;return [['Estimated average glucose',N(e,0)+' mg/dL'],['In mmol/L',N(e/18.016,1)],['Category',a1c<5.7?'Normal':a1c<6.5?'Prediabetes range':'Diabetes range']];
+});</script>
+</body></html>

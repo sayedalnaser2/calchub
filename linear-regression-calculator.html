@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Linear Regression Calculator | CalcHub</title>
+<meta name="description" content="Fit a least-squares line and find the correlation of two data lists.">
+<link rel="canonical" href="https://YOURDOMAIN.com/linear-regression-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does correlation mean causation?", "acceptedAnswer": {"@type": "Answer", "text": "No. Two variables can move together without one causing the other."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Linear Regression Calculator</h1>
+<p class="muted">Fit a least-squares line and find the correlation of two data lists.</p>
+<form class="card" data-calc="1">
+<label for="xs">X values (comma-separated)</label><input id="xs" type="text" value="1, 2, 3, 4, 5">
+<label for="ys">Y values (comma-separated)</label><input id="ys" type="text" value="2, 4, 5, 4, 5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Least squares chooses the line minimizing squared vertical errors. The correlation r (between -1 and 1) measures the strength of the linear relationship.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does correlation mean causation?</summary><p>No. Two variables can move together without one causing the other.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="weighted-average-calculator.html"><b>Weighted Average Calculator</b></a><a href="geometric-mean-calculator.html"><b>Geometric Mean Calculator</b></a><a href="rounding-calculator.html"><b>Rounding Calculator</b></a><a href="modulo-calculator.html"><b>Modulo Calculator</b></a><a href="area-calculator.html"><b>Area Calculator</b></a><a href="rectangle-calculator.html"><b>Rectangle Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({xs,ys}){
+const x=NUMS(xs),y=NUMS(ys),n=x.length;if(n<2||n!==y.length)return 'Enter the same number (at least 2) of X and Y values.';
+const mx=x.reduce((a,b)=>a+b)/n,my=y.reduce((a,b)=>a+b)/n;let sxy=0,sxx=0,syy=0;for(let i=0;i<n;i++){sxy+=(x[i]-mx)*(y[i]-my);sxx+=(x[i]-mx)**2;syy+=(y[i]-my)**2;}
+if(sxx===0)return 'X values must vary.';const b=sxy/sxx,a=my-b*mx,r=sxy/Math.sqrt(sxx*syy);
+return [['Equation','y = '+N(b,6)+'x + '+N(a,6)],['Correlation (r)',N(r,6)],['R²',N(r*r,6)],['Slope',N(b,6)],['Intercept',N(a,6)]];
+});</script>
+</body></html>

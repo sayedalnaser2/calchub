@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weighted Grade Calculator | CalcHub</title>
+<meta name="description" content="Combine assignment categories into an overall course grade.">
+<link rel="canonical" href="https://YOURDOMAIN.com/weighted-grade-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do weights have to add to 100?", "acceptedAnswer": {"@type": "Answer", "text": "They should, but the calculator normalizes if they do not."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Weighted Grade Calculator</h1>
+<p class="muted">Combine assignment categories into an overall course grade.</p>
+<form class="card" data-calc="1">
+<label for="g1">Homework grade (%)</label><input id="g1" type="number" step="any" value="92">
+<label for="w1">Homework weight (%)</label><input id="w1" type="number" step="any" value="20">
+<label for="g2">Quizzes grade (%)</label><input id="g2" type="number" step="any" value="85">
+<label for="w2">Quizzes weight (%)</label><input id="w2" type="number" step="any" value="20">
+<label for="g3">Midterm grade (%)</label><input id="g3" type="number" step="any" value="78">
+<label for="w3">Midterm weight (%)</label><input id="w3" type="number" step="any" value="25">
+<label for="g4">Final grade (%)</label><input id="g4" type="number" step="any" value="88">
+<label for="w4">Final weight (%)</label><input id="w4" type="number" step="any" value="35">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Weighted grade = Σ(grade x weight) / Σ(weights).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Do weights have to add to 100?</summary><p>They should, but the calculator normalizes if they do not.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="test-grade-calculator.html"><b>Test Grade Calculator</b></a><a href="recipe-scaler.html"><b>Recipe Scaler</b></a><a href="ev-charging-cost-calculator.html"><b>EV Charging Cost Calculator</b></a><a href="volumetric-weight-calculator.html"><b>Volumetric Weight Calculator</b></a><a href="cups-to-grams-calculator.html"><b>Cups to Grams Calculator</b></a><a href="age-calculator.html"><b>Age Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({g1,w1,g2,w2,g3,w3,g4,w4}){
+const w=w1+w2+w3+w4;if(!w)return 'Weights cannot all be zero.';const g=(g1*w1+g2*w2+g3*w3+g4*w4)/w;const L=g>=90?'A':g>=80?'B':g>=70?'C':g>=60?'D':'F';return [['Course grade',PCT(g,2)],['Letter',L],['Total weight',w+'%']];
+});</script>
+</body></html>

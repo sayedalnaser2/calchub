@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Margin of Error Calculator | CalcHub</title>
+<meta name="description" content="Calculate the margin of error for a proportion.">
+<link rel="canonical" href="https://YOURDOMAIN.com/margin-of-error-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I halve the margin of error?", "acceptedAnswer": {"@type": "Answer", "text": "Quadruple the sample size."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Margin of Error Calculator</h1>
+<p class="muted">Calculate the margin of error for a proportion.</p>
+<form class="card" data-calc="1">
+<label for="n">Sample size</label><input id="n" type="number" step="any" value="1000">
+<label for="p">Proportion (%)</label><input id="p" type="number" step="any" value="50">
+<label for="cl">Confidence level</label><select id="cl"><option value="1.645">90%</option><option value="1.96" selected>95%</option><option value="2.576">99%</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Margin of error = z x √(p(1-p)/n). It shrinks with the square root of the sample size.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I halve the margin of error?</summary><p>Quadruple the sample size.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="linear-regression-calculator.html"><b>Linear Regression Calculator</b></a><a href="weighted-average-calculator.html"><b>Weighted Average Calculator</b></a><a href="geometric-mean-calculator.html"><b>Geometric Mean Calculator</b></a><a href="rounding-calculator.html"><b>Rounding Calculator</b></a><a href="modulo-calculator.html"><b>Modulo Calculator</b></a><a href="area-calculator.html"><b>Area Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({n,p,cl}){
+const q=p/100,me=cl*Math.sqrt(q*(1-q)/n)*100;return [['Margin of error','±'+N(me,3)+'%'],['Interval',N(p-me,2)+'% to '+N(p+me,2)+'%']];
+});</script>
+</body></html>

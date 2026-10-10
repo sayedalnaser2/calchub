@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Binomial Expansion Calculator | CalcHub</title>
+<meta name="description" content="Expand (a + b)^n using binomial coefficients.">
+<link rel="canonical" href="https://YOURDOMAIN.com/pascals-triangle-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Pascal's triangle?", "acceptedAnswer": {"@type": "Answer", "text": "A triangle where each entry is the sum of the two above it."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Binomial Expansion Calculator</h1>
+<p class="muted">Expand (a + b)^n using binomial coefficients.</p>
+<form class="card" data-calc="1">
+<label for="n">Power n (0-30)</label><input id="n" type="number" step="any" value="5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The binomial theorem expands (a+b)^n into terms with coefficients from row n of Pascal&#x27;s triangle.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is Pascal&#x27;s triangle?</summary><p>A triangle where each entry is the sum of the two above it.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="lcm-calculator.html"><b>LCM Calculator (3 Numbers)</b></a><a href="sum-of-series-calculator.html"><b>Arithmetic and Geometric Series Calculator</b></a><a href="inverse-trig-calculator.html"><b>Inverse Trigonometry Calculator</b></a><a href="base-converter.html"><b>Base Converter (Any Base 2-36)</b></a><a href="percentage-calculator.html"><b>Percentage Calculator</b></a><a href="percent-change-calculator.html"><b>Percent Change Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({n}){
+n=Math.round(n);if(n<0||n>30)return 'Use n from 0 to 30.';const c=[1];for(let k=1;k<=n;k++)c.push(c[k-1]*(n-k+1)/k);
+const sup=['⁰','¹','²','³','⁴','⁵','⁶','⁷','⁸','⁹'],pw=e=>e===0?'':e===1?'':String(e).split('').map(d=>sup[d]).join('');
+const t=c.map((v,k)=>(v>1||k===0&&false?v:(v===1?'':v))+(n-k>0?'a'+pw(n-k):'')+(k>0?'b'+pw(k):'')||'1');return [['Coefficients',c.map(v=>Math.round(v)).join(', ')],['Expansion',t.map(s=>s||'1').join(' + ')]];
+});</script>
+</body></html>

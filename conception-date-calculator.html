@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Conception Date Calculator | CalcHub</title>
+<meta name="description" content="Estimate when you conceived from your due date.">
+<link rel="canonical" href="https://YOURDOMAIN.com/conception-date-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate is it?", "acceptedAnswer": {"@type": "Answer", "text": "Within a few days at best. Ultrasound dating is more precise."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Conception Date Calculator</h1>
+<p class="muted">Estimate when you conceived from your due date.</p>
+<form class="card" data-calc="1">
+<label for="due">Due date</label><input id="due" type="date" value="" data-today="1">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A pregnancy lasts about 266 days from conception, or 280 days from the last period. Subtracting from the due date gives an approximate conception date.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How accurate is it?</summary><p>Within a few days at best. Ultrasound dating is more precise.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="pregnancy-week-calculator.html"><b>Pregnancy Week Calculator</b></a><a href="calories-burned-calculator.html"><b>Calories Burned Calculator</b></a><a href="protein-calculator.html"><b>Protein Intake Calculator</b></a><a href="waist-to-hip-ratio-calculator.html"><b>Waist-to-Hip Ratio Calculator</b></a><a href="waist-to-height-ratio-calculator.html"><b>Waist-to-Height Ratio Calculator</b></a><a href="lean-body-mass-calculator.html"><b>Lean Body Mass Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({due}){
+const d=D(due),a=n=>{const x=new Date(d);x.setDate(x.getDate()-n);return DS(x);};return [['Estimated conception',a(266)],['Last period (approx.)',a(280)],['Fertile window began',a(271)]];
+});</script>
+</body></html>

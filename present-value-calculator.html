@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Present Value Calculator | CalcHub</title>
+<meta name="description" content="Discount a future amount to what it is worth today.">
+<link rel="canonical" href="https://YOURDOMAIN.com/present-value-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What discount rate should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Use your required return or the interest rate you could earn on a safe alternative."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Present Value Calculator</h1>
+<p class="muted">Discount a future amount to what it is worth today.</p>
+<form class="card" data-calc="1">
+<label for="fv">Future value ($)</label><input id="fv" type="number" step="any" value="50000">
+<label for="rate">Discount rate (%)</label><input id="rate" type="number" step="any" value="6">
+<label for="yrs">Years</label><input id="yrs" type="number" step="any" value="10">
+<label for="f">Compounding per year</label><select id="f"><option value="1" selected>Yearly</option><option value="4">Quarterly</option><option value="12">Monthly</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>PV = FV / (1 + r/n)^(n x t). A higher discount rate or longer time makes the present value smaller.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What discount rate should I use?</summary><p>Use your required return or the interest rate you could earn on a safe alternative.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="future-value-calculator.html"><b>Future Value Calculator</b></a><a href="npv-calculator.html"><b>NPV Calculator</b></a><a href="irr-calculator.html"><b>IRR Calculator</b></a><a href="payback-period-calculator.html"><b>Payback Period Calculator</b></a><a href="depreciation-calculator.html"><b>Depreciation Calculator</b></a><a href="car-lease-calculator.html"><b>Car Lease Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({fv,rate,yrs,f}){
+const pv=fv/Math.pow(1+rate/100/f,f*yrs);return [['Present value',M(pv)],['Total discount',M(fv-pv)]];
+});</script>
+</body></html>

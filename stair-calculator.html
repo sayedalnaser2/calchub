@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stair Calculator | CalcHub</title>
+<meta name="description" content="Calculate the number of steps, riser height and stringer length.">
+<link rel="canonical" href="https://YOURDOMAIN.com/stair-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are code limits?", "acceptedAnswer": {"@type": "Answer", "text": "US residential code typically allows risers up to 7.75 in with treads at least 10 in."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Stair Calculator</h1>
+<p class="muted">Calculate the number of steps, riser height and stringer length.</p>
+<form class="card" data-calc="1">
+<label for="rise">Total rise (in)</label><input id="rise" type="number" step="any" value="108">
+<label for="run">Tread depth (in)</label><input id="run" type="number" step="any" value="10">
+<label for="max">Maximum riser height (in)</label><input id="max" type="number" step="any" value="7.5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Divide the total rise by a target riser height, round up, then recompute an even riser. Total run = tread depth x (risers - 1).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What are code limits?</summary><p>US residential code typically allows risers up to 7.75 in with treads at least 10 in.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="roof-area-calculator.html"><b>Roof Area and Shingle Calculator</b></a><a href="brick-calculator.html"><b>Brick Calculator</b></a><a href="paver-calculator.html"><b>Paver Calculator</b></a><a href="sod-calculator.html"><b>Sod Calculator</b></a><a href="grass-seed-calculator.html"><b>Grass Seed Calculator</b></a><a href="pool-volume-calculator.html"><b>Pool Volume Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({rise,run,max}){
+const n=Math.ceil(rise/max),r=rise/n,total=run*(n-1);return [['Number of risers',n],['Riser height',N(r,3)+' in'],['Total run',N(total,1)+' in'],['Stringer length',N(Math.hypot(rise,total),1)+' in'],['Stair angle',N(Math.atan(r/run)*180/Math.PI,1)+'°']];
+});</script>
+</body></html>

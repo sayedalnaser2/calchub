@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Annuity Calculator | CalcHub</title>
+<meta name="description" content="Find the future and present value of regular annuity payments.">
+<link rel="canonical" href="https://YOURDOMAIN.com/annuity-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ordinary vs annuity due?", "acceptedAnswer": {"@type": "Answer", "text": "Ordinary pays at the end of each period; due pays at the start, so each payment earns one extra period of interest."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Annuity Calculator</h1>
+<p class="muted">Find the future and present value of regular annuity payments.</p>
+<form class="card" data-calc="1">
+<label for="pmt">Payment each period ($)</label><input id="pmt" type="number" step="any" value="500">
+<label for="rate">Annual rate (%)</label><input id="rate" type="number" step="any" value="5">
+<label for="yrs">Years</label><input id="yrs" type="number" step="any" value="20">
+<label for="f">Payments per year</label><select id="f"><option value="1">Yearly</option><option value="4">Quarterly</option><option value="12" selected>Monthly</option></select>
+<label for="due">Timing</label><select id="due"><option value="0" selected>End of period (ordinary)</option><option value="1">Start of period (due)</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>An annuity is a series of equal payments. Future value shows what the payments grow to, and present value shows what they are worth today.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Ordinary vs annuity due?</summary><p>Ordinary pays at the end of each period; due pays at the start, so each payment earns one extra period of interest.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="present-value-calculator.html"><b>Present Value Calculator</b></a><a href="future-value-calculator.html"><b>Future Value Calculator</b></a><a href="npv-calculator.html"><b>NPV Calculator</b></a><a href="irr-calculator.html"><b>IRR Calculator</b></a><a href="payback-period-calculator.html"><b>Payback Period Calculator</b></a><a href="depreciation-calculator.html"><b>Depreciation Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({pmt,rate,yrs,f,due}){
+const i=rate/100/f,n=yrs*f,k=i===0?n:(Math.pow(1+i,n)-1)/i,fv=pmt*k*(1+i*due),pv=pmt*(i===0?n:(1-Math.pow(1+i,-n))/i)*(1+i*due);
+return [['Future value',M(fv)],['Present value',M(pv)],['Total payments',M(pmt*n)],['Interest earned (FV basis)',M(fv-pmt*n)]];
+});</script>
+</body></html>

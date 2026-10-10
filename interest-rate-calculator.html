@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interest Rate Calculator | CalcHub</title>
+<meta name="description" content="Find the interest rate of a loan from the amount, payment and term.">
+<link rel="canonical" href="https://YOURDOMAIN.com/interest-rate-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why would I need this?", "acceptedAnswer": {"@type": "Answer", "text": "To check what rate a dealer or lender is really charging when they only quote a monthly payment."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Interest Rate Calculator</h1>
+<p class="muted">Find the interest rate of a loan from the amount, payment and term.</p>
+<form class="card" data-calc="1">
+<label for="amt">Loan amount ($)</label><input id="amt" type="number" step="any" value="20000">
+<label for="pay">Monthly payment ($)</label><input id="pay" type="number" step="any" value="400">
+<label for="months">Number of payments</label><input id="months" type="number" step="any" value="60">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The rate is found by searching for the value at which the standard payment formula equals your payment.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why would I need this?</summary><p>To check what rate a dealer or lender is really charging when they only quote a monthly payment.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="interest-only-loan-calculator.html"><b>Interest-Only Loan Calculator</b></a><a href="401k-calculator.html"><b>401(k) Calculator</b></a><a href="roth-ira-calculator.html"><b>Roth IRA Calculator</b></a><a href="paycheck-calculator.html"><b>Paycheck Calculator</b></a><a href="income-tax-calculator.html"><b>Federal Income Tax Calculator</b></a><a href="self-employment-tax-calculator.html"><b>Self-Employment Tax Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({amt,pay,months}){
+if(pay*months<=amt)return 'Payments must total more than the loan amount.';let lo=0,hi=200;
+for(let i=0;i<100;i++){const mid=(lo+hi)/2;if(PMT(amt,mid,months)>pay)hi=mid;else lo=mid;}
+return [['Interest rate (APR)',PCT((lo+hi)/2,3)],['Total interest',M(pay*months-amt)],['Total paid',M(pay*months)]];
+});</script>
+</body></html>

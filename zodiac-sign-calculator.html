@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zodiac Sign Calculator | CalcHub</title>
+<meta name="description" content="Find your Western zodiac sign from your birth date.">
+<link rel="canonical" href="https://YOURDOMAIN.com/zodiac-sign-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do dates vary by year?", "acceptedAnswer": {"@type": "Answer", "text": "Cusp dates can shift by a day depending on the year."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Zodiac Sign Calculator</h1>
+<p class="muted">Find your Western zodiac sign from your birth date.</p>
+<form class="card" data-calc="1">
+<label for="date">Birth date</label><input id="date" type="date" value="1995-06-15">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Western astrology assigns a sign by the date of birth within roughly one-month ranges. It is a cultural tradition, not science.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Do dates vary by year?</summary><p>Cusp dates can shift by a day depending on the year.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="chinese-zodiac-calculator.html"><b>Chinese Zodiac Calculator</b></a><a href="word-counter.html"><b>Word Counter</b></a><a href="download-time-calculator.html"><b>Download Time Calculator</b></a><a href="aspect-ratio-calculator.html"><b>Aspect Ratio Calculator</b></a><a href="ppi-calculator.html"><b>PPI Calculator (Pixel Density)</b></a><a href="mileage-reimbursement-calculator.html"><b>Mileage Reimbursement Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({date}){
+const d=D(date),m=d.getMonth()+1,day=d.getDate(),z=[['Capricorn',12,22],['Aquarius',1,20],['Pisces',2,19],['Aries',3,21],['Taurus',4,20],['Gemini',5,21],['Cancer',6,21],['Leo',7,23],['Virgo',8,23],['Libra',9,23],['Scorpio',10,23],['Sagittarius',11,22]];
+let s='Capricorn';for(const [n,mm,dd] of z){if(m>mm||(m===mm&&day>=dd))s=n;}if(m===1&&day<20)s='Capricorn';
+const el={Aries:'Fire',Leo:'Fire',Sagittarius:'Fire',Taurus:'Earth',Virgo:'Earth',Capricorn:'Earth',Gemini:'Air',Libra:'Air',Aquarius:'Air',Cancer:'Water',Scorpio:'Water',Pisces:'Water'}[s];return [['Zodiac sign',s],['Element',el]];
+});</script>
+</body></html>

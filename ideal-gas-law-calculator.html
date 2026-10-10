@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ideal Gas Law Calculator | CalcHub</title>
+<meta name="description" content="Solve PV = nRT for pressure, volume, moles or temperature.">
+<link rel="canonical" href="https://YOURDOMAIN.com/ideal-gas-law-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is the ideal gas law inaccurate?", "acceptedAnswer": {"@type": "Answer", "text": "At high pressure and low temperature where real gases deviate."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Ideal Gas Law Calculator</h1>
+<p class="muted">Solve PV = nRT for pressure, volume, moles or temperature.</p>
+<form class="card" data-calc="1">
+<label for="solve">Solve for</label><select id="solve"><option value="1" selected>Pressure (atm)</option><option value="2">Volume (L)</option><option value="3">Moles (mol)</option><option value="4">Temperature (K)</option></select>
+<label for="P">Pressure (atm)</label><input id="P" type="number" step="any" value="1">
+<label for="V">Volume (L)</label><input id="V" type="number" step="any" value="22.4">
+<label for="n">Moles (mol)</label><input id="n" type="number" step="any" value="1">
+<label for="T">Temperature (K)</label><input id="T" type="number" step="any" value="273.15">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The ideal gas law PV = nRT relates pressure, volume, amount and temperature. The chosen variable is solved from the other three.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When is the ideal gas law inaccurate?</summary><p>At high pressure and low temperature where real gases deviate.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="molarity-calculator.html"><b>Molarity Calculator</b></a><a href="dilution-calculator.html"><b>Dilution Calculator (C1V1 = C2V2)</b></a><a href="ph-calculator.html"><b>pH Calculator</b></a><a href="molar-mass-calculator.html"><b>Molar Mass Calculator</b></a><a href="projectile-motion-calculator.html"><b>Projectile Motion Calculator</b></a><a href="free-fall-calculator.html"><b>Free Fall Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({solve,P,V,n,T}){
+const R=0.082057;const r=solve==1?n*R*T/V:solve==2?n*R*T/P:solve==3?P*V/(R*T):P*V/(n*R);const u=['','atm','L','mol','K'][solve];return [['Result',N(r,6)+' '+u],['R used','0.082057 L·atm/(mol·K)']];
+});</script>
+</body></html>

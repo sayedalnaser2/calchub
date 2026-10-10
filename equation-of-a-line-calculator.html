@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Equation of a Line Calculator | CalcHub</title>
+<meta name="description" content="Find the line through two points in slope-intercept and standard form.">
+<link rel="canonical" href="https://YOURDOMAIN.com/equation-of-a-line-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What about vertical lines?", "acceptedAnswer": {"@type": "Answer", "text": "They have undefined slope and the form x = constant."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Equation of a Line Calculator</h1>
+<p class="muted">Find the line through two points in slope-intercept and standard form.</p>
+<form class="card" data-calc="1">
+<label for="x1">x₁</label><input id="x1" type="number" step="any" value="1">
+<label for="y1">y₁</label><input id="y1" type="number" step="any" value="2">
+<label for="x2">x₂</label><input id="x2" type="number" step="any" value="3">
+<label for="y2">y₂</label><input id="y2" type="number" step="any" value="8">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Slope m = (y₂-y₁)/(x₂-x₁) and the intercept b = y₁ - m x₁ give y = mx + b.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What about vertical lines?</summary><p>They have undefined slope and the form x = constant.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="midpoint-calculator.html"><b>Midpoint Calculator</b></a><a href="pascals-triangle-calculator.html"><b>Binomial Expansion Calculator</b></a><a href="lcm-calculator.html"><b>LCM Calculator (3 Numbers)</b></a><a href="sum-of-series-calculator.html"><b>Arithmetic and Geometric Series Calculator</b></a><a href="inverse-trig-calculator.html"><b>Inverse Trigonometry Calculator</b></a><a href="base-converter.html"><b>Base Converter (Any Base 2-36)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({x1,y1,x2,y2}){
+if(x1===x2)return 'Vertical line: x = '+x1;const m=(y2-y1)/(x2-x1),b=y1-m*x1;return [['Slope-intercept','y = '+N(m,6)+'x + '+N(b,6)],['Slope',N(m,6)],['y-intercept',N(b,6)],['x-intercept',m===0?'None':N(-b/m,6)],['Standard form',N(-m,4)+'x + y = '+N(b,4)]];
+});</script>
+</body></html>

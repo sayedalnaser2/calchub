@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Decimal to Fraction Calculator | CalcHub</title>
+<meta name="description" content="Convert a decimal number to a simplified fraction.">
+<link rel="canonical" href="https://YOURDOMAIN.com/decimal-to-fraction-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert a repeating decimal?", "acceptedAnswer": {"@type": "Answer", "text": "For repeating decimals, set x equal to the decimal, multiply to align the repeat and subtract."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Decimal to Fraction Calculator</h1>
+<p class="muted">Convert a decimal number to a simplified fraction.</p>
+<form class="card" data-calc="1">
+<label for="x">Decimal</label><input id="x" type="number" step="any" value="0.375">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A terminating decimal equals digits over a power of ten. The calculator finds the smallest denominator that matches the decimal exactly.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert a repeating decimal?</summary><p>For repeating decimals, set x equal to the decimal, multiply to align the repeat and subtract.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="scientific-notation-calculator.html"><b>Scientific Notation Converter</b></a><a href="log-calculator.html"><b>Log Calculator</b></a><a href="exponent-calculator.html"><b>Exponent Calculator</b></a><a href="square-root-calculator.html"><b>Square Root Calculator</b></a><a href="factorial-calculator.html"><b>Factorial Calculator</b></a><a href="fibonacci-calculator.html"><b>Fibonacci Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({x}){
+let best=null;const s=Math.sign(x),v=Math.abs(x);for(let d=1;d<=100000;d++){const n=Math.round(v*d);if(Math.abs(n/d-v)<1e-9){best=[n,d];break;}}
+if(!best)return 'Could not find an exact fraction. Try fewer decimals.';const w=Math.trunc(best[0]/best[1]),r=best[0]%best[1];
+return [['Fraction',(s<0?'-':'')+best[0]+'/'+best[1]],['Mixed number',(s<0?'-':'')+(w?w+' ':'')+(r?r+'/'+best[1]:'')],['Percent',PCT(x*100,6)]];
+});</script>
+</body></html>

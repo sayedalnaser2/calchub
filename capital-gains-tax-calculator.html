@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capital Gains Tax Calculator | CalcHub</title>
+<meta name="description" content="Estimate federal tax on short-term or long-term investment gains.">
+<link rel="canonical" href="https://YOURDOMAIN.com/capital-gains-tax-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long to get long-term rates?", "acceptedAnswer": {"@type": "Answer", "text": "Hold the asset for more than one year."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Capital Gains Tax Calculator</h1>
+<p class="muted">Estimate federal tax on short-term or long-term investment gains.</p>
+<form class="card" data-calc="1">
+<label for="gain">Capital gain ($)</label><input id="gain" type="number" step="any" value="20000">
+<label for="other">Other taxable income ($)</label><input id="other" type="number" step="any" value="70000">
+<label for="st">Filing status</label><select id="st"><option value="1" selected>Single</option><option value="2">Married filing jointly</option><option value="3">Head of household</option></select>
+<label for="term">Holding period</label><select id="term"><option value="1">Short-term (1 year or less)</option><option value="2" selected>Long-term (over 1 year)</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Short-term gains are taxed as ordinary income. Long-term gains use 0%, 15% or 20% depending on income. The net investment income tax and state taxes are not included. Figures use 2025 US federal rules and are estimates only.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How long to get long-term rates?</summary><p>Hold the asset for more than one year.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="overtime-pay-calculator.html"><b>Overtime Pay Calculator</b></a><a href="raise-calculator.html"><b>Raise Calculator</b></a><a href="commission-calculator.html"><b>Commission Calculator</b></a><a href="vat-calculator.html"><b>VAT Calculator</b></a><a href="gst-calculator.html"><b>GST Calculator</b></a><a href="reverse-sales-tax-calculator.html"><b>Reverse Sales Tax Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({gain,other,st,term}){
+let tax;
+if(term==1){tax=FEDTAX(other+gain,st)-FEDTAX(other,st);}
+else{const L={1:[48350,533400],2:[96700,600050],3:[64750,566700]}[st];
+ const a=Math.max(Math.min(other+gain,L[0])-Math.max(other,0),0),b=Math.max(Math.min(other+gain,L[1])-Math.max(other,L[0]),0),c=gain-a-b;
+ tax=b*.15+c*.20;}
+return [['Estimated capital gains tax',M(tax)],['Net gain after tax',M(gain-tax)],['Effective rate on gain',PCT(tax/gain*100,2)]];
+});</script>
+</body></html>

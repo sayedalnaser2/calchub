@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proportion Calculator | CalcHub</title>
+<meta name="description" content="Solve a/b = c/x for the missing value.">
+<link rel="canonical" href="https://YOURDOMAIN.com/proportion-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where are proportions used?", "acceptedAnswer": {"@type": "Answer", "text": "Scaling recipes, maps, unit prices and similar triangles."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Proportion Calculator</h1>
+<p class="muted">Solve a/b = c/x for the missing value.</p>
+<form class="card" data-calc="1">
+<label for="a">A</label><input id="a" type="number" step="any" value="3">
+<label for="b">B</label><input id="b" type="number" step="any" value="4">
+<label for="c">C</label><input id="c" type="number" step="any" value="9">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>In a proportion a/b = c/x, cross-multiply: x = b x c / a.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Where are proportions used?</summary><p>Scaling recipes, maps, unit prices and similar triangles.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="ratio-calculator.html"><b>Ratio Calculator</b></a><a href="random-number-generator.html"><b>Random Number Generator</b></a><a href="dice-roller.html"><b>Dice Roller</b></a><a href="coin-flip.html"><b>Coin Flip</b></a><a href="probability-calculator.html"><b>Probability Calculator</b></a><a href="binomial-probability-calculator.html"><b>Binomial Probability Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,b,c}){
+if(!a)return 'A cannot be zero.';return [['x',N(b*c/a,8)],['Cross product','A × x = B × C']];
+});</script>
+</body></html>

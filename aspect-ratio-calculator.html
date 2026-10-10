@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aspect Ratio Calculator | CalcHub</title>
+<meta name="description" content="Find the aspect ratio of a screen or image and scale it.">
+<link rel="canonical" href="https://YOURDOMAIN.com/aspect-ratio-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Common ratios?", "acceptedAnswer": {"@type": "Answer", "text": "16:9 for video, 4:3 for older screens, 3:2 for photos."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Aspect Ratio Calculator</h1>
+<p class="muted">Find the aspect ratio of a screen or image and scale it.</p>
+<form class="card" data-calc="1">
+<label for="w">Width</label><input id="w" type="number" step="any" value="1920">
+<label for="h">Height</label><input id="h" type="number" step="any" value="1080">
+<label for="nw">New width</label><input id="nw" type="number" step="any" value="1280">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Divide width and height by their GCD for the ratio. To resize, keep the ratio and compute new height = new width x height / width.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Common ratios?</summary><p>16:9 for video, 4:3 for older screens, 3:2 for photos.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="ppi-calculator.html"><b>PPI Calculator (Pixel Density)</b></a><a href="mileage-reimbursement-calculator.html"><b>Mileage Reimbursement Calculator</b></a><a href="car-depreciation-calculator.html"><b>Car Depreciation Calculator</b></a><a href="mpg-calculator.html"><b>MPG Calculator</b></a><a href="weighted-grade-calculator.html"><b>Weighted Grade Calculator</b></a><a href="test-grade-calculator.html"><b>Test Grade Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({w,h,nw}){
+const g=GCD(Math.round(w),Math.round(h));return [['Aspect ratio',w/g+':'+h/g],['Decimal',N(w/h,4)],['New height for new width',N(nw*h/w,2)],['Megapixels',N(w*h/1e6,2)]];
+});</script>
+</body></html>

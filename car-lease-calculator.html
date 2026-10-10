@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Car Lease Calculator | CalcHub</title>
+<meta name="description" content="Estimate a monthly lease payment from price, residual value and money factor.">
+<link rel="canonical" href="https://YOURDOMAIN.com/car-lease-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the money factor?", "acceptedAnswer": {"@type": "Answer", "text": "A lease interest figure. Multiply it by 2400 to get the approximate APR."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Car Lease Calculator</h1>
+<p class="muted">Estimate a monthly lease payment from price, residual value and money factor.</p>
+<form class="card" data-calc="1">
+<label for="price">Vehicle price ($)</label><input id="price" type="number" step="any" value="35000">
+<label for="down">Down payment ($)</label><input id="down" type="number" step="any" value="2000">
+<label for="res">Residual value (% of price)</label><input id="res" type="number" step="any" value="60">
+<label for="apr">Interest rate equivalent (% APR)</label><input id="apr" type="number" step="any" value="6">
+<label for="term">Lease term (months)</label><input id="term" type="number" step="any" value="36">
+<label for="tax">Sales tax (%)</label><input id="tax" type="number" step="any" value="7">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Lease payment = depreciation ((cap cost - residual) / term) + finance charge ((cap cost + residual) x money factor), plus tax. Money factor = APR / 2400.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the money factor?</summary><p>A lease interest figure. Multiply it by 2400 to get the approximate APR.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="rent-affordability-calculator.html"><b>Rent Affordability Calculator</b></a><a href="biweekly-mortgage-calculator.html"><b>Biweekly Mortgage Calculator</b></a><a href="heloc-calculator.html"><b>HELOC Payment Calculator</b></a><a href="dividend-yield-calculator.html"><b>Dividend Yield Calculator</b></a><a href="stock-profit-calculator.html"><b>Stock Profit Calculator</b></a><a href="credit-card-minimum-payment-calculator.html"><b>Credit Card Minimum Payment Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({price,down,res,apr,term,tax}){
+const cap=price-down,rv=price*res/100,mf=apr/2400,dep=(cap-rv)/term,fin=(cap+rv)*mf,base=dep+fin;
+return [['Monthly payment',M(base*(1+tax/100))],['Depreciation part',M(dep)],['Finance charge part',M(fin)],['Money factor',N(mf,5)],['Total of payments',M(base*(1+tax/100)*term)]];
+});</script>
+</body></html>

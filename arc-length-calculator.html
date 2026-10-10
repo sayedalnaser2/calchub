@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arc Length Calculator | CalcHub</title>
+<meta name="description" content="Find arc length, sector area and chord for a circle sector.">
+<link rel="canonical" href="https://YOURDOMAIN.com/arc-length-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert degrees to radians?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply by \u03c0/180."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Arc Length Calculator</h1>
+<p class="muted">Find arc length, sector area and chord for a circle sector.</p>
+<form class="card" data-calc="1">
+<label for="r">Radius</label><input id="r" type="number" step="any" value="10">
+<label for="deg">Angle (degrees)</label><input id="deg" type="number" step="any" value="60">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Arc length = r x θ (radians). Sector area = ½r²θ. Chord = 2r sin(θ/2).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert degrees to radians?</summary><p>Multiply by π/180.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="trigonometry-calculator.html"><b>Trigonometry Calculator</b></a><a href="triangle-calculator.html"><b>Triangle Angle Calculator (SSS)</b></a><a href="regular-polygon-calculator.html"><b>Regular Polygon Calculator</b></a><a href="roman-numeral-converter.html"><b>Roman Numeral Converter</b></a><a href="factors-calculator.html"><b>Factors Calculator</b></a><a href="prime-number-calculator.html"><b>Prime Number Checker</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({r,deg}){
+const t=deg*Math.PI/180;return [['Arc length',N(r*t,6)],['Sector area',N(r*r*t/2,6)],['Chord length',N(2*r*Math.sin(t/2),6)]];
+});</script>
+</body></html>

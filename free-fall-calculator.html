@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Fall Calculator | CalcHub</title>
+<meta name="description" content="Find fall time and impact speed from a height.">
+<link rel="canonical" href="https://YOURDOMAIN.com/free-fall-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does mass matter?", "acceptedAnswer": {"@type": "Answer", "text": "Not without air resistance."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Free Fall Calculator</h1>
+<p class="muted">Find fall time and impact speed from a height.</p>
+<form class="card" data-calc="1">
+<label for="h">Height (m)</label><input id="h" type="number" step="any" value="50">
+<label for="g">Gravity (m/s²)</label><input id="g" type="number" step="any" value="9.81">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Without drag, fall time is t = √(2h/g) and impact speed is v = gt.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does mass matter?</summary><p>Not without air resistance.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="escape-velocity-calculator.html"><b>Escape Velocity Calculator</b></a><a href="gravitational-force-calculator.html"><b>Gravitational Force Calculator</b></a><a href="centripetal-force-calculator.html"><b>Centripetal Force Calculator</b></a><a href="work-power-calculator.html"><b>Work and Power Calculator</b></a><a href="acceleration-calculator.html"><b>Acceleration Calculator</b></a><a href="wavelength-frequency-calculator.html"><b>Wavelength and Frequency Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({h,g}){
+const t=Math.sqrt(2*h/g);return [['Fall time',N(t,3)+' s'],['Impact speed',N(g*t,3)+' m/s'],['In km/h',N(g*t*3.6,2)],['In mph',N(g*t*2.23694,2)]];
+});</script>
+</body></html>

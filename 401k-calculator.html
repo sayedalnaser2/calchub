@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>401(k) Calculator | CalcHub</title>
+<meta name="description" content="Project your 401(k) balance with employer match and salary growth.">
+<link rel="canonical" href="https://YOURDOMAIN.com/401k-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the 2025 contribution limit?", "acceptedAnswer": {"@type": "Answer", "text": "The employee limit is $23,500, with extra catch-up for age 50+. Check the IRS for current figures."}}, {"@type": "Question", "name": "Always get the full match?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. An employer match is an immediate return on your contribution."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>401(k) Calculator</h1>
+<p class="muted">Project your 401(k) balance with employer match and salary growth.</p>
+<form class="card" data-calc="1">
+<label for="sal">Annual salary ($)</label><input id="sal" type="number" step="any" value="70000">
+<label for="pct">Your contribution (% of salary)</label><input id="pct" type="number" step="any" value="6">
+<label for="match">Employer match (% of your contribution)</label><input id="match" type="number" step="any" value="50">
+<label for="lim">Match limit (% of salary)</label><input id="lim" type="number" step="any" value="6">
+<label for="age">Current age</label><input id="age" type="number" step="any" value="30">
+<label for="ret">Retirement age</label><input id="ret" type="number" step="any" value="65">
+<label for="rate">Annual return (%)</label><input id="rate" type="number" step="any" value="7">
+<label for="g">Annual salary growth (%)</label><input id="g" type="number" step="any" value="2">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Each year your contribution plus the employer match is added, then the balance grows by the expected return. Salary growth raises later contributions.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the 2025 contribution limit?</summary><p>The employee limit is $23,500, with extra catch-up for age 50+. Check the IRS for current figures.</p></details>
+<details><summary>Always get the full match?</summary><p>Yes. An employer match is an immediate return on your contribution.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="roth-ira-calculator.html"><b>Roth IRA Calculator</b></a><a href="paycheck-calculator.html"><b>Paycheck Calculator</b></a><a href="income-tax-calculator.html"><b>Federal Income Tax Calculator</b></a><a href="self-employment-tax-calculator.html"><b>Self-Employment Tax Calculator</b></a><a href="capital-gains-tax-calculator.html"><b>Capital Gains Tax Calculator</b></a><a href="overtime-pay-calculator.html"><b>Overtime Pay Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({sal,pct,match,lim,age,ret,rate,g}){
+let bal=0,s=sal,mine=0,theirs=0;
+for(let y=0;y<Math.max(ret-age,0);y++){const c=s*pct/100,e=s*Math.min(pct,lim)/100*match/100;bal=bal*(1+rate/100)+c+e;mine+=c;theirs+=e;s*=1+g/100;}
+return [['Balance at retirement',M(bal)],['Your contributions',M(mine)],['Employer contributions',M(theirs)],['Investment growth',M(bal-mine-theirs)],['4% rule yearly income',M(bal*.04)]];
+});</script>
+</body></html>

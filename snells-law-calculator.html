@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snell&#x27;s Law Calculator | CalcHub</title>
+<meta name="description" content="Calculate the refraction angle between two media.">
+<link rel="canonical" href="https://YOURDOMAIN.com/snells-law-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Typical indices?", "acceptedAnswer": {"@type": "Answer", "text": "Air 1.00, water 1.33, glass about 1.5, diamond 2.42."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Snell&#x27;s Law Calculator</h1>
+<p class="muted">Calculate the refraction angle between two media.</p>
+<form class="card" data-calc="1">
+<label for="n1">Index of refraction 1</label><input id="n1" type="number" step="any" value="1">
+<label for="n2">Index of refraction 2</label><input id="n2" type="number" step="any" value="1.5">
+<label for="a1">Incident angle (degrees)</label><input id="a1" type="number" step="any" value="30">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Snell&#x27;s law: n1 sin θ1 = n2 sin θ2. Light bends toward the normal entering a denser medium.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Typical indices?</summary><p>Air 1.00, water 1.33, glass about 1.5, diamond 2.42.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="specific-heat-calculator.html"><b>Specific Heat Calculator</b></a><a href="torque-calculator.html"><b>Torque Calculator</b></a><a href="solar-savings-calculator.html"><b>Solar Panel Savings Calculator</b></a><a href="mass-energy-calculator.html"><b>Mass-Energy Equivalence (E = mc²) Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({n1,n2,a1}){
+const s=n1*Math.sin(a1*Math.PI/180)/n2;if(Math.abs(s)>1)return 'Total internal reflection occurs.';const crit=n1>n2?N(Math.asin(n2/n1)*180/Math.PI,3)+'°':'None';return [['Refraction angle',N(Math.asin(s)*180/Math.PI,4)+'°'],['Critical angle',crit]];
+});</script>
+</body></html>

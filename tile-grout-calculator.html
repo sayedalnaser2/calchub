@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grout Calculator | CalcHub</title>
+<meta name="description" content="Estimate the grout needed for a tiled area.">
+<link rel="canonical" href="https://YOURDOMAIN.com/tile-grout-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Sanded or unsanded?", "acceptedAnswer": {"@type": "Answer", "text": "Sanded for joints wider than 1/8 inch; unsanded for narrow joints."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Grout Calculator</h1>
+<p class="muted">Estimate the grout needed for a tiled area.</p>
+<form class="card" data-calc="1">
+<label for="a">Area (sq ft)</label><input id="a" type="number" step="any" value="100">
+<label for="tl">Tile length (in)</label><input id="tl" type="number" step="any" value="12">
+<label for="tw">Tile width (in)</label><input id="tw" type="number" step="any" value="12">
+<label for="t">Tile thickness (in)</label><input id="t" type="number" step="any" value="0.375">
+<label for="j">Joint width (in)</label><input id="j" type="number" step="any" value="0.125">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Grout volume is the joint length times width times tile thickness. Density (about 1.86 lb per 16 cubic inches) converts it to weight, with 10% waste.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Sanded or unsanded?</summary><p>Sanded for joints wider than 1/8 inch; unsanded for narrow joints.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="lumber-weight-calculator.html"><b>Rebar and Material Weight Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a><a href="tile-calculator.html"><b>Tile Calculator</b></a><a href="gravel-calculator.html"><b>Gravel Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,tl,tw,t,j}){
+const lb=a*144*((tl+tw)/(tl*tw))*t*j*1.86*1.1/16;return [['Grout needed (approx.)',N(lb,1)+' lb'],['25 lb bags',N(Math.ceil(lb/25),0)]];
+});</script>
+</body></html>

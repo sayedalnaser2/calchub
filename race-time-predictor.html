@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Race Time Predictor | CalcHub</title>
+<meta name="description" content="Predict your race times at other distances from a recent result.">
+<link rel="canonical" href="https://YOURDOMAIN.com/race-time-predictor.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is it harder for the marathon?", "acceptedAnswer": {"@type": "Answer", "text": "Marathon performance depends on endurance training, so predictions from short races can be optimistic."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Race Time Predictor</h1>
+<p class="muted">Predict your race times at other distances from a recent result.</p>
+<form class="card" data-calc="1">
+<label for="d1">Known distance (km)</label><input id="d1" type="number" step="any" value="10">
+<label for="m1">Known time (minutes)</label><input id="m1" type="number" step="any" value="50">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The Riegel formula predicts T2 = T1 x (D2 / D1)^1.06. It works best for distances not too different from the known race and for well-trained runners.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why is it harder for the marathon?</summary><p>Marathon performance depends on endurance training, so predictions from short races can be optimistic.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="heart-rate-reserve-calculator.html"><b>Heart Rate Reserve Calculator</b></a><a href="bmi-prime-calculator.html"><b>BMI Prime Calculator</b></a><a href="carb-calculator.html"><b>Carbohydrate Calculator</b></a><a href="fat-intake-calculator.html"><b>Daily Fat Intake Calculator</b></a><a href="fiber-intake-calculator.html"><b>Fiber Intake Calculator</b></a><a href="ideal-body-fat-calculator.html"><b>Healthy Body Fat Range Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({d1,m1}){
+const f=d=>{const t=m1*Math.pow(d/d1,1.06);const h=Math.floor(t/60),m=Math.floor(t%60),s=Math.round((t*60)%60);return h+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');};
+return [['5K',f(5)],['10K',f(10)],['Half marathon',f(21.0975)],['Marathon',f(42.195)]];
+});</script>
+</body></html>

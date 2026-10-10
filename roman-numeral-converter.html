@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roman Numeral Converter | CalcHub</title>
+<meta name="description" content="Convert numbers to Roman numerals and back.">
+<link rel="canonical" href="https://YOURDOMAIN.com/roman-numeral-converter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is there no zero?", "acceptedAnswer": {"@type": "Answer", "text": "The Roman system had no symbol for zero."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Roman Numeral Converter</h1>
+<p class="muted">Convert numbers to Roman numerals and back.</p>
+<form class="card" data-calc="1">
+<label for="num">Number (1-3999)</label><input id="num" type="number" step="any" value="2024">
+<label for="rom">Roman numeral</label><input id="rom" type="text" value="MCMXCIV">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Roman numerals use I, V, X, L, C, D and M. A smaller symbol before a larger one is subtracted (IV = 4).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why is there no zero?</summary><p>The Roman system had no symbol for zero.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="factors-calculator.html"><b>Factors Calculator</b></a><a href="prime-number-calculator.html"><b>Prime Number Checker</b></a><a href="vector-calculator.html"><b>Vector Calculator (3D)</b></a><a href="complex-number-calculator.html"><b>Complex Number Calculator</b></a><a href="quartile-calculator.html"><b>Quartile and IQR Calculator</b></a><a href="percentile-calculator.html"><b>Percentile Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({num,rom}){
+num=Math.round(num);let out='';if(num>=1&&num<=3999){const t=[[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];let n=num;for(const [v,s] of t){while(n>=v){out+=s;n-=v;}}}else out='Use 1 to 3999';
+const m={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};let tot=0;const r=rom.toUpperCase();let ok=/^[IVXLCDM]+$/.test(r);if(ok){for(let i=0;i<r.length;i++){const a=m[r[i]],b=m[r[i+1]]||0;tot+=a<b?-a:a;}}
+return [[num+' in Roman numerals',out],[rom.toUpperCase()+' as a number',ok?tot:'Invalid numeral']];
+});</script>
+</body></html>

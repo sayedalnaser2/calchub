@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FIRE Calculator | CalcHub</title>
+<meta name="description" content="Estimate your financial independence number and years until you reach it.">
+<link rel="canonical" href="https://YOURDOMAIN.com/fire-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is 4% safe?", "acceptedAnswer": {"@type": "Answer", "text": "It is a historical guideline for ~30-year retirements. Longer retirements may need a lower rate."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>FIRE Calculator</h1>
+<p class="muted">Estimate your financial independence number and years until you reach it.</p>
+<form class="card" data-calc="1">
+<label for="exp">Annual expenses in retirement ($)</label><input id="exp" type="number" step="any" value="40000">
+<label for="have">Current investments ($)</label><input id="have" type="number" step="any" value="50000">
+<label for="sv">Annual savings ($)</label><input id="sv" type="number" step="any" value="25000">
+<label for="rate">Real return (% after inflation)</label><input id="rate" type="number" step="any" value="5">
+<label for="wr">Safe withdrawal rate (%)</label><input id="wr" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Your FIRE number is annual spending divided by the withdrawal rate (25x spending at 4%). The calculator grows your savings until it reaches that number.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is 4% safe?</summary><p>It is a historical guideline for ~30-year retirements. Longer retirements may need a lower rate.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="apy-calculator.html"><b>APY Calculator</b></a><a href="cd-calculator.html"><b>CD Calculator</b></a><a href="down-payment-calculator.html"><b>Down Payment Calculator</b></a><a href="mortgage-points-calculator.html"><b>Mortgage Points Calculator</b></a><a href="balance-transfer-calculator.html"><b>Balance Transfer Calculator</b></a><a href="salary-to-hourly-calculator.html"><b>Salary to Hourly Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({exp,have,sv,rate,wr}){
+const target=exp/(wr/100);let b=have,y=0;while(b<target&&y<100){b=b*(1+rate/100)+sv;y++;}
+return [['FIRE number',M(target)],['Years to reach it',y>=100?'100+':y],['Savings rate needed note','Higher savings shorten this a lot'],['Current progress',PCT(have/target*100,1)]];
+});</script>
+</body></html>

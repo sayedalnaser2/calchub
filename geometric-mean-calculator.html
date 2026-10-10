@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geometric Mean Calculator | CalcHub</title>
+<meta name="description" content="Calculate the geometric and harmonic mean of positive numbers.">
+<link rel="canonical" href="https://YOURDOMAIN.com/geometric-mean-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When use geometric mean?", "acceptedAnswer": {"@type": "Answer", "text": "For multiplicative changes, such as average investment returns over several years."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Geometric Mean Calculator</h1>
+<p class="muted">Calculate the geometric and harmonic mean of positive numbers.</p>
+<form class="card" data-calc="1">
+<label for="list">Numbers (comma-separated)</label><input id="list" type="text" value="2, 8, 4, 16">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The geometric mean is the nth root of the product, suited to growth rates and ratios. The harmonic mean suits rates like speed.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When use geometric mean?</summary><p>For multiplicative changes, such as average investment returns over several years.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="rounding-calculator.html"><b>Rounding Calculator</b></a><a href="modulo-calculator.html"><b>Modulo Calculator</b></a><a href="area-calculator.html"><b>Area Calculator</b></a><a href="rectangle-calculator.html"><b>Rectangle Calculator</b></a><a href="surface-area-calculator.html"><b>Surface Area Calculator</b></a><a href="arc-length-calculator.html"><b>Arc Length Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({list}){
+const a=NUMS(list);if(!a.length||a.some(x=>x<=0))return 'Enter positive numbers.';const n=a.length;
+return [['Geometric mean',N(Math.exp(a.reduce((s,x)=>s+Math.log(x),0)/n),8)],['Harmonic mean',N(n/a.reduce((s,x)=>s+1/x,0),8)],['Arithmetic mean',N(a.reduce((s,x)=>s+x,0)/n,8)]];
+});</script>
+</body></html>

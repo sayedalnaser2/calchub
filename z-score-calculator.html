@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Z-Score Calculator | CalcHub</title>
+<meta name="description" content="Convert a value to a z-score and percentile.">
+<link rel="canonical" href="https://YOURDOMAIN.com/z-score-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does z = 2 mean?", "acceptedAnswer": {"@type": "Answer", "text": "The value is two standard deviations above the mean, around the 97.7th percentile."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Z-Score Calculator</h1>
+<p class="muted">Convert a value to a z-score and percentile.</p>
+<form class="card" data-calc="1">
+<label for="x">Value (x)</label><input id="x" type="number" step="any" value="85">
+<label for="mu">Mean (μ)</label><input id="mu" type="number" step="any" value="70">
+<label for="sd">Standard deviation (σ)</label><input id="sd" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>z = (x - mean) / standard deviation. The percentile uses the standard normal cumulative distribution.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What does z = 2 mean?</summary><p>The value is two standard deviations above the mean, around the 97.7th percentile.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="p-value-calculator.html"><b>P-Value Calculator</b></a><a href="confidence-interval-calculator.html"><b>Confidence Interval Calculator</b></a><a href="sample-size-calculator.html"><b>Sample Size Calculator</b></a><a href="margin-of-error-calculator.html"><b>Margin of Error Calculator</b></a><a href="linear-regression-calculator.html"><b>Linear Regression Calculator</b></a><a href="weighted-average-calculator.html"><b>Weighted Average Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({x,mu,sd}){
+if(sd<=0)return 'Standard deviation must be positive.';const z=(x-mu)/sd;return [['Z-score',N(z,4)],['Percentile',PCT(NCDF(z)*100,2)],['P(X > x)',N(1-NCDF(z),6)]];
+});</script>
+</body></html>

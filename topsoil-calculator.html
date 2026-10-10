@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Topsoil Calculator | CalcHub</title>
+<meta name="description" content="Calculate the cubic yards of topsoil or garden soil for a bed or lawn.">
+<link rel="canonical" href="https://YOURDOMAIN.com/topsoil-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much topsoil for a new lawn?", "acceptedAnswer": {"@type": "Answer", "text": "4-6 inches is typical for establishing grass."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Topsoil Calculator</h1>
+<p class="muted">Calculate the cubic yards of topsoil or garden soil for a bed or lawn.</p>
+<form class="card" data-calc="1">
+<label for="l">Length (ft)</label><input id="l" type="number" step="any" value="20">
+<label for="w">Width (ft)</label><input id="w" type="number" step="any" value="10">
+<label for="d">Depth (inches)</label><input id="d" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Soil volume equals length x width x depth. Topsoil weighs roughly a ton per cubic yard depending on moisture.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How much topsoil for a new lawn?</summary><p>4-6 inches is typical for establishing grass.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="cubic-yard-calculator.html"><b>Cubic Yard Calculator</b></a><a href="drywall-calculator.html"><b>Drywall Calculator</b></a><a href="wallpaper-calculator.html"><b>Wallpaper Calculator</b></a><a href="fence-calculator.html"><b>Fence Calculator</b></a><a href="deck-board-calculator.html"><b>Deck Board Calculator</b></a><a href="stair-calculator.html"><b>Stair Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,d}){
+const cy=l*w*d/12/27;return [['Topsoil needed',N(cy,2)+' cubic yards'],['With 10% extra',N(cy*1.1,2)+' cubic yards'],['Approx. weight',N(cy*1.1,2)+' tons (about 1 ton per cu yd)'],['1 cu ft bags',N(Math.ceil(cy*27),0)]];
+});</script>
+</body></html>

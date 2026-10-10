@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trigonometry Calculator | CalcHub</title>
+<meta name="description" content="Calculate sin, cos, tan and their reciprocals for an angle.">
+<link rel="canonical" href="https://YOURDOMAIN.com/trigonometry-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Degrees or radians?", "acceptedAnswer": {"@type": "Answer", "text": "Pick the unit your angle is in; \u03c0 radians equals 180\u00b0."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Trigonometry Calculator</h1>
+<p class="muted">Calculate sin, cos, tan and their reciprocals for an angle.</p>
+<form class="card" data-calc="1">
+<label for="a">Angle</label><input id="a" type="number" step="any" value="30">
+<label for="u">Unit</label><select id="u"><option value="1" selected>Degrees</option><option value="2">Radians</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>sin, cos and tan relate an angle to ratios of right-triangle sides. csc, sec and cot are their reciprocals.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Degrees or radians?</summary><p>Pick the unit your angle is in; π radians equals 180°.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="triangle-calculator.html"><b>Triangle Angle Calculator (SSS)</b></a><a href="regular-polygon-calculator.html"><b>Regular Polygon Calculator</b></a><a href="roman-numeral-converter.html"><b>Roman Numeral Converter</b></a><a href="factors-calculator.html"><b>Factors Calculator</b></a><a href="prime-number-calculator.html"><b>Prime Number Checker</b></a><a href="vector-calculator.html"><b>Vector Calculator (3D)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,u}){
+const t=u==1?a*Math.PI/180:a,f=x=>Math.abs(x)<1e-12?0:x,s=f(Math.sin(t)),c=f(Math.cos(t));return [['sin',N(s,8)],['cos',N(c,8)],['tan',c===0?'Undefined':N(s/c,8)],['csc',s===0?'Undefined':N(1/s,8)],['sec',c===0?'Undefined':N(1/c,8)],['cot',s===0?'Undefined':N(c/s,8)]];
+});</script>
+</body></html>

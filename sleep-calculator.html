@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sleep Calculator | CalcHub</title>
+<meta name="description" content="Find the best bedtime or wake-up time based on 90-minute sleep cycles.">
+<link rel="canonical" href="https://YOURDOMAIN.com/sleep-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many cycles do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Most adults do best with 5-6 cycles (7.5-9 hours)."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Sleep Calculator</h1>
+<p class="muted">Find the best bedtime or wake-up time based on 90-minute sleep cycles.</p>
+<form class="card" data-calc="1">
+<label for="mode">I want to</label><select id="mode"><option value="1" selected>Wake up at a set time</option><option value="2">Go to bed at a set time</option></select>
+<label for="t">Time</label><input id="t" type="time" value="07:00">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Sleep moves in cycles of about 90 minutes. Waking at the end of a cycle usually feels easier. The calculator allows 15 minutes to fall asleep.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How many cycles do I need?</summary><p>Most adults do best with 5-6 cycles (7.5-9 hours).</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="bac-calculator.html"><b>Blood Alcohol Content (BAC) Calculator</b></a><a href="vo2-max-calculator.html"><b>VO2 Max Calculator</b></a><a href="steps-to-miles-calculator.html"><b>Steps to Miles Calculator</b></a><a href="weight-loss-calculator.html"><b>Weight Loss Calculator</b></a><a href="calorie-deficit-calculator.html"><b>Calorie Deficit Calculator</b></a><a href="egfr-calculator.html"><b>eGFR Calculator (Kidney Function)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({mode,t}){
+const [h,m]=t.split(':').map(Number),base=h*60+m,fmt=x=>{x=((x%1440)+1440)%1440;const hh=Math.floor(x/60),mm=x%60,ap=hh>=12?'PM':'AM';return ((hh+11)%12+1)+':'+String(mm).padStart(2,'0')+' '+ap;};
+const out=[];if(mode==1){[6,5,4].forEach(c=>out.push([c+' cycles ('+c*1.5+' h)','Go to bed at '+fmt(base-c*90-15)]));}
+else{[4,5,6].forEach(c=>out.push([c+' cycles ('+c*1.5+' h)','Wake at '+fmt(base+c*90+15)]));}
+return out;
+});</script>
+</body></html>

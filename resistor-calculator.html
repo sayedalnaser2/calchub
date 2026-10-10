@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resistor Calculator (Series and Parallel) | CalcHub</title>
+<meta name="description" content="Find total resistance for resistors in series and parallel.">
+<link rel="canonical" href="https://YOURDOMAIN.com/resistor-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is parallel resistance smaller?", "acceptedAnswer": {"@type": "Answer", "text": "Extra paths let more current flow."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Resistor Calculator (Series and Parallel)</h1>
+<p class="muted">Find total resistance for resistors in series and parallel.</p>
+<form class="card" data-calc="1">
+<label for="r1">R1 (Ω)</label><input id="r1" type="number" step="any" value="100">
+<label for="r2">R2 (Ω)</label><input id="r2" type="number" step="any" value="220">
+<label for="r3">R3 (Ω)</label><input id="r3" type="number" step="any" value="330">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>In series resistances add. In parallel the reciprocals add: 1/R = 1/R1 + 1/R2 + 1/R3.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why is parallel resistance smaller?</summary><p>Extra paths let more current flow.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="led-resistor-calculator.html"><b>LED Resistor Calculator</b></a><a href="watts-amps-volts-calculator.html"><b>Watts, Amps and Volts Calculator</b></a><a href="voltage-drop-calculator.html"><b>Voltage Drop Calculator</b></a><a href="battery-life-calculator.html"><b>Battery Life Calculator</b></a><a href="decibel-calculator.html"><b>Decibel Calculator</b></a><a href="snells-law-calculator.html"><b>Snell&#x27;s Law Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({r1,r2,r3}){
+return [['Series total',N(r1+r2+r3,3)+' Ω'],['Parallel total',N(1/(1/r1+1/r2+1/r3),3)+' Ω'],['R1 ∥ R2 only',N(r1*r2/(r1+r2),3)+' Ω']];
+});</script>
+</body></html>

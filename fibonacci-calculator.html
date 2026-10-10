@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fibonacci Calculator | CalcHub</title>
+<meta name="description" content="Find the nth Fibonacci number and the golden ratio approximation.">
+<link rel="canonical" href="https://YOURDOMAIN.com/fibonacci-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where do Fibonacci numbers appear?", "acceptedAnswer": {"@type": "Answer", "text": "Plant growth patterns, art and algorithms, among others."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Fibonacci Calculator</h1>
+<p class="muted">Find the nth Fibonacci number and the golden ratio approximation.</p>
+<form class="card" data-calc="1">
+<label for="n">n (0-1000)</label><input id="n" type="number" step="any" value="50">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Each Fibonacci number is the sum of the two before it: 0, 1, 1, 2, 3, 5, 8... The ratio of consecutive terms approaches the golden ratio 1.618.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Where do Fibonacci numbers appear?</summary><p>Plant growth patterns, art and algorithms, among others.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="determinant-calculator.html"><b>Matrix Determinant Calculator (3×3)</b></a><a href="system-of-equations-calculator.html"><b>System of Equations Calculator (2×2)</b></a><a href="proportion-calculator.html"><b>Proportion Calculator</b></a><a href="ratio-calculator.html"><b>Ratio Calculator</b></a><a href="random-number-generator.html"><b>Random Number Generator</b></a><a href="dice-roller.html"><b>Dice Roller</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({n}){
+n=Math.round(n);if(n<0||n>1000)return 'Enter a whole number from 0 to 1000.';let a=0n,b=1n;for(let i=0;i<n;i++){[a,b]=[b,a+b];}const s=a.toString();
+return [['F(n)',s.length>40?s.slice(0,1)+'.'+s.slice(1,12)+'e+'+(s.length-1):s],['Digits',s.length],['Ratio F(n+1)/F(n)',n>0?N(Number(b)/Number(a),10):'—']];
+});</script>
+</body></html>

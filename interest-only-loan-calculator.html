@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interest-Only Loan Calculator | CalcHub</title>
+<meta name="description" content="Compare interest-only payments with the later full payment.">
+<link rel="canonical" href="https://YOURDOMAIN.com/interest-only-loan-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who uses interest-only loans?", "acceptedAnswer": {"@type": "Answer", "text": "Investors and borrowers expecting higher income later. The balance is not reduced during that period."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Interest-Only Loan Calculator</h1>
+<p class="muted">Compare interest-only payments with the later full payment.</p>
+<form class="card" data-calc="1">
+<label for="amt">Loan amount ($)</label><input id="amt" type="number" step="any" value="300000">
+<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="any" value="6.5">
+<label for="io">Interest-only years</label><input id="io" type="number" step="any" value="5">
+<label for="term">Total term (years)</label><input id="term" type="number" step="any" value="30">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>During the interest-only period you pay just the interest, so the balance does not fall. After it ends the full balance is repaid over the remaining term, making payments higher.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Who uses interest-only loans?</summary><p>Investors and borrowers expecting higher income later. The balance is not reduced during that period.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="401k-calculator.html"><b>401(k) Calculator</b></a><a href="roth-ira-calculator.html"><b>Roth IRA Calculator</b></a><a href="paycheck-calculator.html"><b>Paycheck Calculator</b></a><a href="income-tax-calculator.html"><b>Federal Income Tax Calculator</b></a><a href="self-employment-tax-calculator.html"><b>Self-Employment Tax Calculator</b></a><a href="capital-gains-tax-calculator.html"><b>Capital Gains Tax Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({amt,rate,io,term}){
+const iop=amt*rate/1200,full=PMT(amt,rate,(term-io)*12);return [['Interest-only payment',M(iop)],['Payment after interest-only period',M(full)],['Payment increase',M(full-iop)]];
+});</script>
+</body></html>

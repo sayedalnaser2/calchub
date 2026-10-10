@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dividend Yield Calculator | CalcHub</title>
+<meta name="description" content="Calculate dividend yield and annual dividend income.">
+<link rel="canonical" href="https://YOURDOMAIN.com/dividend-yield-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a high yield good?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. A very high yield can signal a falling price or an unsustainable dividend."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Dividend Yield Calculator</h1>
+<p class="muted">Calculate dividend yield and annual dividend income.</p>
+<form class="card" data-calc="1">
+<label for="price">Share price ($)</label><input id="price" type="number" step="any" value="150">
+<label for="div">Annual dividend per share ($)</label><input id="div" type="number" step="any" value="4.2">
+<label for="sh">Number of shares</label><input id="sh" type="number" step="any" value="100">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Yield = annual dividend per share / share price. Income is dividend per share times the number of shares.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is a high yield good?</summary><p>Not always. A very high yield can signal a falling price or an unsustainable dividend.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="stock-profit-calculator.html"><b>Stock Profit Calculator</b></a><a href="credit-card-minimum-payment-calculator.html"><b>Credit Card Minimum Payment Calculator</b></a><a href="emergency-fund-calculator.html"><b>Emergency Fund Calculator</b></a><a href="net-worth-calculator.html"><b>Net Worth Calculator</b></a><a href="fire-calculator.html"><b>FIRE Calculator</b></a><a href="apy-calculator.html"><b>APY Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({price,div,sh}){
+return [['Dividend yield',PCT(div/price*100,2)],['Annual dividend income',M(div*sh)],['Monthly income',M(div*sh/12)],['Cost of position',M(price*sh)]];
+});</script>
+</body></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HEX to RGB Color Converter | CalcHub</title>
+<meta name="description" content="Convert a HEX color code to RGB and HSL.">
+<link rel="canonical" href="https://YOURDOMAIN.com/hex-to-rgb-converter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does #FFFFFF mean?", "acceptedAnswer": {"@type": "Answer", "text": "White: all three channels at maximum."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a></p>
+<h1>HEX to RGB Color Converter</h1>
+<p class="muted">Convert a HEX color code to RGB and HSL.</p>
+<form class="card" data-calc="1">
+<label for="hex">HEX color</label><input id="hex" type="text" value="#3498db">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A HEX code encodes red, green and blue as three two-digit hexadecimal numbers (00-FF).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What does #FFFFFF mean?</summary><p>White: all three channels at maximum.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="rgb-to-hex-converter.html"><b>RGB to HEX Color Converter</b></a><a href="cooking-temperature-converter.html"><b>Oven Temperature Converter</b></a><a href="shoe-size-converter.html"><b>Shoe Size Converter</b></a><a href="length-converter.html"><b>Length Converter</b></a><a href="weight-converter.html"><b>Weight and Mass Converter</b></a><a href="volume-converter.html"><b>Volume Converter</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({hex}){
+let h=hex.trim().replace('#','');if(h.length===3)h=h.split('').map(c=>c+c).join('');if(!/^[0-9a-fA-F]{6}$/.test(h))return 'Enter a valid HEX color like #3498db.';
+const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16),R=r/255,G=g/255,B=b/255,mx=Math.max(R,G,B),mn=Math.min(R,G,B),l=(mx+mn)/2,d=mx-mn;
+let s=d===0?0:d/(1-Math.abs(2*l-1)),hh=d===0?0:mx===R?((G-B)/d)%6:mx===G?(B-R)/d+2:(R-G)/d+4;hh=Math.round((hh*60+360)%360);
+return [['RGB','rgb('+r+', '+g+', '+b+')'],['HSL','hsl('+hh+', '+Math.round(s*100)+'%, '+Math.round(l*100)+'%)'],['HEX','#'+h.toUpperCase()]];
+});</script>
+</body></html>

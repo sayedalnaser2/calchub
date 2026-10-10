@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Business Days Calculator | CalcHub</title>
+<meta name="description" content="Count working days between two dates, minus holidays.">
+<link rel="canonical" href="https://YOURDOMAIN.com/business-days-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does it know public holidays?", "acceptedAnswer": {"@type": "Answer", "text": "No. Enter the number of holidays that fall on weekdays."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Business Days Calculator</h1>
+<p class="muted">Count working days between two dates, minus holidays.</p>
+<form class="card" data-calc="1">
+<label for="start">Start date</label><input id="start" type="date" value="" data-today="1">
+<label for="end">End date</label><input id="end" type="date" value="2027-01-01">
+<label for="hol">Holidays to exclude</label><input id="hol" type="number" step="any" value="0">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Business days count Monday through Friday between the dates (start included, end excluded), minus any holidays you enter.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does it know public holidays?</summary><p>No. Enter the number of holidays that fall on weekdays.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="zodiac-sign-calculator.html"><b>Zodiac Sign Calculator</b></a><a href="chinese-zodiac-calculator.html"><b>Chinese Zodiac Calculator</b></a><a href="word-counter.html"><b>Word Counter</b></a><a href="download-time-calculator.html"><b>Download Time Calculator</b></a><a href="aspect-ratio-calculator.html"><b>Aspect Ratio Calculator</b></a><a href="ppi-calculator.html"><b>PPI Calculator (Pixel Density)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({start,end,hol}){
+let s=D(start),e=D(end);if(e<s)[s,e]=[e,s];let n=0;for(let d=new Date(s);d<e;d.setDate(d.getDate()+1)){const w=d.getDay();if(w!==0&&w!==6)n++;}
+return [['Business days',Math.max(n-hol,0)],['Calendar days',Math.round((e-s)/864e5)],['Weekend days',Math.round((e-s)/864e5)-n]];
+});</script>
+</body></html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Child Height Predictor | CalcHub</title>
+<meta name="description" content="Estimate adult height from parents&#x27; heights.">
+<link rel="canonical" href="https://YOURDOMAIN.com/child-height-predictor.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate is it?", "acceptedAnswer": {"@type": "Answer", "text": "It is a population average, not a guarantee for one child."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Child Height Predictor</h1>
+<p class="muted">Estimate adult height from parents&#x27; heights.</p>
+<form class="card" data-calc="1">
+<label for="sex">Child sex</label><select id="sex"><option value="1" selected>Boy</option><option value="2">Girl</option></select>
+<label for="f">Father&#x27;s height (cm)</label><input id="f" type="number" step="any" value="180">
+<label for="m">Mother&#x27;s height (cm)</label><input id="m" type="number" step="any" value="165">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The mid-parental method averages parents&#x27; heights and adds 6.5 cm for boys or subtracts 6.5 cm for girls. Actual heights vary by about 8.5 cm either way.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How accurate is it?</summary><p>It is a population average, not a guarantee for one child.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="dog-age-calculator.html"><b>Dog Age Calculator</b></a><a href="cat-age-calculator.html"><b>Cat Age Calculator</b></a><a href="pregnancy-weight-gain-calculator.html"><b>Pregnancy Weight Gain Calculator</b></a><a href="race-time-predictor.html"><b>Race Time Predictor</b></a><a href="heart-rate-reserve-calculator.html"><b>Heart Rate Reserve Calculator</b></a><a href="bmi-prime-calculator.html"><b>BMI Prime Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({sex,f,m}){
+const h=sex==1?(f+m+13)/2:(f+m-13)/2;return [['Predicted adult height',N(h,1)+' cm'],['In feet and inches',Math.floor(h/30.48)+' ft '+N(h/2.54%12,1)+' in'],['Likely range',N(h-8.5,0)+' - '+N(h+8.5,0)+' cm']];
+});</script>
+</body></html>

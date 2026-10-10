@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wavelength and Frequency Calculator | CalcHub</title>
+<meta name="description" content="Convert between frequency, wavelength and photon energy.">
+<link rel="canonical" href="https://YOURDOMAIN.com/wavelength-frequency-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the speed of light?", "acceptedAnswer": {"@type": "Answer", "text": "299,792,458 m/s in a vacuum."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Wavelength and Frequency Calculator</h1>
+<p class="muted">Convert between frequency, wavelength and photon energy.</p>
+<form class="card" data-calc="1">
+<label for="f">Frequency (Hz)</label><input id="f" type="number" step="any" value="500000000000000.0">
+<label for="c">Wave speed (m/s)</label><input id="c" type="number" step="any" value="299792458">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>wavelength = speed / frequency, and photon energy E = hf with Planck&#x27;s constant. Default 500 THz is green light.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the speed of light?</summary><p>299,792,458 m/s in a vacuum.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="coulombs-law-calculator.html"><b>Coulomb&#x27;s Law Calculator</b></a><a href="resistor-calculator.html"><b>Resistor Calculator (Series and Parallel)</b></a><a href="led-resistor-calculator.html"><b>LED Resistor Calculator</b></a><a href="watts-amps-volts-calculator.html"><b>Watts, Amps and Volts Calculator</b></a><a href="voltage-drop-calculator.html"><b>Voltage Drop Calculator</b></a><a href="battery-life-calculator.html"><b>Battery Life Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({f,c}){
+const l=c/f;return [['Wavelength',l.toExponential(4)+' m'],['In nanometres',N(l*1e9,3)+' nm'],['Photon energy',(6.62607e-34*f).toExponential(4)+' J'],['Photon energy (eV)',N(6.62607e-34*f/1.602177e-19,4)+' eV']];
+});</script>
+</body></html>

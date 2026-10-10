@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raise Calculator | CalcHub</title>
+<meta name="description" content="See your new salary and pay increase from a percentage raise.">
+<link rel="canonical" href="https://YOURDOMAIN.com/raise-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a typical raise?", "acceptedAnswer": {"@type": "Answer", "text": "Annual merit raises average roughly 3-4% in the US. Promotions are usually larger."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Raise Calculator</h1>
+<p class="muted">See your new salary and pay increase from a percentage raise.</p>
+<form class="card" data-calc="1">
+<label for="cur">Current annual salary ($)</label><input id="cur" type="number" step="any" value="60000">
+<label for="pct">Raise (%)</label><input id="pct" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>New salary = current salary x (1 + raise%). Hourly rate assumes 2,080 work hours a year.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a typical raise?</summary><p>Annual merit raises average roughly 3-4% in the US. Promotions are usually larger.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="commission-calculator.html"><b>Commission Calculator</b></a><a href="vat-calculator.html"><b>VAT Calculator</b></a><a href="gst-calculator.html"><b>GST Calculator</b></a><a href="reverse-sales-tax-calculator.html"><b>Reverse Sales Tax Calculator</b></a><a href="annuity-calculator.html"><b>Annuity Calculator</b></a><a href="present-value-calculator.html"><b>Present Value Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({cur,pct}){
+const n=cur*(1+pct/100);return [['New salary',M(n)],['Annual increase',M(n-cur)],['Monthly increase',M((n-cur)/12)],['New hourly rate (2,080 h)',M(n/2080)]];
+});</script>
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Random Number Generator | CalcHub</title>
+<meta name="description" content="Generate random numbers within a range.">
+<link rel="canonical" href="https://YOURDOMAIN.com/random-number-generator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this truly random?", "acceptedAnswer": {"@type": "Answer", "text": "It is pseudo-random, fine for games and picking, but not for cryptography."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Random Number Generator</h1>
+<p class="muted">Generate random numbers within a range.</p>
+<form class="card" data-calc="1">
+<label for="lo">Minimum</label><input id="lo" type="number" step="any" value="1">
+<label for="hi">Maximum</label><input id="hi" type="number" step="any" value="100">
+<label for="cnt">How many (1-50)</label><input id="cnt" type="number" step="any" value="5">
+<label for="dup">Duplicates</label><select id="dup"><option value="1" selected>Allowed</option><option value="0">Not allowed</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Numbers are drawn with the browser&#x27;s pseudo-random generator, uniformly between the minimum and maximum. Press Calculate to draw again.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is this truly random?</summary><p>It is pseudo-random, fine for games and picking, but not for cryptography.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="dice-roller.html"><b>Dice Roller</b></a><a href="coin-flip.html"><b>Coin Flip</b></a><a href="probability-calculator.html"><b>Probability Calculator</b></a><a href="binomial-probability-calculator.html"><b>Binomial Probability Calculator</b></a><a href="z-score-calculator.html"><b>Z-Score Calculator</b></a><a href="p-value-calculator.html"><b>P-Value Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({lo,hi,cnt,dup}){
+lo=Math.round(lo);hi=Math.round(hi);cnt=Math.min(Math.max(Math.round(cnt),1),50);if(hi<lo)return 'Maximum must be at least the minimum.';
+if(!dup&&cnt>hi-lo+1)return 'Not enough unique numbers in the range.';const out=[];while(out.length<cnt){const x=lo+Math.floor(Math.random()*(hi-lo+1));if(dup||!out.includes(x))out.push(x);}
+return [['Your numbers',out.join(', ')],['Sum',out.reduce((a,b)=>a+b,0)],['Click Calculate for new numbers','']];
+});</script>
+</body></html>

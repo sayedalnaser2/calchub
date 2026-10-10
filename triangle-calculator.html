@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Triangle Angle Calculator (SSS) | CalcHub</title>
+<meta name="description" content="Find all angles of a triangle from its three sides.">
+<link rel="canonical" href="https://YOURDOMAIN.com/triangle-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I solve a triangle with two sides and an angle?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with the law of sines or cosines; this tool handles the three-sides case."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Triangle Angle Calculator (SSS)</h1>
+<p class="muted">Find all angles of a triangle from its three sides.</p>
+<form class="card" data-calc="1">
+<label for="a">Side a</label><input id="a" type="number" step="any" value="5">
+<label for="b">Side b</label><input id="b" type="number" step="any" value="6">
+<label for="c">Side c</label><input id="c" type="number" step="any" value="7">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The law of cosines gives each angle from the three sides. Angles of a triangle always add to 180°.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Can I solve a triangle with two sides and an angle?</summary><p>Yes, with the law of sines or cosines; this tool handles the three-sides case.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="regular-polygon-calculator.html"><b>Regular Polygon Calculator</b></a><a href="roman-numeral-converter.html"><b>Roman Numeral Converter</b></a><a href="factors-calculator.html"><b>Factors Calculator</b></a><a href="prime-number-calculator.html"><b>Prime Number Checker</b></a><a href="vector-calculator.html"><b>Vector Calculator (3D)</b></a><a href="complex-number-calculator.html"><b>Complex Number Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,b,c}){
+if(a+b<=c||a+c<=b||b+c<=a)return 'These sides cannot form a triangle.';const A=Math.acos((b*b+c*c-a*a)/(2*b*c)),B=Math.acos((a*a+c*c-b*b)/(2*a*c)),d=x=>N(x*180/Math.PI,4)+'°';
+const type=a===b&&b===c?'Equilateral':(a===b||b===c||a===c)?'Isosceles':'Scalene';return [['Angle A',d(A)],['Angle B',d(B)],['Angle C',d(Math.PI-A-B)],['Type',type],['Right triangle?',Math.abs(Math.max(a,b,c)**2-(a*a+b*b+c*c-Math.max(a,b,c)**2))<1e-9?'Yes':'No']];
+});</script>
+</body></html>

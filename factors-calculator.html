@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Factors Calculator | CalcHub</title>
+<meta name="description" content="List all factors of a number.">
+<link rel="canonical" href="https://YOURDOMAIN.com/factors-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a perfect number?", "acceptedAnswer": {"@type": "Answer", "text": "One equal to the sum of its proper divisors, like 6 or 28."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Factors Calculator</h1>
+<p class="muted">List all factors of a number.</p>
+<form class="card" data-calc="1">
+<label for="n">Positive whole number</label><input id="n" type="number" step="any" value="360">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A factor divides the number with no remainder. The tool tests divisors up to the square root and pairs them.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a perfect number?</summary><p>One equal to the sum of its proper divisors, like 6 or 28.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="prime-number-calculator.html"><b>Prime Number Checker</b></a><a href="vector-calculator.html"><b>Vector Calculator (3D)</b></a><a href="complex-number-calculator.html"><b>Complex Number Calculator</b></a><a href="quartile-calculator.html"><b>Quartile and IQR Calculator</b></a><a href="percentile-calculator.html"><b>Percentile Calculator</b></a><a href="mean-absolute-deviation-calculator.html"><b>Mean Absolute Deviation Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({n}){
+n=Math.round(n);if(n<1||n>1e9)return 'Enter an integer from 1 to 1,000,000,000.';const f=[];for(let i=1;i*i<=n;i++)if(n%i===0){f.push(i);if(i*i!==n)f.push(n/i);}f.sort((a,b)=>a-b);
+return [['Factors',f.join(', ')],['Number of factors',f.length],['Sum of factors',f.reduce((a,b)=>a+b,0)],['Perfect number?',f.reduce((a,b)=>a+b,0)-n===n?'Yes':'No']];
+});</script>
+</body></html>

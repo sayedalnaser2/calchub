@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fixed Deposit (FD) Calculator | CalcHub</title>
+<meta name="description" content="Calculate the maturity value of a fixed deposit with compounding.">
+<link rel="canonical" href="https://YOURDOMAIN.com/fd-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is FD interest taxable?", "acceptedAnswer": {"@type": "Answer", "text": "In most countries yes. Check local rules for tax deducted at source."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Fixed Deposit (FD) Calculator</h1>
+<p class="muted">Calculate the maturity value of a fixed deposit with compounding.</p>
+<form class="card" data-calc="1">
+<label for="p">Deposit amount</label><input id="p" type="number" step="any" value="100000">
+<label for="rate">Interest rate (% per year)</label><input id="rate" type="number" step="any" value="7">
+<label for="yrs">Years</label><input id="yrs" type="number" step="any" value="5">
+<label for="f">Compounding</label><select id="f"><option value="1">Yearly</option><option value="2">Half-yearly</option><option value="4" selected>Quarterly</option><option value="12">Monthly</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Maturity value = P x (1 + r/n)^(n x t). More frequent compounding gives a slightly higher effective yield.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is FD interest taxable?</summary><p>In most countries yes. Check local rules for tax deducted at source.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="apr-calculator.html"><b>APR Calculator</b></a><a href="interest-rate-calculator.html"><b>Interest Rate Calculator</b></a><a href="interest-only-loan-calculator.html"><b>Interest-Only Loan Calculator</b></a><a href="401k-calculator.html"><b>401(k) Calculator</b></a><a href="roth-ira-calculator.html"><b>Roth IRA Calculator</b></a><a href="paycheck-calculator.html"><b>Paycheck Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({p,rate,yrs,f}){
+const m=p*Math.pow(1+rate/100/f,f*yrs);return [['Maturity amount',N(m,2)],['Interest earned',N(m-p,2)],['Effective annual yield',PCT((Math.pow(1+rate/100/f,f)-1)*100,3)]];
+});</script>
+</body></html>

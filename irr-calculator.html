@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IRR Calculator | CalcHub</title>
+<meta name="description" content="Find the internal rate of return of a series of cash flows.">
+<link rel="canonical" href="https://YOURDOMAIN.com/irr-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a higher IRR always better?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Compare with project size, risk and your required return."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>IRR Calculator</h1>
+<p class="muted">Find the internal rate of return of a series of cash flows.</p>
+<form class="card" data-calc="1">
+<label for="i0">Initial investment ($)</label><input id="i0" type="number" step="any" value="50000">
+<label for="c1">Year 1 cash flow ($)</label><input id="c1" type="number" step="any" value="15000">
+<label for="c2">Year 2 cash flow ($)</label><input id="c2" type="number" step="any" value="18000">
+<label for="c3">Year 3 cash flow ($)</label><input id="c3" type="number" step="any" value="20000">
+<label for="c4">Year 4 cash flow ($)</label><input id="c4" type="number" step="any" value="20000">
+<label for="c5">Year 5 cash flow ($)</label><input id="c5" type="number" step="any" value="15000">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>IRR is the discount rate that makes NPV equal zero. It is the annualized return implied by the cash flows.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is a higher IRR always better?</summary><p>Not necessarily. Compare with project size, risk and your required return.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="payback-period-calculator.html"><b>Payback Period Calculator</b></a><a href="depreciation-calculator.html"><b>Depreciation Calculator</b></a><a href="car-lease-calculator.html"><b>Car Lease Calculator</b></a><a href="rent-affordability-calculator.html"><b>Rent Affordability Calculator</b></a><a href="biweekly-mortgage-calculator.html"><b>Biweekly Mortgage Calculator</b></a><a href="heloc-calculator.html"><b>HELOC Payment Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({i0,c1,c2,c3,c4,c5}){
+const c=[-i0,c1,c2,c3,c4,c5],f=r=>c.reduce((s,x,k)=>s+x/Math.pow(1+r,k),0);
+let lo=-0.99,hi=10;if(f(lo)*f(hi)>0)return 'No IRR found for these cash flows.';
+for(let i=0;i<200;i++){const m=(lo+hi)/2;if(f(lo)*f(m)<=0)hi=m;else lo=m;}
+return [['IRR',PCT((lo+hi)/2*100,3)],['Total cash returned',M(c1+c2+c3+c4+c5)],['Net profit',M(c1+c2+c3+c4+c5-i0)]];
+});</script>
+</body></html>

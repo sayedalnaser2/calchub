@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loan Comparison Calculator | CalcHub</title>
+<meta name="description" content="Compare two loans by payment and total cost.">
+<link rel="canonical" href="https://YOURDOMAIN.com/loan-comparison-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Lowest payment vs lowest cost?", "acceptedAnswer": {"@type": "Answer", "text": "A longer term lowers the payment but usually raises total interest."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Loan Comparison Calculator</h1>
+<p class="muted">Compare two loans by payment and total cost.</p>
+<form class="card" data-calc="1">
+<label for="a1">Loan A amount ($)</label><input id="a1" type="number" step="any" value="20000">
+<label for="r1">Loan A rate (%)</label><input id="r1" type="number" step="any" value="6.5">
+<label for="t1">Loan A term (months)</label><input id="t1" type="number" step="any" value="48">
+<label for="a2">Loan B amount ($)</label><input id="a2" type="number" step="any" value="20000">
+<label for="r2">Loan B rate (%)</label><input id="r2" type="number" step="any" value="5.5">
+<label for="t2">Loan B term (months)</label><input id="t2" type="number" step="any" value="72">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Each loan is amortized with the standard payment formula so you can compare monthly cost and total interest side by side.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Lowest payment vs lowest cost?</summary><p>A longer term lowers the payment but usually raises total interest.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="tax-refund-estimator.html"><b>Tax Refund Estimator</b></a><a href="mortgage-calculator.html"><b>Mortgage Calculator</b></a><a href="loan-calculator.html"><b>Loan Calculator</b></a><a href="compound-interest-calculator.html"><b>Compound Interest Calculator</b></a><a href="credit-card-payoff-calculator.html"><b>Credit Card Payoff Calculator</b></a><a href="simple-interest-calculator.html"><b>Simple Interest Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a1,r1,t1,a2,r2,t2}){
+const m1=PMT(a1,r1,t1),m2=PMT(a2,r2,t2),c1=m1*t1-a1,c2=m2*t2-a2;return [['Cheaper overall',c1<c2?'Loan A':c2<c1?'Loan B':'Same'],['Loan A payment',M(m1)],['Loan B payment',M(m2)],['Loan A total interest',M(c1)],['Loan B total interest',M(c2)]];
+});</script>
+</body></html>

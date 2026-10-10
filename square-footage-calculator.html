@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Square Footage Calculator | CalcHub</title>
+<meta name="description" content="Calculate the square footage of one or two rectangular areas.">
+<link rel="canonical" href="https://YOURDOMAIN.com/square-footage-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I measure an irregular room?", "acceptedAnswer": {"@type": "Answer", "text": "Break it into rectangles, calculate each and add them."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Square Footage Calculator</h1>
+<p class="muted">Calculate the square footage of one or two rectangular areas.</p>
+<form class="card" data-calc="1">
+<label for="l1">Area 1 length (ft)</label><input id="l1" type="number" step="any" value="20">
+<label for="w1">Area 1 width (ft)</label><input id="w1" type="number" step="any" value="15">
+<label for="l2">Area 2 length (ft)</label><input id="l2" type="number" step="any" value="10">
+<label for="w2">Area 2 width (ft)</label><input id="w2" type="number" step="any" value="8">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Area is length x width in feet. Add multiple rectangles to measure an L-shaped or multi-section space.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I measure an irregular room?</summary><p>Break it into rectangles, calculate each and add them.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="mulch-calculator.html"><b>Mulch Calculator</b></a><a href="topsoil-calculator.html"><b>Topsoil Calculator</b></a><a href="cubic-yard-calculator.html"><b>Cubic Yard Calculator</b></a><a href="drywall-calculator.html"><b>Drywall Calculator</b></a><a href="wallpaper-calculator.html"><b>Wallpaper Calculator</b></a><a href="fence-calculator.html"><b>Fence Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l1,w1,l2,w2}){
+const a=l1*w1,b=l2*w2;return [['Total square feet',N(a+b,2)],['Area 1',N(a,2)],['Area 2',N(b,2)],['Square yards',N((a+b)/9,2)],['Square meters',N((a+b)*0.092903,2)]];
+});</script>
+</body></html>

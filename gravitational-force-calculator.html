@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gravitational Force Calculator | CalcHub</title>
+<meta name="description" content="Calculate the gravitational attraction between two masses.">
+<link rel="canonical" href="https://YOURDOMAIN.com/gravitational-force-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is gravity so weak between small objects?", "acceptedAnswer": {"@type": "Answer", "text": "G is tiny, so masses must be planet-sized for a noticeable force."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Gravitational Force Calculator</h1>
+<p class="muted">Calculate the gravitational attraction between two masses.</p>
+<form class="card" data-calc="1">
+<label for="m1">Mass 1 (kg)</label><input id="m1" type="number" step="any" value="5.972e+24">
+<label for="m2">Mass 2 (kg)</label><input id="m2" type="number" step="any" value="7.348e+22">
+<label for="r">Distance (m)</label><input id="r" type="number" step="any" value="384400000">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Newton&#x27;s law of gravitation: F = G m1 m2 / r², with G = 6.674×10⁻¹¹. Defaults are the Earth and Moon.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why is gravity so weak between small objects?</summary><p>G is tiny, so masses must be planet-sized for a noticeable force.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="centripetal-force-calculator.html"><b>Centripetal Force Calculator</b></a><a href="work-power-calculator.html"><b>Work and Power Calculator</b></a><a href="acceleration-calculator.html"><b>Acceleration Calculator</b></a><a href="wavelength-frequency-calculator.html"><b>Wavelength and Frequency Calculator</b></a><a href="coulombs-law-calculator.html"><b>Coulomb&#x27;s Law Calculator</b></a><a href="resistor-calculator.html"><b>Resistor Calculator (Series and Parallel)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({m1,m2,r}){
+const F=6.674e-11*m1*m2/(r*r);return [['Gravitational force',F.toExponential(4)+' N'],['In kilonewtons',(F/1000).toExponential(4)]];
+});</script>
+</body></html>

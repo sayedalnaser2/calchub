@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Specific Heat Calculator | CalcHub</title>
+<meta name="description" content="Calculate heat energy needed to change a substance&#x27;s temperature.">
+<link rel="canonical" href="https://YOURDOMAIN.com/specific-heat-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does water heat slowly?", "acceptedAnswer": {"@type": "Answer", "text": "It has a high specific heat compared with metals."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Specific Heat Calculator</h1>
+<p class="muted">Calculate heat energy needed to change a substance&#x27;s temperature.</p>
+<form class="card" data-calc="1">
+<label for="m">Mass (g)</label><input id="m" type="number" step="any" value="500">
+<label for="mat">Material</label><select id="mat"><option value="4.186" selected>Water (4.186 J/g°C)</option><option value="0.897">Aluminium (0.897)</option><option value="0.385">Copper (0.385)</option><option value="0.449">Iron (0.449)</option><option value="2.09">Ice (2.09)</option><option value="1.005">Air (1.005)</option></select>
+<label for="dt">Temperature change (°C)</label><input id="dt" type="number" step="any" value="40">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Q = m x c x ΔT, where c is the specific heat of the material.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why does water heat slowly?</summary><p>It has a high specific heat compared with metals.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="torque-calculator.html"><b>Torque Calculator</b></a><a href="solar-savings-calculator.html"><b>Solar Panel Savings Calculator</b></a><a href="mass-energy-calculator.html"><b>Mass-Energy Equivalence (E = mc²) Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({m,mat,dt}){
+const q=m*mat*dt;return [['Heat energy',N(q,2)+' J'],['In kilojoules',N(q/1000,3)],['In kilocalories',N(q/4184,3)]];
+});</script>
+</body></html>

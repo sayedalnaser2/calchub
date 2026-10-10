@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rent Affordability Calculator | CalcHub</title>
+<meta name="description" content="Find how much rent you can afford with the 30% rule.">
+<link rel="canonical" href="https://YOURDOMAIN.com/rent-affordability-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do landlords use 3x rent?", "acceptedAnswer": {"@type": "Answer", "text": "Many require monthly income of at least three times the rent, which is about 33%."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Rent Affordability Calculator</h1>
+<p class="muted">Find how much rent you can afford with the 30% rule.</p>
+<form class="card" data-calc="1">
+<label for="inc">Monthly gross income ($)</label><input id="inc" type="number" step="any" value="5500">
+<label for="debt">Monthly debt payments ($)</label><input id="debt" type="number" step="any" value="300">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A common guideline is spending no more than 30% of gross income on rent. Lenders also look at total debt-to-income, here taken as 36%.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Do landlords use 3x rent?</summary><p>Many require monthly income of at least three times the rent, which is about 33%.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="biweekly-mortgage-calculator.html"><b>Biweekly Mortgage Calculator</b></a><a href="heloc-calculator.html"><b>HELOC Payment Calculator</b></a><a href="dividend-yield-calculator.html"><b>Dividend Yield Calculator</b></a><a href="stock-profit-calculator.html"><b>Stock Profit Calculator</b></a><a href="credit-card-minimum-payment-calculator.html"><b>Credit Card Minimum Payment Calculator</b></a><a href="emergency-fund-calculator.html"><b>Emergency Fund Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({inc,debt}){
+return [['Rent at 30% of income',M(inc*.30)],['Conservative (25%)',M(inc*.25)],['Max with debts (36% total)',M(Math.max(inc*.36-debt,0))],['50/30/20 needs budget (50%)',M(inc*.5)]];
+});</script>
+</body></html>

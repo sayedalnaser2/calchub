@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roth IRA Calculator | CalcHub</title>
+<meta name="description" content="Estimate your tax-free Roth IRA balance at retirement.">
+<link rel="canonical" href="https://YOURDOMAIN.com/roth-ira-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who can contribute?", "acceptedAnswer": {"@type": "Answer", "text": "Eligibility phases out at higher incomes. Check current IRS income limits."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Roth IRA Calculator</h1>
+<p class="muted">Estimate your tax-free Roth IRA balance at retirement.</p>
+<form class="card" data-calc="1">
+<label for="bal">Current balance ($)</label><input id="bal" type="number" step="any" value="5000">
+<label for="c">Annual contribution ($)</label><input id="c" type="number" step="any" value="7000">
+<label for="yrs">Years to grow</label><input id="yrs" type="number" step="any" value="30">
+<label for="rate">Annual return (%)</label><input id="rate" type="number" step="any" value="7">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Roth IRA contributions are made after tax, and qualified withdrawals in retirement are tax-free, so all growth is tax-free.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Who can contribute?</summary><p>Eligibility phases out at higher incomes. Check current IRS income limits.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="paycheck-calculator.html"><b>Paycheck Calculator</b></a><a href="income-tax-calculator.html"><b>Federal Income Tax Calculator</b></a><a href="self-employment-tax-calculator.html"><b>Self-Employment Tax Calculator</b></a><a href="capital-gains-tax-calculator.html"><b>Capital Gains Tax Calculator</b></a><a href="overtime-pay-calculator.html"><b>Overtime Pay Calculator</b></a><a href="raise-calculator.html"><b>Raise Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({bal,c,yrs,rate}){
+let b=bal;for(let i=0;i<yrs;i++)b=b*(1+rate/100)+c;
+return [['Balance after '+yrs+' years',M(b)],['Total contributed',M(bal+c*yrs)],['Tax-free growth',M(b-bal-c*yrs)],['Limit check',c>7000?'Above the 2025 limit of $7,000 ($8,000 if 50+)':'Within the 2025 limit']];
+});</script>
+</body></html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calories Burned Calculator | CalcHub</title>
+<meta name="description" content="Estimate calories burned during exercise using MET values.">
+<link rel="canonical" href="https://YOURDOMAIN.com/calories-burned-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate is it?", "acceptedAnswer": {"@type": "Answer", "text": "It is an average. Fitness, intensity and body composition change the real figure."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Calories Burned Calculator</h1>
+<p class="muted">Estimate calories burned during exercise using MET values.</p>
+<form class="card" data-calc="1">
+<label for="act">Activity</label><select id="act"><option value="3.5">Walking (3.5 mph)</option><option value="9.8">Running (6 mph)</option><option value="7.5">Cycling (moderate)</option><option value="8">Swimming</option><option value="6">Hiking</option><option value="2.5">Yoga</option><option value="5">Weight training</option><option value="8">HIIT</option><option value="4.3">Dancing</option></select>
+<label for="w">Weight (kg)</label><input id="w" type="number" step="any" value="70">
+<label for="min">Duration (minutes)</label><input id="min" type="number" step="any" value="45">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Calories = MET x 3.5 x body weight (kg) / 200 x minutes. MET values rate the energy cost of activities relative to rest.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How accurate is it?</summary><p>It is an average. Fitness, intensity and body composition change the real figure.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="protein-calculator.html"><b>Protein Intake Calculator</b></a><a href="waist-to-hip-ratio-calculator.html"><b>Waist-to-Hip Ratio Calculator</b></a><a href="waist-to-height-ratio-calculator.html"><b>Waist-to-Height Ratio Calculator</b></a><a href="lean-body-mass-calculator.html"><b>Lean Body Mass Calculator</b></a><a href="body-surface-area-calculator.html"><b>Body Surface Area Calculator</b></a><a href="sleep-calculator.html"><b>Sleep Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({act,w,min}){
+const k=act*3.5*w/200*min;return [['Calories burned',N(k,0)+' kcal'],['Per hour',N(k/min*60,0)+' kcal'],['Fat equivalent (approx.)',N(k/7700,3)+' kg']];
+});</script>
+</body></html>

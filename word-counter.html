@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Word Counter | CalcHub</title>
+<meta name="description" content="Count words, characters, sentences and reading time of any text.">
+<link rel="canonical" href="https://YOURDOMAIN.com/word-counter.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is my text stored?", "acceptedAnswer": {"@type": "Answer", "text": "No. Counting happens in your browser."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Word Counter</h1>
+<p class="muted">Count words, characters, sentences and reading time of any text.</p>
+<form class="card" data-calc="1">
+<label for="text">Your text</label><textarea id="text" rows="5">Paste or type your text here. This counter updates as you type.</textarea>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Words are counted as groups of characters separated by whitespace. Reading time assumes 225 words per minute and speaking time 130.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is my text stored?</summary><p>No. Counting happens in your browser.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="download-time-calculator.html"><b>Download Time Calculator</b></a><a href="aspect-ratio-calculator.html"><b>Aspect Ratio Calculator</b></a><a href="ppi-calculator.html"><b>PPI Calculator (Pixel Density)</b></a><a href="mileage-reimbursement-calculator.html"><b>Mileage Reimbursement Calculator</b></a><a href="car-depreciation-calculator.html"><b>Car Depreciation Calculator</b></a><a href="mpg-calculator.html"><b>MPG Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({text}){
+const w=text.trim().split(/\s+/).filter(Boolean).length,ch=text.length,chn=text.replace(/\s/g,'').length,se=(text.match(/[.!?]+(\s|$)/g)||[]).length,pa=text.split(/\n+/).filter(x=>x.trim()).length;
+return [['Words',w],['Characters',ch],['Characters (no spaces)',chn],['Sentences',se],['Paragraphs',pa],['Reading time',N(w/225,1)+' min'],['Speaking time',N(w/130,1)+' min']];
+});</script>
+</body></html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Payback Period Calculator | CalcHub</title>
+<meta name="description" content="See how long it takes an investment to pay for itself.">
+<link rel="canonical" href="https://YOURDOMAIN.com/payback-period-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good payback period?", "acceptedAnswer": {"@type": "Answer", "text": "Shorter is better. Many businesses look for under 3-5 years."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Payback Period Calculator</h1>
+<p class="muted">See how long it takes an investment to pay for itself.</p>
+<form class="card" data-calc="1">
+<label for="inv">Initial investment ($)</label><input id="inv" type="number" step="any" value="40000">
+<label for="cf">Annual cash flow ($)</label><input id="cf" type="number" step="any" value="9000">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Payback period = investment / annual cash flow. It ignores the time value of money and cash flows after payback.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a good payback period?</summary><p>Shorter is better. Many businesses look for under 3-5 years.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="depreciation-calculator.html"><b>Depreciation Calculator</b></a><a href="car-lease-calculator.html"><b>Car Lease Calculator</b></a><a href="rent-affordability-calculator.html"><b>Rent Affordability Calculator</b></a><a href="biweekly-mortgage-calculator.html"><b>Biweekly Mortgage Calculator</b></a><a href="heloc-calculator.html"><b>HELOC Payment Calculator</b></a><a href="dividend-yield-calculator.html"><b>Dividend Yield Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({inv,cf}){
+const y=inv/cf;return [['Payback period',N(y,2)+' years'],['In months',N(y*12,0)],['Return per year',PCT(cf/inv*100,2)]];
+});</script>
+</body></html>

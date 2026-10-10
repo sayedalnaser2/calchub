@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Molarity Calculator | CalcHub</title>
+<meta name="description" content="Calculate molarity from mass, molar mass and volume.">
+<link rel="canonical" href="https://YOURDOMAIN.com/molarity-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Molarity vs molality?", "acceptedAnswer": {"@type": "Answer", "text": "Molarity uses solution volume; molality uses solvent mass."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Molarity Calculator</h1>
+<p class="muted">Calculate molarity from mass, molar mass and volume.</p>
+<form class="card" data-calc="1">
+<label for="m">Mass of solute (g)</label><input id="m" type="number" step="any" value="5.85">
+<label for="mw">Molar mass (g/mol)</label><input id="mw" type="number" step="any" value="58.44">
+<label for="v">Volume of solution (L)</label><input id="v" type="number" step="any" value="0.5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Molarity = moles of solute / liters of solution, where moles = mass / molar mass.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Molarity vs molality?</summary><p>Molarity uses solution volume; molality uses solvent mass.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="dilution-calculator.html"><b>Dilution Calculator (C1V1 = C2V2)</b></a><a href="ph-calculator.html"><b>pH Calculator</b></a><a href="molar-mass-calculator.html"><b>Molar Mass Calculator</b></a><a href="projectile-motion-calculator.html"><b>Projectile Motion Calculator</b></a><a href="free-fall-calculator.html"><b>Free Fall Calculator</b></a><a href="escape-velocity-calculator.html"><b>Escape Velocity Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({m,mw,v}){
+const mol=m/mw;return [['Molarity',N(mol/v,6)+' mol/L'],['Moles of solute',N(mol,6)],['Millimolar',N(mol/v*1000,3)+' mM']];
+});</script>
+</body></html>

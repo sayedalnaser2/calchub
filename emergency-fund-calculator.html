@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emergency Fund Calculator | CalcHub</title>
+<meta name="description" content="Find your emergency fund target and how long it takes to build.">
+<link rel="canonical" href="https://YOURDOMAIN.com/emergency-fund-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where should I keep it?", "acceptedAnswer": {"@type": "Answer", "text": "In a high-yield savings account that is easy to access."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Emergency Fund Calculator</h1>
+<p class="muted">Find your emergency fund target and how long it takes to build.</p>
+<form class="card" data-calc="1">
+<label for="exp">Monthly essential expenses ($)</label><input id="exp" type="number" step="any" value="3200">
+<label for="mo">Months to cover</label><input id="mo" type="number" step="any" value="6">
+<label for="have">Current savings ($)</label><input id="have" type="number" step="any" value="4000">
+<label for="sv">Monthly savings ($)</label><input id="sv" type="number" step="any" value="400">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Multiply essential monthly spending by 3-6 months (more if income is irregular) to find a target.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Where should I keep it?</summary><p>In a high-yield savings account that is easy to access.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="net-worth-calculator.html"><b>Net Worth Calculator</b></a><a href="fire-calculator.html"><b>FIRE Calculator</b></a><a href="apy-calculator.html"><b>APY Calculator</b></a><a href="cd-calculator.html"><b>CD Calculator</b></a><a href="down-payment-calculator.html"><b>Down Payment Calculator</b></a><a href="mortgage-points-calculator.html"><b>Mortgage Points Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({exp,mo,have,sv}){
+const t=exp*mo,need=Math.max(t-have,0);return [['Target fund',M(t)],['Still needed',M(need)],['Months to reach goal',need===0?'Done':N(Math.ceil(need/sv),0)]];
+});</script>
+</body></html>

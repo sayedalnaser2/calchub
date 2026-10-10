@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIP Calculator | CalcHub</title>
+<meta name="description" content="Project the future value of a monthly systematic investment plan.">
+<link rel="canonical" href="https://YOURDOMAIN.com/sip-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are SIP returns guaranteed?", "acceptedAnswer": {"@type": "Answer", "text": "No. Market-linked returns vary, and the rate you enter is only an assumption."}}, {"@type": "Question", "name": "Why start early?", "acceptedAnswer": {"@type": "Answer", "text": "Compounding gives the earliest contributions the most time to grow."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>SIP Calculator</h1>
+<p class="muted">Project the future value of a monthly systematic investment plan.</p>
+<form class="card" data-calc="1">
+<label for="p">Monthly investment</label><input id="p" type="number" step="any" value="10000">
+<label for="rate">Expected annual return (%)</label><input id="rate" type="number" step="any" value="12">
+<label for="yrs">Years</label><input id="yrs" type="number" step="any" value="15">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A SIP invests a fixed amount at the start of each month. The future value is p x (((1+i)^n - 1) / i) x (1+i) with i the monthly return.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Are SIP returns guaranteed?</summary><p>No. Market-linked returns vary, and the rate you enter is only an assumption.</p></details>
+<details><summary>Why start early?</summary><p>Compounding gives the earliest contributions the most time to grow.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="fd-calculator.html"><b>Fixed Deposit (FD) Calculator</b></a><a href="apr-calculator.html"><b>APR Calculator</b></a><a href="interest-rate-calculator.html"><b>Interest Rate Calculator</b></a><a href="interest-only-loan-calculator.html"><b>Interest-Only Loan Calculator</b></a><a href="401k-calculator.html"><b>401(k) Calculator</b></a><a href="roth-ira-calculator.html"><b>Roth IRA Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({p,rate,yrs}){
+const i=rate/1200,n=yrs*12,fv=i===0?p*n:p*((Math.pow(1+i,n)-1)/i)*(1+i);return [['Future value',N(fv,0)],['Amount invested',N(p*n,0)],['Estimated returns',N(fv-p*n,0)]];
+});</script>
+</body></html>

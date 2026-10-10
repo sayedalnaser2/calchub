@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quartile and IQR Calculator | CalcHub</title>
+<meta name="description" content="Find quartiles, interquartile range and outlier fences for a data set.">
+<link rel="canonical" href="https://YOURDOMAIN.com/quartile-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why are quartiles different across tools?", "acceptedAnswer": {"@type": "Answer", "text": "Several methods exist; this one interpolates between ranks."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Quartile and IQR Calculator</h1>
+<p class="muted">Find quartiles, interquartile range and outlier fences for a data set.</p>
+<form class="card" data-calc="1">
+<label for="list">Numbers (comma-separated)</label><input id="list" type="text" value="3, 7, 8, 5, 12, 14, 21, 13, 18">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Quartiles split sorted data into four parts (linear interpolation method). Values beyond 1.5 x IQR from the quartiles are potential outliers.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why are quartiles different across tools?</summary><p>Several methods exist; this one interpolates between ranks.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="percentile-calculator.html"><b>Percentile Calculator</b></a><a href="mean-absolute-deviation-calculator.html"><b>Mean Absolute Deviation Calculator</b></a><a href="distance-formula-calculator.html"><b>Distance Formula Calculator</b></a><a href="equation-of-a-line-calculator.html"><b>Equation of a Line Calculator</b></a><a href="midpoint-calculator.html"><b>Midpoint Calculator</b></a><a href="pascals-triangle-calculator.html"><b>Binomial Expansion Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({list}){
+const s=NUMS(list).sort((a,b)=>a-b),n=s.length;if(n<4)return 'Enter at least 4 numbers.';const q=p=>{const i=(n-1)*p,l=Math.floor(i),h=Math.ceil(i);return s[l]+(s[h]-s[l])*(i-l);};const q1=q(.25),q2=q(.5),q3=q(.75),iqr=q3-q1;
+return [['Q1',N(q1,6)],['Median (Q2)',N(q2,6)],['Q3',N(q3,6)],['IQR',N(iqr,6)],['Lower fence',N(q1-1.5*iqr,6)],['Upper fence',N(q3+1.5*iqr,6)],['Min / Max',N(s[0],4)+' / '+N(s[n-1],4)]];
+});</script>
+</body></html>

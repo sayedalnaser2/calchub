@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weighted Average Calculator | CalcHub</title>
+<meta name="description" content="Find a weighted average of values and weights.">
+<link rel="canonical" href="https://YOURDOMAIN.com/weighted-average-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where is it used?", "acceptedAnswer": {"@type": "Answer", "text": "Course grades, portfolio returns and index calculations."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Weighted Average Calculator</h1>
+<p class="muted">Find a weighted average of values and weights.</p>
+<form class="card" data-calc="1">
+<label for="vals">Values (comma-separated)</label><input id="vals" type="text" value="90, 80, 70">
+<label for="wts">Weights (comma-separated)</label><input id="wts" type="text" value="50, 30, 20">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Weighted average = Σ(value × weight) / Σ(weights). Items with larger weights count more.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Where is it used?</summary><p>Course grades, portfolio returns and index calculations.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="geometric-mean-calculator.html"><b>Geometric Mean Calculator</b></a><a href="rounding-calculator.html"><b>Rounding Calculator</b></a><a href="modulo-calculator.html"><b>Modulo Calculator</b></a><a href="area-calculator.html"><b>Area Calculator</b></a><a href="rectangle-calculator.html"><b>Rectangle Calculator</b></a><a href="surface-area-calculator.html"><b>Surface Area Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({vals,wts}){
+const v=NUMS(vals),w=NUMS(wts);if(!v.length||v.length!==w.length)return 'Enter the same number of values and weights.';const sw=w.reduce((a,b)=>a+b);if(!sw)return 'Weights cannot all be zero.';
+return [['Weighted average',N(v.reduce((s,x,i)=>s+x*w[i],0)/sw,6)],['Simple average',N(v.reduce((a,b)=>a+b)/v.length,6)],['Total weight',N(sw,4)]];
+});</script>
+</body></html>

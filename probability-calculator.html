@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Probability Calculator | CalcHub</title>
+<meta name="description" content="Combine two event probabilities: and, or, neither.">
+<link rel="canonical" href="https://YOURDOMAIN.com/probability-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What if events are not independent?", "acceptedAnswer": {"@type": "Answer", "text": "Then you need the conditional probability P(B|A)."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Probability Calculator</h1>
+<p class="muted">Combine two event probabilities: and, or, neither.</p>
+<form class="card" data-calc="1">
+<label for="pa">P(A) (0 to 1)</label><input id="pa" type="number" step="any" value="0.4">
+<label for="pb">P(B) (0 to 1)</label><input id="pb" type="number" step="any" value="0.3">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>For independent events, P(A and B) = P(A) x P(B) and P(A or B) = P(A) + P(B) - P(A and B).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What if events are not independent?</summary><p>Then you need the conditional probability P(B|A).</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="binomial-probability-calculator.html"><b>Binomial Probability Calculator</b></a><a href="z-score-calculator.html"><b>Z-Score Calculator</b></a><a href="p-value-calculator.html"><b>P-Value Calculator</b></a><a href="confidence-interval-calculator.html"><b>Confidence Interval Calculator</b></a><a href="sample-size-calculator.html"><b>Sample Size Calculator</b></a><a href="margin-of-error-calculator.html"><b>Margin of Error Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({pa,pb}){
+if(pa<0||pa>1||pb<0||pb>1)return 'Probabilities must be between 0 and 1.';return [['P(A and B), independent',N(pa*pb,6)],['P(A or B)',N(pa+pb-pa*pb,6)],['P(neither)',N((1-pa)*(1-pb),6)],['P(exactly one)',N(pa*(1-pb)+pb*(1-pa),6)],['P(not A)',N(1-pa,6)]];
+});</script>
+</body></html>

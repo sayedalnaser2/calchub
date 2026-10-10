@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Biweekly Mortgage Calculator | CalcHub</title>
+<meta name="description" content="See how biweekly payments pay off a mortgage faster.">
+<link rel="canonical" href="https://YOURDOMAIN.com/biweekly-mortgage-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does my lender allow it?", "acceptedAnswer": {"@type": "Answer", "text": "Some charge a fee. You can get the same result by paying one extra monthly payment a year."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Biweekly Mortgage Calculator</h1>
+<p class="muted">See how biweekly payments pay off a mortgage faster.</p>
+<form class="card" data-calc="1">
+<label for="amt">Loan amount ($)</label><input id="amt" type="number" step="any" value="300000">
+<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="any" value="6.5">
+<label for="yrs">Term (years)</label><input id="yrs" type="number" step="any" value="30">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Paying half the monthly amount every two weeks makes 26 half-payments, equal to 13 monthly payments a year, so one extra payment goes to principal.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does my lender allow it?</summary><p>Some charge a fee. You can get the same result by paying one extra monthly payment a year.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="heloc-calculator.html"><b>HELOC Payment Calculator</b></a><a href="dividend-yield-calculator.html"><b>Dividend Yield Calculator</b></a><a href="stock-profit-calculator.html"><b>Stock Profit Calculator</b></a><a href="credit-card-minimum-payment-calculator.html"><b>Credit Card Minimum Payment Calculator</b></a><a href="emergency-fund-calculator.html"><b>Emergency Fund Calculator</b></a><a href="net-worth-calculator.html"><b>Net Worth Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({amt,rate,yrs}){
+const n=yrs*12,m=PMT(amt,rate,n),bp=m/2,r=rate/100/26;let b=amt,k=0,tot=0;
+while(b>0.01&&k<n*3){const i=b*r;tot+=i;b=b+i-bp;k++;}
+const yrsSaved=yrs-k/26;return [['Biweekly payment',M(bp)],['Monthly payment',M(m)],['Payoff time',N(k/26,1)+' years'],['Time saved',N(yrsSaved,1)+' years'],['Interest saved',M(m*n-amt-tot)]];
+});</script>
+</body></html>

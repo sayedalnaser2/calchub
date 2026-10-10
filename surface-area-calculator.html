@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Surface Area Calculator | CalcHub</title>
+<meta name="description" content="Calculate surface area of a sphere, cylinder, cone, cube or box.">
+<link rel="canonical" href="https://YOURDOMAIN.com/surface-area-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Surface area vs volume?", "acceptedAnswer": {"@type": "Answer", "text": "Surface area measures the outside covering; volume measures the space inside."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Surface Area Calculator</h1>
+<p class="muted">Calculate surface area of a sphere, cylinder, cone, cube or box.</p>
+<form class="card" data-calc="1">
+<label for="shape">Shape</label><select id="shape"><option value="1" selected>Sphere (radius a)</option><option value="2">Cylinder (radius a, height b)</option><option value="3">Cone (radius a, height b)</option><option value="4">Cube (side a)</option><option value="5">Box (a, b, c)</option></select>
+<label for="a">a</label><input id="a" type="number" step="any" value="5">
+<label for="b">b</label><input id="b" type="number" step="any" value="10">
+<label for="c">c (box only)</label><input id="c" type="number" step="any" value="3">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Sphere: 4πr². Cylinder: 2πr(r+h). Cone: πr(r+slant). Cube: 6a². Box: 2(ab+bc+ac).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Surface area vs volume?</summary><p>Surface area measures the outside covering; volume measures the space inside.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="arc-length-calculator.html"><b>Arc Length Calculator</b></a><a href="trigonometry-calculator.html"><b>Trigonometry Calculator</b></a><a href="triangle-calculator.html"><b>Triangle Angle Calculator (SSS)</b></a><a href="regular-polygon-calculator.html"><b>Regular Polygon Calculator</b></a><a href="roman-numeral-converter.html"><b>Roman Numeral Converter</b></a><a href="factors-calculator.html"><b>Factors Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({shape,a,b,c}){
+const P=Math.PI,s=Math.hypot(a,b),v={1:4*P*a*a,2:2*P*a*(a+b),3:P*a*(a+s),4:6*a*a,5:2*(a*b+b*c+a*c)}[shape];return [['Surface area',N(v,6)+' square units']];
+});</script>
+</body></html>

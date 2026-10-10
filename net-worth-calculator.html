@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Net Worth Calculator | CalcHub</title>
+<meta name="description" content="Add up assets and debts to find your net worth.">
+<link rel="canonical" href="https://YOURDOMAIN.com/net-worth-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How often should I check?", "acceptedAnswer": {"@type": "Answer", "text": "Once or twice a year is enough to track progress."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Net Worth Calculator</h1>
+<p class="muted">Add up assets and debts to find your net worth.</p>
+<form class="card" data-calc="1">
+<label for="cash">Cash and savings ($)</label><input id="cash" type="number" step="any" value="15000">
+<label for="inv">Investments and retirement ($)</label><input id="inv" type="number" step="any" value="60000">
+<label for="home">Home and property value ($)</label><input id="home" type="number" step="any" value="250000">
+<label for="oa">Other assets ($)</label><input id="oa" type="number" step="any" value="12000">
+<label for="mort">Mortgage balance ($)</label><input id="mort" type="number" step="any" value="190000">
+<label for="loans">Other loans ($)</label><input id="loans" type="number" step="any" value="12000">
+<label for="cc">Credit card debt ($)</label><input id="cc" type="number" step="any" value="3000">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Net worth is everything you own minus everything you owe.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How often should I check?</summary><p>Once or twice a year is enough to track progress.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="fire-calculator.html"><b>FIRE Calculator</b></a><a href="apy-calculator.html"><b>APY Calculator</b></a><a href="cd-calculator.html"><b>CD Calculator</b></a><a href="down-payment-calculator.html"><b>Down Payment Calculator</b></a><a href="mortgage-points-calculator.html"><b>Mortgage Points Calculator</b></a><a href="balance-transfer-calculator.html"><b>Balance Transfer Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({cash,inv,home,oa,mort,loans,cc}){
+const a=cash+inv+home+oa,l=mort+loans+cc;return [['Net worth',M(a-l)],['Total assets',M(a)],['Total liabilities',M(l)],['Debt-to-asset ratio',PCT(l/a*100,1)]];
+});</script>
+</body></html>

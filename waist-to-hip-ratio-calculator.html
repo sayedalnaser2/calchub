@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waist-to-Hip Ratio Calculator | CalcHub</title>
+<meta name="description" content="Calculate WHR and what it says about health risk.">
+<link rel="canonical" href="https://YOURDOMAIN.com/waist-to-hip-ratio-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I measure?", "acceptedAnswer": {"@type": "Answer", "text": "Waist at the narrowest point, hips at the widest, tape level and snug."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Waist-to-Hip Ratio Calculator</h1>
+<p class="muted">Calculate WHR and what it says about health risk.</p>
+<form class="card" data-calc="1">
+<label for="sex">Sex</label><select id="sex"><option value="1" selected>Male</option><option value="2">Female</option></select>
+<label for="waist">Waist (cm)</label><input id="waist" type="number" step="any" value="85">
+<label for="hip">Hip (cm)</label><input id="hip" type="number" step="any" value="100">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>WHR is waist circumference divided by hip circumference. Higher ratios indicate more abdominal fat, linked with cardiovascular risk. This is an educational estimate, not medical advice.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I measure?</summary><p>Waist at the narrowest point, hips at the widest, tape level and snug.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="waist-to-height-ratio-calculator.html"><b>Waist-to-Height Ratio Calculator</b></a><a href="lean-body-mass-calculator.html"><b>Lean Body Mass Calculator</b></a><a href="body-surface-area-calculator.html"><b>Body Surface Area Calculator</b></a><a href="sleep-calculator.html"><b>Sleep Calculator</b></a><a href="bac-calculator.html"><b>Blood Alcohol Content (BAC) Calculator</b></a><a href="vo2-max-calculator.html"><b>VO2 Max Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({sex,waist,hip}){
+const r=waist/hip,hi=sex==1?0.90:0.85,mod=sex==1?0.95:0.80;
+return [['Waist-to-hip ratio',N(r,2)],['Risk level',r>=(sex==1?1.0:0.85)?'High':r>=hi?'Moderate':'Low']];
+});</script>
+</body></html>

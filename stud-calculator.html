@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wall Stud Calculator | CalcHub</title>
+<meta name="description" content="Estimate the number of studs for a framed wall.">
+<link rel="canonical" href="https://YOURDOMAIN.com/stud-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "16 or 24 inch spacing?", "acceptedAnswer": {"@type": "Answer", "text": "16 in is standard for load-bearing walls; 24 in can work with advanced framing."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Wall Stud Calculator</h1>
+<p class="muted">Estimate the number of studs for a framed wall.</p>
+<form class="card" data-calc="1">
+<label for="len">Wall length (ft)</label><input id="len" type="number" step="any" value="20">
+<label for="sp">Stud spacing (in)</label><select id="sp"><option value="12">12 in</option><option value="16" selected>16 in</option><option value="24">24 in</option></select>
+<label for="openings">Doors/windows</label><input id="openings" type="number" step="any" value="2">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Studs = wall length in inches / spacing + 1, plus extra for corners and each opening&#x27;s king, jack and header studs.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>16 or 24 inch spacing?</summary><p>16 in is standard for load-bearing walls; 24 in can work with advanced framing.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="insulation-calculator.html"><b>Insulation Calculator</b></a><a href="tile-grout-calculator.html"><b>Grout Calculator</b></a><a href="lumber-weight-calculator.html"><b>Rebar and Material Weight Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({len,sp,openings}){
+const s=Math.ceil(len*12/sp)+1,extra=openings*4,plates=Math.ceil(len/8)*3;return [['Studs (incl. openings)',s+extra],['Plates (8 ft pieces)',plates],['Base studs only',s]];
+});</script>
+</body></html>

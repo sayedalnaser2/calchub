@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Student Loan Calculator | CalcHub</title>
+<meta name="description" content="Estimate student loan payments and how extra payments shorten repayment.">
+<link rel="canonical" href="https://YOURDOMAIN.com/student-loan-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Standard repayment term?", "acceptedAnswer": {"@type": "Answer", "text": "Federal student loans default to a 10-year standard plan. Income-driven plans extend the term and change the payment."}}, {"@type": "Question", "name": "Does this include income-driven plans?", "acceptedAnswer": {"@type": "Answer", "text": "No. This uses a fixed-rate amortization schedule."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Student Loan Calculator</h1>
+<p class="muted">Estimate student loan payments and how extra payments shorten repayment.</p>
+<form class="card" data-calc="1">
+<label for="bal">Loan balance ($)</label><input id="bal" type="number" step="any" value="35000">
+<label for="rate">Interest rate (% APR)</label><input id="rate" type="number" step="any" value="5.5">
+<label for="years">Repayment term (years)</label><input id="years" type="number" step="any" value="10">
+<label for="extra">Extra payment per month ($)</label><input id="extra" type="number" step="any" value="50">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Payments are calculated on a standard fixed schedule. Entering an extra monthly amount shows how much sooner you finish and how much interest you avoid.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Standard repayment term?</summary><p>Federal student loans default to a 10-year standard plan. Income-driven plans extend the term and change the payment.</p></details>
+<details><summary>Does this include income-driven plans?</summary><p>No. This uses a fixed-rate amortization schedule.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="emi-calculator.html"><b>EMI Calculator</b></a><a href="sip-calculator.html"><b>SIP Calculator</b></a><a href="fd-calculator.html"><b>Fixed Deposit (FD) Calculator</b></a><a href="apr-calculator.html"><b>APR Calculator</b></a><a href="interest-rate-calculator.html"><b>Interest Rate Calculator</b></a><a href="interest-only-loan-calculator.html"><b>Interest-Only Loan Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({bal,rate,years,extra}){
+const n=years*12,r=rate/1200,m=PMT(bal,rate,n);
+let b=bal,k=0,tot=0;
+while(b>0.005&&k<n+600){const i=b*r;tot+=i;let p=m+extra-i;if(p>b)p=b;b-=p;k++;}
+const base=m*n-bal,d=new Date();d.setMonth(d.getMonth()+k);
+return [['Payoff time',Math.floor(k/12)+' years '+k%12+' months'],['Monthly payment (required)',M(m)],['Total interest with extra payments',M(tot)],['Interest saved',M(Math.max(base-tot,0))],['Months saved',Math.max(n-k,0)],['Payoff date',d.toLocaleDateString('en-US',{month:'long',year:'numeric'})]];
+});</script>
+</body></html>

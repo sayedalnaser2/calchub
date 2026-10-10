@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Future Value Calculator | CalcHub</title>
+<meta name="description" content="Project the future value of a lump sum plus regular contributions.">
+<link rel="canonical" href="https://YOURDOMAIN.com/future-value-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this adjusted for inflation?", "acceptedAnswer": {"@type": "Answer", "text": "No. Use a real return (return minus inflation) to see results in today's money."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Future Value Calculator</h1>
+<p class="muted">Project the future value of a lump sum plus regular contributions.</p>
+<form class="card" data-calc="1">
+<label for="pv">Present value ($)</label><input id="pv" type="number" step="any" value="10000">
+<label for="pmt">Monthly contribution ($)</label><input id="pmt" type="number" step="any" value="200">
+<label for="rate">Annual rate (%)</label><input id="rate" type="number" step="any" value="6">
+<label for="yrs">Years</label><input id="yrs" type="number" step="any" value="15">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Future value is the lump sum compounded plus the future value of each monthly contribution.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is this adjusted for inflation?</summary><p>No. Use a real return (return minus inflation) to see results in today&#x27;s money.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="npv-calculator.html"><b>NPV Calculator</b></a><a href="irr-calculator.html"><b>IRR Calculator</b></a><a href="payback-period-calculator.html"><b>Payback Period Calculator</b></a><a href="depreciation-calculator.html"><b>Depreciation Calculator</b></a><a href="car-lease-calculator.html"><b>Car Lease Calculator</b></a><a href="rent-affordability-calculator.html"><b>Rent Affordability Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({pv,pmt,rate,yrs}){
+const i=rate/1200,n=yrs*12,fvl=pv*Math.pow(1+i,n),fvs=i===0?pmt*n:pmt*(Math.pow(1+i,n)-1)/i;
+return [['Future value',M(fvl+fvs)],['From lump sum',M(fvl)],['From contributions',M(fvs)],['Total invested',M(pv+pmt*n)]];
+});</script>
+</body></html>
