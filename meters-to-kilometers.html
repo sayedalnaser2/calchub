@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Meters to Kilometers Converter | CalcHub</title>
-<meta name="description" content="Convert meters to kilometers instantly. 1 m = 0.001 km.">
+<title>Meters to Kilometers Converter (Both Ways) | CalcHub</title>
+<meta name="description" content="Convert meters to kilometers and kilometers to meters instantly. 1 m = 0.001 km.">
 <link rel="canonical" href="https://YOURDOMAIN.com/meters-to-kilometers.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many kilometers are in one meter?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.001 kilometers in one meter."}}, {"@type": "Question", "name": "How many meters are in one kilometer?", "acceptedAnswer": {"@type": "Answer", "text": "There are 1,000 meters in one kilometer."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="length-conversions.html">Length Conversions</a></p>
-<h1>Meters to Kilometers Converter</h1>
-<p class="muted">Convert meters to kilometers instantly. 1 m = 0.001 km.</p>
+<h1>Meters to Kilometers Converter (Both Ways)</h1>
+<p class="muted">Convert meters to kilometers and kilometers to meters instantly. 1 m = 0.001 km.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in meters (m)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Meters (m)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Kilometers (km)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert meters to kilometers, multiply the number of meters by 0.001. One meter equals 0.001 kilometers, and one kilometer equals 1,000 meters. The table shows common values.</p>
+<p>To convert meters to kilometers, multiply the number of meters by 0.001. To convert kilometers to meters, multiply by 1,000 (or divide by 0.001). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Meters to Kilometers formula</h2>
 <p><b>Kilometers = meters &times; 0.001</b></p>
 <p>Worked example: convert 12.5 meters to kilometers. Multiply 12.5 &times; 0.001 = <b>0.0125 km</b>. To go the other way, multiply kilometers by 1,000 (or divide by 0.001).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many kilometers are in one meter?</summary><p>There are 0.001 kilometers in one meter.</p></details>
 <details><summary>How many meters are in one kilometer?</summary><p>There are 1,000 meters in one kilometer.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="length-converter.html"><b>Length Converter</b></a><a href="kilometers-to-meters.html"><b>Kilometers to Meters Converter</b></a><a href="meters-to-millimeters.html"><b>Meters to Millimeters Converter</b></a><a href="meters-to-centimeters.html"><b>Meters to Centimeters Converter</b></a><a href="meters-to-inches.html"><b>Meters to Inches Converter</b></a><a href="meters-to-feet.html"><b>Meters to Feet Converter</b></a><a href="meters-to-yards.html"><b>Meters to Yards Converter</b></a><a href="meters-to-miles.html"><b>Meters to Miles Converter</b></a><a href="meters-to-nanometers.html"><b>Meters to Nanometers Converter</b></a><a href="meters-to-micrometers.html"><b>Meters to Micrometers Converter</b></a><a href="meters-to-nautical-miles.html"><b>Meters to Nautical Miles Converter</b></a><a href="meters-to-furlongs.html"><b>Meters to Furlongs Converter</b></a></div>
+<div class="grid"><a href="length-converter.html"><b>Length Converter</b></a><a href="inches-to-meters.html"><b>Inches to Meters Converter (Both Ways)</b></a><a href="feet-to-meters.html"><b>Feet to Meters Converter (Both Ways)</b></a><a href="yards-to-meters.html"><b>Yards to Meters Converter (Both Ways)</b></a><a href="miles-to-meters.html"><b>Miles to Meters Converter (Both Ways)</b></a><a href="meters-to-nanometers.html"><b>Meters to Nanometers Converter (Both Ways)</b></a><a href="meters-to-micrometers.html"><b>Meters to Micrometers Converter (Both Ways)</b></a><a href="nautical-miles-to-meters.html"><b>Nautical Miles to Meters Converter (Both Ways)</b></a><a href="furlongs-to-meters.html"><b>Furlongs to Meters Converter (Both Ways)</b></a><a href="mils-to-meters.html"><b>Mils to Meters Converter (Both Ways)</b></a><a href="meters-to-light-years.html"><b>Meters to Light Years Converter (Both Ways)</b></a><a href="fathoms-to-meters.html"><b>Fathoms to Meters Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=0.001;const r=v*F;return [[SF(v)+' '+(v===1?'m':'m')+' =',SF(r)+' '+(r===1?'km':'km')],['Formula','km = m × '+SF(F)],['Reverse','1 m = '+SF(1/F)+' km'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'m':'m'),SF(x*F)+' km'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*0.001;},a:function(v){return v.b/0.001;}}});</script>
 </body></html>

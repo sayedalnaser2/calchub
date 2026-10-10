@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Miles to Light Years Converter | CalcHub</title>
-<meta name="description" content="Convert miles to light years instantly. 1 mi = 1.70108e-13 ly.">
+<title>Miles to Light Years Converter (Both Ways) | CalcHub</title>
+<meta name="description" content="Convert miles to light years and light years to miles instantly. 1 mi = 1.70108e-13 ly.">
 <link rel="canonical" href="https://YOURDOMAIN.com/miles-to-light-years.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many light years are in one mile?", "acceptedAnswer": {"@type": "Answer", "text": "There are 1.70108e-13 light years in one mile."}}, {"@type": "Question", "name": "How many miles are in one light year?", "acceptedAnswer": {"@type": "Answer", "text": "There are 5,878,625,400,000 miles in one light year."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="length-conversions.html">Length Conversions</a></p>
-<h1>Miles to Light Years Converter</h1>
-<p class="muted">Convert miles to light years instantly. 1 mi = 1.70108e-13 ly.</p>
+<h1>Miles to Light Years Converter (Both Ways)</h1>
+<p class="muted">Convert miles to light years and light years to miles instantly. 1 mi = 1.70108e-13 ly.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in miles (mi)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Miles (mi)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Light Years (ly)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert miles to light years, multiply the number of miles by 1.70108e-13. One mile equals 1.70108e-13 light years, and one light year equals 5,878,625,400,000 miles. The table shows common values.</p>
+<p>To convert miles to light years, multiply the number of miles by 1.70108e-13. To convert light years to miles, multiply by 5,878,625,400,000 (or divide by 1.70108e-13). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Miles to Light Years formula</h2>
 <p><b>Light years = miles &times; 1.70108e-13</b></p>
 <p>Worked example: convert 12.5 miles to light years. Multiply 12.5 &times; 1.70108e-13 = <b>2.12635e-12 ly</b>. To go the other way, multiply light years by 5,878,625,400,000 (or divide by 1.70108e-13).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many light years are in one mile?</summary><p>There are 1.70108e-13 light years in one mile.</p></details>
 <details><summary>How many miles are in one light year?</summary><p>There are 5,878,625,400,000 miles in one light year.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="length-converter.html"><b>Length Converter</b></a><a href="light-years-to-miles.html"><b>Light Years to Miles Converter</b></a><a href="miles-to-millimeters.html"><b>Miles to Millimeters Converter</b></a><a href="miles-to-centimeters.html"><b>Miles to Centimeters Converter</b></a><a href="miles-to-meters.html"><b>Miles to Meters Converter</b></a><a href="miles-to-kilometers.html"><b>Miles to Kilometers Converter</b></a><a href="miles-to-inches.html"><b>Miles to Inches Converter</b></a><a href="miles-to-feet.html"><b>Miles to Feet Converter</b></a><a href="miles-to-yards.html"><b>Miles to Yards Converter</b></a><a href="miles-to-nautical-miles.html"><b>Miles to Nautical Miles Converter</b></a><a href="miles-to-furlongs.html"><b>Miles to Furlongs Converter</b></a><a href="miles-to-mils.html"><b>Miles to Mils Converter</b></a></div>
+<div class="grid"><a href="length-converter.html"><b>Length Converter</b></a><a href="miles-to-millimeters.html"><b>Miles to Millimeters Converter (Both Ways)</b></a><a href="miles-to-centimeters.html"><b>Miles to Centimeters Converter (Both Ways)</b></a><a href="miles-to-meters.html"><b>Miles to Meters Converter (Both Ways)</b></a><a href="miles-to-kilometers.html"><b>Miles to Kilometers Converter (Both Ways)</b></a><a href="miles-to-nautical-miles.html"><b>Miles to Nautical Miles Converter (Both Ways)</b></a><a href="miles-to-furlongs.html"><b>Miles to Furlongs Converter (Both Ways)</b></a><a href="miles-to-mils.html"><b>Miles to Mils Converter (Both Ways)</b></a><a href="miles-to-fathoms.html"><b>Miles to Fathoms Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=1.7010779502325107e-13;const r=v*F;return [[SF(v)+' '+(v===1?'mi':'mi')+' =',SF(r)+' '+(r===1?'ly':'ly')],['Formula','ly = mi × '+SF(F)],['Reverse','1 mi = '+SF(1/F)+' ly'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'mi':'mi'),SF(x*F)+' ly'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*1.7010779502325107e-13;},a:function(v){return v.b/1.7010779502325107e-13;}}});</script>
 </body></html>

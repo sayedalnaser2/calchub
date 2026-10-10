@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Boyle&#x27;s Law Calculator | CalcHub</title>
-<meta name="description" content="Calculate the new volume or pressure of a gas at constant temperature.">
+<meta name="description" content="Solve pressure or volume of a gas at constant temperature from any three values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/boyles-law-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need absolute pressure?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use absolute pressure, not gauge pressure."}}, {"@type": "Question", "name": "Which units work?", "acceptedAnswer": {"@type": "Answer", "text": "Any, as long as pressure units match and volume units match."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Boyle&#x27;s Law Calculator</h1>
-<p class="muted">Calculate the new volume or pressure of a gas at constant temperature.</p>
+<p class="muted">Solve pressure or volume of a gas at constant temperature from any three values.</p>
 <form class="card" data-calc="1">
-<label for="p1">Initial pressure</label><input id="p1" type="number" step="any" value="100">
-<label for="v1">Initial volume</label><input id="v1" type="number" step="any" value="5">
-<label for="p2">Final pressure (same unit)</label><input id="p2" type="number" step="any" value="250">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="P1">Initial pressure</label><div class="eqrow"><input id="P1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="P1_u" aria-label="Initial pressure unit"><option>kPa</option><option>Pa</option><option>atm</option><option>bar</option><option>psi</option><option>mmHg</option></select></div>
+<label for="V1">Initial volume</label><div class="eqrow"><input id="V1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="V1_u" aria-label="Initial volume unit"><option>L</option><option>mL</option><option>m³</option><option>cm³</option><option>gal</option><option>ft³</option></select></div>
+<label for="P2">Final pressure</label><div class="eqrow"><input id="P2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="P2_u" aria-label="Final pressure unit"><option>kPa</option><option>Pa</option><option>atm</option><option>bar</option><option>psi</option><option>mmHg</option></select></div>
+<label for="V2">Final volume</label><div class="eqrow"><input id="V2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="V2_u" aria-label="Final volume unit"><option>L</option><option>mL</option><option>m³</option><option>cm³</option><option>gal</option><option>ft³</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Boyle&#x27;s law: P1 x V1 = P2 x V2 for a fixed amount of gas at constant temperature. Pressure and volume are inversely proportional.</p>
+<h2>Formula</h2>
+<p>Boyle's law: P1 x V1 = P2 x V2 at constant temperature. Enter any three of the four values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Do I need absolute pressure?</summary><p>Yes. Use absolute pressure, not gauge pressure.</p></details>
 <details><summary>Which units work?</summary><p>Any, as long as pressure units match and volume units match.</p></details>
@@ -32,7 +36,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({p1,v1,p2}){
-if(p2<=0)return 'Final pressure must be positive.';return [['Final volume',N(p1*v1/p2,5)+' (same unit as initial volume)'],['Constant P x V',N(p1*v1,4)],['Volume change',PCT((p1/p2-1)*100,2)]];
-});</script>
+<script>EqPage({vars:[{"id": "P1", "units": [["kPa", 1000], ["Pa", 1], ["atm", 101325], ["bar", 100000.0], ["psi", 6894.757293168], ["mmHg", 133.322387415]], "init": 100}, {"id": "V1", "units": [["L", 0.001], ["mL", 1e-06], ["m\u00b3", 1], ["cm\u00b3", 1e-06], ["gal", 0.003785411784], ["ft\u00b3", 0.028316846592]], "init": 5}, {"id": "P2", "units": [["kPa", 1000], ["Pa", 1], ["atm", 101325], ["bar", 100000.0], ["psi", 6894.757293168], ["mmHg", 133.322387415]], "init": 250}, {"id": "V2", "units": [["L", 0.001], ["mL", 1e-06], ["m\u00b3", 1], ["cm\u00b3", 1e-06], ["gal", 0.003785411784], ["ft\u00b3", 0.028316846592]]}],need:3,solve:{V2:function(v){return v.P1*v.V1/v.P2;},P1:function(v){return v.P2*v.V2/v.V1;},V1:function(v){return v.P2*v.V2/v.P1;},P2:function(v){return v.P1*v.V1/v.V2;}}});</script>
 </body></html>

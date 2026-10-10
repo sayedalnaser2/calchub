@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aspect Ratio Calculator | CalcHub</title>
-<meta name="description" content="Find the aspect ratio of a screen or image and scale it.">
+<meta name="description" content="Scale an image or screen: enter any three of the four dimensions and get the fourth.">
 <link rel="canonical" href="https://YOURDOMAIN.com/aspect-ratio-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Common ratios?", "acceptedAnswer": {"@type": "Answer", "text": "16:9 for video, 4:3 for older screens, 3:2 for photos."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
 <h1>Aspect Ratio Calculator</h1>
-<p class="muted">Find the aspect ratio of a screen or image and scale it.</p>
+<p class="muted">Scale an image or screen: enter any three of the four dimensions and get the fourth.</p>
 <form class="card" data-calc="1">
-<label for="w">Width</label><input id="w" type="number" step="any" value="1920">
-<label for="h">Height</label><input id="h" type="number" step="any" value="1080">
-<label for="nw">New width</label><input id="nw" type="number" step="any" value="1280">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="w1">Original width</label><div class="eqrow"><input id="w1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="h1">Original height</label><div class="eqrow"><input id="h1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="w2">New width</label><div class="eqrow"><input id="w2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="h2">New height</label><div class="eqrow"><input id="h2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Divide width and height by their GCD for the ratio. To resize, keep the ratio and compute new height = new width x height / width.</p>
+<h2>Formula</h2>
+<p>Keeping the ratio width : height constant, new height = original height x new width / original width. Enter any three values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Common ratios?</summary><p>16:9 for video, 4:3 for older screens, 3:2 for photos.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({w,h,nw}){
-const g=GCD(Math.round(w),Math.round(h));return [['Aspect ratio',w/g+':'+h/g],['Decimal',N(w/h,4)],['New height for new width',N(nw*h/w,2)],['Megapixels',N(w*h/1e6,2)]];
-});</script>
+<script>EqPage({vars:[{"id": "w1", "init": 1920}, {"id": "h1", "init": 1080}, {"id": "w2", "init": 1280}, {"id": "h2"}],need:3,solve:{h2:function(v){return v.h1*v.w2/v.w1;},w2:function(v){return v.w1*v.h2/v.h1;},w1:function(v){return v.w2*v.h1/v.h2;},h1:function(v){return v.w1*v.h2/v.w2;}},extra:function(v){var g=function(a,b){return b?g(b,a%b):a;};var d=g(Math.round(v.w1),Math.round(v.h1));return [['Aspect ratio',Math.round(v.w1)/d+':'+Math.round(v.h1)/d],['Decimal',N(v.w1/v.h1,4)]];}});</script>
 </body></html>

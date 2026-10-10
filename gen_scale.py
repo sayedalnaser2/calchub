@@ -34,17 +34,16 @@ def ftitle(n):
 
 def fuel():
     # base: km per litre
-    U = [("mpgus", "miles per gallon (US)", "mpg", "mile per gallon (US)", "x*0.425143707", "v/0.425143707"),
-         ("mpguk", "miles per gallon (UK)", "mpg UK", "mile per gallon (UK)", "x*0.354006189", "v/0.354006189"),
-         ("kml", "kilometers per liter", "km/L", "kilometer per liter", "x", "v"),
-         ("l100", "liters per 100 kilometers", "L/100km", "liter per 100 kilometers", "100/x", "100/v")]
-    for a in U:
-        for b in U:
-            if a[0] == b[0]:
-                continue
-            body = (f"const k=(x=>{a[4]})(v);const conv=v=>{b[5]};const r=conv(k);"
-                    f"return [[N(v,4)+' {a[2]} =',N(r,4)+' {b[2]}'],"
-                    f"...[10,15,20,25,30,35,40,50].map(x=>{{const kk=(x=>{a[4]})(x);return [N(x)+' {a[2]}',N(conv(kk),3)+' {b[2]}'];}})];")
+    U = [("mpgus", "miles per gallon (US)", "mpg", "mile per gallon (US)", "x*0.425143707", "k/0.425143707"),
+         ("mpguk", "miles per gallon (UK)", "mpg UK", "mile per gallon (UK)", "x*0.354006189", "k/0.354006189"),
+         ("kml", "kilometers per liter", "km/L", "kilometer per liter", "x", "k"),
+         ("l100", "liters per 100 kilometers", "L/100km", "liter per 100 kilometers", "100/x", "100/k")]
+    for ia, a in enumerate(U):
+        for b in U[ia + 1:]:
+            def conv(p, q, var):
+                return f"(function(x){{var k={p[4]};return {q[5]};}})({var})"
+            eq = dict(vars=[("a", f"{ftitle(a[1])} ({a[2]})", None, 30), ("b", f"{ftitle(b[1])} ({b[2]})", None, None)],
+                      solve={"b": conv(a, b, "v.a"), "a": conv(b, a, "v.b")})
             rows = []
             for x in (10, 15, 20, 25, 30, 35, 40, 50):
                 k = {"mpgus": x * .425143707, "mpguk": x * .354006189, "kml": x, "l100": 100 / x}[a[0]]
@@ -54,14 +53,13 @@ def fuel():
                      "<h2>About fuel economy units</h2>\n<p>Fuel economy is reported as distance per volume of fuel (mpg, km/L) in the US, UK and much of Asia, "
                      "and as volume per distance (L/100 km) in Europe, Canada and Australia. Higher is better for distance-per-volume units, lower is better for L/100 km. "
                      "US and UK gallons differ (3.785 L vs 4.546 L), so mpg values are not interchangeable.</p>\n")
-            slug = f"{a[1].split(' (')[0].replace(' ', '-')}-{a[0][-2:]}-to-{b[1].split(' (')[0].replace(' ', '-')}-{b[0][-2:]}"
             slug = f"{a[0]}-to-{b[0]}-fuel-economy"
-            SPECS.append(C("conversion", slug, f"{ftitle(a[1])} to {ftitle(b[1])} Converter",
-                           f"Convert {a[1]} to {b[1]} instantly.", [("v", f"Fuel economy in {a[1]}", 30)], body,
-                           f"Fuel economy units are converted through kilometers per liter. The inverse relationship between distance-per-volume and volume-per-distance units means L/100 km = 100 / (km/L).",
+            SPECS.append(C("conversion", slug, f"{ftitle(a[1])} to {ftitle(b[1])} Converter (Both Ways)",
+                           f"Convert {a[1]} to {b[1]} and back instantly.", [], "",
+                           "Fuel economy units are converted through kilometers per liter. The inverse relationship between distance-per-volume and volume-per-distance units means L/100 km = 100 / (km/L). Type in either box and the other updates.",
                            [(f"What is 30 {a[2]} in {b[2]}?", f"30 {a[2]} is about " + next(r for x, r in rows if x.startswith("30 ")) + "."),
                             ("Which fuel economy unit is best?", "None is better; they measure the same thing. Use whichever your region's vehicles and fuel prices are quoted in.")],
-                           extra, None, ("fuel-economy-conversions", "Fuel Economy Conversions", "Convert between mpg (US and UK), km/L and L/100 km.")))
+                           extra, None, ("fuel-economy-conversions", "Fuel Economy Conversions", "Convert between mpg (US and UK), km/L and L/100 km."), eq))
 
 
 fuel()
@@ -309,12 +307,11 @@ ING = [("All-Purpose Flour", "all-purpose-flour", 120), ("Bread Flour", "bread-f
        ("Whole Almonds", "almonds", 142), ("Chopped Walnuts", "walnuts", 113), ("Pecan Halves", "pecans", 99), ("Raisins", "raisins", 149),
        ("Shredded Coconut", "shredded-coconut", 85), ("Semolina", "semolina", 163)]
 OZ = 28.3495
-COOK_TYPES = [
-    ("cups", "g", "Cups", "Grams", "cups", "grams", lambda g: g, 1),
-    ("grams", "c", "Grams", "Cups", "grams", "cups", lambda g: 1 / g, 100),
-    ("tablespoons", "g", "Tablespoons", "Grams", "tablespoons", "grams", lambda g: g / 16, 1),
-    ("teaspoons", "g", "Teaspoons", "Grams", "teaspoons", "grams", lambda g: g / 48, 1),
-    ("ounces", "c", "Ounces", "Cups", "ounces", "cups", lambda g: OZ / g, 1),
+COOK_TYPES = [  # (from unit plural, to unit plural, from title, to title, default amount, factor builder)
+    ("cups", "grams", "Cups", "Grams", 1, lambda g: g),
+    ("tablespoons", "grams", "Tablespoons", "Grams", 1, lambda g: g / 16),
+    ("teaspoons", "grams", "Teaspoons", "Grams", 1, lambda g: g / 48),
+    ("ounces", "cups", "Ounces", "Cups", 8, lambda g: OZ / g),
 ]
 
 
@@ -326,21 +323,16 @@ def cook(name, stub, g):
            f"<p>1 US cup of {name.lower()} weighs about {g} g ({g / OZ:.1f} oz), 1 tablespoon about {g / 16:.1f} g and 1 teaspoon about {g / 48:.1f} g. "
            "Weights vary with brand, moisture and how the ingredient is scooped or packed, so use a kitchen scale for baking. Values use the US cup of 236.6 mL.</p>\n")
     n = name.lower()
-    for kind, unit, fu, tu, fw, tw, ratio, default in COOK_TYPES:
+    for fw, tw, fu, tu, default, kf in COOK_TYPES:
+        k = kf(g)
+        eq = dict(vars=[("a", f"{fu} of {n}", None, default), ("b", tu, None, None)], solve={"b": f"v.a*{k!r}", "a": f"v.b/{k!r}"})
         slug = f"{fw}-of-{stub}-to-{tw}"
-        k = ratio(g)
-        if unit == "g":
-            body = f"const r=v*{k!r};return [[N(v,4)+' {fw} of {n} =',N(r,2)+' g'],['In ounces',N(r/{OZ},2)+' oz'],['Per 1 {fw[:-1]}',N({k!r},2)+' g']];"
-            faq = [(f"How many grams is 1 {fw[:-1]} of {n}?", f"{k:.1f} g."),
-                   (f"How many grams are in 2 {fw} of {n}?", f"{2 * k:.1f} g.")]
-        else:
-            body = f"const r=v*{k!r};return [[N(v,4)+' {fw} of {n} =',N(r,3)+' cups'],['In tablespoons',N(r*16,2)+' tbsp'],['In teaspoons',N(r*48,1)+' tsp']];"
-            faq = [(f"How many cups is {default} {fw[:-1] if default == 1 else fw} of {n}?", f"{default * k:.3f} cups."),
-                   (f"How many cups is 500 {fw} of {n}?", f"{500 * k:.2f} cups.")]
-        SPECS.append(C("conversion", slug, f"{fu} of {name} to {tu}",
-                       f"Convert {fw} of {n} to {tw}. 1 cup of {n} weighs about {g} g.", [("v", f"Amount in {fw}", default)], body,
-                       f"{name} is measured by weight or by volume depending on the recipe. Using about {g} g per US cup, convert {fw} to {tw} by multiplying by {k:.4g}.",
-                       faq, ref, None, COOK_GROUP))
+        SPECS.append(C("conversion", slug, f"{fu} of {name} to {tu} (Both Ways)",
+                       f"Convert {fw} of {n} to {tw} and back. 1 cup of {n} weighs about {g} g.", [], "",
+                       f"{name} is measured by weight or by volume depending on the recipe. Using about {g} g per US cup, {fw} x {k:.4g} gives {tw}, and {tw} divided by {k:.4g} gives {fw}. Type in either box.",
+                       [(f"How many {tw} is 1 {fw[:-1]} of {n}?", f"{k:.3f} {tw}." if tw == "cups" else f"{k:.1f} {tw}."),
+                        (f"How many {tw} is 2 {fw} of {n}?", f"{2 * k:.3f} {tw}." if tw == "cups" else f"{2 * k:.1f} {tw}.")],
+                       ref, None, COOK_GROUP, eq))
 
 
 for ing in ING:

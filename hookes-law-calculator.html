@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hooke&#x27;s Law Spring Calculator | CalcHub</title>
-<meta name="description" content="Calculate spring force and stored energy from stiffness and extension.">
+<meta name="description" content="Enter any two of force, spring constant and extension and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/hookes-law-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the spring constant?", "acceptedAnswer": {"@type": "Answer", "text": "Force needed per meter of stretch, a measure of stiffness."}}, {"@type": "Question", "name": "What if the spring is in series?", "acceptedAnswer": {"@type": "Answer", "text": "Series springs have a lower combined constant: 1/k = 1/k1 + 1/k2."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Hooke&#x27;s Law Spring Calculator</h1>
-<p class="muted">Calculate spring force and stored energy from stiffness and extension.</p>
+<p class="muted">Enter any two of force, spring constant and extension and get the third.</p>
 <form class="card" data-calc="1">
-<label for="k">Spring constant (N/m)</label><input id="k" type="number" step="any" value="200">
-<label for="x">Extension / compression (m)</label><input id="x" type="number" step="any" value="0.15">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="F">Force</label><div class="eqrow"><input id="F" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="F_u" aria-label="Force unit"><option>N</option><option>kN</option><option>lbf</option></select></div>
+<label for="k">Spring constant (N/m)</label><div class="eqrow"><input id="k" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="x">Extension</label><div class="eqrow"><input id="x" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="x_u" aria-label="Extension unit"><option>m</option><option>cm</option><option>mm</option><option>km</option><option>in</option><option>ft</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Hooke&#x27;s law: F = k x. A spring stores elastic potential energy U = 1/2 k x^2. It holds within the elastic limit of the spring.</p>
+<h2>Formula</h2>
+<p>Hooke's law: F = k x. Enter any two of force, spring constant and extension.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is the spring constant?</summary><p>Force needed per meter of stretch, a measure of stiffness.</p></details>
 <details><summary>What if the spring is in series?</summary><p>Series springs have a lower combined constant: 1/k = 1/k1 + 1/k2.</p></details>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({k,x}){
-return [['Force',N(k*x,3)+' N'],['Stored energy',N(.5*k*x*x,4)+' J'],['Weight that stretches it (kg)',N(k*x/9.81,3)],['Extension in cm',N(x*100,2)]];
-});</script>
+<script>EqPage({vars:[{"id": "F", "units": [["N", 1], ["kN", 1000], ["lbf", 4.4482216152605]]}, {"id": "k", "init": 200}, {"id": "x", "units": [["m", 1], ["cm", 0.01], ["mm", 0.001], ["km", 1000], ["in", 0.0254], ["ft", 0.3048]], "init": 0.15}],need:2,solve:{F:function(v){return v.k*v.x;},k:function(v){return v.F/v.x;},x:function(v){return v.F/v.k;}},extra:function(v){return [['Stored energy',N(.5*v.k*v.x*v.x,4)+' J']];}});</script>
 </body></html>

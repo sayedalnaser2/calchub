@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Escape Velocity Calculator | CalcHub</title>
-<meta name="description" content="Compute the escape velocity from a planet or moon.">
+<meta name="description" content="Solve escape velocity, mass or radius from any two values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/escape-velocity-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Escape velocity for the Moon?", "acceptedAnswer": {"@type": "Answer", "text": "About 2.38 km/s."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Escape Velocity Calculator</h1>
-<p class="muted">Compute the escape velocity from a planet or moon.</p>
+<p class="muted">Solve escape velocity, mass or radius from any two values.</p>
 <form class="card" data-calc="1">
-<label for="m">Mass (kg)</label><input id="m" type="number" step="any" value="5.972e+24">
-<label for="r">Radius (m)</label><input id="r" type="number" step="any" value="6371000">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="ve">Escape velocity</label><div class="eqrow"><input id="ve" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="ve_u" aria-label="Escape velocity unit"><option>km/s</option><option>m/s</option><option>mph</option></select></div>
+<label for="M">Mass of body</label><div class="eqrow"><input id="M" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="M_u" aria-label="Mass of body unit"><option>Earth masses</option><option>kg</option><option>Moon masses</option><option>Sun masses</option></select></div>
+<label for="r">Radius</label><div class="eqrow"><input id="r" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="r_u" aria-label="Radius unit"><option>km</option><option>m</option><option>mi</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Escape velocity is √(2GM/r). Defaults are Earth&#x27;s mass and radius (about 11.2 km/s).</p>
+<h2>Formula</h2>
+<p>Escape velocity = sqrt(2GM / r). Enter any two values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Escape velocity for the Moon?</summary><p>About 2.38 km/s.</p></details>
 <h2>Related calculators</h2>
@@ -30,7 +34,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({m,r}){
-const G=6.674e-11,v=Math.sqrt(2*G*m/r);return [['Escape velocity',N(v/1000,3)+' km/s'],['In m/s',N(v,0)],['In mph',N(v*2.23694,0)],['Surface gravity',N(G*m/(r*r),3)+' m/s²']];
-});</script>
+<script>EqPage({vars:[{"id": "ve", "units": [["km/s", 1000], ["m/s", 1], ["mph", 0.44704]]}, {"id": "M", "units": [["Earth masses", 5.972e+24], ["kg", 1], ["Moon masses", 7.342e+22], ["Sun masses", 1.989e+30]], "init": 1}, {"id": "r", "units": [["km", 1000], ["m", 1], ["mi", 1609.344]], "init": 6371}],need:2,solve:{ve:function(v){return Math.sqrt(2*6.6743e-11*v.M/v.r);},M:function(v){return v.ve*v.ve*v.r/(2*6.6743e-11);},r:function(v){return 2*6.6743e-11*v.M/(v.ve*v.ve);}}});</script>
 </body></html>

@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sphere Volume and Surface Area Calculator | CalcHub</title>
-<meta name="description" content="Calculate volume, surface area and diameter of a sphere from its radius.">
+<meta name="description" content="Enter any one of radius, volume or surface area of a sphere and get the rest.">
 <link rel="canonical" href="https://YOURDOMAIN.com/sphere-volume-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I find the volume from the diameter?", "acceptedAnswer": {"@type": "Answer", "text": "Halve the diameter to get the radius, then use the formula."}}, {"@type": "Question", "name": "What is the volume of a sphere with radius 1?", "acceptedAnswer": {"@type": "Answer", "text": "About 4.18879 cubic units."}}]}</script>
@@ -13,15 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
 <h1>Sphere Volume and Surface Area Calculator</h1>
-<p class="muted">Calculate volume, surface area and diameter of a sphere from its radius.</p>
+<p class="muted">Enter any one of radius, volume or surface area of a sphere and get the rest.</p>
 <form class="card" data-calc="1">
-<label for="r">Radius</label><input id="r" type="number" step="any" value="5">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="r">Radius</label><div class="eqrow"><input id="r" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="V">Volume</label><div class="eqrow"><input id="V" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="S">Surface area</label><div class="eqrow"><input id="S" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Volume = 4/3 x pi x r^3. Surface area = 4 x pi x r^2. Use any unit; volume is in cubic units and area in square units.</p>
+<h2>Formula</h2>
+<p>V = 4/3 x pi x r cubed and surface area = 4 x pi x r squared. Enter any one of radius, volume or surface area.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>How do I find the volume from the diameter?</summary><p>Halve the diameter to get the radius, then use the formula.</p></details>
 <details><summary>What is the volume of a sphere with radius 1?</summary><p>About 4.18879 cubic units.</p></details>
@@ -30,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({r}){
-return [['Volume',N(4/3*Math.PI*r*r*r,4)],['Surface area',N(4*Math.PI*r*r,4)],['Diameter',N(2*r,4)],['Circumference',N(2*Math.PI*r,4)]];
-});</script>
+<script>EqPage({vars:[{"id": "r", "init": 5}, {"id": "V"}, {"id": "S"}],need:1,solve:{r:[[["V"],function(v){return Math.cbrt(3*v.V/(4*Math.PI));}],[["S"],function(v){return Math.sqrt(v.S/(4*Math.PI));}]],V:[[["r"],function(v){return 4/3*Math.PI*v.r*v.r*v.r;}]],S:[[["r"],function(v){return 4*Math.PI*v.r*v.r;}]]}});</script>
 </body></html>

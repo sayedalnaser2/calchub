@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Coulomb&#x27;s Law Calculator | CalcHub</title>
-<meta name="description" content="Calculate the electric force between two charges.">
+<meta name="description" content="Solve electric force, a charge, or distance from any three values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/coulombs-law-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a microcoulomb?", "acceptedAnswer": {"@type": "Answer", "text": "One millionth of a coulomb."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Coulomb&#x27;s Law Calculator</h1>
-<p class="muted">Calculate the electric force between two charges.</p>
+<p class="muted">Solve electric force, a charge, or distance from any three values.</p>
 <form class="card" data-calc="1">
-<label for="q1">Charge 1 (µC)</label><input id="q1" type="number" step="any" value="5">
-<label for="q2">Charge 2 (µC)</label><input id="q2" type="number" step="any" value="-3">
-<label for="r">Distance (m)</label><input id="r" type="number" step="any" value="0.2">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="F">Force (N)</label><div class="eqrow"><input id="F" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="q1">Charge 1</label><div class="eqrow"><input id="q1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="q1_u" aria-label="Charge 1 unit"><option>µC</option><option>nC</option><option>pC</option><option>C</option></select></div>
+<label for="q2">Charge 2</label><div class="eqrow"><input id="q2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="q2_u" aria-label="Charge 2 unit"><option>µC</option><option>nC</option><option>pC</option><option>C</option></select></div>
+<label for="r">Distance</label><div class="eqrow"><input id="r" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="r_u" aria-label="Distance unit"><option>m</option><option>cm</option><option>mm</option><option>km</option><option>in</option><option>ft</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>F = k|q1 q2|/r² with k = 8.99×10⁹ N·m²/C². Like charges repel and opposite charges attract.</p>
+<h2>Formula</h2>
+<p>Coulomb's law: F = k x q1 x q2 / r squared, with k = 8.9876 x 10^9 N·m²/C². Enter any three of the four values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is a microcoulomb?</summary><p>One millionth of a coulomb.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({q1,q2,r}){
-const F=8.9875e9*Math.abs(q1*q2)*1e-12/(r*r);return [['Force magnitude',N(F,4)+' N'],['Nature',q1*q2<0?'Attractive':q1*q2>0?'Repulsive':'None']];
-});</script>
+<script>EqPage({vars:[{"id": "F"}, {"id": "q1", "units": [["\u00b5C", 1e-06], ["nC", 1e-09], ["pC", 1e-12], ["C", 1]], "init": 2}, {"id": "q2", "units": [["\u00b5C", 1e-06], ["nC", 1e-09], ["pC", 1e-12], ["C", 1]], "init": 3}, {"id": "r", "units": [["m", 1], ["cm", 0.01], ["mm", 0.001], ["km", 1000], ["in", 0.0254], ["ft", 0.3048]], "init": 0.5}],need:3,solve:{F:function(v){return 8.9875517923e9*v.q1*v.q2/(v.r*v.r);},q1:function(v){return v.F*v.r*v.r/(8.9875517923e9*v.q2);},q2:function(v){return v.F*v.r*v.r/(8.9875517923e9*v.q1);},r:function(v){return Math.sqrt(8.9875517923e9*v.q1*v.q2/v.F);}}});</script>
 </body></html>

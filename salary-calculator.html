@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Salary Calculator (Hourly, Weekly, Monthly, Annual)</title>
-<meta name="description" content="Convert an hourly wage to weekly, monthly and yearly pay.">
+<title>Salary Calculator (Hourly to Annual and Back) | CalcHub</title>
+<meta name="description" content="Convert hourly pay to annual salary, or annual salary to an hourly rate.">
 <link rel="canonical" href="https://YOURDOMAIN.com/salary-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this before or after tax?", "acceptedAnswer": {"@type": "Answer", "text": "Before tax. Your take-home pay will be lower depending on income tax, Social Security and other deductions."}}]}</script>
@@ -12,27 +12,28 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
-<h1>Salary Calculator (Hourly, Weekly, Monthly, Annual)</h1>
-<p class="muted">Convert an hourly wage to weekly, monthly and yearly pay.</p>
+<h1>Salary Calculator (Hourly to Annual and Back)</h1>
+<p class="muted">Convert hourly pay to annual salary, or annual salary to an hourly rate.</p>
 <form class="card" data-calc="1">
-<label for="hourly">Hourly rate ($)</label><input id="hourly" type="number" step="any" value="25">
-<label for="hours">Hours per week</label><input id="hours" type="number" step="any" value="40">
-<label for="weeks">Weeks per year</label><input id="weeks" type="number" step="any" value="52">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="annual">Annual pay ($)</label><div class="eqrow"><input id="annual" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="hourly">Hourly rate ($)</label><div class="eqrow"><input id="hourly" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="hrs">Hours per week</label><div class="eqrow"><input id="hrs" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="wks">Weeks per year</label><div class="eqrow"><input id="wks" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Yearly pay is hourly rate times hours per week times weeks worked. Figures are before taxes and deductions.</p>
+<h2>Formula</h2>
+<p>Annual pay = hourly rate x hours per week x weeks per year. Enter any three values, for example an annual salary, hours and weeks to find the hourly wage.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Is this before or after tax?</summary><p>Before tax. Your take-home pay will be lower depending on income tax, Social Security and other deductions.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="break-even-calculator.html"><b>Break-Even Calculator</b></a><a href="margin-calculator.html"><b>Profit Margin &amp; Markup Calculator</b></a><a href="cagr-calculator.html"><b>CAGR Calculator</b></a><a href="rule-of-72-calculator.html"><b>Rule of 72 Calculator</b></a><a href="debt-to-income-calculator.html"><b>Debt-to-Income Ratio Calculator</b></a><a href="refinance-calculator.html"><b>Refinance Break-Even Calculator</b></a></div>
+<div class="grid"><a href="break-even-calculator.html"><b>Break-Even Calculator</b></a><a href="margin-calculator.html"><b>Profit Margin and Markup Calculator</b></a><a href="cagr-calculator.html"><b>CAGR Calculator</b></a><a href="rule-of-72-calculator.html"><b>Rule of 72 Calculator</b></a><a href="debt-to-income-calculator.html"><b>Debt-to-Income Ratio Calculator</b></a><a href="refinance-calculator.html"><b>Refinance Break-Even Calculator</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({hourly,hours,weeks}){
-const y=hourly*hours*weeks;
-return [['Yearly pay',M(y)],['Monthly pay',M(y/12)],['Weekly pay',M(hourly*hours)],['Daily pay (5 days)',M(hourly*hours/5)]];
-});</script>
+<script>EqPage({vars:[{"id": "annual"}, {"id": "hourly", "init": 25}, {"id": "hrs", "init": 40}, {"id": "wks", "init": 52}],need:3,solve:{annual:function(v){return v.hourly*v.hrs*v.wks;},hourly:function(v){return v.annual/(v.hrs*v.wks);},hrs:function(v){return v.annual/(v.hourly*v.wks);},wks:function(v){return v.annual/(v.hourly*v.hrs);}},extra:function(v){return [['Monthly',M(v.annual/12)],['Biweekly',M(v.annual/26)],['Weekly',M(v.annual/v.wks)],['Daily (5 days)',M(v.annual/v.wks/5)]];}});</script>
 </body></html>

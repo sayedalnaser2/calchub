@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ohm&#x27;s Law Calculator | CalcHub</title>
-<meta name="description" content="Find current and power from voltage and resistance.">
+<meta name="description" content="Enter any two of voltage, current, resistance and power and get the others.">
 <link rel="canonical" href="https://YOURDOMAIN.com/ohms-law-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Ohm's law?", "acceptedAnswer": {"@type": "Answer", "text": "It states that the current through a conductor is proportional to the voltage across it and inversely proportional to its resistance."}}]}</script>
@@ -13,16 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Ohm&#x27;s Law Calculator</h1>
-<p class="muted">Find current and power from voltage and resistance.</p>
+<p class="muted">Enter any two of voltage, current, resistance and power and get the others.</p>
 <form class="card" data-calc="1">
-<label for="v">Voltage (V)</label><input id="v" type="number" step="any" value="12">
-<label for="r">Resistance (Ω)</label><input id="r" type="number" step="any" value="6">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="V">Voltage</label><div class="eqrow"><input id="V" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="V_u" aria-label="Voltage unit"><option>V</option><option>mV</option><option>kV</option></select></div>
+<label for="I">Current</label><div class="eqrow"><input id="I" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="I_u" aria-label="Current unit"><option>A</option><option>mA</option></select></div>
+<label for="R">Resistance</label><div class="eqrow"><input id="R" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="R_u" aria-label="Resistance unit"><option>Ω</option><option>kΩ</option><option>MΩ</option></select></div>
+<label for="P">Power</label><div class="eqrow"><input id="P" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="P_u" aria-label="Power unit"><option>W</option><option>mW</option><option>kW</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Ohm&#x27;s law: V = I x R. Power is P = V x I. Given voltage and resistance, current is I = V / R.</p>
+<h2>Formula</h2>
+<p>V = I x R and P = V x I. Enter any two of voltage, current, resistance and power to solve the other two.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is Ohm&#x27;s law?</summary><p>It states that the current through a conductor is proportional to the voltage across it and inversely proportional to its resistance.</p></details>
 <h2>Related calculators</h2>
@@ -30,8 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v,r}){
-const i=v/r;
-return [['Current',N(i,4)+' A'],['Power',N(v*i,4)+' W'],['Energy per hour',N(v*i/1000,4)+' kWh']];
-});</script>
+<script>EqPage({vars:[{"id": "V", "units": [["V", 1], ["mV", 0.001], ["kV", 1000.0]], "init": 12}, {"id": "I", "units": [["A", 1], ["mA", 0.001]]}, {"id": "R", "units": [["\u03a9", 1], ["k\u03a9", 1000.0], ["M\u03a9", 1000000.0]], "init": 4}, {"id": "P", "units": [["W", 1], ["mW", 0.001], ["kW", 1000.0]]}],need:2,solve:{V:[[["I", "R"],function(v){return v.I*v.R;}],[["P", "I"],function(v){return v.P/v.I;}],[["P", "R"],function(v){return Math.sqrt(v.P*v.R);}]],I:[[["V", "R"],function(v){return v.V/v.R;}],[["P", "V"],function(v){return v.P/v.V;}],[["P", "R"],function(v){return Math.sqrt(v.P/v.R);}]],R:[[["V", "I"],function(v){return v.V/v.I;}],[["V", "P"],function(v){return v.V*v.V/v.P;}],[["P", "I"],function(v){return v.P/(v.I*v.I);}]],P:[[["V", "I"],function(v){return v.V*v.I;}],[["V", "R"],function(v){return v.V*v.V/v.R;}],[["I", "R"],function(v){return v.I*v.I*v.R;}]]}});</script>
 </body></html>

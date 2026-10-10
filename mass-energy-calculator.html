@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mass-Energy Equivalence (E = mc²) Calculator | CalcHub</title>
-<meta name="description" content="Calculate the energy equivalent of a mass.">
+<meta name="description" content="Convert between mass and energy with E = mc².">
 <link rel="canonical" href="https://YOURDOMAIN.com/mass-energy-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can all mass be converted?", "acceptedAnswer": {"@type": "Answer", "text": "No. Only a small fraction is released in nuclear reactions."}}]}</script>
@@ -13,15 +13,19 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Mass-Energy Equivalence (E = mc²) Calculator</h1>
-<p class="muted">Calculate the energy equivalent of a mass.</p>
+<p class="muted">Convert between mass and energy with E = mc².</p>
 <form class="card" data-calc="1">
-<label for="m">Mass (kg)</label><input id="m" type="number" step="any" value="0.001">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="E">Energy</label><div class="eqrow"><input id="E" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="E_u" aria-label="Energy unit"><option>J</option><option>kWh</option><option>MJ</option><option>kJ</option></select></div>
+<label for="m">Mass</label><div class="eqrow"><input id="m" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="m_u" aria-label="Mass unit"><option>g</option><option>kg</option><option>mg</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Einstein&#x27;s relation E = mc² gives the rest energy of a mass. One gram corresponds to about 21.5 kilotons of TNT.</p>
+<h2>Formula</h2>
+<p>Einstein's equation E = m c squared, with c = 299,792,458 m/s. Enter either energy or mass.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Can all mass be converted?</summary><p>No. Only a small fraction is released in nuclear reactions.</p></details>
 <h2>Related calculators</h2>
@@ -29,7 +33,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({m}){
-const E=m*299792458**2;return [['Energy',E.toExponential(4)+' J'],['In kilowatt-hours',(E/3.6e6).toExponential(4)+' kWh'],['In tons of TNT',(E/4.184e9).toExponential(4)]];
-});</script>
+<script>EqPage({vars:[{"id": "E", "units": [["J", 1], ["kWh", 3600000.0], ["MJ", 1000000.0], ["kJ", 1000]]}, {"id": "m", "units": [["g", 0.001], ["kg", 1], ["mg", 1e-06]], "init": 1}],need:1,solve:{E:function(v){return v.m*299792458*299792458;},m:function(v){return v.E/(299792458*299792458);}}});</script>
 </body></html>

@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Torque Calculator | CalcHub</title>
-<meta name="description" content="Calculate torque from force, lever arm and angle.">
+<meta name="description" content="Enter any two of torque, force and lever arm and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/torque-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much torque for lug nuts?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly 80-100 lb\u00b7ft on many cars; check the manual."}}]}</script>
@@ -13,17 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Torque Calculator</h1>
-<p class="muted">Calculate torque from force, lever arm and angle.</p>
+<p class="muted">Enter any two of torque, force and lever arm and get the third.</p>
 <form class="card" data-calc="1">
-<label for="f">Force (N)</label><input id="f" type="number" step="any" value="150">
-<label for="r">Lever arm (m)</label><input id="r" type="number" step="any" value="0.3">
-<label for="a">Angle (degrees)</label><input id="a" type="number" step="any" value="90">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="T">Torque</label><div class="eqrow"><input id="T" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="T_u" aria-label="Torque unit"><option>N·m</option><option>lb-ft</option><option>lb-in</option></select></div>
+<label for="F">Force (perpendicular)</label><div class="eqrow"><input id="F" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="F_u" aria-label="Force (perpendicular) unit"><option>N</option><option>kN</option><option>lbf</option></select></div>
+<label for="r">Lever arm length</label><div class="eqrow"><input id="r" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="r_u" aria-label="Lever arm length unit"><option>m</option><option>cm</option><option>mm</option><option>km</option><option>in</option><option>ft</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Torque = F x r x sin(θ). Maximum torque occurs when the force is perpendicular to the lever.</p>
+<h2>Formula</h2>
+<p>Torque = force x perpendicular lever arm. Enter any two of torque, force and lever arm length.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>How much torque for lug nuts?</summary><p>Roughly 80-100 lb·ft on many cars; check the manual.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +34,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({f,r,a}){
-const t=f*r*Math.sin(a*Math.PI/180);return [['Torque',N(t,3)+' N·m'],['In lb·ft',N(t*0.737562,3)],['In lb·in',N(t*8.85075,3)]];
-});</script>
+<script>EqPage({vars:[{"id": "T", "units": [["N\u00b7m", 1], ["lb-ft", 1.3558179483314], ["lb-in", 0.1129848290276]]}, {"id": "F", "units": [["N", 1], ["kN", 1000], ["lbf", 4.4482216152605]], "init": 200}, {"id": "r", "units": [["m", 1], ["cm", 0.01], ["mm", 0.001], ["km", 1000], ["in", 0.0254], ["ft", 0.3048]], "init": 0.3}],need:2,solve:{T:function(v){return v.F*v.r;},F:function(v){return v.T/v.r;},r:function(v){return v.T/v.F;}}});</script>
 </body></html>

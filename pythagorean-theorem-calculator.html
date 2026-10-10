@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pythagorean Theorem Calculator | CalcHub</title>
-<meta name="description" content="Find the hypotenuse of a right triangle from its two legs.">
+<meta name="description" content="Enter any two sides of a right triangle and get the third, plus area and angles.">
 <link rel="canonical" href="https://YOURDOMAIN.com/pythagorean-theorem-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a Pythagorean triple?", "acceptedAnswer": {"@type": "Answer", "text": "A set of three whole numbers satisfying a\u00b2 + b\u00b2 = c\u00b2, such as 3-4-5 or 5-12-13."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
 <h1>Pythagorean Theorem Calculator</h1>
-<p class="muted">Find the hypotenuse of a right triangle from its two legs.</p>
+<p class="muted">Enter any two sides of a right triangle and get the third, plus area and angles.</p>
 <form class="card" data-calc="1">
-<label for="a">Leg a</label><input id="a" type="number" step="any" value="3">
-<label for="b">Leg b</label><input id="b" type="number" step="any" value="4">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="a">Side a</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Side b</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="c">Hypotenuse c</label><div class="eqrow"><input id="c" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>For a right triangle a² + b² = c², where c is the hypotenuse opposite the right angle.</p>
+<h2>Formula</h2>
+<p>a squared + b squared = c squared. Enter any two sides of a right triangle to find the third.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is a Pythagorean triple?</summary><p>A set of three whole numbers satisfying a² + b² = c², such as 3-4-5 or 5-12-13.</p></details>
 <h2>Related calculators</h2>
@@ -30,8 +34,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({a,b}){
-const c=Math.sqrt(a*a+b*b);
-return [['Hypotenuse c',N(c,6)],['Area',N(a*b/2,6)],['Perimeter',N(a+b+c,6)],['Angle A',N(Math.atan(a/b)*180/Math.PI,4)+'°'],['Angle B',N(Math.atan(b/a)*180/Math.PI,4)+'°']];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 3}, {"id": "b", "init": 4}, {"id": "c"}],need:2,solve:{c:function(v){return Math.sqrt(v.a*v.a+v.b*v.b);},a:function(v){return Math.sqrt(v.c*v.c-v.b*v.b);},b:function(v){return Math.sqrt(v.c*v.c-v.a*v.a);}},extra:function(v){var A=Math.atan2(v.a,v.b)*180/Math.PI;return [['Area',N(v.a*v.b/2,4)],['Perimeter',N(v.a+v.b+v.c,4)],['Angle A',N(A,3)+' degrees'],['Angle B',N(90-A,3)+' degrees']];}});</script>
 </body></html>

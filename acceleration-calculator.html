@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Acceleration Calculator | CalcHub</title>
-<meta name="description" content="Find acceleration and distance from initial and final velocity.">
+<meta name="description" content="Solve acceleration, initial or final velocity, or time from any three values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/acceleration-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is 0-60 mph in m/s\u00b2?", "acceptedAnswer": {"@type": "Answer", "text": "About 4.5 m/s\u00b2 for a 6 s time."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Acceleration Calculator</h1>
-<p class="muted">Find acceleration and distance from initial and final velocity.</p>
+<p class="muted">Solve acceleration, initial or final velocity, or time from any three values.</p>
 <form class="card" data-calc="1">
-<label for="v0">Initial velocity (m/s)</label><input id="v0" type="number" step="any" value="0">
-<label for="v1">Final velocity (m/s)</label><input id="v1" type="number" step="any" value="27">
-<label for="t">Time (s)</label><input id="t" type="number" step="any" value="6">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="u">Initial velocity</label><div class="eqrow"><input id="u" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="u_u" aria-label="Initial velocity unit"><option>m/s</option><option>mph</option><option>km/h</option><option>knots</option><option>ft/s</option></select></div>
+<label for="w">Final velocity</label><div class="eqrow"><input id="w" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="w_u" aria-label="Final velocity unit"><option>m/s</option><option>mph</option><option>km/h</option><option>knots</option><option>ft/s</option></select></div>
+<label for="t">Time</label><div class="eqrow"><input id="t" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="t_u" aria-label="Time unit"><option>s</option><option>min</option><option>h</option></select></div>
+<label for="a">Acceleration</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="a_u" aria-label="Acceleration unit"><option>m/s²</option><option>g</option><option>ft/s²</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>a = (v - u) / t, and distance = average velocity x time for constant acceleration.</p>
+<h2>Formula</h2>
+<p>a = (v - u) / t, where u is initial velocity, v final velocity and t time. Enter any three of the four values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is 0-60 mph in m/s²?</summary><p>About 4.5 m/s² for a 6 s time.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v0,v1,t}){
-const a=(v1-v0)/t;return [['Acceleration',N(a,4)+' m/s²'],['In g',N(a/9.81,4)],['Distance covered',N((v0+v1)/2*t,3)+' m']];
-});</script>
+<script>EqPage({vars:[{"id": "u", "units": [["m/s", 1], ["mph", 0.44704], ["km/h", 0.2777777777777778], ["knots", 0.5144444444444445], ["ft/s", 0.3048]], "init": 0}, {"id": "w", "units": [["m/s", 1], ["mph", 0.44704], ["km/h", 0.2777777777777778], ["knots", 0.5144444444444445], ["ft/s", 0.3048]], "init": 26.8224}, {"id": "t", "units": [["s", 1], ["min", 60], ["h", 3600]], "init": 6}, {"id": "a", "units": [["m/s\u00b2", 1], ["g", 9.80665], ["ft/s\u00b2", 0.3048]]}],need:3,solve:{a:function(v){return (v.w-v.u)/v.t;},u:function(v){return v.w-v.a*v.t;},w:function(v){return v.u+v.a*v.t;},t:function(v){return (v.w-v.u)/v.a;}},extra:function(v){var dist=(v.u+v.w)/2*v.t;return [['Distance covered',N(dist,2)+' m'],['Acceleration in g',N(v.a/9.80665,3)+' g']];}});</script>
 </body></html>

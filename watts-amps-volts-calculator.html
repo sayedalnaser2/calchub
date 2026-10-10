@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Watts, Amps and Volts Calculator | CalcHub</title>
-<meta name="description" content="Convert between watts, amps and volts for DC or AC circuits.">
+<meta name="description" content="Convert between watts, amps, volts and power factor for DC and AC circuits.">
 <link rel="canonical" href="https://YOURDOMAIN.com/watts-amps-volts-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does a 15 A circuit limit loads?", "acceptedAnswer": {"@type": "Answer", "text": "15 A at 120 V is 1,800 W; continuous loads should stay under 80%."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Watts, Amps and Volts Calculator</h1>
-<p class="muted">Convert between watts, amps and volts for DC or AC circuits.</p>
+<p class="muted">Convert between watts, amps, volts and power factor for DC and AC circuits.</p>
 <form class="card" data-calc="1">
-<label for="w">Power (W)</label><input id="w" type="number" step="any" value="1500">
-<label for="v">Voltage (V)</label><input id="v" type="number" step="any" value="120">
-<label for="pf">Power factor (AC)</label><input id="pf" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="P">Power</label><div class="eqrow"><input id="P" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="P_u" aria-label="Power unit"><option>W</option><option>kW</option></select></div>
+<label for="V">Voltage</label><div class="eqrow"><input id="V" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="V_u" aria-label="Voltage unit"><option>V</option><option>mV</option><option>kV</option></select></div>
+<label for="I">Current</label><div class="eqrow"><input id="I" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="I_u" aria-label="Current unit"><option>A</option><option>mA</option></select></div>
+<label for="pf">Power factor (1 for DC)</label><div class="eqrow"><input id="pf" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>I = P / (V x PF). For three-phase, I = P / (√3 x V x PF).</p>
+<h2>Formula</h2>
+<p>Real power P = V x I x power factor. For DC circuits the power factor is 1. Enter any three values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why does a 15 A circuit limit loads?</summary><p>15 A at 120 V is 1,800 W; continuous loads should stay under 80%.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({w,v,pf}){
-return [['Current (single phase)',N(w/(v*pf),3)+' A'],['Current (3-phase)',N(w/(Math.sqrt(3)*v*pf),3)+' A'],['Resistance (V²/P)',N(v*v/w,3)+' Ω']];
-});</script>
+<script>EqPage({vars:[{"id": "P", "units": [["W", 1], ["kW", 1000.0]], "init": 1800}, {"id": "V", "units": [["V", 1], ["mV", 0.001], ["kV", 1000.0]], "init": 120}, {"id": "I", "units": [["A", 1], ["mA", 0.001]]}, {"id": "pf", "init": 1}],need:3,solve:{P:function(v){return v.V*v.I*v.pf;},V:function(v){return v.P/(v.I*v.pf);},I:function(v){return v.P/(v.V*v.pf);},pf:function(v){return v.P/(v.V*v.I);}}});</script>
 </body></html>

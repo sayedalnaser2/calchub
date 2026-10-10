@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Years to Decades Converter | CalcHub</title>
-<meta name="description" content="Convert years to decades instantly. 1 year = 0.1 decades.">
+<title>Years to Decades Converter (Both Ways) | CalcHub</title>
+<meta name="description" content="Convert years to decades and decades to years instantly. 1 year = 0.1 decades.">
 <link rel="canonical" href="https://YOURDOMAIN.com/years-to-decades.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many decades are in one year?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.1 decades in one year."}}, {"@type": "Question", "name": "How many years are in one decade?", "acceptedAnswer": {"@type": "Answer", "text": "There are 10 years in one decade."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="time-conversions.html">Time Conversions</a></p>
-<h1>Years to Decades Converter</h1>
-<p class="muted">Convert years to decades instantly. 1 year = 0.1 decades.</p>
+<h1>Years to Decades Converter (Both Ways)</h1>
+<p class="muted">Convert years to decades and decades to years instantly. 1 year = 0.1 decades.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in years (years)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Years (years)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Decades (decades)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert years to decades, multiply the number of years by 0.1. One year equals 0.1 decades, and one decade equals 10 years. The table shows common values.</p>
+<p>To convert years to decades, multiply the number of years by 0.1. To convert decades to years, multiply by 10 (or divide by 0.1). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Years to Decades formula</h2>
 <p><b>Decades = years &times; 0.1</b></p>
 <p>Worked example: convert 12.5 years to decades. Multiply 12.5 &times; 0.1 = <b>1.25 decades</b>. To go the other way, multiply decades by 10 (or divide by 0.1).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many decades are in one year?</summary><p>There are 0.1 decades in one year.</p></details>
 <details><summary>How many years are in one decade?</summary><p>There are 10 years in one decade.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="decades-to-years.html"><b>Decades to Years Converter</b></a><a href="years-to-seconds.html"><b>Years to Seconds Converter</b></a><a href="years-to-minutes.html"><b>Years to Minutes Converter</b></a><a href="years-to-hours.html"><b>Years to Hours Converter</b></a><a href="years-to-days.html"><b>Years to Days Converter</b></a><a href="years-to-weeks.html"><b>Years to Weeks Converter</b></a><a href="years-to-months.html"><b>Years to Months Converter</b></a><a href="years-to-centuries.html"><b>Years to Centuries Converter</b></a><a href="seconds-to-decades.html"><b>Seconds to Decades Converter</b></a><a href="minutes-to-decades.html"><b>Minutes to Decades Converter</b></a><a href="hours-to-decades.html"><b>Hours to Decades Converter</b></a></div>
+<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="years-to-centuries.html"><b>Years to Centuries Converter (Both Ways)</b></a><a href="decades-to-centuries.html"><b>Decades to Centuries Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=0.1;const r=v*F;return [[SF(v)+' '+(v===1?'year':'years')+' =',SF(r)+' '+(r===1?'decade':'decades')],['Formula','decades = years × '+SF(F)],['Reverse','1 year = '+SF(1/F)+' decades'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'year':'years'),SF(x*F)+' decades'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*0.1;},a:function(v){return v.b/0.1;}}});</script>
 </body></html>

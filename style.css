@@ -39,3 +39,9 @@ nav{display:flex;flex-wrap:wrap;gap:4px 0}
 .ref tr:last-child td{border-bottom:0}
 .links{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px 18px;margin:12px 0}
 .links a{padding:4px 0;font-size:.95rem}
+.eqrow{display:flex;gap:8px}
+.eqrow input{flex:1;min-width:0}
+.eqrow select{width:auto;min-width:96px;max-width:46%}
+input.computed{background:rgba(46,158,91,.14);border-color:#2e9e5b;font-weight:700}
+.eqnote{margin:0 0 8px}
+button[type=reset]{background:transparent;color:var(--brand);border:1px solid var(--line);margin-top:12px}

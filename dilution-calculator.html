@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dilution Calculator (C1V1 = C2V2) | CalcHub</title>
-<meta name="description" content="Find the volume needed to dilute a stock solution.">
+<meta name="description" content="Solve a concentration or volume for a dilution from any three values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/dilution-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Add solute to solvent or the reverse?", "acceptedAnswer": {"@type": "Answer", "text": "Add acid to water, never water to concentrated acid."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Dilution Calculator (C1V1 = C2V2)</h1>
-<p class="muted">Find the volume needed to dilute a stock solution.</p>
+<p class="muted">Solve a concentration or volume for a dilution from any three values.</p>
 <form class="card" data-calc="1">
-<label for="c1">Stock concentration (C1)</label><input id="c1" type="number" step="any" value="10">
-<label for="c2">Target concentration (C2)</label><input id="c2" type="number" step="any" value="2">
-<label for="v2">Final volume (V2, mL)</label><input id="v2" type="number" step="any" value="100">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="c1">Stock concentration C1</label><div class="eqrow"><input id="c1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="v1">Stock volume needed V1</label><div class="eqrow"><input id="v1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="c2">Final concentration C2</label><div class="eqrow"><input id="c2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="v2">Final volume V2</label><div class="eqrow"><input id="v2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>The dilution equation C1V1 = C2V2 keeps the amount of solute constant. Add solvent to reach the final volume.</p>
+<h2>Formula</h2>
+<p>C1 x V1 = C2 x V2. Enter any three of the four values (use consistent units for each pair).</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Add solute to solvent or the reverse?</summary><p>Add acid to water, never water to concentrated acid.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({c1,c2,v2}){
-if(c2>c1)return 'Target concentration cannot exceed stock.';const v1=c2*v2/c1;return [['Stock volume to use (V1)',N(v1,4)+' mL'],['Solvent to add',N(v2-v1,4)+' mL'],['Dilution factor',N(c1/c2,3)+'x']];
-});</script>
+<script>EqPage({vars:[{"id": "c1", "init": 10}, {"id": "v1"}, {"id": "c2", "init": 2}, {"id": "v2", "init": 100}],need:3,solve:{v1:function(v){return v.c2*v.v2/v.c1;},c1:function(v){return v.c2*v.v2/v.v1;},c2:function(v){return v.c1*v.v1/v.v2;},v2:function(v){return v.c1*v.v1/v.c2;}},extra:function(v){return [['Diluent to add',N(v.v2-v.v1,4)+' (same volume unit)']];}});</script>
 </body></html>

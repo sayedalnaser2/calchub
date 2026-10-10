@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Download Time Calculator | CalcHub</title>
-<meta name="description" content="Estimate how long a download or upload takes.">
+<meta name="description" content="Enter any two of file size, speed and time and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/download-time-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is my download slower?", "acceptedAnswer": {"@type": "Answer", "text": "Server limits, Wi-Fi quality and network congestion."}}]}</script>
@@ -13,17 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
 <h1>Download Time Calculator</h1>
-<p class="muted">Estimate how long a download or upload takes.</p>
+<p class="muted">Enter any two of file size, speed and time and get the third.</p>
 <form class="card" data-calc="1">
-<label for="size">File size</label><input id="size" type="number" step="any" value="10">
-<label for="u">Unit</label><select id="u"><option value="1">MB</option><option value="1000" selected>GB</option><option value="1000000.0">TB</option></select>
-<label for="sp">Connection speed (Mbps)</label><input id="sp" type="number" step="any" value="100">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="size">File size</label><div class="eqrow"><input id="size" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="size_u" aria-label="File size unit"><option>GB</option><option>MB</option><option>TB</option><option>KB</option></select></div>
+<label for="sp">Connection speed</label><div class="eqrow"><input id="sp" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="sp_u" aria-label="Connection speed unit"><option>Mbps</option><option>Gbps</option><option>Kbps</option><option>MB/s</option></select></div>
+<label for="time">Time</label><div class="eqrow"><input id="time" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="time_u" aria-label="Time unit"><option>min</option><option>s</option><option>h</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Time = file size in megabits / speed in Mbps. Real speeds are usually 5-20% lower due to overhead.</p>
+<h2>Formula</h2>
+<p>Time = file size / speed. Speeds in megabits per second are divided by 8 to give megabytes per second. Real downloads are usually 5-10% slower because of overhead.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why is my download slower?</summary><p>Server limits, Wi-Fi quality and network congestion.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +34,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({size,u,sp}){
-const bits=size*u*8e6,s=bits/(sp*1e6),h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=Math.round(s%60);return [['Download time',h+' h '+m+' min '+sec+' s'],['Total seconds',N(s,1)],['Real speed in MB/s',N(sp/8,2)]];
-});</script>
+<script>EqPage({vars:[{"id": "size", "units": [["GB", 1000000000.0], ["MB", 1000000.0], ["TB", 1000000000000.0], ["KB", 1000.0]], "init": 5}, {"id": "sp", "units": [["Mbps", 125000], ["Gbps", 125000000.0], ["Kbps", 125], ["MB/s", 1000000.0]], "init": 100}, {"id": "time", "units": [["min", 60], ["s", 1], ["h", 3600]]}],need:2,solve:{time:function(v){return v.size/v.sp;},size:function(v){return v.sp*v.time;},sp:function(v){return v.size/v.time;}}});</script>
 </body></html>

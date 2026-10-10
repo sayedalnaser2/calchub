@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RC Time Constant Calculator | CalcHub</title>
-<meta name="description" content="Calculate the time constant, charge time and cutoff frequency of an RC circuit.">
+<meta name="description" content="Enter any two of time constant, resistance and capacitance and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/rc-time-constant-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a low-pass filter?", "acceptedAnswer": {"@type": "Answer", "text": "An RC circuit that passes low frequencies and attenuates high ones."}}, {"@type": "Question", "name": "How long to fully charge?", "acceptedAnswer": {"@type": "Answer", "text": "In theory never, but 5\u03c4 is practically full."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>RC Time Constant Calculator</h1>
-<p class="muted">Calculate the time constant, charge time and cutoff frequency of an RC circuit.</p>
+<p class="muted">Enter any two of time constant, resistance and capacitance and get the third.</p>
 <form class="card" data-calc="1">
-<label for="r">Resistance (ohms)</label><input id="r" type="number" step="any" value="10000">
-<label for="c">Capacitance (µF)</label><input id="c" type="number" step="any" value="10">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="tau">Time constant τ</label><div class="eqrow"><input id="tau" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="tau_u" aria-label="Time constant τ unit"><option>ms</option><option>s</option><option>µs</option></select></div>
+<label for="R">Resistance</label><div class="eqrow"><input id="R" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="R_u" aria-label="Resistance unit"><option>kΩ</option><option>Ω</option><option>MΩ</option></select></div>
+<label for="C">Capacitance</label><div class="eqrow"><input id="C" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="C_u" aria-label="Capacitance unit"><option>µF</option><option>nF</option><option>pF</option><option>mF</option><option>F</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>The time constant tau = R x C is the time for a capacitor to charge to 63.2% of the supply voltage (or discharge to 36.8%). After five time constants it is about 99.3% charged. The RC filter cutoff is 1 / (2 pi R C).</p>
+<h2>Formula</h2>
+<p>τ = R x C. Enter any two of time constant, resistance and capacitance.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is a low-pass filter?</summary><p>An RC circuit that passes low frequencies and attenuates high ones.</p></details>
 <details><summary>How long to fully charge?</summary><p>In theory never, but 5τ is practically full.</p></details>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({r,c}){
-const tau=r*c*1e-6;return [['Time constant τ = RC',N(tau*1000,4)+' ms'],['Charged to 63.2% in',N(tau*1000,4)+' ms'],['Charged to 99.3% (5τ)',N(5*tau*1000,3)+' ms'],['Cutoff frequency',N(1/(2*Math.PI*tau),3)+' Hz']];
-});</script>
+<script>EqPage({vars:[{"id": "tau", "units": [["ms", 0.001], ["s", 1], ["\u00b5s", 1e-06]]}, {"id": "R", "units": [["k\u03a9", 1000.0], ["\u03a9", 1], ["M\u03a9", 1000000.0]], "init": 10}, {"id": "C", "units": [["\u00b5F", 1e-06], ["nF", 1e-09], ["pF", 1e-12], ["mF", 0.001], ["F", 1]], "init": 10}],need:2,solve:{tau:function(v){return v.R*v.C;},R:function(v){return v.tau/v.C;},C:function(v){return v.tau/v.R;}},extra:function(v){return [['Cutoff frequency',N(1/(2*Math.PI*v.tau),3)+' Hz'],['99% charged after',N(4.605*v.tau*1000,3)+' ms']];}});</script>
 </body></html>

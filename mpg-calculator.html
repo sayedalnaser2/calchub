@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MPG Calculator | CalcHub</title>
-<meta name="description" content="Calculate fuel economy from distance and fuel used.">
+<meta name="description" content="Enter any two of mpg, miles driven and gallons used and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/mpg-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is good MPG?", "acceptedAnswer": {"@type": "Answer", "text": "Over 30 mpg for gas cars is considered good."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
 <h1>MPG Calculator</h1>
-<p class="muted">Calculate fuel economy from distance and fuel used.</p>
+<p class="muted">Enter any two of mpg, miles driven and gallons used and get the third.</p>
 <form class="card" data-calc="1">
-<label for="mi">Miles driven</label><input id="mi" type="number" step="any" value="350">
-<label for="gal">Gallons used</label><input id="gal" type="number" step="any" value="12">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="mpg">Fuel economy (mpg)</label><div class="eqrow"><input id="mpg" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="mi">Distance (miles)</label><div class="eqrow"><input id="mi" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="gal">Fuel used (gallons)</label><div class="eqrow"><input id="gal" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>MPG = miles / gallons. Fill the tank both times for accurate tracking.</p>
+<h2>Formula</h2>
+<p>mpg = miles / gallons. Enter any two of mpg, miles and gallons.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is good MPG?</summary><p>Over 30 mpg for gas cars is considered good.</p></details>
 <h2>Related calculators</h2>
@@ -30,7 +34,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({mi,gal}){
-const m=mi/gal;return [['Fuel economy',N(m,1)+' mpg'],['Litres per 100 km',N(235.215/m,2)],['Cost per mile at $3.50/gal',M(3.5/m)]];
-});</script>
+<script>EqPage({vars:[{"id": "mpg"}, {"id": "mi", "init": 350}, {"id": "gal", "init": 12.5}],need:2,solve:{mpg:function(v){return v.mi/v.gal;},mi:function(v){return v.mpg*v.gal;},gal:function(v){return v.mi/v.mpg;}},extra:function(v){return [['Liters per 100 km',N(235.215/v.mpg,2)],['Kilometers per liter',N(v.mpg*.425144,3)]];}});</script>
 </body></html>

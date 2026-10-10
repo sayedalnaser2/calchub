@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cone Volume and Surface Area Calculator | CalcHub</title>
-<meta name="description" content="Calculate volume, slant height and surface area of a cone.">
+<meta name="description" content="Enter any two of radius, height and volume of a cone and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/cone-volume-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is a cone one third of a cylinder?", "acceptedAnswer": {"@type": "Answer", "text": "It follows from integral calculus and can be shown by filling a cone with water three times."}}, {"@type": "Question", "name": "What is slant height?", "acceptedAnswer": {"@type": "Answer", "text": "The distance along the surface from the apex to the base edge."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
 <h1>Cone Volume and Surface Area Calculator</h1>
-<p class="muted">Calculate volume, slant height and surface area of a cone.</p>
+<p class="muted">Enter any two of radius, height and volume of a cone and get the third.</p>
 <form class="card" data-calc="1">
-<label for="r">Base radius</label><input id="r" type="number" step="any" value="4">
-<label for="h">Height</label><input id="h" type="number" step="any" value="9">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="r">Base radius</label><div class="eqrow"><input id="r" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="h">Height</label><div class="eqrow"><input id="h" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="V">Volume</label><div class="eqrow"><input id="V" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Volume = pi x r^2 x h / 3, one third of a cylinder with the same base and height. Slant height = sqrt(r^2 + h^2). Lateral area = pi x r x slant height.</p>
+<h2>Formula</h2>
+<p>V = pi x r squared x h / 3. Enter any two of radius, height and volume.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why is a cone one third of a cylinder?</summary><p>It follows from integral calculus and can be shown by filling a cone with water three times.</p></details>
 <details><summary>What is slant height?</summary><p>The distance along the surface from the apex to the base edge.</p></details>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({r,h}){
-const s=Math.hypot(r,h);return [['Volume',N(Math.PI*r*r*h/3,4)],['Slant height',N(s,4)],['Lateral surface area',N(Math.PI*r*s,4)],['Total surface area',N(Math.PI*r*(r+s),4)]];
-});</script>
+<script>EqPage({vars:[{"id": "r", "init": 4}, {"id": "h", "init": 9}, {"id": "V"}],need:2,solve:{V:function(v){return Math.PI*v.r*v.r*v.h/3;},h:function(v){return 3*v.V/(Math.PI*v.r*v.r);},r:function(v){return Math.sqrt(3*v.V/(Math.PI*v.h));}},extra:function(v){var s=Math.hypot(v.r,v.h);return [['Slant height',N(s,4)],['Total surface area',N(Math.PI*v.r*(v.r+s),4)]];}});</script>
 </body></html>

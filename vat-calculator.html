@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VAT Calculator | CalcHub</title>
-<meta name="description" content="Add or remove VAT from a price at any rate.">
+<meta name="description" content="Add or remove VAT, or find the rate, from any two values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/vat-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Standard VAT rates?", "acceptedAnswer": {"@type": "Answer", "text": "The UK is 20%; EU countries range roughly from 17% to 27%."}}]}</script>
@@ -13,25 +13,26 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
 <h1>VAT Calculator</h1>
-<p class="muted">Add or remove VAT from a price at any rate.</p>
+<p class="muted">Add or remove VAT, or find the rate, from any two values.</p>
 <form class="card" data-calc="1">
-<label for="amt">Amount</label><input id="amt" type="number" step="any" value="100">
-<label for="rate">VAT rate (%)</label><input id="rate" type="number" step="any" value="20">
-<label for="mode">Mode</label><select id="mode"><option value="1" selected>Add VAT (amount is net)</option><option value="2">Remove VAT (amount includes VAT)</option></select>
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="net">Price excluding VAT</label><div class="eqrow"><input id="net" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="rate">VAT rate (%)</label><div class="eqrow"><input id="rate" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="gross">Price including VAT</label><div class="eqrow"><input id="gross" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>To add VAT multiply by 1 + rate. To remove it divide by 1 + rate. The VAT amount is the difference.</p>
+<h2>Formula</h2>
+<p>Gross = net x (1 + VAT rate). Enter any two of net, rate and gross to add VAT, remove VAT, or find the rate.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Standard VAT rates?</summary><p>The UK is 20%; EU countries range roughly from 17% to 27%.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="gst-calculator.html"><b>GST Calculator</b></a><a href="reverse-sales-tax-calculator.html"><b>Reverse Sales Tax Calculator</b></a><a href="annuity-calculator.html"><b>Annuity Calculator</b></a><a href="present-value-calculator.html"><b>Present Value Calculator</b></a><a href="future-value-calculator.html"><b>Future Value Calculator</b></a><a href="npv-calculator.html"><b>NPV Calculator</b></a></div>
+<div class="grid"><a href="gst-calculator.html"><b>GST Calculator</b></a><a href="annuity-calculator.html"><b>Annuity Calculator</b></a><a href="present-value-calculator.html"><b>Present Value Calculator</b></a><a href="future-value-calculator.html"><b>Future Value Calculator</b></a><a href="npv-calculator.html"><b>NPV Calculator</b></a><a href="irr-calculator.html"><b>IRR Calculator</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({amt,rate,mode}){
-const net=mode==1?amt:amt/(1+rate/100),gross=mode==1?amt*(1+rate/100):amt;return [['Gross (with VAT)',N(gross,2)],['Net (without VAT)',N(net,2)],['VAT amount',N(gross-net,2)]];
-});</script>
+<script>EqPage({vars:[{"id": "net", "init": 100}, {"id": "rate", "init": 20}, {"id": "gross"}],need:2,solve:{gross:function(v){return v.net*(1+v.rate/100);},net:function(v){return v.gross/(1+v.rate/100);},rate:function(v){return (v.gross/v.net-1)*100;}},extra:function(v){return [['VAT amount',N(v.gross-v.net,2)]];}});</script>
 </body></html>

@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sales Tax Calculator | CalcHub</title>
-<meta name="description" content="Add sales tax to a price or find the tax portion of a total.">
+<meta name="description" content="Add sales tax, remove it from a total, or find the tax rate from any two values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/sales-tax-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is my sales tax rate?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your state, county and city. Check your local revenue department's website for the combined rate."}}]}</script>
@@ -13,25 +13,26 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
 <h1>Sales Tax Calculator</h1>
-<p class="muted">Add sales tax to a price or find the tax portion of a total.</p>
+<p class="muted">Add sales tax, remove it from a total, or find the tax rate from any two values.</p>
 <form class="card" data-calc="1">
-<label for="amount">Price before tax ($)</label><input id="amount" type="number" step="any" value="100">
-<label for="rate">Sales tax rate (%)</label><input id="rate" type="number" step="any" value="8.25">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="pre">Price before tax ($)</label><div class="eqrow"><input id="pre" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="rate">Sales tax rate (%)</label><div class="eqrow"><input id="rate" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="tot">Total with tax ($)</label><div class="eqrow"><input id="tot" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Sales tax equals the pre-tax price multiplied by the tax rate. Add it to the price to get the total you pay.</p>
+<h2>Formula</h2>
+<p>Total = price x (1 + tax rate). Enter any two of price, rate and total to add tax, remove tax from a total, or find the rate.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is my sales tax rate?</summary><p>It depends on your state, county and city. Check your local revenue department&#x27;s website for the combined rate.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="tip-calculator.html"><b>Tip Calculator</b></a><a href="discount-calculator.html"><b>Discount Calculator</b></a><a href="roi-calculator.html"><b>ROI Calculator</b></a><a href="inflation-calculator.html"><b>Inflation Calculator</b></a><a href="salary-calculator.html"><b>Salary Calculator (Hourly, Weekly, Monthly, Annual)</b></a><a href="break-even-calculator.html"><b>Break-Even Calculator</b></a></div>
+<div class="grid"><a href="tip-calculator.html"><b>Tip Calculator</b></a><a href="discount-calculator.html"><b>Discount Calculator</b></a><a href="roi-calculator.html"><b>ROI Calculator</b></a><a href="inflation-calculator.html"><b>Inflation Calculator</b></a><a href="salary-calculator.html"><b>Salary Calculator (Hourly to Annual and Back)</b></a><a href="break-even-calculator.html"><b>Break-Even Calculator</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({amount,rate}){
-const t=amount*rate/100;
-return [['Total with tax',M(amount+t)],['Sales tax',M(t)],['Price before tax',M(amount)]];
-});</script>
+<script>EqPage({vars:[{"id": "pre", "init": 100}, {"id": "rate", "init": 8.25}, {"id": "tot"}],need:2,solve:{tot:function(v){return v.pre*(1+v.rate/100);},pre:function(v){return v.tot/(1+v.rate/100);},rate:function(v){return (v.tot/v.pre-1)*100;}},extra:function(v){return [['Sales tax',M(v.tot-v.pre)]];}});</script>
 </body></html>

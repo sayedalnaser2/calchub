@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Microseconds to Nanoseconds Converter | CalcHub</title>
-<meta name="description" content="Convert microseconds to nanoseconds instantly. 1 µs = 1,000 ns.">
+<title>Microseconds to Nanoseconds Converter (Both Ways) | CalcHub</title>
+<meta name="description" content="Convert microseconds to nanoseconds and nanoseconds to microseconds instantly. 1 µs = 1,000 ns.">
 <link rel="canonical" href="https://YOURDOMAIN.com/microseconds-to-nanoseconds.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many nanoseconds are in one microsecond?", "acceptedAnswer": {"@type": "Answer", "text": "There are 1,000 nanoseconds in one microsecond."}}, {"@type": "Question", "name": "How many microseconds are in one nanosecond?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.001 microseconds in one nanosecond."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="time-conversions.html">Time Conversions</a></p>
-<h1>Microseconds to Nanoseconds Converter</h1>
-<p class="muted">Convert microseconds to nanoseconds instantly. 1 µs = 1,000 ns.</p>
+<h1>Microseconds to Nanoseconds Converter (Both Ways)</h1>
+<p class="muted">Convert microseconds to nanoseconds and nanoseconds to microseconds instantly. 1 µs = 1,000 ns.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in microseconds (µs)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Microseconds (µs)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Nanoseconds (ns)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert microseconds to nanoseconds, multiply the number of microseconds by 1,000. One microsecond equals 1,000 nanoseconds, and one nanosecond equals 0.001 microseconds. The table shows common values.</p>
+<p>To convert microseconds to nanoseconds, multiply the number of microseconds by 1,000. To convert nanoseconds to microseconds, multiply by 0.001 (or divide by 1,000). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Microseconds to Nanoseconds formula</h2>
 <p><b>Nanoseconds = microseconds &times; 1,000</b></p>
 <p>Worked example: convert 12.5 microseconds to nanoseconds. Multiply 12.5 &times; 1,000 = <b>12,500 ns</b>. To go the other way, multiply nanoseconds by 0.001 (or divide by 1,000).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many nanoseconds are in one microsecond?</summary><p>There are 1,000 nanoseconds in one microsecond.</p></details>
 <details><summary>How many microseconds are in one nanosecond?</summary><p>There are 0.001 microseconds in one nanosecond.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="nanoseconds-to-microseconds.html"><b>Nanoseconds to Microseconds Converter</b></a><a href="microseconds-to-seconds.html"><b>Microseconds to Seconds Converter</b></a><a href="microseconds-to-minutes.html"><b>Microseconds to Minutes Converter</b></a><a href="microseconds-to-milliseconds.html"><b>Microseconds to Milliseconds Converter</b></a><a href="seconds-to-nanoseconds.html"><b>Seconds to Nanoseconds Converter</b></a><a href="milliseconds-to-nanoseconds.html"><b>Milliseconds to Nanoseconds Converter</b></a></div>
+<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=999.9999999999999;const r=v*F;return [[SF(v)+' '+(v===1?'µs':'µs')+' =',SF(r)+' '+(r===1?'ns':'ns')],['Formula','ns = µs × '+SF(F)],['Reverse','1 µs = '+SF(1/F)+' ns'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'µs':'µs'),SF(x*F)+' ns'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*999.9999999999999;},a:function(v){return v.b/999.9999999999999;}}});</script>
 </body></html>

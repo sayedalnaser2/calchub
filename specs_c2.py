@@ -188,11 +188,26 @@ def pair_extra(kind, a, b, units):
 
 
 def pair_related(kind, a, b, units):
-    rel = [f"{slugify(b[1])}-to-{slugify(a[1])}"]
-    rel += [f"{slugify(a[1])}-to-{slugify(u[1])}" for u in units if u[0] not in (a[0], b[0])]
-    rel += [f"{slugify(u[1])}-to-{slugify(b[1])}" for u in units if u[0] not in (a[0], b[0])]
+    rel = [pslug(a, u) for u in units if u[0] not in (a[0], b[0]) and keep_pair(a, u)]
+    rel += [pslug(b, u) for u in units if u[0] not in (a[0], b[0]) and keep_pair(b, u)]
     general = KIND_INFO[kind][1]
     return ([general] if general else []) + rel
+
+
+IMPERIAL = {"in", "ft", "yd", "mi", "mil", "furlong", "fathom", "nmi", "oz", "lb", "st", "ston", "lton", "slug", "gr",
+            "tsp", "tbsp", "floz", "cup", "pt", "qt", "gal", "cuin", "cuft", "cuyd", "igal", "iqt", "ipt", "bbl",
+            "sqin", "sqft", "sqyd", "acre", "sqmi", "mph", "fps", "knot", "psi", "inHg", "BTU", "therm", "ftlb", "hp", "BTUh", "ftlbs",
+            "lbf", "ozf", "kip", "lbft", "lbin", "ozin", "lbft3", "lbin3", "lbgal", "gpm", "cfm", "fps2"}
+
+
+def canon(a, b):
+    """Imperial/US unit first (miles-to-kilometers), otherwise keep table order."""
+    return (b, a) if (b[0] in IMPERIAL and a[0] not in IMPERIAL) else (a, b)
+
+
+def pslug(a, b):
+    a, b = canon(a, b)
+    return f"{slugify(a[1])}-to-{slugify(b[1])}"
 
 
 def ulab(u, v):
@@ -201,23 +216,22 @@ def ulab(u, v):
 
 
 def pair_spec(kind, a, b, units=None):
+    a, b = canon(a, b)
     ka, na, aa, sa, fa = a
     kb, nb, ab, sb, fb = b
     F = fa / fb
-    title = f"{tc(na)} to {tc(nb)} Converter"
+    title = f"{tc(na)} to {tc(nb)} Converter (Both Ways)"
     slug = f"{slugify(na)}-to-{slugify(nb)}"
-    desc = f"Convert {na} to {nb} instantly. 1 {ulab(a, 1)} = {fmt(F)} {ulab(b, fmt(F) == '1' and 1 or 2)}."
-    one_a, one_b = ulab(a, 1), ulab(b, 1)
-    body = ("const F=%r;const r=v*F;return [[SF(v)+' '+(v===1?'%s':'%s')+' =',SF(r)+' '+(r===1?'%s':'%s')],"
-            "['Formula','%s = %s × '+SF(F)],['Reverse','1 %s = '+SF(1/F)+' %s']," % (F, one_a, aa, one_b, ab, ab, aa, one_a, ab)
-            + "...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'%s':'%s'),SF(x*F)+' %s'])];" % (one_a, aa, ab))
-    about = (f"To convert {na} to {nb}, multiply the number of {na} by {fmt(F)}. One {sa} equals {fmt(F)} {nb}, "
-             f"and one {sb} equals {fmt(1 / F)} {na}. The table shows common values.")
+    desc = f"Convert {na} to {nb} and {nb} to {na} instantly. 1 {ulab(a, 1)} = {fmt(F)} {ulab(b, fmt(F) == '1' and 1 or 2)}."
+    eq = dict(vars=[("a", f"{tc(na)} ({aa})", None, 1), ("b", f"{tc(nb)} ({ab})", None, None)],
+              solve={"b": f"v.a*{F!r}", "a": f"v.b/{F!r}"})
+    about = (f"To convert {na} to {nb}, multiply the number of {na} by {fmt(F)}. To convert {nb} to {na}, multiply by {fmt(1 / F)} (or divide by {fmt(F)}). "
+             f"Type a value in either box and the other updates, so this one page works in both directions.")
     faqs = [(f"How many {nb} are in one {sa}?", f"There are {fmt(F)} {nb} in one {sa}."),
             (f"How many {na} are in one {sb}?", f"There are {fmt(1 / F)} {na} in one {sb}.")]
     extra = pair_extra(kind, a, b, units) if units else ""
     related = pair_related(kind, a, b, units) if units else None
-    return C("conversion", slug, title, desc, [("v", f"Value in {na} ({aa})", 1)], body, about, faqs, extra, related, kind_group(kind))
+    return C("conversion", slug, title, desc, [], "", about, faqs, extra, related, kind_group(kind), eq)
 
 
 def temp_extra(a, b, na, nb, aa, ab, f, t):
@@ -233,29 +247,24 @@ def temp_extra(a, b, na, nb, aa, ab, f, t):
 
 def temp_specs():
     names = {"C": ("Celsius", "°C"), "F": ("Fahrenheit", "°F"), "K": ("Kelvin", "K")}
-    f = {"C": "v", "F": "(v-32)*5/9", "K": "v-273.15"}
-    t = {"C": "c", "F": "c*9/5+32", "K": "c+273.15"}
+    to_c = {"C": "x", "F": "(x-32)*5/9", "K": "x-273.15"}
+    from_c = {"C": "c", "F": "c*9/5+32", "K": "c+273.15"}
+    formulas = {("C", "F"): "°F = °C × 9/5 + 32", ("F", "C"): "°C = (°F − 32) × 5/9", ("C", "K"): "K = °C + 273.15",
+                ("K", "C"): "°C = K − 273.15", ("F", "K"): "K = (°F − 32) × 5/9 + 273.15", ("K", "F"): "°F = (K − 273.15) × 9/5 + 32"}
     out = []
-    for a in "CFK":
-        for b in "CFK":
-            if a == b:
-                continue
-            na, aa = names[a]
-            nb, ab = names[b]
-            body = ("const c=%s;const conv=x=>{const c=%s;return %s;};const r=conv(v);"
-                    "return [[N(v,6)+' %s =',N(r,6)+' %s'],...[-40,0,20,37,100].map(x=>{const cc=%s;return [N(x)+' %s',N(%s,4)+' %s'];})];"
-                    % (f[a], f[a].replace("v", "x"), t[b], aa, ab, f[a].replace("v", "x"), aa, t[b].replace("c", "cc"), ab))
-            formulas = {("C", "F"): "°F = °C × 9/5 + 32", ("F", "C"): "°C = (°F − 32) × 5/9", ("C", "K"): "K = °C + 273.15",
-                        ("K", "C"): "°C = K − 273.15", ("F", "K"): "K = (°F − 32) × 5/9 + 273.15", ("K", "F"): "°F = (K − 273.15) × 9/5 + 32"}
-            out.append(C("conversion", f"{na.lower()}-to-{nb.lower()}", f"{na} to {nb} Converter",
-                         f"Convert {na} to {nb} instantly with the exact formula.",
-                         [("v", f"Temperature in {aa}", 100 if a == "C" else 212 if a == "F" else 373.15)], body,
-                         f"The conversion formula is {formulas[(a, b)]}. The table lists reference points such as freezing and boiling.",
-                         [(f"What is the formula for {na} to {nb}?", formulas[(a, b)] + "."),
-                          ("What temperature is the same in Celsius and Fahrenheit?", "-40 degrees is the same in both scales.")],
-                         temp_extra(a, b, na, nb, aa, ab, f, t),
-                         [f"{names[b][0].lower()}-to-{names[a][0].lower()}"] + [f"{names[x][0].lower()}-to-{names[y][0].lower()}" for x in "CFK" for y in "CFK" if x != y and (x, y) not in ((a, b), (b, a))] + ["temperature-converter"],
-                         kind_group("temperature")))
+    for a, b in (("C", "F"), ("C", "K"), ("F", "K")):
+        na, aa = names[a]
+        nb, ab = names[b]
+        conv = lambda p, q: f"(function(){{var x={'v.a' if p == a else 'v.b'},c={to_c[p]};return {from_c[q]};}})()"
+        eq = dict(vars=[("a", f"{na} ({aa})", None, {"C": 100, "F": 212, "K": 373.15}[a]), ("b", f"{nb} ({ab})", None, None)],
+                  solve={"b": conv(a, b), "a": conv(b, a)})
+        others = [f"{names[x][0].lower()}-to-{names[y][0].lower()}" for x, y in (("C", "F"), ("C", "K"), ("F", "K")) if (x, y) != (a, b)]
+        out.append(C("conversion", f"{na.lower()}-to-{nb.lower()}", f"{na} to {nb} Converter (Both Ways)",
+                     f"Convert {na} to {nb} and {nb} to {na} instantly with the exact formulas.", [], "",
+                     f"The formulas are {formulas[(a, b)]} and {formulas[(b, a)]}. Type a temperature in either box and the other updates.",
+                     [(f"What is the formula for {na} to {nb}?", formulas[(a, b)] + "."), (f"What is the formula for {nb} to {na}?", formulas[(b, a)] + "."),
+                      ("What temperature is the same in Celsius and Fahrenheit?", "-40 degrees is the same in both scales.")],
+                     temp_extra(a, b, na, nb, aa, ab, None, None), others + ["temperature-converter"], kind_group("temperature"), eq))
     return out
 
 
@@ -275,9 +284,9 @@ def keep_pair(a, b):
 
 PAIRS = []
 for kind, (base, units) in TABLES.items():
-    for a in units:
-        for b in units:
-            if a[0] != b[0] and keep_pair(a, b):
+    for i, a in enumerate(units):
+        for b in units[i + 1:]:
+            if keep_pair(a, b):
                 PAIRS.append(pair_spec(kind, a, b, units))
 PAIRS += temp_specs()
 

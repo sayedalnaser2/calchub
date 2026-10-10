@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Percent Yield Calculator | CalcHub</title>
-<meta name="description" content="Calculate percent yield of a chemical reaction from actual and theoretical yield.">
+<meta name="description" content="Enter any two of percent yield, actual yield and theoretical yield and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/percent-yield-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can percent yield be above 100%?", "acceptedAnswer": {"@type": "Answer", "text": "Only through errors such as impurities or incomplete drying."}}, {"@type": "Question", "name": "What is limiting reagent?", "acceptedAnswer": {"@type": "Answer", "text": "The reactant that runs out first and sets the theoretical yield."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Percent Yield Calculator</h1>
-<p class="muted">Calculate percent yield of a chemical reaction from actual and theoretical yield.</p>
+<p class="muted">Enter any two of percent yield, actual yield and theoretical yield and get the third.</p>
 <form class="card" data-calc="1">
-<label for="act">Actual yield (g)</label><input id="act" type="number" step="any" value="8.2">
-<label for="theo">Theoretical yield (g)</label><input id="theo" type="number" step="any" value="10.5">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="y">Percent yield (%)</label><div class="eqrow"><input id="y" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="act">Actual yield</label><div class="eqrow"><input id="act" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="theo">Theoretical yield</label><div class="eqrow"><input id="theo" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Percent yield = actual yield / theoretical yield x 100. The theoretical yield is the maximum product predicted by stoichiometry; real reactions lose product to side reactions and handling.</p>
+<h2>Formula</h2>
+<p>Percent yield = actual yield / theoretical yield x 100. Enter any two values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Can percent yield be above 100%?</summary><p>Only through errors such as impurities or incomplete drying.</p></details>
 <details><summary>What is limiting reagent?</summary><p>The reactant that runs out first and sets the theoretical yield.</p></details>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({act,theo}){
-if(theo<=0)return 'Theoretical yield must be positive.';return [['Percent yield',PCT(act/theo*100,2)],['Lost',N(theo-act,4)+' g'],['Loss',PCT((theo-act)/theo*100,2)]];
-});</script>
+<script>EqPage({vars:[{"id": "y"}, {"id": "act", "init": 8.2}, {"id": "theo", "init": 10.5}],need:2,solve:{y:function(v){return v.act/v.theo*100;},act:function(v){return v.y*v.theo/100;},theo:function(v){return v.act*100/v.y;}}});</script>
 </body></html>

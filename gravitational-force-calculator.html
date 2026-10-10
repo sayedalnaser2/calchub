@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gravitational Force Calculator | CalcHub</title>
-<meta name="description" content="Calculate the gravitational attraction between two masses.">
+<meta name="description" content="Solve gravitational force, a mass, or distance from any three values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/gravitational-force-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is gravity so weak between small objects?", "acceptedAnswer": {"@type": "Answer", "text": "G is tiny, so masses must be planet-sized for a noticeable force."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Gravitational Force Calculator</h1>
-<p class="muted">Calculate the gravitational attraction between two masses.</p>
+<p class="muted">Solve gravitational force, a mass, or distance from any three values.</p>
 <form class="card" data-calc="1">
-<label for="m1">Mass 1 (kg)</label><input id="m1" type="number" step="any" value="5.972e+24">
-<label for="m2">Mass 2 (kg)</label><input id="m2" type="number" step="any" value="7.348e+22">
-<label for="r">Distance (m)</label><input id="r" type="number" step="any" value="384400000">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="F">Gravitational force (N)</label><div class="eqrow"><input id="F" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="m1">Mass 1</label><div class="eqrow"><input id="m1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="m1_u" aria-label="Mass 1 unit"><option>Earth masses</option><option>kg</option><option>Moon masses</option><option>Sun masses</option></select></div>
+<label for="m2">Mass 2</label><div class="eqrow"><input id="m2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="m2_u" aria-label="Mass 2 unit"><option>Moon masses</option><option>kg</option><option>Earth masses</option><option>Sun masses</option></select></div>
+<label for="r">Distance between centers</label><div class="eqrow"><input id="r" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="r_u" aria-label="Distance between centers unit"><option>km</option><option>m</option><option>mi</option><option>AU</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Newton&#x27;s law of gravitation: F = G m1 m2 / r², with G = 6.674×10⁻¹¹. Defaults are the Earth and Moon.</p>
+<h2>Formula</h2>
+<p>Newton's law of gravitation: F = G x m1 x m2 / r squared, with G = 6.6743 x 10^-11. Enter any three values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why is gravity so weak between small objects?</summary><p>G is tiny, so masses must be planet-sized for a noticeable force.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({m1,m2,r}){
-const F=6.674e-11*m1*m2/(r*r);return [['Gravitational force',F.toExponential(4)+' N'],['In kilonewtons',(F/1000).toExponential(4)]];
-});</script>
+<script>EqPage({vars:[{"id": "F"}, {"id": "m1", "units": [["Earth masses", 5.972e+24], ["kg", 1], ["Moon masses", 7.342e+22], ["Sun masses", 1.989e+30]], "init": 1}, {"id": "m2", "units": [["Moon masses", 7.342e+22], ["kg", 1], ["Earth masses", 5.972e+24], ["Sun masses", 1.989e+30]], "init": 1}, {"id": "r", "units": [["km", 1000], ["m", 1], ["mi", 1609.344], ["AU", 149597870700.0]], "init": 384400}],need:3,solve:{F:function(v){return 6.6743e-11*v.m1*v.m2/(v.r*v.r);},m1:function(v){return v.F*v.r*v.r/(6.6743e-11*v.m2);},m2:function(v){return v.F*v.r*v.r/(6.6743e-11*v.m1);},r:function(v){return Math.sqrt(6.6743e-11*v.m1*v.m2/v.F);}}});</script>
 </body></html>

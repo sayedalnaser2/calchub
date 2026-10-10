@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Days to Years Converter | CalcHub</title>
-<meta name="description" content="Convert days to years instantly. 1 day = 0.002737907 years.">
+<title>Days to Years Converter (Both Ways) | CalcHub</title>
+<meta name="description" content="Convert days to years and years to days instantly. 1 day = 0.002737907 years.">
 <link rel="canonical" href="https://YOURDOMAIN.com/days-to-years.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many years are in one day?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.002737907 years in one day."}}, {"@type": "Question", "name": "How many days are in one year?", "acceptedAnswer": {"@type": "Answer", "text": "There are 365.2425 days in one year."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="time-conversions.html">Time Conversions</a></p>
-<h1>Days to Years Converter</h1>
-<p class="muted">Convert days to years instantly. 1 day = 0.002737907 years.</p>
+<h1>Days to Years Converter (Both Ways)</h1>
+<p class="muted">Convert days to years and years to days instantly. 1 day = 0.002737907 years.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in days (days)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Days (days)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Years (years)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert days to years, multiply the number of days by 0.002737907. One day equals 0.002737907 years, and one year equals 365.2425 days. The table shows common values.</p>
+<p>To convert days to years, multiply the number of days by 0.002737907. To convert years to days, multiply by 365.2425 (or divide by 0.002737907). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Days to Years formula</h2>
 <p><b>Years = days &times; 0.002737907</b></p>
 <p>Worked example: convert 12.5 days to years. Multiply 12.5 &times; 0.002737907 = <b>0.034223838 years</b>. To go the other way, multiply years by 365.2425 (or divide by 0.002737907).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many years are in one day?</summary><p>There are 0.002737907 years in one day.</p></details>
 <details><summary>How many days are in one year?</summary><p>There are 365.2425 days in one year.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="years-to-days.html"><b>Years to Days Converter</b></a><a href="days-to-seconds.html"><b>Days to Seconds Converter</b></a><a href="days-to-minutes.html"><b>Days to Minutes Converter</b></a><a href="days-to-hours.html"><b>Days to Hours Converter</b></a><a href="days-to-weeks.html"><b>Days to Weeks Converter</b></a><a href="days-to-months.html"><b>Days to Months Converter</b></a><a href="days-to-milliseconds.html"><b>Days to Milliseconds Converter</b></a><a href="days-to-decades.html"><b>Days to Decades Converter</b></a><a href="days-to-centuries.html"><b>Days to Centuries Converter</b></a><a href="seconds-to-years.html"><b>Seconds to Years Converter</b></a><a href="minutes-to-years.html"><b>Minutes to Years Converter</b></a></div>
+<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="days-to-weeks.html"><b>Days to Weeks Converter (Both Ways)</b></a><a href="days-to-months.html"><b>Days to Months Converter (Both Ways)</b></a><a href="days-to-milliseconds.html"><b>Days to Milliseconds Converter (Both Ways)</b></a><a href="days-to-decades.html"><b>Days to Decades Converter (Both Ways)</b></a><a href="days-to-centuries.html"><b>Days to Centuries Converter (Both Ways)</b></a><a href="years-to-decades.html"><b>Years to Decades Converter (Both Ways)</b></a><a href="years-to-centuries.html"><b>Years to Centuries Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=0.002737907006988508;const r=v*F;return [[SF(v)+' '+(v===1?'day':'days')+' =',SF(r)+' '+(r===1?'year':'years')],['Formula','years = days × '+SF(F)],['Reverse','1 day = '+SF(1/F)+' years'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'day':'days'),SF(x*F)+' years'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*0.002737907006988508;},a:function(v){return v.b/0.002737907006988508;}}});</script>
 </body></html>

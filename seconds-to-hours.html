@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Seconds to Hours Converter | CalcHub</title>
-<meta name="description" content="Convert seconds to hours instantly. 1 s = 0.00027777778 h.">
+<title>Seconds to Hours Converter (Both Ways) | CalcHub</title>
+<meta name="description" content="Convert seconds to hours and hours to seconds instantly. 1 s = 0.00027777778 h.">
 <link rel="canonical" href="https://YOURDOMAIN.com/seconds-to-hours.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many hours are in one second?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.00027777778 hours in one second."}}, {"@type": "Question", "name": "How many seconds are in one hour?", "acceptedAnswer": {"@type": "Answer", "text": "There are 3,600 seconds in one hour."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="time-conversions.html">Time Conversions</a></p>
-<h1>Seconds to Hours Converter</h1>
-<p class="muted">Convert seconds to hours instantly. 1 s = 0.00027777778 h.</p>
+<h1>Seconds to Hours Converter (Both Ways)</h1>
+<p class="muted">Convert seconds to hours and hours to seconds instantly. 1 s = 0.00027777778 h.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in seconds (s)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Seconds (s)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Hours (h)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert seconds to hours, multiply the number of seconds by 0.00027777778. One second equals 0.00027777778 hours, and one hour equals 3,600 seconds. The table shows common values.</p>
+<p>To convert seconds to hours, multiply the number of seconds by 0.00027777778. To convert hours to seconds, multiply by 3,600 (or divide by 0.00027777778). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Seconds to Hours formula</h2>
 <p><b>Hours = seconds &times; 0.00027777778</b></p>
 <p>Worked example: convert 12.5 seconds to hours. Multiply 12.5 &times; 0.00027777778 = <b>0.0034722222 h</b>. To go the other way, multiply hours by 3,600 (or divide by 0.00027777778).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many hours are in one second?</summary><p>There are 0.00027777778 hours in one second.</p></details>
 <details><summary>How many seconds are in one hour?</summary><p>There are 3,600 seconds in one hour.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="hours-to-seconds.html"><b>Hours to Seconds Converter</b></a><a href="seconds-to-minutes.html"><b>Seconds to Minutes Converter</b></a><a href="seconds-to-days.html"><b>Seconds to Days Converter</b></a><a href="seconds-to-weeks.html"><b>Seconds to Weeks Converter</b></a><a href="seconds-to-months.html"><b>Seconds to Months Converter</b></a><a href="seconds-to-years.html"><b>Seconds to Years Converter</b></a><a href="seconds-to-milliseconds.html"><b>Seconds to Milliseconds Converter</b></a><a href="seconds-to-microseconds.html"><b>Seconds to Microseconds Converter</b></a><a href="seconds-to-nanoseconds.html"><b>Seconds to Nanoseconds Converter</b></a><a href="seconds-to-decades.html"><b>Seconds to Decades Converter</b></a><a href="minutes-to-hours.html"><b>Minutes to Hours Converter</b></a></div>
+<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="seconds-to-minutes.html"><b>Seconds to Minutes Converter (Both Ways)</b></a><a href="seconds-to-days.html"><b>Seconds to Days Converter (Both Ways)</b></a><a href="seconds-to-weeks.html"><b>Seconds to Weeks Converter (Both Ways)</b></a><a href="seconds-to-months.html"><b>Seconds to Months Converter (Both Ways)</b></a><a href="seconds-to-years.html"><b>Seconds to Years Converter (Both Ways)</b></a><a href="seconds-to-milliseconds.html"><b>Seconds to Milliseconds Converter (Both Ways)</b></a><a href="seconds-to-microseconds.html"><b>Seconds to Microseconds Converter (Both Ways)</b></a><a href="seconds-to-nanoseconds.html"><b>Seconds to Nanoseconds Converter (Both Ways)</b></a><a href="seconds-to-decades.html"><b>Seconds to Decades Converter (Both Ways)</b></a><a href="hours-to-days.html"><b>Hours to Days Converter (Both Ways)</b></a><a href="hours-to-weeks.html"><b>Hours to Weeks Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=0.0002777777777777778;const r=v*F;return [[SF(v)+' '+(v===1?'s':'s')+' =',SF(r)+' '+(r===1?'h':'h')],['Formula','h = s × '+SF(F)],['Reverse','1 s = '+SF(1/F)+' h'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'s':'s'),SF(x*F)+' h'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*0.0002777777777777778;},a:function(v){return v.b/0.0002777777777777778;}}});</script>
 </body></html>

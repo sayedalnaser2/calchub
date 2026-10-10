@@ -52,3 +52,48 @@ function CalcPage(fn){
   form.addEventListener('input',run);
   run();
 }
+
+// Two-way equation engine: fill any (N-1) fields and the remaining one is solved.
+// cfg.vars: [{id, units:[[label,factor,offset?]], init}], cfg.solve: {id: fn | [[requiredIds, fn],...]}
+// cfg.need: how many fields must be entered (default N-1). The most recently edited fields are the inputs.
+function EqPage(cfg){
+  const V=cfg.vars,by={};V.forEach(v=>by[v.id]=v);
+  const need=cfg.need||V.length-1;
+  const form=document.querySelector('form[data-calc]'),out=$('out'),note=$('eqnote');
+  const el={},sel={};V.forEach(v=>{el[v.id]=$(v.id);sel[v.id]=$(v.id+'_u');});
+  const U=v=>(sel[v.id]&&v.units)?v.units[sel[v.id].selectedIndex]:['',1,0];
+  const toB=(v,x)=>(x+(U(v)[2]||0))*U(v)[1];
+  const fromB=(v,b)=>b/U(v)[1]-(U(v)[2]||0);
+  const fmt=x=>Number.isFinite(x)?String(Number(x.toPrecision(10))):'';
+  const alts=id=>{const s=cfg.solve[id];return !s?[]:(typeof s==='function'?[[null,s]]:s);};
+  let order=[];
+  const hint='Type in any '+need+' field'+(need>1?'s':'')+' and the rest are calculated (the '+(need>1?need+' you edited last are':'one you edited last is')+' used). Press Clear to start over.';
+  function compute(){
+    const ins=order.filter(id=>el[id].value!==''&&!isNaN(parseFloat(el[id].value))).slice(-need);
+    const known={};ins.forEach(id=>known[id]=toB(by[id],parseFloat(el[id].value)));
+    V.forEach(v=>{el[v.id].classList.remove('computed');if(!ins.includes(v.id))el[v.id].value='';});
+    out.innerHTML='';
+    if(ins.length<need){note.textContent=hint;return;}
+    const sol=Object.assign({},known);let changed=true,guard=0;
+    while(changed&&guard++<6){changed=false;
+      V.forEach(v=>{if(v.id in sol)return;
+        for(const a of alts(v.id)){
+          const ok=a[0]?a[0].every(r=>r in sol):V.every(w=>w.id===v.id||w.id in sol);
+          if(!ok)continue;let r;try{r=a[1](sol);}catch(e){r=NaN;}
+          if(Number.isFinite(r)){sol[v.id]=r;changed=true;break;}
+        }});}
+    let bad=false;
+    V.forEach(v=>{if(ins.includes(v.id))return;
+      if(v.id in sol){el[v.id].value=fmt(fromB(v,sol[v.id]));el[v.id].classList.add('computed');}else bad=true;});
+    note.textContent=bad?'No valid result for these values. Check for zero, negative or impossible numbers.':hint;
+    if(!bad&&cfg.extra){try{out.innerHTML=cfg.extra(sol).map(([k,x])=>'<div class="row"><span>'+k+'</span><b>'+x+'</b></div>').join('');}catch(e){}}
+  }
+  V.forEach(v=>{
+    el[v.id].addEventListener('input',()=>{order=order.filter(x=>x!==v.id);if(el[v.id].value!=='')order.push(v.id);compute();});
+    if(sel[v.id])sel[v.id].addEventListener('change',compute);
+  });
+  const init=()=>{order=[];V.forEach(v=>{if(v.init!==undefined&&v.init!==null){el[v.id].value=v.init;order.push(v.id);}});compute();};
+  form.addEventListener('submit',e=>e.preventDefault());
+  form.addEventListener('reset',()=>setTimeout(()=>{order=[];V.forEach(v=>{el[v.id].value='';});compute();},0));
+  init();
+}

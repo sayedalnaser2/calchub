@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Meters per Second Squared to Standard Gravities Converter</title>
-<meta name="description" content="Convert meters per second squared to standard gravities instantly. 1 m/s² = 0.10197162 g.">
+<title>Meters per Second Squared to Standard Gravities Converter (Both Ways)</title>
+<meta name="description" content="Convert meters per second squared to standard gravities and standard gravities to meters per second squared instantly. 1 m/s² = 0.10197162 g.">
 <link rel="canonical" href="https://YOURDOMAIN.com/meters-per-second-squared-to-standard-gravities.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many standard gravities are in one meter per second squared?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.10197162 standard gravities in one meter per second squared."}}, {"@type": "Question", "name": "How many meters per second squared are in one standard gravity?", "acceptedAnswer": {"@type": "Answer", "text": "There are 9.80665 meters per second squared in one standard gravity."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="accel-conversions.html">Acceleration Conversions</a></p>
-<h1>Meters per Second Squared to Standard Gravities Converter</h1>
-<p class="muted">Convert meters per second squared to standard gravities instantly. 1 m/s² = 0.10197162 g.</p>
+<h1>Meters per Second Squared to Standard Gravities Converter (Both Ways)</h1>
+<p class="muted">Convert meters per second squared to standard gravities and standard gravities to meters per second squared instantly. 1 m/s² = 0.10197162 g.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in meters per second squared (m/s²)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Meters per Second Squared (m/s²)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Standard Gravities (g)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert meters per second squared to standard gravities, multiply the number of meters per second squared by 0.10197162. One meter per second squared equals 0.10197162 standard gravities, and one standard gravity equals 9.80665 meters per second squared. The table shows common values.</p>
+<p>To convert meters per second squared to standard gravities, multiply the number of meters per second squared by 0.10197162. To convert standard gravities to meters per second squared, multiply by 9.80665 (or divide by 0.10197162). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Meters per Second Squared to Standard Gravities formula</h2>
 <p><b>Standard gravities = meters per second squared &times; 0.10197162</b></p>
 <p>Worked example: convert 12.5 meters per second squared to standard gravities. Multiply 12.5 &times; 0.10197162 = <b>1.2746453 g</b>. To go the other way, multiply standard gravities by 9.80665 (or divide by 0.10197162).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many standard gravities are in one meter per second squared?</summary><p>There are 0.10197162 standard gravities in one meter per second squared.</p></details>
 <details><summary>How many meters per second squared are in one standard gravity?</summary><p>There are 9.80665 meters per second squared in one standard gravity.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="standard-gravities-to-meters-per-second-squared.html"><b>Standard Gravities to Meters per Second Squared Converter</b></a><a href="meters-per-second-squared-to-feet-per-second-squared.html"><b>Meters per Second Squared to Feet per Second Squared Converter</b></a><a href="feet-per-second-squared-to-standard-gravities.html"><b>Feet per Second Squared to Standard Gravities Converter</b></a></div>
+<div class="grid"><a href="feet-per-second-squared-to-meters-per-second-squared.html"><b>Feet per Second Squared to Meters per Second Squared Converter (Both Ways)</b></a><a href="feet-per-second-squared-to-standard-gravities.html"><b>Feet per Second Squared to Standard Gravities Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=0.10197162129779283;const r=v*F;return [[SF(v)+' '+(v===1?'m/s²':'m/s²')+' =',SF(r)+' '+(r===1?'g':'g')],['Formula','g = m/s² × '+SF(F)],['Reverse','1 m/s² = '+SF(1/F)+' g'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'m/s²':'m/s²'),SF(x*F)+' g'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*0.10197162129779283;},a:function(v){return v.b/0.10197162129779283;}}});</script>
 </body></html>

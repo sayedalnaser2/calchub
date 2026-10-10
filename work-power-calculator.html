@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Work and Power Calculator | CalcHub</title>
-<meta name="description" content="Calculate work done and power from force, distance and time.">
+<meta name="description" content="Enter any three of work, force, distance, power and time and solve the rest.">
 <link rel="canonical" href="https://YOURDOMAIN.com/work-power-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a watt?", "acceptedAnswer": {"@type": "Answer", "text": "One joule per second."}}]}</script>
@@ -13,17 +13,22 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Work and Power Calculator</h1>
-<p class="muted">Calculate work done and power from force, distance and time.</p>
+<p class="muted">Enter any three of work, force, distance, power and time and solve the rest.</p>
 <form class="card" data-calc="1">
-<label for="F">Force (N)</label><input id="F" type="number" step="any" value="200">
-<label for="d">Distance (m)</label><input id="d" type="number" step="any" value="15">
-<label for="t">Time (s)</label><input id="t" type="number" step="any" value="10">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="W">Work / energy</label><div class="eqrow"><input id="W" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="W_u" aria-label="Work / energy unit"><option>J</option><option>kJ</option><option>cal</option><option>kcal</option><option>Wh</option><option>kWh</option></select></div>
+<label for="F">Force</label><div class="eqrow"><input id="F" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="F_u" aria-label="Force unit"><option>N</option><option>kN</option><option>lbf</option></select></div>
+<label for="d">Distance</label><div class="eqrow"><input id="d" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="d_u" aria-label="Distance unit"><option>m</option><option>cm</option><option>mm</option><option>km</option><option>in</option><option>ft</option></select></div>
+<label for="P">Power</label><div class="eqrow"><input id="P" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="P_u" aria-label="Power unit"><option>W</option><option>kW</option><option>mW</option><option>hp</option></select></div>
+<label for="t">Time</label><div class="eqrow"><input id="t" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="t_u" aria-label="Time unit"><option>s</option><option>min</option><option>h</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Work = force x distance (in the force&#x27;s direction). Power = work / time.</p>
+<h2>Formula</h2>
+<p>Work W = F x d and power P = W / t. Enter any three values (for example force, distance and time).</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is a watt?</summary><p>One joule per second.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +36,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({F,d,t}){
-const W=F*d;return [['Work',N(W,3)+' J'],['Power',N(W/t,3)+' W'],['Horsepower',N(W/t/745.7,4)+' hp']];
-});</script>
+<script>EqPage({vars:[{"id": "W", "units": [["J", 1], ["kJ", 1000], ["cal", 4.184], ["kcal", 4184], ["Wh", 3600], ["kWh", 3600000.0]]}, {"id": "F", "units": [["N", 1], ["kN", 1000], ["lbf", 4.4482216152605]], "init": 50}, {"id": "d", "units": [["m", 1], ["cm", 0.01], ["mm", 0.001], ["km", 1000], ["in", 0.0254], ["ft", 0.3048]], "init": 10}, {"id": "P", "units": [["W", 1], ["kW", 1000], ["mW", 0.001], ["hp", 745.69987158]]}, {"id": "t", "units": [["s", 1], ["min", 60], ["h", 3600]], "init": 5}],need:3,solve:{W:[[["F", "d"],function(v){return v.F*v.d;}],[["P", "t"],function(v){return v.P*v.t;}]],F:[[["W", "d"],function(v){return v.W/v.d;}]],d:[[["W", "F"],function(v){return v.W/v.F;}]],P:[[["W", "t"],function(v){return v.W/v.t;}]],t:[[["W", "P"],function(v){return v.W/v.P;}]]}});</script>
 </body></html>

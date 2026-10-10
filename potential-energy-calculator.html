@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gravitational Potential Energy Calculator | CalcHub</title>
-<meta name="description" content="Calculate potential energy from mass, height and gravity.">
+<meta name="description" content="Enter any two of potential energy, mass and height and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/potential-energy-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is g on the Moon?", "acceptedAnswer": {"@type": "Answer", "text": "About 1.62 m/s\u00b2."}}, {"@type": "Question", "name": "Does mass matter for falling speed?", "acceptedAnswer": {"@type": "Answer", "text": "Not in a vacuum; all objects fall at the same rate."}}]}</script>
@@ -13,17 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Gravitational Potential Energy Calculator</h1>
-<p class="muted">Calculate potential energy from mass, height and gravity.</p>
+<p class="muted">Enter any two of potential energy, mass and height and get the third.</p>
 <form class="card" data-calc="1">
-<label for="m">Mass (kg)</label><input id="m" type="number" step="any" value="10">
-<label for="h">Height (m)</label><input id="h" type="number" step="any" value="20">
-<label for="g">Gravity (m/s²)</label><input id="g" type="number" step="any" value="9.81">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="PE">Potential energy</label><div class="eqrow"><input id="PE" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="PE_u" aria-label="Potential energy unit"><option>J</option><option>kJ</option><option>cal</option><option>kcal</option><option>Wh</option><option>kWh</option></select></div>
+<label for="m">Mass</label><div class="eqrow"><input id="m" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="m_u" aria-label="Mass unit"><option>kg</option><option>g</option><option>lb</option><option>oz</option></select></div>
+<label for="h">Height</label><div class="eqrow"><input id="h" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="h_u" aria-label="Height unit"><option>m</option><option>cm</option><option>mm</option><option>km</option><option>in</option><option>ft</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Gravitational potential energy PE = m x g x h. Dropping an object converts it to kinetic energy, so v = sqrt(2 g h) ignoring air resistance.</p>
+<h2>Formula</h2>
+<p>Gravitational potential energy PE = m x g x h with g = 9.80665 m/s squared.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is g on the Moon?</summary><p>About 1.62 m/s².</p></details>
 <details><summary>Does mass matter for falling speed?</summary><p>Not in a vacuum; all objects fall at the same rate.</p></details>
@@ -32,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({m,h,g}){
-const e=m*g*h;return [['Potential energy',N(e,2)+' J'],['In kilojoules',N(e/1000,4)+' kJ'],['Speed at ground if dropped',N(Math.sqrt(2*g*h),2)+' m/s'],['In kilocalories',N(e/4184,5)]];
-});</script>
+<script>EqPage({vars:[{"id": "PE", "units": [["J", 1], ["kJ", 1000], ["cal", 4.184], ["kcal", 4184], ["Wh", 3600], ["kWh", 3600000.0]]}, {"id": "m", "units": [["kg", 1], ["g", 0.001], ["lb", 0.45359237], ["oz", 0.028349523125]], "init": 10}, {"id": "h", "units": [["m", 1], ["cm", 0.01], ["mm", 0.001], ["km", 1000], ["in", 0.0254], ["ft", 0.3048]], "init": 20}],need:2,solve:{PE:function(v){return v.m*9.80665*v.h;},m:function(v){return v.PE/(9.80665*v.h);},h:function(v){return v.PE/(9.80665*v.m);}}});</script>
 </body></html>

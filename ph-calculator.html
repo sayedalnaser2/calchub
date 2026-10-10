@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>pH Calculator | CalcHub</title>
-<meta name="description" content="Convert between pH and hydrogen ion concentration.">
+<meta name="description" content="Convert between pH, pOH and ion concentration.">
 <link rel="canonical" href="https://YOURDOMAIN.com/ph-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is neutral pH?", "acceptedAnswer": {"@type": "Answer", "text": "7 at 25 \u00b0C."}}]}</script>
@@ -13,16 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>pH Calculator</h1>
-<p class="muted">Convert between pH and hydrogen ion concentration.</p>
+<p class="muted">Convert between pH, pOH and ion concentration.</p>
 <form class="card" data-calc="1">
-<label for="ph">pH</label><input id="ph" type="number" step="any" value="4.5">
-<label for="h">[H+] concentration (mol/L)</label><input id="h" type="number" step="any" value="0.001">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="ph">pH</label><div class="eqrow"><input id="ph" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="H">[H+] concentration (mol/L)</label><div class="eqrow"><input id="H" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="poh">pOH</label><div class="eqrow"><input id="poh" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="OH">[OH-] concentration (mol/L)</label><div class="eqrow"><input id="OH" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>pH = -log10[H+]. At 25 °C, pH + pOH = 14.</p>
+<h2>Formula</h2>
+<p>pH = -log10[H+] and pH + pOH = 14 at 25 °C. Enter any one value.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is neutral pH?</summary><p>7 at 25 °C.</p></details>
 <h2>Related calculators</h2>
@@ -30,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({ph,h}){
-const H=Math.pow(10,-ph);return [['[H+] from pH',H.toExponential(4)+' mol/L'],['[OH-]',(1e-14/H).toExponential(4)+' mol/L'],['pOH',N(14-ph,4)],['pH from [H+]',h>0?N(-Math.log10(h),4):'Enter a positive value'],['Nature',ph<7?'Acidic':ph>7?'Basic':'Neutral']];
-});</script>
+<script>EqPage({vars:[{"id": "ph", "init": 7}, {"id": "H"}, {"id": "poh"}, {"id": "OH"}],need:1,solve:{ph:[[["H"],function(v){return -Math.log10(v.H);}],[["poh"],function(v){return 14-v.poh;}]],H:[[["ph"],function(v){return Math.pow(10,-v.ph);}]],poh:[[["OH"],function(v){return -Math.log10(v.OH);}],[["ph"],function(v){return 14-v.ph;}]],OH:[[["poh"],function(v){return Math.pow(10,-v.poh);}]]},extra:function(v){return [['Solution is',v.ph<7?'Acidic':v.ph>7?'Basic':'Neutral']];}});</script>
 </body></html>

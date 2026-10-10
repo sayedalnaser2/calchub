@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Discount Calculator | CalcHub</title>
-<meta name="description" content="Calculate the sale price after a percentage discount, with an optional extra discount.">
+<meta name="description" content="Enter any two of original price, discount % and sale price and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/discount-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why isn't a 25% plus 10% discount equal to 35%?", "acceptedAnswer": {"@type": "Answer", "text": "The second discount applies to the already reduced price, so the total saving is slightly less than the sum."}}]}</script>
@@ -13,26 +13,26 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
 <h1>Discount Calculator</h1>
-<p class="muted">Calculate the sale price after a percentage discount, with an optional extra discount.</p>
+<p class="muted">Enter any two of original price, discount % and sale price and get the third.</p>
 <form class="card" data-calc="1">
-<label for="price">Original price ($)</label><input id="price" type="number" step="any" value="100">
-<label for="disc">Discount (%)</label><input id="disc" type="number" step="any" value="25">
-<label for="extra">Extra discount (%)</label><input id="extra" type="number" step="any" value="0">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="orig">Original price ($)</label><div class="eqrow"><input id="orig" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="d">Discount (%)</label><div class="eqrow"><input id="d" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="sale">Sale price ($)</label><div class="eqrow"><input id="sale" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Each discount is applied one after another to the remaining price. Two discounts of 25% and 10% equal 32.5% off, not 35%.</p>
+<h2>Formula</h2>
+<p>Sale price = original price x (1 - discount%). Enter any two of original price, discount and sale price.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why isn&#x27;t a 25% plus 10% discount equal to 35%?</summary><p>The second discount applies to the already reduced price, so the total saving is slightly less than the sum.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="roi-calculator.html"><b>ROI Calculator</b></a><a href="inflation-calculator.html"><b>Inflation Calculator</b></a><a href="salary-calculator.html"><b>Salary Calculator (Hourly, Weekly, Monthly, Annual)</b></a><a href="break-even-calculator.html"><b>Break-Even Calculator</b></a><a href="margin-calculator.html"><b>Profit Margin &amp; Markup Calculator</b></a><a href="cagr-calculator.html"><b>CAGR Calculator</b></a></div>
+<div class="grid"><a href="roi-calculator.html"><b>ROI Calculator</b></a><a href="inflation-calculator.html"><b>Inflation Calculator</b></a><a href="salary-calculator.html"><b>Salary Calculator (Hourly to Annual and Back)</b></a><a href="break-even-calculator.html"><b>Break-Even Calculator</b></a><a href="margin-calculator.html"><b>Profit Margin and Markup Calculator</b></a><a href="cagr-calculator.html"><b>CAGR Calculator</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({price,disc,extra}){
-const f=price*(1-disc/100)*(1-extra/100);
-return [['Final price',M(f)],['You save',M(price-f)],['Total discount',PCT((1-f/price)*100)]];
-});</script>
+<script>EqPage({vars:[{"id": "orig", "init": 120}, {"id": "d", "init": 25}, {"id": "sale"}],need:2,solve:{sale:function(v){return v.orig*(1-v.d/100);},orig:function(v){return v.sale/(1-v.d/100);},d:function(v){return (1-v.sale/v.orig)*100;}},extra:function(v){return [['You save',M(v.orig-v.sale)]];}});</script>
 </body></html>

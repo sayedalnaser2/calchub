@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Force Calculator (F = ma) | CalcHub</title>
-<meta name="description" content="Calculate force from mass and acceleration using Newton&#x27;s second law.">
+<meta name="description" content="Enter any two of force, mass and acceleration and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/force-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the weight of an object?", "acceptedAnswer": {"@type": "Answer", "text": "Weight is the gravitational force on it: mass x 9.81 m/s\u00b2 on Earth."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Force Calculator (F = ma)</h1>
-<p class="muted">Calculate force from mass and acceleration using Newton&#x27;s second law.</p>
+<p class="muted">Enter any two of force, mass and acceleration and get the third.</p>
 <form class="card" data-calc="1">
-<label for="m">Mass (kg)</label><input id="m" type="number" step="any" value="10">
-<label for="a">Acceleration (m/s²)</label><input id="a" type="number" step="any" value="9.81">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="F">Force</label><div class="eqrow"><input id="F" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="F_u" aria-label="Force unit"><option>N</option><option>kN</option><option>lbf</option></select></div>
+<label for="m">Mass</label><div class="eqrow"><input id="m" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="m_u" aria-label="Mass unit"><option>kg</option><option>g</option><option>lb</option><option>oz</option></select></div>
+<label for="a">Acceleration</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="a_u" aria-label="Acceleration unit"><option>m/s²</option><option>g</option><option>ft/s²</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Newton&#x27;s second law states F = m x a. One newton accelerates one kilogram at one metre per second squared.</p>
+<h2>Formula</h2>
+<p>Newton's second law: F = m x a. Enter any two of force, mass and acceleration.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is the weight of an object?</summary><p>Weight is the gravitational force on it: mass x 9.81 m/s² on Earth.</p></details>
 <h2>Related calculators</h2>
@@ -30,8 +34,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({m,a}){
-const f=m*a;
-return [['Force',N(f,4)+' N'],['In pound-force',N(f*0.224809,4)+' lbf'],['In kilogram-force',N(f/9.80665,4)+' kgf']];
-});</script>
+<script>EqPage({vars:[{"id": "F", "units": [["N", 1], ["kN", 1000], ["lbf", 4.4482216152605]]}, {"id": "m", "units": [["kg", 1], ["g", 0.001], ["lb", 0.45359237], ["oz", 0.028349523125]], "init": 10}, {"id": "a", "units": [["m/s\u00b2", 1], ["g", 9.80665], ["ft/s\u00b2", 0.3048]], "init": 9.80665}],need:2,solve:{F:function(v){return v.m*v.a;},m:function(v){return v.F/v.a;},a:function(v){return v.F/v.m;}}});</script>
 </body></html>

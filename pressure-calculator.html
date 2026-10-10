@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pressure Calculator (Force over Area) | CalcHub</title>
-<meta name="description" content="Calculate pressure from force and area in pascals, kPa, psi and atmospheres.">
+<meta name="description" content="Enter any two of pressure, force and area and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/pressure-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why do sharp knives cut better?", "acceptedAnswer": {"@type": "Answer", "text": "The same force over a smaller area gives higher pressure."}}, {"@type": "Question", "name": "How do I convert to psi?", "acceptedAnswer": {"@type": "Answer", "text": "Divide pascals by 6894.757."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Pressure Calculator (Force over Area)</h1>
-<p class="muted">Calculate pressure from force and area in pascals, kPa, psi and atmospheres.</p>
+<p class="muted">Enter any two of pressure, force and area and get the third.</p>
 <form class="card" data-calc="1">
-<label for="f">Force (N)</label><input id="f" type="number" step="any" value="500">
-<label for="a">Area (m²)</label><input id="a" type="number" step="any" value="0.02">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="P">Pressure</label><div class="eqrow"><input id="P" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="P_u" aria-label="Pressure unit"><option>kPa</option><option>Pa</option><option>atm</option><option>bar</option><option>psi</option><option>mmHg</option></select></div>
+<label for="F">Force</label><div class="eqrow"><input id="F" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="F_u" aria-label="Force unit"><option>N</option><option>kN</option><option>lbf</option></select></div>
+<label for="A">Area</label><div class="eqrow"><input id="A" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="A_u" aria-label="Area unit"><option>m²</option><option>cm²</option><option>ft²</option><option>in²</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Pressure = force / area. One pascal is one newton per square meter. Standard atmospheric pressure is 101,325 Pa.</p>
+<h2>Formula</h2>
+<p>Pressure P = F / A. Enter any two of pressure, force and area.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why do sharp knives cut better?</summary><p>The same force over a smaller area gives higher pressure.</p></details>
 <details><summary>How do I convert to psi?</summary><p>Divide pascals by 6894.757.</p></details>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({f,a}){
-if(a<=0)return 'Area must be positive.';const p=f/a;return [['Pressure',N(p,2)+' Pa'],['Kilopascals',N(p/1000,3)+' kPa'],['PSI',N(p/6894.757,3)],['Atmospheres',N(p/101325,5)],['Bar',N(p/1e5,5)]];
-});</script>
+<script>EqPage({vars:[{"id": "P", "units": [["kPa", 1000], ["Pa", 1], ["atm", 101325], ["bar", 100000.0], ["psi", 6894.757293168], ["mmHg", 133.322387415]]}, {"id": "F", "units": [["N", 1], ["kN", 1000], ["lbf", 4.4482216152605]], "init": 500}, {"id": "A", "units": [["m\u00b2", 1], ["cm\u00b2", 0.0001], ["ft\u00b2", 0.09290304], ["in\u00b2", 0.00064516]], "init": 0.02}],need:2,solve:{P:function(v){return v.F/v.A;},F:function(v){return v.P*v.A;},A:function(v){return v.F/v.P;}},extra:function(v){return [['Pressure in psi',N(v.P/6894.757,3)],['Pressure in kPa',N(v.P/1000,3)],['Pressure in atm',N(v.P/101325,5)]];}});</script>
 </body></html>

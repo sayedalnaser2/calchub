@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Seconds to Microseconds Converter | CalcHub</title>
-<meta name="description" content="Convert seconds to microseconds instantly. 1 s = 1,000,000 µs.">
+<title>Seconds to Microseconds Converter (Both Ways) | CalcHub</title>
+<meta name="description" content="Convert seconds to microseconds and microseconds to seconds instantly. 1 s = 1,000,000 µs.">
 <link rel="canonical" href="https://YOURDOMAIN.com/seconds-to-microseconds.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many microseconds are in one second?", "acceptedAnswer": {"@type": "Answer", "text": "There are 1,000,000 microseconds in one second."}}, {"@type": "Question", "name": "How many seconds are in one microsecond?", "acceptedAnswer": {"@type": "Answer", "text": "There are 1e-06 seconds in one microsecond."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="time-conversions.html">Time Conversions</a></p>
-<h1>Seconds to Microseconds Converter</h1>
-<p class="muted">Convert seconds to microseconds instantly. 1 s = 1,000,000 µs.</p>
+<h1>Seconds to Microseconds Converter (Both Ways)</h1>
+<p class="muted">Convert seconds to microseconds and microseconds to seconds instantly. 1 s = 1,000,000 µs.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in seconds (s)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Seconds (s)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Microseconds (µs)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert seconds to microseconds, multiply the number of seconds by 1,000,000. One second equals 1,000,000 microseconds, and one microsecond equals 1e-06 seconds. The table shows common values.</p>
+<p>To convert seconds to microseconds, multiply the number of seconds by 1,000,000. To convert microseconds to seconds, multiply by 1e-06 (or divide by 1,000,000). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Seconds to Microseconds formula</h2>
 <p><b>Microseconds = seconds &times; 1,000,000</b></p>
 <p>Worked example: convert 12.5 seconds to microseconds. Multiply 12.5 &times; 1,000,000 = <b>12,500,000 µs</b>. To go the other way, multiply microseconds by 1e-06 (or divide by 1,000,000).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many microseconds are in one second?</summary><p>There are 1,000,000 microseconds in one second.</p></details>
 <details><summary>How many seconds are in one microsecond?</summary><p>There are 1e-06 seconds in one microsecond.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="microseconds-to-seconds.html"><b>Microseconds to Seconds Converter</b></a><a href="seconds-to-minutes.html"><b>Seconds to Minutes Converter</b></a><a href="seconds-to-hours.html"><b>Seconds to Hours Converter</b></a><a href="seconds-to-days.html"><b>Seconds to Days Converter</b></a><a href="seconds-to-weeks.html"><b>Seconds to Weeks Converter</b></a><a href="seconds-to-months.html"><b>Seconds to Months Converter</b></a><a href="seconds-to-years.html"><b>Seconds to Years Converter</b></a><a href="seconds-to-milliseconds.html"><b>Seconds to Milliseconds Converter</b></a><a href="seconds-to-nanoseconds.html"><b>Seconds to Nanoseconds Converter</b></a><a href="seconds-to-decades.html"><b>Seconds to Decades Converter</b></a><a href="minutes-to-microseconds.html"><b>Minutes to Microseconds Converter</b></a></div>
+<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="seconds-to-minutes.html"><b>Seconds to Minutes Converter (Both Ways)</b></a><a href="seconds-to-hours.html"><b>Seconds to Hours Converter (Both Ways)</b></a><a href="seconds-to-days.html"><b>Seconds to Days Converter (Both Ways)</b></a><a href="seconds-to-weeks.html"><b>Seconds to Weeks Converter (Both Ways)</b></a><a href="seconds-to-months.html"><b>Seconds to Months Converter (Both Ways)</b></a><a href="seconds-to-years.html"><b>Seconds to Years Converter (Both Ways)</b></a><a href="seconds-to-milliseconds.html"><b>Seconds to Milliseconds Converter (Both Ways)</b></a><a href="seconds-to-nanoseconds.html"><b>Seconds to Nanoseconds Converter (Both Ways)</b></a><a href="seconds-to-decades.html"><b>Seconds to Decades Converter (Both Ways)</b></a><a href="microseconds-to-nanoseconds.html"><b>Microseconds to Nanoseconds Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=1000000.0;const r=v*F;return [[SF(v)+' '+(v===1?'s':'s')+' =',SF(r)+' '+(r===1?'µs':'µs')],['Formula','µs = s × '+SF(F)],['Reverse','1 s = '+SF(1/F)+' µs'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'s':'s'),SF(x*F)+' µs'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*1000000.0;},a:function(v){return v.b/1000000.0;}}});</script>
 </body></html>

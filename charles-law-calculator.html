@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Charles&#x27;s Law Calculator | CalcHub</title>
-<meta name="description" content="Calculate how gas volume changes with temperature at constant pressure.">
+<meta name="description" content="Solve gas volume or temperature at constant pressure from any three values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/charles-law-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why use kelvin?", "acceptedAnswer": {"@type": "Answer", "text": "Volume is proportional to absolute temperature, not Celsius."}}, {"@type": "Question", "name": "What happens at 0 K?", "acceptedAnswer": {"@type": "Answer", "text": "The ideal gas model predicts zero volume, but real gases liquefy first."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Charles&#x27;s Law Calculator</h1>
-<p class="muted">Calculate how gas volume changes with temperature at constant pressure.</p>
+<p class="muted">Solve gas volume or temperature at constant pressure from any three values.</p>
 <form class="card" data-calc="1">
-<label for="v1">Initial volume</label><input id="v1" type="number" step="any" value="10">
-<label for="t1">Initial temperature (K)</label><input id="t1" type="number" step="any" value="293.15">
-<label for="t2">Final temperature (K)</label><input id="t2" type="number" step="any" value="353.15">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="V1">Initial volume</label><div class="eqrow"><input id="V1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="V1_u" aria-label="Initial volume unit"><option>L</option><option>mL</option><option>m³</option><option>cm³</option><option>gal</option><option>ft³</option></select></div>
+<label for="T1">Initial temperature</label><div class="eqrow"><input id="T1" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="T1_u" aria-label="Initial temperature unit"><option>°C</option><option>K</option><option>°F</option></select></div>
+<label for="V2">Final volume</label><div class="eqrow"><input id="V2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="V2_u" aria-label="Final volume unit"><option>L</option><option>mL</option><option>m³</option><option>cm³</option><option>gal</option><option>ft³</option></select></div>
+<label for="T2">Final temperature</label><div class="eqrow"><input id="T2" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="T2_u" aria-label="Final temperature unit"><option>°C</option><option>K</option><option>°F</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Charles&#x27;s law: V1 / T1 = V2 / T2 at constant pressure, with temperature in kelvin. Add 273.15 to Celsius to get kelvin.</p>
+<h2>Formula</h2>
+<p>Charles's law: V1 / T1 = V2 / T2 with temperature in kelvin (the calculator converts for you). Enter any three values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why use kelvin?</summary><p>Volume is proportional to absolute temperature, not Celsius.</p></details>
 <details><summary>What happens at 0 K?</summary><p>The ideal gas model predicts zero volume, but real gases liquefy first.</p></details>
@@ -32,7 +36,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v1,t1,t2}){
-if(t1<=0||t2<=0)return 'Temperatures must be in kelvin and above zero.';return [['Final volume',N(v1*t2/t1,5)],['Volume change',PCT((t2/t1-1)*100,2)],['Initial in °C',N(t1-273.15,2)],['Final in °C',N(t2-273.15,2)]];
-});</script>
+<script>EqPage({vars:[{"id": "V1", "units": [["L", 0.001], ["mL", 1e-06], ["m\u00b3", 1], ["cm\u00b3", 1e-06], ["gal", 0.003785411784], ["ft\u00b3", 0.028316846592]], "init": 10}, {"id": "T1", "units": [["\u00b0C", 1, 273.15], ["K", 1, 0], ["\u00b0F", 0.5555555555555556, 459.67]], "init": 20}, {"id": "V2", "units": [["L", 0.001], ["mL", 1e-06], ["m\u00b3", 1], ["cm\u00b3", 1e-06], ["gal", 0.003785411784], ["ft\u00b3", 0.028316846592]]}, {"id": "T2", "units": [["\u00b0C", 1, 273.15], ["K", 1, 0], ["\u00b0F", 0.5555555555555556, 459.67]], "init": 80}],need:3,solve:{V2:function(v){return v.V1*v.T2/v.T1;},V1:function(v){return v.V2*v.T1/v.T2;},T1:function(v){return v.V1*v.T2/v.V2;},T2:function(v){return v.V2*v.T1/v.V1;}}});</script>
 </body></html>

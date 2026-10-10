@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hours to Months Converter | CalcHub</title>
-<meta name="description" content="Convert hours to months instantly. 1 h = 0.0013689535 months.">
+<title>Hours to Months Converter (Both Ways) | CalcHub</title>
+<meta name="description" content="Convert hours to months and months to hours instantly. 1 h = 0.0013689535 months.">
 <link rel="canonical" href="https://YOURDOMAIN.com/hours-to-months.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many months are in one hour?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.0013689535 months in one hour."}}, {"@type": "Question", "name": "How many hours are in one month?", "acceptedAnswer": {"@type": "Answer", "text": "There are 730.485 hours in one month."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="time-conversions.html">Time Conversions</a></p>
-<h1>Hours to Months Converter</h1>
-<p class="muted">Convert hours to months instantly. 1 h = 0.0013689535 months.</p>
+<h1>Hours to Months Converter (Both Ways)</h1>
+<p class="muted">Convert hours to months and months to hours instantly. 1 h = 0.0013689535 months.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in hours (h)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Hours (h)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Months (months)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert hours to months, multiply the number of hours by 0.0013689535. One hour equals 0.0013689535 months, and one month equals 730.485 hours. The table shows common values.</p>
+<p>To convert hours to months, multiply the number of hours by 0.0013689535. To convert months to hours, multiply by 730.485 (or divide by 0.0013689535). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Hours to Months formula</h2>
 <p><b>Months = hours &times; 0.0013689535</b></p>
 <p>Worked example: convert 12.5 hours to months. Multiply 12.5 &times; 0.0013689535 = <b>0.017111919 months</b>. To go the other way, multiply months by 730.485 (or divide by 0.0013689535).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many months are in one hour?</summary><p>There are 0.0013689535 months in one hour.</p></details>
 <details><summary>How many hours are in one month?</summary><p>There are 730.485 hours in one month.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="months-to-hours.html"><b>Months to Hours Converter</b></a><a href="hours-to-seconds.html"><b>Hours to Seconds Converter</b></a><a href="hours-to-minutes.html"><b>Hours to Minutes Converter</b></a><a href="hours-to-days.html"><b>Hours to Days Converter</b></a><a href="hours-to-weeks.html"><b>Hours to Weeks Converter</b></a><a href="hours-to-years.html"><b>Hours to Years Converter</b></a><a href="hours-to-milliseconds.html"><b>Hours to Milliseconds Converter</b></a><a href="hours-to-decades.html"><b>Hours to Decades Converter</b></a><a href="hours-to-centuries.html"><b>Hours to Centuries Converter</b></a><a href="seconds-to-months.html"><b>Seconds to Months Converter</b></a><a href="minutes-to-months.html"><b>Minutes to Months Converter</b></a></div>
+<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="hours-to-days.html"><b>Hours to Days Converter (Both Ways)</b></a><a href="hours-to-weeks.html"><b>Hours to Weeks Converter (Both Ways)</b></a><a href="hours-to-years.html"><b>Hours to Years Converter (Both Ways)</b></a><a href="hours-to-milliseconds.html"><b>Hours to Milliseconds Converter (Both Ways)</b></a><a href="hours-to-decades.html"><b>Hours to Decades Converter (Both Ways)</b></a><a href="hours-to-centuries.html"><b>Hours to Centuries Converter (Both Ways)</b></a><a href="months-to-years.html"><b>Months to Years Converter (Both Ways)</b></a><a href="months-to-decades.html"><b>Months to Decades Converter (Both Ways)</b></a><a href="months-to-centuries.html"><b>Months to Centuries Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=0.001368953503494254;const r=v*F;return [[SF(v)+' '+(v===1?'h':'h')+' =',SF(r)+' '+(r===1?'month':'months')],['Formula','months = h × '+SF(F)],['Reverse','1 h = '+SF(1/F)+' months'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'h':'h'),SF(x*F)+' months'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*0.001368953503494254;},a:function(v){return v.b/0.001368953503494254;}}});</script>
 </body></html>

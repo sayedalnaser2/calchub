@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Speed, Distance and Time Calculator | CalcHub</title>
-<meta name="description" content="Calculate average speed from distance and travel time.">
+<meta name="description" content="Enter any two of speed, distance and time and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/speed-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I find distance or time?", "acceptedAnswer": {"@type": "Answer", "text": "Rearrange: distance = speed x time and time = distance / speed."}}]}</script>
@@ -13,17 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Speed, Distance and Time Calculator</h1>
-<p class="muted">Calculate average speed from distance and travel time.</p>
+<p class="muted">Enter any two of speed, distance and time and get the third.</p>
 <form class="card" data-calc="1">
-<label for="dist">Distance (km)</label><input id="dist" type="number" step="any" value="100">
-<label for="h">Hours</label><input id="h" type="number" step="any" value="1">
-<label for="m">Minutes</label><input id="m" type="number" step="any" value="30">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="d">Distance</label><div class="eqrow"><input id="d" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="d_u" aria-label="Distance unit"><option>mi</option><option>km</option><option>m</option><option>ft</option><option>nmi</option></select></div>
+<label for="t">Time</label><div class="eqrow"><input id="t" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="t_u" aria-label="Time unit"><option>h</option><option>min</option><option>s</option><option>days</option></select></div>
+<label for="s">Average speed</label><div class="eqrow"><input id="s" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="s_u" aria-label="Average speed unit"><option>mph</option><option>km/h</option><option>m/s</option><option>knots</option><option>ft/s</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Speed = distance / time. Enter the total time in hours and minutes.</p>
+<h2>Formula</h2>
+<p>speed = distance / time, so distance = speed x time and time = distance / speed. Enter any two and the third is solved.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>How do I find distance or time?</summary><p>Rearrange: distance = speed x time and time = distance / speed.</p></details>
 <h2>Related calculators</h2>
@@ -31,8 +34,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({dist,h,m}){
-const t=h+m/60;if(t<=0)return 'Time must be greater than zero.';
-return [['Average speed',N(dist/t,2)+' km/h'],['In miles per hour',N(dist/t/1.609344,2)+' mph'],['In metres per second',N(dist/t/3.6,2)+' m/s']];
-});</script>
+<script>EqPage({vars:[{"id": "d", "units": [["mi", 1609.344], ["km", 1000], ["m", 1], ["ft", 0.3048], ["nmi", 1852]], "init": 150}, {"id": "t", "units": [["h", 3600], ["min", 60], ["s", 1], ["days", 86400]], "init": 3}, {"id": "s", "units": [["mph", 0.44704], ["km/h", 0.2777777777777778], ["m/s", 1], ["knots", 0.5144444444444445], ["ft/s", 0.3048]]}],need:2,solve:{d:function(v){return v.s*v.t;},t:function(v){return v.d/v.s;},s:function(v){return v.d/v.t;}},extra:function(v){return [['Speed in mph',N(v.s/.44704,3)],['Speed in km/h',N(v.s*3.6,3)],['Speed in m/s',N(v.s,3)],['Speed in knots',N(v.s/.514444,3)],['Pace per mile',v.s>0?Math.floor(1609.344/v.s/60)+':'+('0'+Math.round(1609.344/v.s%60)).slice(-2):'-']];}});</script>
 </body></html>

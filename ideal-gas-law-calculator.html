@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ideal Gas Law Calculator | CalcHub</title>
-<meta name="description" content="Solve PV = nRT for pressure, volume, moles or temperature.">
+<meta name="description" content="Solve pressure, volume, moles or temperature from any three values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/ideal-gas-law-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is the ideal gas law inaccurate?", "acceptedAnswer": {"@type": "Answer", "text": "At high pressure and low temperature where real gases deviate."}}]}</script>
@@ -13,19 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Ideal Gas Law Calculator</h1>
-<p class="muted">Solve PV = nRT for pressure, volume, moles or temperature.</p>
+<p class="muted">Solve pressure, volume, moles or temperature from any three values.</p>
 <form class="card" data-calc="1">
-<label for="solve">Solve for</label><select id="solve"><option value="1" selected>Pressure (atm)</option><option value="2">Volume (L)</option><option value="3">Moles (mol)</option><option value="4">Temperature (K)</option></select>
-<label for="P">Pressure (atm)</label><input id="P" type="number" step="any" value="1">
-<label for="V">Volume (L)</label><input id="V" type="number" step="any" value="22.4">
-<label for="n">Moles (mol)</label><input id="n" type="number" step="any" value="1">
-<label for="T">Temperature (K)</label><input id="T" type="number" step="any" value="273.15">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="P">Pressure</label><div class="eqrow"><input id="P" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="P_u" aria-label="Pressure unit"><option>atm</option><option>kPa</option><option>Pa</option><option>bar</option><option>psi</option><option>mmHg</option></select></div>
+<label for="V">Volume</label><div class="eqrow"><input id="V" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="V_u" aria-label="Volume unit"><option>L</option><option>mL</option><option>m³</option><option>cm³</option><option>gal</option><option>ft³</option></select></div>
+<label for="n">Moles of gas</label><div class="eqrow"><input id="n" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="T">Temperature</label><div class="eqrow"><input id="T" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="T_u" aria-label="Temperature unit"><option>°C</option><option>K</option><option>°F</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>The ideal gas law PV = nRT relates pressure, volume, amount and temperature. The chosen variable is solved from the other three.</p>
+<h2>Formula</h2>
+<p>Ideal gas law: PV = nRT with R = 8.314462618 J/(mol·K). Enter any three of pressure, volume, moles and temperature.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>When is the ideal gas law inaccurate?</summary><p>At high pressure and low temperature where real gases deviate.</p></details>
 <h2>Related calculators</h2>
@@ -33,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({solve,P,V,n,T}){
-const R=0.082057;const r=solve==1?n*R*T/V:solve==2?n*R*T/P:solve==3?P*V/(R*T):P*V/(n*R);const u=['','atm','L','mol','K'][solve];return [['Result',N(r,6)+' '+u],['R used','0.082057 L·atm/(mol·K)']];
-});</script>
+<script>EqPage({vars:[{"id": "P", "units": [["atm", 101325], ["kPa", 1000], ["Pa", 1], ["bar", 100000.0], ["psi", 6894.757293168], ["mmHg", 133.322387415]], "init": 1}, {"id": "V", "units": [["L", 0.001], ["mL", 1e-06], ["m\u00b3", 1], ["cm\u00b3", 1e-06], ["gal", 0.003785411784], ["ft\u00b3", 0.028316846592]]}, {"id": "n", "init": 1}, {"id": "T", "units": [["\u00b0C", 1, 273.15], ["K", 1, 0], ["\u00b0F", 0.5555555555555556, 459.67]], "init": 0}],need:3,solve:{P:function(v){return v.n*8.314462618*v.T/v.V;},V:function(v){return v.n*8.314462618*v.T/v.P;},n:function(v){return v.P*v.V/(8.314462618*v.T);},T:function(v){return v.P*v.V/(v.n*8.314462618);}}});</script>
 </body></html>

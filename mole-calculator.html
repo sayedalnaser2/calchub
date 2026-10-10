@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mole Calculator (Grams to Moles) | CalcHub</title>
-<meta name="description" content="Convert between grams, moles and number of particles.">
+<meta name="description" content="Enter any two of moles, mass and molar mass and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/mole-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I find molar mass?", "acceptedAnswer": {"@type": "Answer", "text": "Add the atomic masses of all atoms in the formula."}}, {"@type": "Question", "name": "What is a mole?", "acceptedAnswer": {"@type": "Answer", "text": "The amount of substance containing exactly the Avogadro number of entities."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Mole Calculator (Grams to Moles)</h1>
-<p class="muted">Convert between grams, moles and number of particles.</p>
+<p class="muted">Enter any two of moles, mass and molar mass and get the third.</p>
 <form class="card" data-calc="1">
-<label for="g">Mass (g)</label><input id="g" type="number" step="any" value="36">
-<label for="mm">Molar mass (g/mol)</label><input id="mm" type="number" step="any" value="18.015">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="n">Moles (mol)</label><div class="eqrow"><input id="n" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="m">Mass (g)</label><div class="eqrow"><input id="m" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="M">Molar mass (g/mol)</label><div class="eqrow"><input id="M" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Moles = mass / molar mass. One mole contains 6.02214076 x 10^23 particles (Avogadro&#x27;s number). Water has a molar mass of about 18.015 g/mol.</p>
+<h2>Formula</h2>
+<p>Moles n = mass / molar mass. One mole contains 6.02214076 x 10^23 particles.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>How do I find molar mass?</summary><p>Add the atomic masses of all atoms in the formula.</p></details>
 <details><summary>What is a mole?</summary><p>The amount of substance containing exactly the Avogadro number of entities.</p></details>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({g,mm}){
-if(mm<=0)return 'Molar mass must be positive.';const mol=g/mm;return [['Moles',N(mol,6)+' mol'],['Particles',(mol*6.02214076e23).toExponential(4)],['Mass of 1 mole',N(mm,4)+' g'],['Avogadro constant','6.02214076 × 10²³ per mol']];
-});</script>
+<script>EqPage({vars:[{"id": "n"}, {"id": "m", "init": 36}, {"id": "M", "init": 18.015}],need:2,solve:{n:function(v){return v.m/v.M;},m:function(v){return v.n*v.M;},M:function(v){return v.m/v.n;}},extra:function(v){return [['Particles',(v.n*6.02214076e23).toExponential(4)]];}});</script>
 </body></html>

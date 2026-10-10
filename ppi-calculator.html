@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PPI Calculator (Pixel Density) | CalcHub</title>
-<meta name="description" content="Calculate screen pixel density and physical size.">
+<meta name="description" content="Solve pixel density, resolution or screen size from any three values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/ppi-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What PPI looks sharp?", "acceptedAnswer": {"@type": "Answer", "text": "Around 110 at arm's length for monitors, 300+ for phones."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
 <h1>PPI Calculator (Pixel Density)</h1>
-<p class="muted">Calculate screen pixel density and physical size.</p>
+<p class="muted">Solve pixel density, resolution or screen size from any three values.</p>
 <form class="card" data-calc="1">
-<label for="w">Width (pixels)</label><input id="w" type="number" step="any" value="2560">
-<label for="h">Height (pixels)</label><input id="h" type="number" step="any" value="1440">
-<label for="d">Diagonal (inches)</label><input id="d" type="number" step="any" value="27">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="ppi">Pixel density (PPI)</label><div class="eqrow"><input id="ppi" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="w">Width (pixels)</label><div class="eqrow"><input id="w" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="h">Height (pixels)</label><div class="eqrow"><input id="h" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="d">Diagonal (inches)</label><div class="eqrow"><input id="d" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>PPI = √(width² + height²) / diagonal. Higher PPI means sharper images.</p>
+<h2>Formula</h2>
+<p>PPI = sqrt(width squared + height squared) / diagonal. Enter any three values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What PPI looks sharp?</summary><p>Around 110 at arm&#x27;s length for monitors, 300+ for phones.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({w,h,d}){
-const dp=Math.hypot(w,h),ppi=dp/d,ww=w/ppi,hh=h/ppi;return [['Pixel density',N(ppi,1)+' PPI'],['Physical width',N(ww,2)+' in ('+N(ww*2.54,1)+' cm)'],['Physical height',N(hh,2)+' in ('+N(hh*2.54,1)+' cm)'],['Total pixels',N(w*h/1e6,2)+' MP']];
-});</script>
+<script>EqPage({vars:[{"id": "ppi"}, {"id": "w", "init": 2560}, {"id": "h", "init": 1440}, {"id": "d", "init": 27}],need:3,solve:{ppi:function(v){return Math.hypot(v.w,v.h)/v.d;},d:function(v){return Math.hypot(v.w,v.h)/v.ppi;},w:function(v){return Math.sqrt(v.ppi*v.ppi*v.d*v.d-v.h*v.h);},h:function(v){return Math.sqrt(v.ppi*v.ppi*v.d*v.d-v.w*v.w);}},extra:function(v){var dg=Math.hypot(v.w,v.h);return [['Physical width',N(v.d*v.w/dg,2)+' in'],['Physical height',N(v.d*v.h/dg,2)+' in'],['Total pixels',N(v.w*v.h,0)]];}});</script>
 </body></html>

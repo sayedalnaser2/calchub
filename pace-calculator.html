@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Running Pace Calculator | CalcHub</title>
-<meta name="description" content="Find your running pace and speed from distance and time.">
+<meta name="description" content="Enter any two of distance, time and pace and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/pace-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good 10K pace?", "acceptedAnswer": {"@type": "Answer", "text": "Recreational runners often finish 10K in 50-70 minutes, a pace of about 5:00-7:00 per km."}}]}</script>
@@ -13,18 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
 <h1>Running Pace Calculator</h1>
-<p class="muted">Find your running pace and speed from distance and time.</p>
+<p class="muted">Enter any two of distance, time and pace and get the third.</p>
 <form class="card" data-calc="1">
-<label for="dist">Distance (km)</label><input id="dist" type="number" step="any" value="10">
-<label for="h">Hours</label><input id="h" type="number" step="any" value="0">
-<label for="m">Minutes</label><input id="m" type="number" step="any" value="50">
-<label for="s">Seconds</label><input id="s" type="number" step="any" value="0">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="dist">Distance</label><div class="eqrow"><input id="dist" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="dist_u" aria-label="Distance unit"><option>km</option><option>mi</option><option>m</option></select></div>
+<label for="time">Time</label><div class="eqrow"><input id="time" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="time_u" aria-label="Time unit"><option>min</option><option>h</option><option>s</option></select></div>
+<label for="pace">Pace (decimal minutes, e.g. 8.5 = 8:30)</label><div class="eqrow"><input id="pace" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="pace_u" aria-label="Pace (decimal minutes, e.g. 8.5 = 8:30) unit"><option>min/km</option><option>min/mi</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Pace is total time divided by distance. This tool reports it per kilometre and per mile, plus average speed.</p>
+<h2>Formula</h2>
+<p>pace = time / distance. Enter any two of distance, time and pace to solve the third. Pace is entered as decimal minutes; the table below shows it as minutes:seconds.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is a good 10K pace?</summary><p>Recreational runners often finish 10K in 50-70 minutes, a pace of about 5:00-7:00 per km.</p></details>
 <h2>Related calculators</h2>
@@ -32,9 +34,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({dist,h,m,s}){
-const t=h*3600+m*60+s;if(t<=0||dist<=0)return 'Enter a distance and time.';
-const pk=t/dist,mm=x=>Math.floor(x/60)+':'+String(Math.round(x%60)).padStart(2,'0');
-return [['Pace per km',mm(pk)],['Pace per mile',mm(pk*1.609344)],['Speed',N(dist/(t/3600),2)+' km/h'],['Speed',N(dist/1.609344/(t/3600),2)+' mph']];
-});</script>
+<script>EqPage({vars:[{"id": "dist", "units": [["km", 1000], ["mi", 1609.344], ["m", 1]], "init": 5}, {"id": "time", "units": [["min", 60], ["h", 3600], ["s", 1]], "init": 25}, {"id": "pace", "units": [["min/km", 0.06], ["min/mi", 0.03728227153424004]]}],need:2,solve:{dist:function(v){return v.time/v.pace;},time:function(v){return v.pace*v.dist;},pace:function(v){return v.time/v.dist;}},extra:function(v){var f=function(x){var t=Math.round(x);return Math.floor(t/60)+':'+('0'+t%60).slice(-2);};return [['Pace per km',f(v.pace*1000)],['Pace per mile',f(v.pace*1609.344)],['Speed',N(3.6/v.pace,2)+' km/h ('+N(2.23694/v.pace,2)+' mph)'],['5K at this pace',f(v.pace*5000)],['10K at this pace',f(v.pace*10000)]];}});</script>
 </body></html>

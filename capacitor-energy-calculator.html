@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Capacitor Energy Calculator | CalcHub</title>
-<meta name="description" content="Calculate the energy and charge stored in a capacitor.">
+<meta name="description" content="Enter any two of energy, capacitance and voltage and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/capacitor-energy-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is the voltage squared?", "acceptedAnswer": {"@type": "Answer", "text": "Energy grows with both charge and voltage, giving a squared term."}}, {"@type": "Question", "name": "Is discharged energy fully usable?", "acceptedAnswer": {"@type": "Answer", "text": "Not always; circuits stop working below a minimum voltage."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Capacitor Energy Calculator</h1>
-<p class="muted">Calculate the energy and charge stored in a capacitor.</p>
+<p class="muted">Enter any two of energy, capacitance and voltage and get the third.</p>
 <form class="card" data-calc="1">
-<label for="c">Capacitance (µF)</label><input id="c" type="number" step="any" value="470">
-<label for="v">Voltage (V)</label><input id="v" type="number" step="any" value="25">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="E">Stored energy</label><div class="eqrow"><input id="E" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="E_u" aria-label="Stored energy unit"><option>J</option><option>mJ</option></select></div>
+<label for="C">Capacitance</label><div class="eqrow"><input id="C" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="C_u" aria-label="Capacitance unit"><option>µF</option><option>nF</option><option>pF</option><option>mF</option><option>F</option></select></div>
+<label for="V">Voltage (V)</label><div class="eqrow"><input id="V" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Energy E = 1/2 C V^2 and charge Q = C V. Capacitance in microfarads is converted to farads by multiplying by 10^-6.</p>
+<h2>Formula</h2>
+<p>E = 1/2 x C x V squared. Enter any two of energy, capacitance and voltage.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why is the voltage squared?</summary><p>Energy grows with both charge and voltage, giving a squared term.</p></details>
 <details><summary>Is discharged energy fully usable?</summary><p>Not always; circuits stop working below a minimum voltage.</p></details>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({c,v}){
-const C=c*1e-6;return [['Stored energy',N(.5*C*v*v,5)+' J'],['Charge',N(C*v*1e3,4)+' mC'],['Energy in mWh',N(.5*C*v*v/3.6,5)]];
-});</script>
+<script>EqPage({vars:[{"id": "E", "units": [["J", 1], ["mJ", 0.001]]}, {"id": "C", "units": [["\u00b5F", 1e-06], ["nF", 1e-09], ["pF", 1e-12], ["mF", 0.001], ["F", 1]], "init": 470}, {"id": "V", "init": 25}],need:2,solve:{E:function(v){return .5*v.C*v.V*v.V;},C:function(v){return 2*v.E/(v.V*v.V);},V:function(v){return Math.sqrt(2*v.E/v.C);}},extra:function(v){return [['Charge',N(v.C*v.V*1000,4)+' mC']];}});</script>
 </body></html>

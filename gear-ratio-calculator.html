@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gear Ratio Calculator | CalcHub</title>
-<meta name="description" content="Calculate gear ratio and output speed from the tooth counts of two gears.">
+<meta name="description" content="Enter any two of gear ratio, driving teeth and driven teeth and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/gear-ratio-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a higher ratio mean?", "acceptedAnswer": {"@type": "Answer", "text": "More torque and lower output speed."}}, {"@type": "Question", "name": "Do real gears lose power?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, typically a few percent to friction per mesh."}}]}</script>
@@ -13,17 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Gear Ratio Calculator</h1>
-<p class="muted">Calculate gear ratio and output speed from the tooth counts of two gears.</p>
+<p class="muted">Enter any two of gear ratio, driving teeth and driven teeth and get the third.</p>
 <form class="card" data-calc="1">
-<label for="drv">Driving gear teeth</label><input id="drv" type="number" step="any" value="15">
-<label for="drn">Driven gear teeth</label><input id="drn" type="number" step="any" value="45">
-<label for="inr">Input speed (RPM)</label><input id="inr" type="number" step="any" value="1800">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="r">Gear ratio (driven : driving)</label><div class="eqrow"><input id="r" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="drv">Driving gear teeth</label><div class="eqrow"><input id="drv" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="drn">Driven gear teeth</label><div class="eqrow"><input id="drn" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Gear ratio = driven teeth / driving teeth. Output speed equals input speed divided by the ratio, while torque rises by the ratio in an ideal, lossless system.</p>
+<h2>Formula</h2>
+<p>Gear ratio = driven teeth / driving teeth. Enter any two values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What does a higher ratio mean?</summary><p>More torque and lower output speed.</p></details>
 <details><summary>Do real gears lose power?</summary><p>Yes, typically a few percent to friction per mesh.</p></details>
@@ -32,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({drv,drn,inr}){
-const r=drn/drv;return [['Gear ratio',N(r,4)+' : 1'],['Output speed',N(inr/r,2)+' RPM'],['Torque multiplication',N(r,3)+'x (ideal)'],['Type',r>1?'Reduction (slower, more torque)':r<1?'Overdrive (faster, less torque)':'1:1']];
-});</script>
+<script>EqPage({vars:[{"id": "r"}, {"id": "drv", "init": 15}, {"id": "drn", "init": 45}],need:2,solve:{r:function(v){return v.drn/v.drv;},drv:function(v){return v.drn/v.r;},drn:function(v){return v.r*v.drv;}},extra:function(v){return [['Type',v.r>1?'Reduction (more torque, less speed)':v.r<1?'Overdrive (more speed, less torque)':'1:1']];}});</script>
 </body></html>

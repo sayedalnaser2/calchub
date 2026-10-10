@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Weeks to Years Converter | CalcHub</title>
-<meta name="description" content="Convert weeks to years instantly. 1 week = 0.019165349 years.">
+<title>Weeks to Years Converter (Both Ways) | CalcHub</title>
+<meta name="description" content="Convert weeks to years and years to weeks instantly. 1 week = 0.019165349 years.">
 <link rel="canonical" href="https://YOURDOMAIN.com/weeks-to-years.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many years are in one week?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.019165349 years in one week."}}, {"@type": "Question", "name": "How many weeks are in one year?", "acceptedAnswer": {"@type": "Answer", "text": "There are 52.1775 weeks in one year."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="time-conversions.html">Time Conversions</a></p>
-<h1>Weeks to Years Converter</h1>
-<p class="muted">Convert weeks to years instantly. 1 week = 0.019165349 years.</p>
+<h1>Weeks to Years Converter (Both Ways)</h1>
+<p class="muted">Convert weeks to years and years to weeks instantly. 1 week = 0.019165349 years.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in weeks (weeks)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Weeks (weeks)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Years (years)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert weeks to years, multiply the number of weeks by 0.019165349. One week equals 0.019165349 years, and one year equals 52.1775 weeks. The table shows common values.</p>
+<p>To convert weeks to years, multiply the number of weeks by 0.019165349. To convert years to weeks, multiply by 52.1775 (or divide by 0.019165349). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Weeks to Years formula</h2>
 <p><b>Years = weeks &times; 0.019165349</b></p>
 <p>Worked example: convert 12.5 weeks to years. Multiply 12.5 &times; 0.019165349 = <b>0.23956686 years</b>. To go the other way, multiply years by 52.1775 (or divide by 0.019165349).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many years are in one week?</summary><p>There are 0.019165349 years in one week.</p></details>
 <details><summary>How many weeks are in one year?</summary><p>There are 52.1775 weeks in one year.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="years-to-weeks.html"><b>Years to Weeks Converter</b></a><a href="weeks-to-seconds.html"><b>Weeks to Seconds Converter</b></a><a href="weeks-to-minutes.html"><b>Weeks to Minutes Converter</b></a><a href="weeks-to-hours.html"><b>Weeks to Hours Converter</b></a><a href="weeks-to-days.html"><b>Weeks to Days Converter</b></a><a href="weeks-to-months.html"><b>Weeks to Months Converter</b></a><a href="weeks-to-milliseconds.html"><b>Weeks to Milliseconds Converter</b></a><a href="weeks-to-decades.html"><b>Weeks to Decades Converter</b></a><a href="weeks-to-centuries.html"><b>Weeks to Centuries Converter</b></a><a href="seconds-to-years.html"><b>Seconds to Years Converter</b></a><a href="minutes-to-years.html"><b>Minutes to Years Converter</b></a></div>
+<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="weeks-to-months.html"><b>Weeks to Months Converter (Both Ways)</b></a><a href="weeks-to-milliseconds.html"><b>Weeks to Milliseconds Converter (Both Ways)</b></a><a href="weeks-to-decades.html"><b>Weeks to Decades Converter (Both Ways)</b></a><a href="weeks-to-centuries.html"><b>Weeks to Centuries Converter (Both Ways)</b></a><a href="years-to-decades.html"><b>Years to Decades Converter (Both Ways)</b></a><a href="years-to-centuries.html"><b>Years to Centuries Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=0.019165349048919554;const r=v*F;return [[SF(v)+' '+(v===1?'week':'weeks')+' =',SF(r)+' '+(r===1?'year':'years')],['Formula','years = weeks × '+SF(F)],['Reverse','1 week = '+SF(1/F)+' years'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'week':'weeks'),SF(x*F)+' years'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*0.019165349048919554;},a:function(v){return v.b/0.019165349048919554;}}});</script>
 </body></html>

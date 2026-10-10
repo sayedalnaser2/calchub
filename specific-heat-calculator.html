@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Specific Heat Calculator | CalcHub</title>
-<meta name="description" content="Calculate heat energy needed to change a substance&#x27;s temperature.">
+<meta name="description" content="Solve heat energy, mass, specific heat or temperature change from any three values.">
 <link rel="canonical" href="https://YOURDOMAIN.com/specific-heat-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does water heat slowly?", "acceptedAnswer": {"@type": "Answer", "text": "It has a high specific heat compared with metals."}}]}</script>
@@ -13,17 +13,21 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Specific Heat Calculator</h1>
-<p class="muted">Calculate heat energy needed to change a substance&#x27;s temperature.</p>
+<p class="muted">Solve heat energy, mass, specific heat or temperature change from any three values.</p>
 <form class="card" data-calc="1">
-<label for="m">Mass (g)</label><input id="m" type="number" step="any" value="500">
-<label for="mat">Material</label><select id="mat"><option value="4.186" selected>Water (4.186 J/g°C)</option><option value="0.897">Aluminium (0.897)</option><option value="0.385">Copper (0.385)</option><option value="0.449">Iron (0.449)</option><option value="2.09">Ice (2.09)</option><option value="1.005">Air (1.005)</option></select>
-<label for="dt">Temperature change (°C)</label><input id="dt" type="number" step="any" value="40">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 3 fields and the rest are calculated.</p>
+<label for="Q">Heat energy</label><div class="eqrow"><input id="Q" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="Q_u" aria-label="Heat energy unit"><option>J</option><option>kJ</option><option>cal</option><option>kcal</option></select></div>
+<label for="m">Mass</label><div class="eqrow"><input id="m" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="m_u" aria-label="Mass unit"><option>g</option><option>kg</option><option>lb</option><option>oz</option></select></div>
+<label for="c">Specific heat</label><div class="eqrow"><input id="c" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="c_u" aria-label="Specific heat unit"><option>J/(g·°C)</option><option>J/(kg·K)</option><option>cal/(g·°C)</option></select></div>
+<label for="dT">Temperature change</label><div class="eqrow"><input id="dT" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="dT_u" aria-label="Temperature change unit"><option>°C</option><option>°F</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Q = m x c x ΔT, where c is the specific heat of the material.</p>
+<h2>Formula</h2>
+<p>Q = m x c x ΔT. Water has a specific heat of 4.186 J/(g·°C). Enter any three of the four values.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why does water heat slowly?</summary><p>It has a high specific heat compared with metals.</p></details>
 <h2>Related calculators</h2>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({m,mat,dt}){
-const q=m*mat*dt;return [['Heat energy',N(q,2)+' J'],['In kilojoules',N(q/1000,3)],['In kilocalories',N(q/4184,3)]];
-});</script>
+<script>EqPage({vars:[{"id": "Q", "units": [["J", 1], ["kJ", 1000], ["cal", 4.184], ["kcal", 4184]]}, {"id": "m", "units": [["g", 0.001], ["kg", 1], ["lb", 0.45359237], ["oz", 0.028349523125]], "init": 500}, {"id": "c", "units": [["J/(g\u00b7\u00b0C)", 1000], ["J/(kg\u00b7K)", 1], ["cal/(g\u00b7\u00b0C)", 4184]], "init": 4.186}, {"id": "dT", "units": [["\u00b0C", 1], ["\u00b0F", 0.5555555555555556]], "init": 40}],need:3,solve:{Q:function(v){return v.m*v.c*v.dT;},m:function(v){return v.Q/(v.c*v.dT);},c:function(v){return v.Q/(v.m*v.dT);},dT:function(v){return v.Q/(v.m*v.c);}}});</script>
 </body></html>

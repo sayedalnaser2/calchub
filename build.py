@@ -31,6 +31,22 @@ CATS = [
 ]
 CAT = {c[0]: c for c in CATS}
 SPECS = F + HM + O + F2 + H2 + M2 + C2 + K2 + N2 + P2 + G + G2
+
+# Two-way equation pages replace the one-way versions; duplicates are deleted.
+from specs_eq import EQ, DELETE
+_by = {s["slug"]: s for s in SPECS}
+for _d in DELETE:
+    assert _d in _by, "cannot delete missing " + _d
+SPECS = [s for s in SPECS if s["slug"] not in DELETE]
+for _slug, _o in EQ.items():
+    _s = _by[_slug]
+    _s["eq"], _s["inputs"], _s["body"] = _o["eq"], [], ""
+    if _o.get("title"):
+        _s["title"] = _o["title"]
+    if _o.get("desc"):
+        _s["desc"] = _o["desc"]
+    if _o.get("formula"):
+        _s["extra"] = "<h2>Formula</h2>\n<p>" + _o["formula"] + "</p>\n" + (_s.get("extra") or "")
 e = html.escape
 
 
@@ -80,6 +96,41 @@ def field(i):
     return f'<label for="{id_}">{e(label)}</label>{ctl}'
 
 
+def eq_js(eq):
+    vs = []
+    for v in eq["vars"]:
+        id_, label, units, init = v
+        o = {"id": id_}
+        if units:
+            o["units"] = [list(u) for u in units]
+        if init is not None:
+            o["init"] = init
+        vs.append(o)
+    sol = []
+    for k, d in eq["solve"].items():
+        if isinstance(d, str):
+            sol.append(f"{k}:function(v){{return {d};}}")
+        else:
+            sol.append(f"{k}:[" + ",".join(f"[{json.dumps(list(req))},function(v){{return {ex};}}]" for req, ex in d) + "]")
+    js = "{vars:" + json.dumps(vs) + ",need:" + str(eq.get("need") or len(vs) - 1) + ",solve:{" + ",".join(sol) + "}"
+    if eq.get("extra"):
+        js += ",extra:function(v){" + eq["extra"] + "}"
+    return js + "}"
+
+
+def eq_form(eq):
+    need = eq.get("need") or len(eq["vars"]) - 1
+    rows = []
+    for id_, label, units, init in eq["vars"]:
+        sel = ""
+        if units:
+            sel = f'<select id="{id_}_u" aria-label="{e(label)} unit">' + "".join(f'<option>{e(u[0])}</option>' for u in units) + "</select>"
+        rows.append(f'<label for="{id_}">{e(label)}</label><div class="eqrow"><input id="{id_}" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank">{sel}</div>')
+    return ('<form class="card" data-calc="1">\n<p class="muted eqnote" id="eqnote">Type in any ' + str(need) + ' field' + ("s" if need > 1 else "") +
+            ' and the rest are calculated.</p>\n' + "\n".join(rows) +
+            '\n<button type="reset">Clear</button>\n<div class="result" id="out" aria-live="polite"></div>\n</form>\n')
+
+
 def calc_page(s):
     cat = CAT[s["cat"]]
     related = [x for x in SPECS if x["cat"] == s["cat"] and x["slug"] != s["slug"]]
@@ -103,8 +154,11 @@ def calc_page(s):
         crumb += f' › <a href="{s["group"][0]}.html">{e(s["group"][1])}</a>'
     p += f'<p class="muted">{crumb}</p>\n'
     p += f'<h1>{e(s["title"])}</h1>\n<p class="muted">{e(s["desc"])}</p>\n'
-    p += '<form class="card" data-calc="1">\n' + "\n".join(field(i) for i in s["inputs"])
-    p += '\n<button type="submit">Calculate</button>\n<div class="result" id="out" aria-live="polite"></div>\n</form>\n'
+    if s.get("eq"):
+        p += eq_form(s["eq"])
+    else:
+        p += '<form class="card" data-calc="1">\n' + "\n".join(field(i) for i in s["inputs"])
+        p += '\n<button type="submit">Calculate</button>\n<div class="result" id="out" aria-live="polite"></div>\n</form>\n'
     p += '<div class="ad"><!-- ad slot --></div>\n'
     p += f'<h2>How it works</h2>\n<p>{e(s["about"])}</p>\n'
     p += s.get("extra", "")
@@ -113,7 +167,10 @@ def calc_page(s):
     p += "<h2>Related calculators</h2>\n<div class=\"grid\">" + "".join(
         f'<a href="{r["slug"]}.html"><b>{e(r["title"])}</b></a>' for r in related) + "</div>\n"
     p += foot()
-    p += f'<script src="calc.js"></script>\n<script>CalcPage(function({{{ids}}}){{\n{s["body"]}\n}});</script>\n</body></html>\n'
+    if s.get("eq"):
+        p += f'<script src="calc.js"></script>\n<script>EqPage({eq_js(s["eq"])});</script>\n</body></html>\n'
+    else:
+        p += f'<script src="calc.js"></script>\n<script>CalcPage(function({{{ids}}}){{\n{s["body"]}\n}});</script>\n</body></html>\n'
     return p
 
 

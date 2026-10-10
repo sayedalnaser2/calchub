@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Temperature Converter | CalcHub</title>
-<meta name="description" content="Convert between Celsius, Fahrenheit and Kelvin.">
+<title>Temperature Converter (Celsius, Fahrenheit, Kelvin)</title>
+<meta name="description" content="Convert between Celsius, Fahrenheit and Kelvin: type in any box.">
 <link rel="canonical" href="https://YOURDOMAIN.com/temperature-converter.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "At what temperature are Celsius and Fahrenheit equal?", "acceptedAnswer": {"@type": "Answer", "text": "At -40 degrees."}}]}</script>
@@ -12,28 +12,27 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a></p>
-<h1>Temperature Converter</h1>
-<p class="muted">Convert between Celsius, Fahrenheit and Kelvin.</p>
+<h1>Temperature Converter (Celsius, Fahrenheit, Kelvin)</h1>
+<p class="muted">Convert between Celsius, Fahrenheit and Kelvin: type in any box.</p>
 <form class="card" data-calc="1">
-<label for="v">Temperature</label><input id="v" type="number" step="any" value="100">
-<label for="a">From</label><select id="a"><option value="C" selected>Celsius (°C)</option><option value="F">Fahrenheit (°F)</option><option value="K">Kelvin (K)</option></select>
-<label for="b">To</label><select id="b"><option value="C">Celsius (°C)</option><option value="F" selected>Fahrenheit (°F)</option><option value="K">Kelvin (K)</option></select>
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="c">Celsius (°C)</label><div class="eqrow"><input id="c" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="f">Fahrenheit (°F)</label><div class="eqrow"><input id="f" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="k">Kelvin (K)</label><div class="eqrow"><input id="k" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Fahrenheit = Celsius x 9/5 + 32. Kelvin = Celsius + 273.15. Values are converted through Celsius.</p>
+<h2>Formula</h2>
+<p>°F = °C x 9/5 + 32 and K = °C + 273.15. Type a temperature in any box and the other two update.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>At what temperature are Celsius and Fahrenheit equal?</summary><p>At -40 degrees.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="fuel-economy-converter.html"><b>Fuel Economy Converter (MPG to L/100km)</b></a><a href="millimeters-to-centimeters.html"><b>Millimeters to Centimeters Converter</b></a><a href="millimeters-to-meters.html"><b>Millimeters to Meters Converter</b></a><a href="millimeters-to-kilometers.html"><b>Millimeters to Kilometers Converter</b></a><a href="millimeters-to-inches.html"><b>Millimeters to Inches Converter</b></a><a href="millimeters-to-feet.html"><b>Millimeters to Feet Converter</b></a></div>
+<div class="grid"><a href="fuel-economy-converter.html"><b>Fuel Economy Converter (MPG to L/100km)</b></a><a href="millimeters-to-centimeters.html"><b>Millimeters to Centimeters Converter (Both Ways)</b></a><a href="millimeters-to-meters.html"><b>Millimeters to Meters Converter (Both Ways)</b></a><a href="millimeters-to-kilometers.html"><b>Millimeters to Kilometers Converter (Both Ways)</b></a><a href="inches-to-millimeters.html"><b>Inches to Millimeters Converter (Both Ways)</b></a><a href="feet-to-millimeters.html"><b>Feet to Millimeters Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v,a,b}){
-const c=a=='C'?v:a=='F'?(v-32)*5/9:v-273.15;
-const r=b=='C'?c:b=='F'?c*9/5+32:c+273.15;
-return [[N(v,6)+' °'+a+' =',N(r,6)+' °'+b],['Celsius',N(c,4)],['Fahrenheit',N(c*9/5+32,4)],['Kelvin',N(c+273.15,4)]];
-});</script>
+<script>EqPage({vars:[{"id": "c", "init": 100}, {"id": "f"}, {"id": "k"}],need:1,solve:{c:[[["f"],function(v){return (v.f-32)*5/9;}],[["k"],function(v){return v.k-273.15;}]],f:[[["c"],function(v){return v.c*9/5+32;}]],k:[[["c"],function(v){return v.c+273.15;}]]}});</script>
 </body></html>

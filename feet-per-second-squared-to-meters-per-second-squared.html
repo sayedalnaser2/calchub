@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Feet per Second Squared to Meters per Second Squared Converter</title>
-<meta name="description" content="Convert feet per second squared to meters per second squared instantly. 1 ft/s² = 0.3048 m/s².">
+<title>Feet per Second Squared to Meters per Second Squared Converter (Both Ways)</title>
+<meta name="description" content="Convert feet per second squared to meters per second squared and meters per second squared to feet per second squared instantly. 1 ft/s² = 0.3048 m/s².">
 <link rel="canonical" href="https://YOURDOMAIN.com/feet-per-second-squared-to-meters-per-second-squared.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many meters per second squared are in one foot per second squared?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.3048 meters per second squared in one foot per second squared."}}, {"@type": "Question", "name": "How many feet per second squared are in one meter per second squared?", "acceptedAnswer": {"@type": "Answer", "text": "There are 3.2808399 feet per second squared in one meter per second squared."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="accel-conversions.html">Acceleration Conversions</a></p>
-<h1>Feet per Second Squared to Meters per Second Squared Converter</h1>
-<p class="muted">Convert feet per second squared to meters per second squared instantly. 1 ft/s² = 0.3048 m/s².</p>
+<h1>Feet per Second Squared to Meters per Second Squared Converter (Both Ways)</h1>
+<p class="muted">Convert feet per second squared to meters per second squared and meters per second squared to feet per second squared instantly. 1 ft/s² = 0.3048 m/s².</p>
 <form class="card" data-calc="1">
-<label for="v">Value in feet per second squared (ft/s²)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Feet per Second Squared (ft/s²)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Meters per Second Squared (m/s²)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert feet per second squared to meters per second squared, multiply the number of feet per second squared by 0.3048. One foot per second squared equals 0.3048 meters per second squared, and one meter per second squared equals 3.2808399 feet per second squared. The table shows common values.</p>
+<p>To convert feet per second squared to meters per second squared, multiply the number of feet per second squared by 0.3048. To convert meters per second squared to feet per second squared, multiply by 3.2808399 (or divide by 0.3048). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Feet per Second Squared to Meters per Second Squared formula</h2>
 <p><b>Meters per second squared = feet per second squared &times; 0.3048</b></p>
 <p>Worked example: convert 12.5 feet per second squared to meters per second squared. Multiply 12.5 &times; 0.3048 = <b>3.81 m/s²</b>. To go the other way, multiply meters per second squared by 3.2808399 (or divide by 0.3048).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many meters per second squared are in one foot per second squared?</summary><p>There are 0.3048 meters per second squared in one foot per second squared.</p></details>
 <details><summary>How many feet per second squared are in one meter per second squared?</summary><p>There are 3.2808399 feet per second squared in one meter per second squared.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="meters-per-second-squared-to-feet-per-second-squared.html"><b>Meters per Second Squared to Feet per Second Squared Converter</b></a><a href="feet-per-second-squared-to-standard-gravities.html"><b>Feet per Second Squared to Standard Gravities Converter</b></a><a href="standard-gravities-to-meters-per-second-squared.html"><b>Standard Gravities to Meters per Second Squared Converter</b></a></div>
+<div class="grid"><a href="feet-per-second-squared-to-standard-gravities.html"><b>Feet per Second Squared to Standard Gravities Converter (Both Ways)</b></a><a href="meters-per-second-squared-to-standard-gravities.html"><b>Meters per Second Squared to Standard Gravities Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=0.3048;const r=v*F;return [[SF(v)+' '+(v===1?'ft/s²':'ft/s²')+' =',SF(r)+' '+(r===1?'m/s²':'m/s²')],['Formula','m/s² = ft/s² × '+SF(F)],['Reverse','1 ft/s² = '+SF(1/F)+' m/s²'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'ft/s²':'ft/s²'),SF(x*F)+' m/s²'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*0.3048;},a:function(v){return v.b/0.3048;}}});</script>
 </body></html>

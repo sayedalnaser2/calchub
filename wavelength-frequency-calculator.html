@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Wavelength and Frequency Calculator | CalcHub</title>
-<meta name="description" content="Convert between frequency, wavelength and photon energy.">
+<meta name="description" content="Convert between frequency and wavelength of light and radio waves.">
 <link rel="canonical" href="https://YOURDOMAIN.com/wavelength-frequency-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the speed of light?", "acceptedAnswer": {"@type": "Answer", "text": "299,792,458 m/s in a vacuum."}}]}</script>
@@ -13,16 +13,19 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Wavelength and Frequency Calculator</h1>
-<p class="muted">Convert between frequency, wavelength and photon energy.</p>
+<p class="muted">Convert between frequency and wavelength of light and radio waves.</p>
 <form class="card" data-calc="1">
-<label for="f">Frequency (Hz)</label><input id="f" type="number" step="any" value="500000000000000.0">
-<label for="c">Wave speed (m/s)</label><input id="c" type="number" step="any" value="299792458">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="f">Frequency</label><div class="eqrow"><input id="f" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="f_u" aria-label="Frequency unit"><option>GHz</option><option>MHz</option><option>kHz</option><option>Hz</option><option>THz</option></select></div>
+<label for="wl">Wavelength</label><div class="eqrow"><input id="wl" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="wl_u" aria-label="Wavelength unit"><option>m</option><option>cm</option><option>mm</option><option>µm</option><option>nm</option><option>km</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>wavelength = speed / frequency, and photon energy E = hf with Planck&#x27;s constant. Default 500 THz is green light.</p>
+<h2>Formula</h2>
+<p>Wavelength = speed of light / frequency, with c = 299,792,458 m/s. Enter either value.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is the speed of light?</summary><p>299,792,458 m/s in a vacuum.</p></details>
 <h2>Related calculators</h2>
@@ -30,7 +33,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({f,c}){
-const l=c/f;return [['Wavelength',l.toExponential(4)+' m'],['In nanometres',N(l*1e9,3)+' nm'],['Photon energy',(6.62607e-34*f).toExponential(4)+' J'],['Photon energy (eV)',N(6.62607e-34*f/1.602177e-19,4)+' eV']];
-});</script>
+<script>EqPage({vars:[{"id": "f", "units": [["GHz", 1000000000.0], ["MHz", 1000000.0], ["kHz", 1000.0], ["Hz", 1], ["THz", 1000000000000.0]], "init": 2.4}, {"id": "wl", "units": [["m", 1], ["cm", 0.01], ["mm", 0.001], ["\u00b5m", 1e-06], ["nm", 1e-09], ["km", 1000]]}],need:1,solve:{wl:function(v){return 299792458/v.f;},f:function(v){return 299792458/v.wl;}},extra:function(v){return [['Photon energy',(6.62607015e-34*v.f).toExponential(4)+' J'],['Photon energy',N(6.62607015e-34*v.f/1.602176634e-19,6)+' eV']];}});</script>
 </body></html>

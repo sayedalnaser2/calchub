@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Horsepower from Torque Calculator | CalcHub</title>
-<meta name="description" content="Find engine horsepower from torque and RPM.">
+<meta name="description" content="Enter any two of horsepower, torque and RPM and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/horsepower-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why do torque and horsepower curves cross at 5252 RPM?", "acceptedAnswer": {"@type": "Answer", "text": "Because of the formula, they are numerically equal at exactly 5252 RPM."}}, {"@type": "Question", "name": "Is this wheel or crank horsepower?", "acceptedAnswer": {"@type": "Answer", "text": "It gives power at wherever torque was measured, crank for engine dyno figures."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Horsepower from Torque Calculator</h1>
-<p class="muted">Find engine horsepower from torque and RPM.</p>
+<p class="muted">Enter any two of horsepower, torque and RPM and get the third.</p>
 <form class="card" data-calc="1">
-<label for="tq">Torque (lb-ft)</label><input id="tq" type="number" step="any" value="300">
-<label for="rpm">Engine speed (RPM)</label><input id="rpm" type="number" step="any" value="5000">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="P">Power</label><div class="eqrow"><input id="P" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="P_u" aria-label="Power unit"><option>hp</option><option>kW</option><option>W</option></select></div>
+<label for="T">Torque</label><div class="eqrow"><input id="T" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="T_u" aria-label="Torque unit"><option>lb-ft</option><option>N·m</option></select></div>
+<label for="rpm">Engine speed (RPM)</label><div class="eqrow"><input id="rpm" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Horsepower = torque (lb-ft) x RPM / 5252. The constant 5252 comes from converting rotational power to the horsepower unit, 33,000 ft-lb per minute, divided by 2π.</p>
+<h2>Formula</h2>
+<p>Power = torque x angular speed. In US units, horsepower = torque (lb-ft) x RPM / 5252.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>Why do torque and horsepower curves cross at 5252 RPM?</summary><p>Because of the formula, they are numerically equal at exactly 5252 RPM.</p></details>
 <details><summary>Is this wheel or crank horsepower?</summary><p>It gives power at wherever torque was measured, crank for engine dyno figures.</p></details>
@@ -31,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({tq,rpm}){
-const hp=tq*rpm/5252;return [['Horsepower',N(hp,1)+' hp'],['Kilowatts',N(hp*0.745699872,1)+' kW'],['Metric horsepower (PS)',N(hp*1.01387,1)+' PS']];
-});</script>
+<script>EqPage({vars:[{"id": "P", "units": [["hp", 745.69987158], ["kW", 1000], ["W", 1]]}, {"id": "T", "units": [["lb-ft", 1.3558179483314], ["N\u00b7m", 1]], "init": 300}, {"id": "rpm", "init": 5000}],need:2,solve:{P:function(v){return v.T*v.rpm*2*Math.PI/60;},T:function(v){return v.P*60/(2*Math.PI*v.rpm);},rpm:function(v){return v.P*60/(2*Math.PI*v.T);}}});</script>
 </body></html>

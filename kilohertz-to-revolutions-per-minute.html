@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kilohertz to Revolutions per Minute Converter | CalcHub</title>
-<meta name="description" content="Convert kilohertz to revolutions per minute instantly. 1 kHz = 60,000 rpm.">
+<title>Kilohertz to Revolutions per Minute Converter (Both Ways)</title>
+<meta name="description" content="Convert kilohertz to revolutions per minute and revolutions per minute to kilohertz instantly. 1 kHz = 60,000 rpm.">
 <link rel="canonical" href="https://YOURDOMAIN.com/kilohertz-to-revolutions-per-minute.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many revolutions per minute are in one kilohertz?", "acceptedAnswer": {"@type": "Answer", "text": "There are 60,000 revolutions per minute in one kilohertz."}}, {"@type": "Question", "name": "How many kilohertz are in one revolution per minute?", "acceptedAnswer": {"@type": "Answer", "text": "There are 1.66667e-05 kilohertz in one revolution per minute."}}]}</script>
@@ -12,16 +12,18 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="frequency-conversions.html">Frequency Conversions</a></p>
-<h1>Kilohertz to Revolutions per Minute Converter</h1>
-<p class="muted">Convert kilohertz to revolutions per minute instantly. 1 kHz = 60,000 rpm.</p>
+<h1>Kilohertz to Revolutions per Minute Converter (Both Ways)</h1>
+<p class="muted">Convert kilohertz to revolutions per minute and revolutions per minute to kilohertz instantly. 1 kHz = 60,000 rpm.</p>
 <form class="card" data-calc="1">
-<label for="v">Value in kilohertz (kHz)</label><input id="v" type="number" step="any" value="1">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="a">Kilohertz (kHz)</label><div class="eqrow"><input id="a" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="b">Revolutions per Minute (rpm)</label><div class="eqrow"><input id="b" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
-<p>To convert kilohertz to revolutions per minute, multiply the number of kilohertz by 60,000. One kilohertz equals 60,000 revolutions per minute, and one revolution per minute equals 1.66667e-05 kilohertz. The table shows common values.</p>
+<p>To convert kilohertz to revolutions per minute, multiply the number of kilohertz by 60,000. To convert revolutions per minute to kilohertz, multiply by 1.66667e-05 (or divide by 60,000). Type a value in either box and the other updates, so this one page works in both directions.</p>
 <h2>Kilohertz to Revolutions per Minute formula</h2>
 <p><b>Revolutions per minute = kilohertz &times; 60,000</b></p>
 <p>Worked example: convert 12.5 kilohertz to revolutions per minute. Multiply 12.5 &times; 60,000 = <b>750,000 rpm</b>. To go the other way, multiply revolutions per minute by 1.66667e-05 (or divide by 60,000).</p>
@@ -35,11 +37,9 @@
 <details><summary>How many revolutions per minute are in one kilohertz?</summary><p>There are 60,000 revolutions per minute in one kilohertz.</p></details>
 <details><summary>How many kilohertz are in one revolution per minute?</summary><p>There are 1.66667e-05 kilohertz in one revolution per minute.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="revolutions-per-minute-to-kilohertz.html"><b>Revolutions per Minute to Kilohertz Converter</b></a><a href="kilohertz-to-hertz.html"><b>Kilohertz to Hertz Converter</b></a><a href="kilohertz-to-megahertz.html"><b>Kilohertz to Megahertz Converter</b></a><a href="kilohertz-to-gigahertz.html"><b>Kilohertz to Gigahertz Converter</b></a><a href="hertz-to-revolutions-per-minute.html"><b>Hertz to Revolutions per Minute Converter</b></a><a href="megahertz-to-revolutions-per-minute.html"><b>Megahertz to Revolutions per Minute Converter</b></a></div>
+<div class="grid"><a href="kilohertz-to-megahertz.html"><b>Kilohertz to Megahertz Converter (Both Ways)</b></a><a href="kilohertz-to-gigahertz.html"><b>Kilohertz to Gigahertz Converter (Both Ways)</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({v}){
-const F=60000.0;const r=v*F;return [[SF(v)+' '+(v===1?'kHz':'kHz')+' =',SF(r)+' '+(r===1?'rpm':'rpm')],['Formula','rpm = kHz × '+SF(F)],['Reverse','1 kHz = '+SF(1/F)+' rpm'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'kHz':'kHz'),SF(x*F)+' rpm'])];
-});</script>
+<script>EqPage({vars:[{"id": "a", "init": 1}, {"id": "b"}],need:1,solve:{b:function(v){return v.a*60000.0;},a:function(v){return v.b/60000.0;}}});</script>
 </body></html>

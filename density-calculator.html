@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Density Calculator | CalcHub</title>
-<meta name="description" content="Calculate density from mass and volume.">
+<meta name="description" content="Enter any two of density, mass and volume and get the third.">
 <link rel="canonical" href="https://YOURDOMAIN.com/density-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are common densities?", "acceptedAnswer": {"@type": "Answer", "text": "Water 1.0, aluminium 2.7, iron 7.87 and gold 19.3 g/cm\u00b3."}}]}</script>
@@ -13,16 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
 <h1>Density Calculator</h1>
-<p class="muted">Calculate density from mass and volume.</p>
+<p class="muted">Enter any two of density, mass and volume and get the third.</p>
 <form class="card" data-calc="1">
-<label for="m">Mass (g)</label><input id="m" type="number" step="any" value="500">
-<label for="v">Volume (cm³)</label><input id="v" type="number" step="any" value="250">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="rho">Density</label><div class="eqrow"><input id="rho" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="rho_u" aria-label="Density unit"><option>g/cm³</option><option>kg/m³</option><option>lb/ft³</option></select></div>
+<label for="m">Mass</label><div class="eqrow"><input id="m" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="m_u" aria-label="Mass unit"><option>g</option><option>kg</option><option>lb</option><option>oz</option></select></div>
+<label for="V">Volume</label><div class="eqrow"><input id="V" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"><select id="V_u" aria-label="Volume unit"><option>cm³</option><option>L</option><option>mL</option><option>m³</option><option>ft³</option><option>gal</option></select></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Density = mass / volume. Water is 1 g/cm³ at 4 °C, so objects with a lower density float.</p>
+<h2>Formula</h2>
+<p>Density = mass / volume. Enter any two of density, mass and volume.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What are common densities?</summary><p>Water 1.0, aluminium 2.7, iron 7.87 and gold 19.3 g/cm³.</p></details>
 <h2>Related calculators</h2>
@@ -30,8 +34,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({m,v}){
-const d=m/v;
-return [['Density',N(d,4)+' g/cm³'],['In kg/m³',N(d*1000,2)],['In lb/ft³',N(d*62.428,2)],['Floats in water?',d<1?'Yes':'No']];
-});</script>
+<script>EqPage({vars:[{"id": "rho", "units": [["g/cm\u00b3", 1000], ["kg/m\u00b3", 1], ["lb/ft\u00b3", 16.01846337]]}, {"id": "m", "units": [["g", 0.001], ["kg", 1], ["lb", 0.45359237], ["oz", 0.028349523125]], "init": 500}, {"id": "V", "units": [["cm\u00b3", 1e-06], ["L", 0.001], ["mL", 1e-06], ["m\u00b3", 1], ["ft\u00b3", 0.028316846592], ["gal", 0.003785411784]], "init": 250}],need:2,solve:{rho:function(v){return v.m/v.V;},m:function(v){return v.rho*v.V;},V:function(v){return v.m/v.rho;}},extra:function(v){return [['Specific gravity (water = 1)',N(v.rho/1000,4)]];}});</script>
 </body></html>

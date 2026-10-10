@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cube Volume and Diagonal Calculator | CalcHub</title>
-<meta name="description" content="Calculate volume, surface area and diagonals of a cube from its side length.">
+<meta name="description" content="Enter any one of side, volume or surface area of a cube and get the rest.">
 <link rel="canonical" href="https://YOURDOMAIN.com/cube-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I find side from volume?", "acceptedAnswer": {"@type": "Answer", "text": "Take the cube root of the volume."}}, {"@type": "Question", "name": "How many faces does a cube have?", "acceptedAnswer": {"@type": "Answer", "text": "Six."}}]}</script>
@@ -13,15 +13,20 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
 <h1>Cube Volume and Diagonal Calculator</h1>
-<p class="muted">Calculate volume, surface area and diagonals of a cube from its side length.</p>
+<p class="muted">Enter any one of side, volume or surface area of a cube and get the rest.</p>
 <form class="card" data-calc="1">
-<label for="s">Side length</label><input id="s" type="number" step="any" value="5">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 1 field and the rest are calculated.</p>
+<label for="s">Side length</label><div class="eqrow"><input id="s" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="V">Volume</label><div class="eqrow"><input id="V" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="S">Surface area</label><div class="eqrow"><input id="S" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Volume = s^3, surface area = 6 s^2, face diagonal = s x sqrt(2), and space diagonal = s x sqrt(3).</p>
+<h2>Formula</h2>
+<p>V = s cubed and surface area = 6 x s squared. Enter any one of side, volume or surface area.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>How do I find side from volume?</summary><p>Take the cube root of the volume.</p></details>
 <details><summary>How many faces does a cube have?</summary><p>Six.</p></details>
@@ -30,7 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({s}){
-return [['Volume',N(s*s*s,4)],['Surface area',N(6*s*s,4)],['Face diagonal',N(s*Math.SQRT2,4)],['Space diagonal',N(s*Math.sqrt(3),4)]];
-});</script>
+<script>EqPage({vars:[{"id": "s", "init": 5}, {"id": "V"}, {"id": "S"}],need:1,solve:{s:[[["V"],function(v){return Math.cbrt(v.V);}],[["S"],function(v){return Math.sqrt(v.S/6);}]],V:[[["s"],function(v){return v.s*v.s*v.s;}]],S:[[["s"],function(v){return 6*v.s*v.s;}]]},extra:function(v){return [['Face diagonal',N(v.s*Math.SQRT2,4)],['Space diagonal',N(v.s*Math.sqrt(3),4)]];}});</script>
 </body></html>

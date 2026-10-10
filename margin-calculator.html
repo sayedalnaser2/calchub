@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Profit Margin &amp; Markup Calculator | CalcHub</title>
-<meta name="description" content="Calculate profit, gross margin and markup from cost and selling price.">
+<title>Profit Margin and Markup Calculator | CalcHub</title>
+<meta name="description" content="Convert between cost, price, margin and markup: enter any two and get the others.">
 <link rel="canonical" href="https://YOURDOMAIN.com/margin-calculator.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between margin and markup?", "acceptedAnswer": {"@type": "Answer", "text": "Margin divides profit by price; markup divides profit by cost. Markup is always the larger number."}}]}</script>
@@ -12,17 +12,22 @@
 <header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
-<h1>Profit Margin &amp; Markup Calculator</h1>
-<p class="muted">Calculate profit, gross margin and markup from cost and selling price.</p>
+<h1>Profit Margin and Markup Calculator</h1>
+<p class="muted">Convert between cost, price, margin and markup: enter any two and get the others.</p>
 <form class="card" data-calc="1">
-<label for="cost">Cost ($)</label><input id="cost" type="number" step="any" value="60">
-<label for="price">Selling price ($)</label><input id="price" type="number" step="any" value="100">
-<button type="submit">Calculate</button>
+<p class="muted eqnote" id="eqnote">Type in any 2 fields and the rest are calculated.</p>
+<label for="cost">Cost ($)</label><div class="eqrow"><input id="cost" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="price">Selling price ($)</label><div class="eqrow"><input id="price" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="margin">Profit margin (%)</label><div class="eqrow"><input id="margin" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<label for="mk">Markup (%)</label><div class="eqrow"><input id="mk" type="number" step="any" inputmode="decimal" placeholder="enter or leave blank"></div>
+<button type="reset">Clear</button>
 <div class="result" id="out" aria-live="polite"></div>
 </form>
 <div class="ad"><!-- ad slot --></div>
 <h2>How it works</h2>
 <p>Margin is profit as a share of the selling price. Markup is profit as a share of cost. A 50% markup equals a 33.3% margin.</p>
+<h2>Formula</h2>
+<p>Margin = profit / price and markup = profit / cost. Enter any two of cost, price, margin and markup (for example margin alone with cost) to solve the rest.</p>
 <h2>Frequently asked questions</h2>
 <details><summary>What is the difference between margin and markup?</summary><p>Margin divides profit by price; markup divides profit by cost. Markup is always the larger number.</p></details>
 <h2>Related calculators</h2>
@@ -30,8 +35,5 @@
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
-<script>CalcPage(function({cost,price}){
-const p=price-cost;
-return [['Gross margin',PCT(p/price*100)],['Markup',PCT(p/cost*100)],['Profit',M(p)]];
-});</script>
+<script>EqPage({vars:[{"id": "cost", "init": 60}, {"id": "price"}, {"id": "margin"}, {"id": "mk", "init": 25}],need:2,solve:{price:[[["cost", "mk"],function(v){return v.cost*(1+v.mk/100);}],[["cost", "margin"],function(v){return v.cost/(1-v.margin/100);}]],cost:[[["price", "mk"],function(v){return v.price/(1+v.mk/100);}],[["price", "margin"],function(v){return v.price*(1-v.margin/100);}]],margin:[[["cost", "price"],function(v){return (v.price-v.cost)/v.price*100;}],[["mk"],function(v){return v.mk/(1+v.mk/100);}]],mk:[[["cost", "price"],function(v){return (v.price/v.cost-1)*100;}],[["margin"],function(v){return v.margin/(1-v.margin/100);}]]},extra:function(v){return [['Profit',M(v.price-v.cost)]];}});</script>
 </body></html>
