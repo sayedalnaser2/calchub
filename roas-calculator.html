@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROAS Calculator (Return on Ad Spend) | CalcHub</title>
+<meta name="description" content="Calculate return on ad spend, ad ROI and the break-even ROAS for your margin.">
+<link rel="canonical" href="https://YOURDOMAIN.com/roas-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good ROAS?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on margins; 4x is a common target for e-commerce but break-even is 1/margin."}}, {"@type": "Question", "name": "ROAS vs ROI?", "acceptedAnswer": {"@type": "Answer", "text": "ROAS ignores costs of goods; ROI accounts for profit."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>ROAS Calculator (Return on Ad Spend)</h1>
+<p class="muted">Calculate return on ad spend, ad ROI and the break-even ROAS for your margin.</p>
+<form class="card" data-calc="1">
+<label for="rev">Revenue from ads ($)</label><input id="rev" type="number" step="any" value="12000">
+<label for="spend">Ad spend ($)</label><input id="spend" type="number" step="any" value="3000">
+<label for="mar">Gross margin (%)</label><input id="mar" type="number" step="any" value="40">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>ROAS = revenue from ads / ad spend. Because ads must be paid for out of gross profit, the break-even ROAS is 1 / gross margin.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a good ROAS?</summary><p>It depends on margins; 4x is a common target for e-commerce but break-even is 1/margin.</p></details>
+<details><summary>ROAS vs ROI?</summary><p>ROAS ignores costs of goods; ROI accounts for profit.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="ad-metrics-calculator.html"><b>CTR, CPC and CPM Calculator</b></a><a href="website-ad-revenue-calculator.html"><b>Website Ad Revenue Calculator (RPM)</b></a><a href="8-dollars-an-hour-is-how-much-a-year.html"><b>$8 an Hour Is How Much a Year?</b></a><a href="9-dollars-an-hour-is-how-much-a-year.html"><b>$9 an Hour Is How Much a Year?</b></a><a href="10-dollars-an-hour-is-how-much-a-year.html"><b>$10 an Hour Is How Much a Year?</b></a><a href="11-dollars-an-hour-is-how-much-a-year.html"><b>$11 an Hour Is How Much a Year?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({rev,spend,mar}){
+if(spend<=0)return 'Ad spend must be positive.';const roas=rev/spend,gp=rev*mar/100;return [['ROAS',N(roas,2)+'x'],['Ad ROI (on gross profit)',PCT((gp-spend)/spend*100,1)],['Break-even ROAS',N(100/mar,2)+'x'],['Profit after ad spend',M(gp-spend)]];
+});</script>
+</body></html>

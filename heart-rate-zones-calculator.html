@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heart Rate Zones Calculator | CalcHub</title>
+<meta name="description" content="Calculate your five training heart rate zones with the Karvonen method.">
+<link rel="canonical" href="https://YOURDOMAIN.com/heart-rate-zones-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which zone burns the most fat?", "acceptedAnswer": {"@type": "Answer", "text": "Zone 2 uses the highest proportion of fat, but total calories matter more for weight loss."}}, {"@type": "Question", "name": "Is 220 - age accurate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a rough average; a tested max is better."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Heart Rate Zones Calculator</h1>
+<p class="muted">Calculate your five training heart rate zones with the Karvonen method.</p>
+<form class="card" data-calc="1">
+<label for="age">Age (years)</label><input id="age" type="number" step="any" value="35">
+<label for="rest">Resting heart rate (bpm)</label><input id="rest" type="number" step="any" value="62">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Max heart rate is estimated as 220 minus age. The Karvonen method uses heart rate reserve (max minus resting): target = resting + reserve x intensity. Individual maximums vary by up to 10-20 bpm.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Which zone burns the most fat?</summary><p>Zone 2 uses the highest proportion of fat, but total calories matter more for weight loss.</p></details>
+<details><summary>Is 220 - age accurate?</summary><p>It is a rough average; a tested max is better.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="met-calories-calculator.html"><b>Calories Burned by Activity (MET) Calculator</b></a><a href="pace-converter.html"><b>Running Pace Converter (min/mile, min/km, mph)</b></a><a href="swim-pace-calculator.html"><b>Swim Pace Calculator (per 100m)</b></a><a href="bmi-for-4-ft-8-in.html"><b>BMI for 4 ft 8 in (142 cm)</b></a><a href="bmi-for-4-ft-9-in.html"><b>BMI for 4 ft 9 in (145 cm)</b></a><a href="bmi-for-4-ft-10-in.html"><b>BMI for 4 ft 10 in (147 cm)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({age,rest}){
+const mx=220-age,res=mx-rest;const z=(a,b)=>Math.round(rest+res*a)+' - '+Math.round(rest+res*b)+' bpm';return [['Estimated max heart rate',mx+' bpm'],['Zone 1 - Very light (50-60%)',z(.5,.6)],['Zone 2 - Light / fat burn (60-70%)',z(.6,.7)],['Zone 3 - Moderate / aerobic (70-80%)',z(.7,.8)],['Zone 4 - Hard / threshold (80-90%)',z(.8,.9)],['Zone 5 - Maximum (90-100%)',z(.9,1)]];
+});</script>
+</body></html>

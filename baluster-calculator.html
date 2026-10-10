@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Baluster Spacing Calculator | CalcHub</title>
+<meta name="description" content="Find how many balusters you need for a railing and the exact gap between them.">
+<link rel="canonical" href="https://YOURDOMAIN.com/baluster-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the 4-inch rule?", "acceptedAnswer": {"@type": "Answer", "text": "Gaps between balusters must be small enough that a 4-inch sphere cannot pass."}}, {"@type": "Question", "name": "Do I count the end gaps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the formula includes a gap at each end next to the posts."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Baluster Spacing Calculator</h1>
+<p class="muted">Find how many balusters you need for a railing and the exact gap between them.</p>
+<form class="card" data-calc="1">
+<label for="len">Railing length between posts (inches)</label><input id="len" type="number" step="any" value="72">
+<label for="bw">Baluster width (inches)</label><input id="bw" type="number" step="any" value="1.5">
+<label for="gap">Maximum gap (inches)</label><input id="gap" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Balusters n satisfy length = n x width + (n + 1) x gap, so n = ceil((length - gap) / (width + gap)). Most building codes require that a 4-inch sphere cannot pass through the railing.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is the 4-inch rule?</summary><p>Gaps between balusters must be small enough that a 4-inch sphere cannot pass.</p></details>
+<details><summary>Do I count the end gaps?</summary><p>Yes, the formula includes a gap at each end next to the posts.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="joist-calculator.html"><b>Floor Joist Calculator</b></a><a href="plywood-sheet-calculator.html"><b>Plywood Sheet Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a><a href="tile-calculator.html"><b>Tile Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({len,bw,gap}){
+const n=Math.ceil((len-gap)/(bw+gap));const g=(len-n*bw)/(n+1);return [['Balusters needed',n],['Actual gap',N(g,3)+' in'],['Center-to-center',N(g+bw,3)+' in'],['Meets 4-inch rule',g<=4?'Yes':'Check local code']];
+});</script>
+</body></html>

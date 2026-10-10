@@ -28,6 +28,10 @@ def bal(P, apr, n, k):
 
 
 # ---------------------------------------------------------------- fuel economy
+def ftitle(n):
+    return n.title().replace(" Per ", " per ").replace("(Us)", "(US)").replace("(Uk)", "(UK)")
+
+
 def fuel():
     # base: km per litre
     U = [("mpgus", "miles per gallon (US)", "mpg", "mile per gallon (US)", "x*0.425143707", "v/0.425143707"),
@@ -46,13 +50,13 @@ def fuel():
                 k = {"mpgus": x * .425143707, "mpguk": x * .354006189, "kml": x, "l100": 100 / x}[a[0]]
                 r = {"mpgus": k / .425143707, "mpguk": k / .354006189, "kml": k, "l100": 100 / k}[b[0]]
                 rows.append((f"{x} {a[2]}", f"{r:.2f} {b[2]}"))
-            extra = (f"<h2>{a[1].title()} to {b[1].title()} conversion table</h2>\n" + table([a[1].title(), b[1].title()], rows) +
+            extra = (f"<h2>{ftitle(a[1])} to {ftitle(b[1])} conversion table</h2>\n" + table([ftitle(a[1]), ftitle(b[1])], rows) +
                      "<h2>About fuel economy units</h2>\n<p>Fuel economy is reported as distance per volume of fuel (mpg, km/L) in the US, UK and much of Asia, "
                      "and as volume per distance (L/100 km) in Europe, Canada and Australia. Higher is better for distance-per-volume units, lower is better for L/100 km. "
                      "US and UK gallons differ (3.785 L vs 4.546 L), so mpg values are not interchangeable.</p>\n")
             slug = f"{a[1].split(' (')[0].replace(' ', '-')}-{a[0][-2:]}-to-{b[1].split(' (')[0].replace(' ', '-')}-{b[0][-2:]}"
             slug = f"{a[0]}-to-{b[0]}-fuel-economy"
-            SPECS.append(C("conversion", slug, f"{a[1].title()} to {b[1].title()} Converter",
+            SPECS.append(C("conversion", slug, f"{ftitle(a[1])} to {ftitle(b[1])} Converter",
                            f"Convert {a[1]} to {b[1]} instantly.", [("v", f"Fuel economy in {a[1]}", 30)], body,
                            f"Fuel economy units are converted through kilometers per liter. The inverse relationship between distance-per-volume and volume-per-distance units means L/100 km = 100 / (km/L).",
                            [(f"What is 30 {a[2]} in {b[2]}?", f"30 {a[2]} is about " + next(r for x, r in rows if x.startswith("30 ")) + "."),
@@ -355,7 +359,7 @@ def fraction(n, d):
     extra = ("<h2>" + f"{n}/{d} conversions" + "</h2>\n" + table(["Form", "Value"], [("Decimal", dec if len(dec) < 10 else f"{rep}…"), ("Percent", f"{val * 100:.4f}".rstrip("0").rstrip(".") + "%"),
              ("Inches to millimeters", f"{val * 25.4:.3f} mm"), ("Inches to centimeters", f"{val * 2.54:.4f} cm"), ("Equivalent fractions", eq)]) +
              f"<p>To convert {n}/{d} to a decimal, divide the numerator {n} by the denominator {d}. Multiply by 100 for a percent.</p>\n")
-    SPECS.append(C("math", f"{n}-{d}-as-a-decimal", f"{n}/{d} as a Decimal, Percent and Millimeters",
+    SPECS.append(C("math", f"{n}-{d}-as-a-decimal", f"{n}/{d} as a Decimal and Percent",
                    f"{n}/{d} as a decimal is {dec if len(dec) < 10 else rep + '…'}. See it as a percent and as inches in mm.",
                    [("n", "Numerator", n), ("d", "Denominator", d)], FRAC_BODY,
                    f"Divide the numerator by the denominator: {n} / {d} = {dec if len(dec) < 10 else rep + '…'}. As a percent that is {val * 100:.2f}%. If the fraction is a length in inches, it equals {val * 25.4:.2f} mm.",

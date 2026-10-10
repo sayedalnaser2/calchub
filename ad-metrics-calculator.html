@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CTR, CPC and CPM Calculator | CalcHub</title>
+<meta name="description" content="Calculate click-through rate, cost per click and cost per thousand impressions.">
+<link rel="canonical" href="https://YOURDOMAIN.com/ad-metrics-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good CTR?", "acceptedAnswer": {"@type": "Answer", "text": "Search ads often exceed 3%, display ads are usually well below 1%."}}, {"@type": "Question", "name": "How are CPM and CPC related?", "acceptedAnswer": {"@type": "Answer", "text": "CPM = CPC x CTR x 1000."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>CTR, CPC and CPM Calculator</h1>
+<p class="muted">Calculate click-through rate, cost per click and cost per thousand impressions.</p>
+<form class="card" data-calc="1">
+<label for="imp">Impressions</label><input id="imp" type="number" step="any" value="100000">
+<label for="clk">Clicks</label><input id="clk" type="number" step="any" value="1500">
+<label for="cost">Total ad cost ($)</label><input id="cost" type="number" step="any" value="900">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>CTR = clicks / impressions. CPC = cost / clicks. CPM = cost / impressions x 1000. These three metrics describe the efficiency of an ad campaign.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a good CTR?</summary><p>Search ads often exceed 3%, display ads are usually well below 1%.</p></details>
+<details><summary>How are CPM and CPC related?</summary><p>CPM = CPC x CTR x 1000.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="website-ad-revenue-calculator.html"><b>Website Ad Revenue Calculator (RPM)</b></a><a href="8-dollars-an-hour-is-how-much-a-year.html"><b>$8 an Hour Is How Much a Year?</b></a><a href="9-dollars-an-hour-is-how-much-a-year.html"><b>$9 an Hour Is How Much a Year?</b></a><a href="10-dollars-an-hour-is-how-much-a-year.html"><b>$10 an Hour Is How Much a Year?</b></a><a href="11-dollars-an-hour-is-how-much-a-year.html"><b>$11 an Hour Is How Much a Year?</b></a><a href="12-dollars-an-hour-is-how-much-a-year.html"><b>$12 an Hour Is How Much a Year?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({imp,clk,cost}){
+if(imp<=0||clk<=0)return 'Impressions and clicks must be positive.';return [['CTR',PCT(clk/imp*100,3)],['CPC',M(cost/clk)],['CPM',M(cost/imp*1000)],['Clicks per $100',N(clk/cost*100,1)]];
+});</script>
+</body></html>

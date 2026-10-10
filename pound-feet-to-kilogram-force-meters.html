@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.13825495437599997;const r=v*F;return [[SF(v)+' lb-ft =',SF(r)+' kgf·m'],['Formula','kgf·m = lb-ft × '+SF(F)],['Reverse','1 kgf·m = '+SF(1/F)+' lb-ft'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' lb-ft',SF(x*F)+' kgf·m'])];
+const F=0.13825495437599997;const r=v*F;return [[SF(v)+' '+(v===1?'lb-ft':'lb-ft')+' =',SF(r)+' '+(r===1?'kgf·m':'kgf·m')],['Formula','kgf·m = lb-ft × '+SF(F)],['Reverse','1 lb-ft = '+SF(1/F)+' kgf·m'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'lb-ft':'lb-ft'),SF(x*F)+' kgf·m'])];
 });</script>
 </body></html>

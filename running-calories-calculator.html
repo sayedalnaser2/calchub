@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calories Burned Running Calculator | CalcHub</title>
+<meta name="description" content="Estimate calories burned from your weight and running distance.">
+<link rel="canonical" href="https://YOURDOMAIN.com/running-calories-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does running faster burn more calories?", "acceptedAnswer": {"@type": "Answer", "text": "Per kilometer, the difference is small; per minute, faster running burns many more."}}, {"@type": "Question", "name": "How accurate is this?", "acceptedAnswer": {"@type": "Answer", "text": "Within roughly 10-15%."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Calories Burned Running Calculator</h1>
+<p class="muted">Estimate calories burned from your weight and running distance.</p>
+<form class="card" data-calc="1">
+<label for="kg">Body weight (kg)</label><input id="kg" type="number" step="any" value="70">
+<label for="km">Distance (km)</label><input id="km" type="number" step="any" value="5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A common estimate is about 1.036 kcal per kilogram of body weight per kilometer run, regardless of pace. Real burn varies with terrain, wind and fitness.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does running faster burn more calories?</summary><p>Per kilometer, the difference is small; per minute, faster running burns many more.</p></details>
+<details><summary>How accurate is this?</summary><p>Within roughly 10-15%.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="power-to-weight-calculator.html"><b>Cycling Power-to-Weight Calculator</b></a><a href="target-weight-date-calculator.html"><b>Target Weight Date Calculator</b></a><a href="heart-rate-zones-calculator.html"><b>Heart Rate Zones Calculator</b></a><a href="met-calories-calculator.html"><b>Calories Burned by Activity (MET) Calculator</b></a><a href="pace-converter.html"><b>Running Pace Converter (min/mile, min/km, mph)</b></a><a href="swim-pace-calculator.html"><b>Swim Pace Calculator (per 100m)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({kg,km}){
+const k=1.036*kg*km;return [['Calories burned',N(k,0)+' kcal'],['Per mile',N(1.036*kg*1.609344,0)+' kcal'],['Distance in miles',N(km/1.609344,2)],['Kilojoules',N(k*4.184,0)]];
+});</script>
+</body></html>

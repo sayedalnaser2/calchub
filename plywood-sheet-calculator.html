@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plywood Sheet Calculator | CalcHub</title>
+<meta name="description" content="Calculate how many 4x8 sheets of plywood or OSB you need.">
+<link rel="canonical" href="https://YOURDOMAIN.com/plywood-sheet-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much waste should I allow?", "acceptedAnswer": {"@type": "Answer", "text": "10% is typical, 15% for complex layouts."}}, {"@type": "Question", "name": "What thickness should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Subfloors are often 3/4 inch; roof sheathing 1/2 inch, depending on rafter spacing."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Plywood Sheet Calculator</h1>
+<p class="muted">Calculate how many 4x8 sheets of plywood or OSB you need.</p>
+<form class="card" data-calc="1">
+<label for="l">Area length (ft)</label><input id="l" type="number" step="any" value="24">
+<label for="w">Area width (ft)</label><input id="w" type="number" step="any" value="16">
+<label for="waste">Waste (%)</label><input id="waste" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A 4x8 sheet covers 32 square feet. Sheets = area / 32, plus a waste allowance for cuts and offcuts.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How much waste should I allow?</summary><p>10% is typical, 15% for complex layouts.</p></details>
+<details><summary>What thickness should I use?</summary><p>Subfloors are often 3/4 inch; roof sheathing 1/2 inch, depending on rafter spacing.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a><a href="tile-calculator.html"><b>Tile Calculator</b></a><a href="gravel-calculator.html"><b>Gravel Calculator</b></a><a href="board-feet-calculator.html"><b>Board Feet Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,waste}){
+const a=l*w,s=a/32;return [['Sheets needed (4x8)',Math.ceil(s*(1+waste/100))],['Area',N(a,0)+' sq ft'],['Exact sheets',N(s,2)],['Sheets with 4x10',Math.ceil(a/40*(1+waste/100))]];
+});</script>
+</body></html>

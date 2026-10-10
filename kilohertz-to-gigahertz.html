@@ -35,11 +35,11 @@
 <details><summary>How many gigahertz are in one kilohertz?</summary><p>There are 1e-06 gigahertz in one kilohertz.</p></details>
 <details><summary>How many kilohertz are in one gigahertz?</summary><p>There are 1,000,000 kilohertz in one gigahertz.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="gigahertz-to-kilohertz.html"><b>Gigahertz to Kilohertz Converter</b></a><a href="kilohertz-to-hertz.html"><b>Kilohertz to Hertz Converter</b></a><a href="kilohertz-to-megahertz.html"><b>Kilohertz to Megahertz Converter</b></a><a href="kilohertz-to-revolutions-per-minute.html"><b>Kilohertz to Revolutions per Minute Converter</b></a><a href="hertz-to-gigahertz.html"><b>Hertz to Gigahertz Converter</b></a><a href="megahertz-to-gigahertz.html"><b>Megahertz to Gigahertz Converter</b></a><a href="revolutions-per-minute-to-gigahertz.html"><b>Revolutions per Minute to Gigahertz Converter</b></a></div>
+<div class="grid"><a href="gigahertz-to-kilohertz.html"><b>Gigahertz to Kilohertz Converter</b></a><a href="kilohertz-to-hertz.html"><b>Kilohertz to Hertz Converter</b></a><a href="kilohertz-to-megahertz.html"><b>Kilohertz to Megahertz Converter</b></a><a href="kilohertz-to-revolutions-per-minute.html"><b>Kilohertz to Revolutions per Minute Converter</b></a><a href="hertz-to-gigahertz.html"><b>Hertz to Gigahertz Converter</b></a><a href="megahertz-to-gigahertz.html"><b>Megahertz to Gigahertz Converter</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=1e-06;const r=v*F;return [[SF(v)+' kHz =',SF(r)+' GHz'],['Formula','GHz = kHz × '+SF(F)],['Reverse','1 GHz = '+SF(1/F)+' kHz'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' kHz',SF(x*F)+' GHz'])];
+const F=1e-06;const r=v*F;return [[SF(v)+' '+(v===1?'kHz':'kHz')+' =',SF(r)+' '+(r===1?'GHz':'GHz')],['Formula','GHz = kHz × '+SF(F)],['Reverse','1 kHz = '+SF(1/F)+' GHz'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'kHz':'kHz'),SF(x*F)+' GHz'])];
 });</script>
 </body></html>

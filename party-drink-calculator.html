@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Party Drink Calculator | CalcHub</title>
+<meta name="description" content="Estimate how many drinks, wine bottles and beers to buy for a party.">
+<link rel="canonical" href="https://YOURDOMAIN.com/party-drink-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much ice do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Plan about 1 pound of ice per guest."}}, {"@type": "Question", "name": "Is this safe guidance?", "acceptedAnswer": {"@type": "Answer", "text": "It is a planning estimate, not a recommendation to drink."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Party Drink Calculator</h1>
+<p class="muted">Estimate how many drinks, wine bottles and beers to buy for a party.</p>
+<form class="card" data-calc="1">
+<label for="g">Number of guests</label><input id="g" type="number" step="any" value="30">
+<label for="h">Party length (hours)</label><input id="h" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>A common rule of thumb is two drinks per guest in the first hour and one per guest per hour afterwards. Adjust for your crowd, and always provide water and non-alcoholic options.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How much ice do I need?</summary><p>Plan about 1 pound of ice per guest.</p></details>
+<details><summary>Is this safe guidance?</summary><p>It is a planning estimate, not a recommendation to drink.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="born-in-1930-how-old-am-i.html"><b>Born in 1930: How Old Am I?</b></a><a href="born-in-1931-how-old-am-i.html"><b>Born in 1931: How Old Am I?</b></a><a href="born-in-1932-how-old-am-i.html"><b>Born in 1932: How Old Am I?</b></a><a href="born-in-1933-how-old-am-i.html"><b>Born in 1933: How Old Am I?</b></a><a href="born-in-1934-how-old-am-i.html"><b>Born in 1934: How Old Am I?</b></a><a href="born-in-1935-how-old-am-i.html"><b>Born in 1935: How Old Am I?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({g,h}){
+const d=g*(2+Math.max(0,h-1));return [['Total drinks',N(d,0)],['If all wine (5 glasses/bottle)',Math.ceil(d/5)+' bottles'],['If all beer (12 oz)',Math.ceil(d/6)+' six-packs'],['If all spirits (1.5 oz shots)',Math.ceil(d/17)+' bottles (750 ml)'],['Mixed (40% beer, 40% wine, 20% spirits)',Math.ceil(d*.4/6)+' six-packs, '+Math.ceil(d*.4/5)+' wine, '+Math.ceil(d*.2/17)+' spirits']];
+});</script>
+</body></html>

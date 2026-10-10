@@ -35,11 +35,11 @@
 <details><summary>How many megahertz are in one revolution per minute?</summary><p>There are 1.66667e-08 megahertz in one revolution per minute.</p></details>
 <details><summary>How many revolutions per minute are in one megahertz?</summary><p>There are 60,000,000 revolutions per minute in one megahertz.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="megahertz-to-revolutions-per-minute.html"><b>Megahertz to Revolutions per Minute Converter</b></a><a href="revolutions-per-minute-to-hertz.html"><b>Revolutions per Minute to Hertz Converter</b></a><a href="revolutions-per-minute-to-kilohertz.html"><b>Revolutions per Minute to Kilohertz Converter</b></a><a href="revolutions-per-minute-to-gigahertz.html"><b>Revolutions per Minute to Gigahertz Converter</b></a><a href="hertz-to-megahertz.html"><b>Hertz to Megahertz Converter</b></a><a href="kilohertz-to-megahertz.html"><b>Kilohertz to Megahertz Converter</b></a><a href="gigahertz-to-megahertz.html"><b>Gigahertz to Megahertz Converter</b></a></div>
+<div class="grid"><a href="megahertz-to-revolutions-per-minute.html"><b>Megahertz to Revolutions per Minute Converter</b></a><a href="revolutions-per-minute-to-hertz.html"><b>Revolutions per Minute to Hertz Converter</b></a><a href="revolutions-per-minute-to-kilohertz.html"><b>Revolutions per Minute to Kilohertz Converter</b></a><a href="hertz-to-megahertz.html"><b>Hertz to Megahertz Converter</b></a><a href="kilohertz-to-megahertz.html"><b>Kilohertz to Megahertz Converter</b></a><a href="gigahertz-to-megahertz.html"><b>Gigahertz to Megahertz Converter</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=1.6666666666666667e-08;const r=v*F;return [[SF(v)+' rpm =',SF(r)+' MHz'],['Formula','MHz = rpm × '+SF(F)],['Reverse','1 MHz = '+SF(1/F)+' rpm'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' rpm',SF(x*F)+' MHz'])];
+const F=1.6666666666666667e-08;const r=v*F;return [[SF(v)+' '+(v===1?'rpm':'rpm')+' =',SF(r)+' '+(r===1?'MHz':'MHz')],['Formula','MHz = rpm × '+SF(F)],['Reverse','1 rpm = '+SF(1/F)+' MHz'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'rpm':'rpm'),SF(x*F)+' MHz'])];
 });</script>
 </body></html>

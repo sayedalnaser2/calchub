@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Turkey Cooking Time Calculator | CalcHub</title>
+<meta name="description" content="Estimate roasting time for a turkey by weight at 325 °F.">
+<link rel="canonical" href="https://YOURDOMAIN.com/turkey-cooking-time-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long to thaw a turkey?", "acceptedAnswer": {"@type": "Answer", "text": "Allow about 24 hours in the refrigerator for every 4-5 lb."}}, {"@type": "Question", "name": "Should I cover the turkey?", "acceptedAnswer": {"@type": "Answer", "text": "Tent it with foil if the skin browns too quickly."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Turkey Cooking Time Calculator</h1>
+<p class="muted">Estimate roasting time for a turkey by weight at 325 °F.</p>
+<form class="card" data-calc="1">
+<label for="lb">Turkey weight (lb)</label><input id="lb" type="number" step="any" value="16">
+<label for="st">Stuffing</label><select id="st"><option value="0" selected>Unstuffed</option><option value="1">Stuffed</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Times follow the USDA guide for a fresh or fully thawed turkey roasted at 325 °F. Always confirm doneness with a food thermometer reaching 165 °F in the thickest part of the breast, thigh and stuffing.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How long to thaw a turkey?</summary><p>Allow about 24 hours in the refrigerator for every 4-5 lb.</p></details>
+<details><summary>Should I cover the turkey?</summary><p>Tent it with foil if the skin browns too quickly.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="coffee-ratio-calculator.html"><b>Coffee to Water Ratio Calculator</b></a><a href="party-drink-calculator.html"><b>Party Drink Calculator</b></a><a href="born-in-1930-how-old-am-i.html"><b>Born in 1930: How Old Am I?</b></a><a href="born-in-1931-how-old-am-i.html"><b>Born in 1931: How Old Am I?</b></a><a href="born-in-1932-how-old-am-i.html"><b>Born in 1932: How Old Am I?</b></a><a href="born-in-1933-how-old-am-i.html"><b>Born in 1933: How Old Am I?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({lb,st}){
+const T=st?[[12,3,3.5],[14,3.5,4],[18,4,4.25],[20,4.25,4.75],[24,4.75,5.25]]:[[12,2.75,3],[14,3,3.75],[18,3.75,4.25],[20,4.25,4.5],[24,4.5,5]];if(lb<8||lb>24)return 'This table covers 8 to 24 lb turkeys.';const r=T.find(x=>lb<=x[0]);const f=h=>Math.floor(h)+' h '+Math.round((h%1)*60)+' min';return [['Roasting time',f(r[1])+' to '+f(r[2])],['Oven temperature','325 °F (165 °C)'],['Safe internal temperature','165 °F (74 °C) in the thickest part of the breast and thigh'],['Rest before carving','20 to 30 minutes']];
+});</script>
+</body></html>

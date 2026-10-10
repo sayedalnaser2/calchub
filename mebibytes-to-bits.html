@@ -28,7 +28,7 @@
 <h2>Mebibytes to Bits conversion table</h2>
 <table class="ref"><thead><tr><th>Mebibytes</th><th>Bits</th></tr></thead><tbody><tr><td>1 MiB</td><td>8,388,608 bits</td></tr><tr><td>2 MiB</td><td>16,777,216 bits</td></tr><tr><td>5 MiB</td><td>41,943,040 bits</td></tr><tr><td>10 MiB</td><td>83,886,080 bits</td></tr><tr><td>20 MiB</td><td>167,772,160 bits</td></tr><tr><td>25 MiB</td><td>209,715,200 bits</td></tr><tr><td>50 MiB</td><td>419,430,400 bits</td></tr><tr><td>100 MiB</td><td>838,860,800 bits</td></tr><tr><td>250 MiB</td><td>2,097,152,000 bits</td></tr><tr><td>500 MiB</td><td>4,194,304,000 bits</td></tr><tr><td>1,000 MiB</td><td>8,388,608,000 bits</td></tr></tbody></table>
 <h2>Bits to Mebibytes conversion table</h2>
-<table class="ref"><thead><tr><th>Bits</th><th>Mebibytes</th></tr></thead><tbody><tr><td>1 bits</td><td>1.19209e-07 MiB</td></tr><tr><td>2 bits</td><td>2.38419e-07 MiB</td></tr><tr><td>5 bits</td><td>5.96046e-07 MiB</td></tr><tr><td>10 bits</td><td>1.19209e-06 MiB</td></tr><tr><td>20 bits</td><td>2.38419e-06 MiB</td></tr><tr><td>25 bits</td><td>2.98023e-06 MiB</td></tr><tr><td>50 bits</td><td>5.96046e-06 MiB</td></tr><tr><td>100 bits</td><td>1.19209e-05 MiB</td></tr><tr><td>250 bits</td><td>2.98023e-05 MiB</td></tr><tr><td>500 bits</td><td>5.96046e-05 MiB</td></tr><tr><td>1,000 bits</td><td>0.00011920929 MiB</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Bits</th><th>Mebibytes</th></tr></thead><tbody><tr><td>1 bit</td><td>1.19209e-07 MiB</td></tr><tr><td>2 bits</td><td>2.38419e-07 MiB</td></tr><tr><td>5 bits</td><td>5.96046e-07 MiB</td></tr><tr><td>10 bits</td><td>1.19209e-06 MiB</td></tr><tr><td>20 bits</td><td>2.38419e-06 MiB</td></tr><tr><td>25 bits</td><td>2.98023e-06 MiB</td></tr><tr><td>50 bits</td><td>5.96046e-06 MiB</td></tr><tr><td>100 bits</td><td>1.19209e-05 MiB</td></tr><tr><td>250 bits</td><td>2.98023e-05 MiB</td></tr><tr><td>500 bits</td><td>5.96046e-05 MiB</td></tr><tr><td>1,000 bits</td><td>0.00011920929 MiB</td></tr></tbody></table>
 <h2>About digital storage units</h2>
 <p>These conversions use decimal (SI) prefixes where 1 KB = 1,000 bytes. Some operating systems use binary multiples of 1,024 instead, so reported sizes can differ slightly.</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=8388608.0;const r=v*F;return [[SF(v)+' MiB =',SF(r)+' bits'],['Formula','bits = MiB × '+SF(F)],['Reverse','1 bits = '+SF(1/F)+' MiB'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' MiB',SF(x*F)+' bits'])];
+const F=8388608.0;const r=v*F;return [[SF(v)+' '+(v===1?'MiB':'MiB')+' =',SF(r)+' '+(r===1?'bit':'bits')],['Formula','bits = MiB × '+SF(F)],['Reverse','1 MiB = '+SF(1/F)+' bits'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'MiB':'MiB'),SF(x*F)+' bits'])];
 });</script>
 </body></html>

@@ -28,7 +28,7 @@
 <h2>Millimeters to Fathoms conversion table</h2>
 <table class="ref"><thead><tr><th>Millimeters</th><th>Fathoms</th></tr></thead><tbody><tr><td>1 mm</td><td>0.00054680665 fathoms</td></tr><tr><td>2 mm</td><td>0.0010936133 fathoms</td></tr><tr><td>5 mm</td><td>0.0027340332 fathoms</td></tr><tr><td>10 mm</td><td>0.0054680665 fathoms</td></tr><tr><td>20 mm</td><td>0.010936133 fathoms</td></tr><tr><td>25 mm</td><td>0.013670166 fathoms</td></tr><tr><td>50 mm</td><td>0.027340332 fathoms</td></tr><tr><td>100 mm</td><td>0.054680665 fathoms</td></tr><tr><td>250 mm</td><td>0.13670166 fathoms</td></tr><tr><td>500 mm</td><td>0.27340332 fathoms</td></tr><tr><td>1,000 mm</td><td>0.54680665 fathoms</td></tr></tbody></table>
 <h2>Fathoms to Millimeters conversion table</h2>
-<table class="ref"><thead><tr><th>Fathoms</th><th>Millimeters</th></tr></thead><tbody><tr><td>1 fathoms</td><td>1,828.8 mm</td></tr><tr><td>2 fathoms</td><td>3,657.6 mm</td></tr><tr><td>5 fathoms</td><td>9,144 mm</td></tr><tr><td>10 fathoms</td><td>18,288 mm</td></tr><tr><td>20 fathoms</td><td>36,576 mm</td></tr><tr><td>25 fathoms</td><td>45,720 mm</td></tr><tr><td>50 fathoms</td><td>91,440 mm</td></tr><tr><td>100 fathoms</td><td>182,880 mm</td></tr><tr><td>250 fathoms</td><td>457,200 mm</td></tr><tr><td>500 fathoms</td><td>914,400 mm</td></tr><tr><td>1,000 fathoms</td><td>1,828,800 mm</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Fathoms</th><th>Millimeters</th></tr></thead><tbody><tr><td>1 fathom</td><td>1,828.8 mm</td></tr><tr><td>2 fathoms</td><td>3,657.6 mm</td></tr><tr><td>5 fathoms</td><td>9,144 mm</td></tr><tr><td>10 fathoms</td><td>18,288 mm</td></tr><tr><td>20 fathoms</td><td>36,576 mm</td></tr><tr><td>25 fathoms</td><td>45,720 mm</td></tr><tr><td>50 fathoms</td><td>91,440 mm</td></tr><tr><td>100 fathoms</td><td>182,880 mm</td></tr><tr><td>250 fathoms</td><td>457,200 mm</td></tr><tr><td>500 fathoms</td><td>914,400 mm</td></tr><tr><td>1,000 fathoms</td><td>1,828,800 mm</td></tr></tbody></table>
 <h2>About length units</h2>
 <p>Length measures the distance between two points. The meter is the SI base unit; inches, feet, yards and miles are US customary and imperial units, all defined exactly in terms of the meter (1 inch = 2.54 cm exactly).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.0005468066491688539;const r=v*F;return [[SF(v)+' mm =',SF(r)+' fathoms'],['Formula','fathoms = mm × '+SF(F)],['Reverse','1 fathoms = '+SF(1/F)+' mm'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' mm',SF(x*F)+' fathoms'])];
+const F=0.0005468066491688539;const r=v*F;return [[SF(v)+' '+(v===1?'mm':'mm')+' =',SF(r)+' '+(r===1?'fathom':'fathoms')],['Formula','fathoms = mm × '+SF(F)],['Reverse','1 mm = '+SF(1/F)+' fathoms'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'mm':'mm'),SF(x*F)+' fathoms'])];
 });</script>
 </body></html>

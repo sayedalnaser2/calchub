@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cube Volume and Diagonal Calculator | CalcHub</title>
+<meta name="description" content="Calculate volume, surface area and diagonals of a cube from its side length.">
+<link rel="canonical" href="https://YOURDOMAIN.com/cube-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I find side from volume?", "acceptedAnswer": {"@type": "Answer", "text": "Take the cube root of the volume."}}, {"@type": "Question", "name": "How many faces does a cube have?", "acceptedAnswer": {"@type": "Answer", "text": "Six."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Cube Volume and Diagonal Calculator</h1>
+<p class="muted">Calculate volume, surface area and diagonals of a cube from its side length.</p>
+<form class="card" data-calc="1">
+<label for="s">Side length</label><input id="s" type="number" step="any" value="5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Volume = s^3, surface area = 6 s^2, face diagonal = s x sqrt(2), and space diagonal = s x sqrt(3).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I find side from volume?</summary><p>Take the cube root of the volume.</p></details>
+<details><summary>How many faces does a cube have?</summary><p>Six.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="1-2-as-a-decimal.html"><b>1/2 as a Decimal and Percent</b></a><a href="1-3-as-a-decimal.html"><b>1/3 as a Decimal and Percent</b></a><a href="2-3-as-a-decimal.html"><b>2/3 as a Decimal and Percent</b></a><a href="1-4-as-a-decimal.html"><b>1/4 as a Decimal and Percent</b></a><a href="3-4-as-a-decimal.html"><b>3/4 as a Decimal and Percent</b></a><a href="1-5-as-a-decimal.html"><b>1/5 as a Decimal and Percent</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({s}){
+return [['Volume',N(s*s*s,4)],['Surface area',N(6*s*s,4)],['Face diagonal',N(s*Math.SQRT2,4)],['Space diagonal',N(s*Math.sqrt(3),4)]];
+});</script>
+</body></html>

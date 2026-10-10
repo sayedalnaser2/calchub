@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Number to Words Converter | CalcHub</title>
+<meta name="description" content="Write any number out in English words, including cheque-style amounts.">
+<link rel="canonical" href="https://YOURDOMAIN.com/number-to-words-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do you write 1,000,000 in words?", "acceptedAnswer": {"@type": "Answer", "text": "One million."}}, {"@type": "Question", "name": "Is 'and' used in numbers?", "acceptedAnswer": {"@type": "Answer", "text": "British English says 'one hundred and five'; American usage often omits 'and'."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Number to Words Converter</h1>
+<p class="muted">Write any number out in English words, including cheque-style amounts.</p>
+<form class="card" data-calc="1">
+<label for="x">Number</label><input id="x" type="number" step="any" value="1234567.89">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Numbers are split into groups of three digits (thousands, millions and so on). Each group is spoken as hundreds, tens and units, followed by its scale word. Cheque-style output spells the cents separately.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do you write 1,000,000 in words?</summary><p>One million.</p></details>
+<details><summary>Is &#x27;and&#x27; used in numbers?</summary><p>British English says &#x27;one hundred and five&#x27;; American usage often omits &#x27;and&#x27;.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="leap-year-calculator.html"><b>Leap Year Calculator</b></a><a href="mixed-number-calculator.html"><b>Mixed Number to Improper Fraction Calculator</b></a><a href="cube-calculator.html"><b>Cube Volume and Diagonal Calculator</b></a><a href="1-2-as-a-decimal.html"><b>1/2 as a Decimal and Percent</b></a><a href="1-3-as-a-decimal.html"><b>1/3 as a Decimal and Percent</b></a><a href="2-3-as-a-decimal.html"><b>2/3 as a Decimal and Percent</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({x}){
+const S=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'],T=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'],U=['',' thousand',' million',' billion',' trillion',' quadrillion'];
+const w3=n=>{let s='';if(n>=100){s+=S[Math.floor(n/100)]+' hundred';n%=100;if(n)s+=' and ';}if(n>=20){s+=T[Math.floor(n/10)];if(n%10)s+='-'+S[n%10];}else if(n>0)s+=S[n];return s;};
+const wd=n=>{if(n===0)return 'zero';let parts=[],i=0;while(n>0){const c=n%1000;if(c)parts.unshift(w3(c)+U[i]);n=Math.floor(n/1000);i++;}return parts.join(', ');};
+const neg=x<0,a=Math.abs(x);if(a>9007199254740991)return 'Number is too large.';const ip=Math.floor(a),cents=Math.round((a-ip)*100);let w=wd(ip);if(neg)w='minus '+w;const dec=String(a).includes('.')?String(a).split('.')[1]:'';
+return [['In words',w+(dec?' point '+dec.split('').map(d=>S[+d]).join(' '):'')],['As dollars and cents',wd(ip)+' dollar'+(ip===1?'':'s')+(cents?' and '+wd(cents)+' cent'+(cents===1?'':'s'):'')],['Digits',N(a,2)]];
+});</script>
+</body></html>

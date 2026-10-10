@@ -28,7 +28,7 @@
 <h2>Feet to Fathoms conversion table</h2>
 <table class="ref"><thead><tr><th>Feet</th><th>Fathoms</th></tr></thead><tbody><tr><td>1 ft</td><td>0.16666667 fathoms</td></tr><tr><td>2 ft</td><td>0.33333333 fathoms</td></tr><tr><td>5 ft</td><td>0.83333333 fathoms</td></tr><tr><td>10 ft</td><td>1.6666667 fathoms</td></tr><tr><td>20 ft</td><td>3.3333333 fathoms</td></tr><tr><td>25 ft</td><td>4.1666667 fathoms</td></tr><tr><td>50 ft</td><td>8.3333333 fathoms</td></tr><tr><td>100 ft</td><td>16.666667 fathoms</td></tr><tr><td>250 ft</td><td>41.666667 fathoms</td></tr><tr><td>500 ft</td><td>83.333333 fathoms</td></tr><tr><td>1,000 ft</td><td>166.66667 fathoms</td></tr></tbody></table>
 <h2>Fathoms to Feet conversion table</h2>
-<table class="ref"><thead><tr><th>Fathoms</th><th>Feet</th></tr></thead><tbody><tr><td>1 fathoms</td><td>6 ft</td></tr><tr><td>2 fathoms</td><td>12 ft</td></tr><tr><td>5 fathoms</td><td>30 ft</td></tr><tr><td>10 fathoms</td><td>60 ft</td></tr><tr><td>20 fathoms</td><td>120 ft</td></tr><tr><td>25 fathoms</td><td>150 ft</td></tr><tr><td>50 fathoms</td><td>300 ft</td></tr><tr><td>100 fathoms</td><td>600 ft</td></tr><tr><td>250 fathoms</td><td>1,500 ft</td></tr><tr><td>500 fathoms</td><td>3,000 ft</td></tr><tr><td>1,000 fathoms</td><td>6,000 ft</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Fathoms</th><th>Feet</th></tr></thead><tbody><tr><td>1 fathom</td><td>6 ft</td></tr><tr><td>2 fathoms</td><td>12 ft</td></tr><tr><td>5 fathoms</td><td>30 ft</td></tr><tr><td>10 fathoms</td><td>60 ft</td></tr><tr><td>20 fathoms</td><td>120 ft</td></tr><tr><td>25 fathoms</td><td>150 ft</td></tr><tr><td>50 fathoms</td><td>300 ft</td></tr><tr><td>100 fathoms</td><td>600 ft</td></tr><tr><td>250 fathoms</td><td>1,500 ft</td></tr><tr><td>500 fathoms</td><td>3,000 ft</td></tr><tr><td>1,000 fathoms</td><td>6,000 ft</td></tr></tbody></table>
 <h2>About length units</h2>
 <p>Length measures the distance between two points. The meter is the SI base unit; inches, feet, yards and miles are US customary and imperial units, all defined exactly in terms of the meter (1 inch = 2.54 cm exactly).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.16666666666666669;const r=v*F;return [[SF(v)+' ft =',SF(r)+' fathoms'],['Formula','fathoms = ft × '+SF(F)],['Reverse','1 fathoms = '+SF(1/F)+' ft'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' ft',SF(x*F)+' fathoms'])];
+const F=0.16666666666666669;const r=v*F;return [[SF(v)+' '+(v===1?'ft':'ft')+' =',SF(r)+' '+(r===1?'fathom':'fathoms')],['Formula','fathoms = ft × '+SF(F)],['Reverse','1 ft = '+SF(1/F)+' fathoms'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'ft':'ft'),SF(x*F)+' fathoms'])];
 });</script>
 </body></html>

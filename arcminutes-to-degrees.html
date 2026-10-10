@@ -35,11 +35,11 @@
 <details><summary>How many degrees are in one arcminute?</summary><p>There are 0.016666667 degrees in one arcminute.</p></details>
 <details><summary>How many arcminutes are in one degree?</summary><p>There are 60 arcminutes in one degree.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="degrees-to-arcminutes.html"><b>Degrees to Arcminutes Converter</b></a><a href="arcminutes-to-radians.html"><b>Arcminutes to Radians Converter</b></a><a href="arcminutes-to-gradians.html"><b>Arcminutes to Gradians Converter</b></a><a href="arcminutes-to-arcseconds.html"><b>Arcminutes to Arcseconds Converter</b></a><a href="arcminutes-to-turns.html"><b>Arcminutes to Turns Converter</b></a><a href="radians-to-degrees.html"><b>Radians to Degrees Converter</b></a><a href="gradians-to-degrees.html"><b>Gradians to Degrees Converter</b></a><a href="arcseconds-to-degrees.html"><b>Arcseconds to Degrees Converter</b></a><a href="turns-to-degrees.html"><b>Turns to Degrees Converter</b></a></div>
+<div class="grid"><a href="degrees-to-arcminutes.html"><b>Degrees to Arcminutes Converter</b></a><a href="arcminutes-to-radians.html"><b>Arcminutes to Radians Converter</b></a><a href="arcminutes-to-gradians.html"><b>Arcminutes to Gradians Converter</b></a><a href="arcminutes-to-turns.html"><b>Arcminutes to Turns Converter</b></a><a href="radians-to-degrees.html"><b>Radians to Degrees Converter</b></a><a href="gradians-to-degrees.html"><b>Gradians to Degrees Converter</b></a><a href="arcseconds-to-degrees.html"><b>Arcseconds to Degrees Converter</b></a><a href="turns-to-degrees.html"><b>Turns to Degrees Converter</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.016666666666666666;const r=v*F;return [[SF(v)+' arcmin =',SF(r)+' °'],['Formula','° = arcmin × '+SF(F)],['Reverse','1 ° = '+SF(1/F)+' arcmin'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' arcmin',SF(x*F)+' °'])];
+const F=0.016666666666666666;const r=v*F;return [[SF(v)+' '+(v===1?'arcmin':'arcmin')+' =',SF(r)+' '+(r===1?'°':'°')],['Formula','° = arcmin × '+SF(F)],['Reverse','1 arcmin = '+SF(1/F)+' °'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'arcmin':'arcmin'),SF(x*F)+' °'])];
 });</script>
 </body></html>

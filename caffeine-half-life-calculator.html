@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caffeine Half-Life Calculator | CalcHub</title>
+<meta name="description" content="Estimate how much caffeine is left in your body hours after a drink.">
+<link rel="canonical" href="https://YOURDOMAIN.com/caffeine-half-life-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much caffeine is in a cup of coffee?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly 80-120 mg for a brewed 8 oz cup."}}, {"@type": "Question", "name": "How much is too much?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 400 mg a day is generally considered safe for most healthy adults."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Caffeine Half-Life Calculator</h1>
+<p class="muted">Estimate how much caffeine is left in your body hours after a drink.</p>
+<form class="card" data-calc="1">
+<label for="dose">Caffeine consumed (mg)</label><input id="dose" type="number" step="any" value="200">
+<label for="hrs">Hours since consumption</label><input id="hrs" type="number" step="any" value="6">
+<label for="hl">Half-life (hours)</label><input id="hl" type="number" step="any" value="5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Caffeine decays exponentially: remaining = dose x 0.5^(hours / half-life). The average half-life is about 5 hours but ranges from 2 to 10 depending on genetics, pregnancy, smoking and medications.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How much caffeine is in a cup of coffee?</summary><p>Roughly 80-120 mg for a brewed 8 oz cup.</p></details>
+<details><summary>How much is too much?</summary><p>Up to 400 mg a day is generally considered safe for most healthy adults.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="alcohol-units-calculator.html"><b>Alcohol Units and Standard Drinks Calculator</b></a><a href="running-calories-calculator.html"><b>Calories Burned Running Calculator</b></a><a href="power-to-weight-calculator.html"><b>Cycling Power-to-Weight Calculator</b></a><a href="target-weight-date-calculator.html"><b>Target Weight Date Calculator</b></a><a href="heart-rate-zones-calculator.html"><b>Heart Rate Zones Calculator</b></a><a href="met-calories-calculator.html"><b>Calories Burned by Activity (MET) Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({dose,hrs,hl}){
+if(hl<=0)return 'Half-life must be positive.';const left=dose*Math.pow(.5,hrs/hl);return [['Caffeine remaining',N(left,1)+' mg'],['Percent remaining',PCT(left/dose*100,1)],['Hours until under 25 mg',dose>25?N(hl*Math.log2(dose/25),1):'0']];
+});</script>
+</body></html>

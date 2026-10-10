@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thin Lens Equation Calculator | CalcHub</title>
+<meta name="description" content="Find image distance and magnification for a thin lens or mirror.">
+<link rel="canonical" href="https://YOURDOMAIN.com/thin-lens-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a virtual image?", "acceptedAnswer": {"@type": "Answer", "text": "One that cannot be projected on a screen, seen when the object is inside the focal length."}}, {"@type": "Question", "name": "Does it work for mirrors?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with the same equation and sign convention."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Thin Lens Equation Calculator</h1>
+<p class="muted">Find image distance and magnification for a thin lens or mirror.</p>
+<form class="card" data-calc="1">
+<label for="f">Focal length (cm)</label><input id="f" type="number" step="any" value="20">
+<label for="u">Object distance (cm)</label><input id="u" type="number" step="any" value="50">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The thin lens equation 1/f = 1/do + 1/di relates focal length f, object distance do and image distance di. Magnification m = -di/do. A positive di means a real image on the opposite side of the lens.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a virtual image?</summary><p>One that cannot be projected on a screen, seen when the object is inside the focal length.</p></details>
+<details><summary>Does it work for mirrors?</summary><p>Yes, with the same equation and sign convention.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="mole-calculator.html"><b>Mole Calculator (Grams to Moles)</b></a><a href="percent-yield-calculator.html"><b>Percent Yield Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a><a href="density-calculator.html"><b>Density Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({f,u}){
+if(f===u)return 'The image forms at infinity when the object is at the focal point.';const di=1/(1/f-1/u),m=-di/u;return [['Image distance',N(di,3)+' cm'],['Magnification',N(m,3)+'x'],['Image type',di>0?'Real, '+(m<0?'inverted':'upright'):'Virtual, upright'],['Image size relative to object',N(Math.abs(m)*100,1)+'%']];
+});</script>
+</body></html>

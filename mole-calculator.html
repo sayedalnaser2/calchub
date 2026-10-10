@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mole Calculator (Grams to Moles) | CalcHub</title>
+<meta name="description" content="Convert between grams, moles and number of particles.">
+<link rel="canonical" href="https://YOURDOMAIN.com/mole-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I find molar mass?", "acceptedAnswer": {"@type": "Answer", "text": "Add the atomic masses of all atoms in the formula."}}, {"@type": "Question", "name": "What is a mole?", "acceptedAnswer": {"@type": "Answer", "text": "The amount of substance containing exactly the Avogadro number of entities."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Mole Calculator (Grams to Moles)</h1>
+<p class="muted">Convert between grams, moles and number of particles.</p>
+<form class="card" data-calc="1">
+<label for="g">Mass (g)</label><input id="g" type="number" step="any" value="36">
+<label for="mm">Molar mass (g/mol)</label><input id="mm" type="number" step="any" value="18.015">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Moles = mass / molar mass. One mole contains 6.02214076 x 10^23 particles (Avogadro&#x27;s number). Water has a molar mass of about 18.015 g/mol.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I find molar mass?</summary><p>Add the atomic masses of all atoms in the formula.</p></details>
+<details><summary>What is a mole?</summary><p>The amount of substance containing exactly the Avogadro number of entities.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="percent-yield-calculator.html"><b>Percent Yield Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a><a href="density-calculator.html"><b>Density Calculator</b></a><a href="force-calculator.html"><b>Force Calculator (F = ma)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({g,mm}){
+if(mm<=0)return 'Molar mass must be positive.';const mol=g/mm;return [['Moles',N(mol,6)+' mol'],['Particles',(mol*6.02214076e23).toExponential(4)],['Mass of 1 mole',N(mm,4)+' g'],['Avogadro constant','6.02214076 × 10²³ per mol']];
+});</script>
+</body></html>

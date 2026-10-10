@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doppler Effect Calculator | CalcHub</title>
+<meta name="description" content="Calculate the observed frequency when a source or observer is moving.">
+<link rel="canonical" href="https://YOURDOMAIN.com/doppler-effect-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does it work for light?", "acceptedAnswer": {"@type": "Answer", "text": "Light needs the relativistic Doppler formula."}}, {"@type": "Question", "name": "What speed is Mach 1?", "acceptedAnswer": {"@type": "Answer", "text": "About 343 m/s in air at 20 \u00b0C."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Doppler Effect Calculator</h1>
+<p class="muted">Calculate the observed frequency when a source or observer is moving.</p>
+<form class="card" data-calc="1">
+<label for="f">Source frequency (Hz)</label><input id="f" type="number" step="any" value="500">
+<label for="vs">Source speed (m/s)</label><input id="vs" type="number" step="any" value="30">
+<label for="vo">Observer speed (m/s)</label><input id="vo" type="number" step="any" value="0">
+<label for="c">Wave speed in medium (m/s)</label><input id="c" type="number" step="any" value="343">
+<label for="dir">Motion</label><select id="dir"><option value="1" selected>Moving toward each other</option><option value="-1">Moving apart</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>For sound: f&#x27; = f x (c + v_observer) / (c - v_source) when approaching. Use the opposite signs when moving apart. This is why an ambulance siren drops in pitch as it passes.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does it work for light?</summary><p>Light needs the relativistic Doppler formula.</p></details>
+<details><summary>What speed is Mach 1?</summary><p>About 343 m/s in air at 20 °C.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="kepler-third-law-calculator.html"><b>Kepler&#x27;s Third Law (Orbital Period) Calculator</b></a><a href="capacitor-energy-calculator.html"><b>Capacitor Energy Calculator</b></a><a href="rc-time-constant-calculator.html"><b>RC Time Constant Calculator</b></a><a href="thin-lens-calculator.html"><b>Thin Lens Equation Calculator</b></a><a href="mole-calculator.html"><b>Mole Calculator (Grams to Moles)</b></a><a href="percent-yield-calculator.html"><b>Percent Yield Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({f,vs,vo,c,dir}){
+const den=c-dir*vs;if(den<=0)return 'Source speed must be below the wave speed.';const fo=f*(c+dir*vo)/den;return [['Observed frequency',N(fo,2)+' Hz'],['Shift',N(fo-f,2)+' Hz'],['Change',PCT((fo/f-1)*100,2)]];
+});</script>
+</body></html>

@@ -35,11 +35,11 @@
 <details><summary>How many radians are in one arcsecond?</summary><p>There are 4.84814e-06 radians in one arcsecond.</p></details>
 <details><summary>How many arcseconds are in one radian?</summary><p>There are 206,264.81 arcseconds in one radian.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="radians-to-arcseconds.html"><b>Radians to Arcseconds Converter</b></a><a href="arcseconds-to-degrees.html"><b>Arcseconds to Degrees Converter</b></a><a href="arcseconds-to-gradians.html"><b>Arcseconds to Gradians Converter</b></a><a href="arcseconds-to-arcminutes.html"><b>Arcseconds to Arcminutes Converter</b></a><a href="arcseconds-to-turns.html"><b>Arcseconds to Turns Converter</b></a><a href="degrees-to-radians.html"><b>Degrees to Radians Converter</b></a><a href="gradians-to-radians.html"><b>Gradians to Radians Converter</b></a><a href="arcminutes-to-radians.html"><b>Arcminutes to Radians Converter</b></a><a href="turns-to-radians.html"><b>Turns to Radians Converter</b></a></div>
+<div class="grid"><a href="radians-to-arcseconds.html"><b>Radians to Arcseconds Converter</b></a><a href="arcseconds-to-degrees.html"><b>Arcseconds to Degrees Converter</b></a><a href="arcseconds-to-gradians.html"><b>Arcseconds to Gradians Converter</b></a><a href="arcseconds-to-turns.html"><b>Arcseconds to Turns Converter</b></a><a href="degrees-to-radians.html"><b>Degrees to Radians Converter</b></a><a href="gradians-to-radians.html"><b>Gradians to Radians Converter</b></a><a href="arcminutes-to-radians.html"><b>Arcminutes to Radians Converter</b></a><a href="turns-to-radians.html"><b>Turns to Radians Converter</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=4.84813681109536e-06;const r=v*F;return [[SF(v)+' arcsec =',SF(r)+' rad'],['Formula','rad = arcsec × '+SF(F)],['Reverse','1 rad = '+SF(1/F)+' arcsec'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' arcsec',SF(x*F)+' rad'])];
+const F=4.84813681109536e-06;const r=v*F;return [[SF(v)+' '+(v===1?'arcsec':'arcsec')+' =',SF(r)+' '+(r===1?'rad':'rad')],['Formula','rad = arcsec × '+SF(F)],['Reverse','1 arcsec = '+SF(1/F)+' rad'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'arcsec':'arcsec'),SF(x*F)+' rad'])];
 });</script>
 </body></html>

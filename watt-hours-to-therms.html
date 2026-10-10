@@ -28,7 +28,7 @@
 <h2>Watt Hours to Therms conversion table</h2>
 <table class="ref"><thead><tr><th>Watt Hours</th><th>Therms</th></tr></thead><tbody><tr><td>1 Wh</td><td>3.41296e-05 therms</td></tr><tr><td>2 Wh</td><td>6.82591e-05 therms</td></tr><tr><td>5 Wh</td><td>0.00017064782 therms</td></tr><tr><td>10 Wh</td><td>0.00034129563 therms</td></tr><tr><td>20 Wh</td><td>0.00068259127 therms</td></tr><tr><td>25 Wh</td><td>0.00085323909 therms</td></tr><tr><td>50 Wh</td><td>0.0017064782 therms</td></tr><tr><td>100 Wh</td><td>0.0034129563 therms</td></tr><tr><td>250 Wh</td><td>0.0085323909 therms</td></tr><tr><td>500 Wh</td><td>0.017064782 therms</td></tr><tr><td>1,000 Wh</td><td>0.034129563 therms</td></tr></tbody></table>
 <h2>Therms to Watt Hours conversion table</h2>
-<table class="ref"><thead><tr><th>Therms</th><th>Watt Hours</th></tr></thead><tbody><tr><td>1 therms</td><td>29,300.111 Wh</td></tr><tr><td>2 therms</td><td>58,600.222 Wh</td></tr><tr><td>5 therms</td><td>146,500.56 Wh</td></tr><tr><td>10 therms</td><td>293,001.11 Wh</td></tr><tr><td>20 therms</td><td>586,002.22 Wh</td></tr><tr><td>25 therms</td><td>732,502.78 Wh</td></tr><tr><td>50 therms</td><td>1,465,005.6 Wh</td></tr><tr><td>100 therms</td><td>2,930,011.1 Wh</td></tr><tr><td>250 therms</td><td>7,325,027.8 Wh</td></tr><tr><td>500 therms</td><td>14,650,056 Wh</td></tr><tr><td>1,000 therms</td><td>29,300,111 Wh</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Therms</th><th>Watt Hours</th></tr></thead><tbody><tr><td>1 therm</td><td>29,300.111 Wh</td></tr><tr><td>2 therms</td><td>58,600.222 Wh</td></tr><tr><td>5 therms</td><td>146,500.56 Wh</td></tr><tr><td>10 therms</td><td>293,001.11 Wh</td></tr><tr><td>20 therms</td><td>586,002.22 Wh</td></tr><tr><td>25 therms</td><td>732,502.78 Wh</td></tr><tr><td>50 therms</td><td>1,465,005.6 Wh</td></tr><tr><td>100 therms</td><td>2,930,011.1 Wh</td></tr><tr><td>250 therms</td><td>7,325,027.8 Wh</td></tr><tr><td>500 therms</td><td>14,650,056 Wh</td></tr><tr><td>1,000 therms</td><td>29,300,111 Wh</td></tr></tbody></table>
 <h2>About energy units</h2>
 <p>Energy is measured in joules in the SI system. Calories describe food energy, kilowatt hours appear on electricity bills, and BTU is used for heating and cooling.</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=3.412956340704055e-05;const r=v*F;return [[SF(v)+' Wh =',SF(r)+' therms'],['Formula','therms = Wh × '+SF(F)],['Reverse','1 therms = '+SF(1/F)+' Wh'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' Wh',SF(x*F)+' therms'])];
+const F=3.412956340704055e-05;const r=v*F;return [[SF(v)+' '+(v===1?'Wh':'Wh')+' =',SF(r)+' '+(r===1?'therm':'therms')],['Formula','therms = Wh × '+SF(F)],['Reverse','1 Wh = '+SF(1/F)+' therms'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'Wh':'Wh'),SF(x*F)+' therms'])];
 });</script>
 </body></html>

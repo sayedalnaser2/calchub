@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Work Hours Calculator | CalcHub</title>
+<meta name="description" content="Calculate hours worked between a start and end time, minus unpaid breaks.">
+<link rel="canonical" href="https://YOURDOMAIN.com/work-hours-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert minutes to decimal hours?", "acceptedAnswer": {"@type": "Answer", "text": "Divide by 60; 30 minutes is 0.5."}}, {"@type": "Question", "name": "Does it handle night shifts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when the end is earlier than the start it assumes the next day."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Work Hours Calculator</h1>
+<p class="muted">Calculate hours worked between a start and end time, minus unpaid breaks.</p>
+<form class="card" data-calc="1">
+<label for="st">Start time</label><input id="st" type="time" value="09:00">
+<label for="en">End time</label><input id="en" type="time" value="17:30">
+<label for="br">Unpaid break (minutes)</label><input id="br" type="number" step="any" value="30">
+<label for="days">Days per week</label><input id="days" type="number" step="any" value="5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Hours worked = end time - start time - break. If the end time is earlier than the start (overnight shift), the calculator adds 24 hours.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert minutes to decimal hours?</summary><p>Divide by 60; 30 minutes is 0.5.</p></details>
+<details><summary>Does it handle night shifts?</summary><p>Yes, when the end is earlier than the start it assumes the next day.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="pizza-calculator.html"><b>Pizza Calculator (How Many Pizzas to Order)</b></a><a href="turkey-cooking-time-calculator.html"><b>Turkey Cooking Time Calculator</b></a><a href="coffee-ratio-calculator.html"><b>Coffee to Water Ratio Calculator</b></a><a href="party-drink-calculator.html"><b>Party Drink Calculator</b></a><a href="born-in-1930-how-old-am-i.html"><b>Born in 1930: How Old Am I?</b></a><a href="born-in-1931-how-old-am-i.html"><b>Born in 1931: How Old Am I?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({st,en,br,days}){
+const p=s=>{const [h,m]=s.split(':').map(Number);return h*60+m;};let d=p(en)-p(st);if(d<0)d+=1440;const net=d-br;if(net<0)return 'Break is longer than the shift.';const f=x=>Math.floor(x/60)+' h '+(x%60)+' min';return [['Hours worked per day',f(net)],['Decimal hours',N(net/60,2)],['Per week',N(net/60*days,2)+' h'],['Per month (4.33 weeks)',N(net/60*days*4.333,1)+' h']];
+});</script>
+</body></html>

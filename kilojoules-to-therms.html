@@ -28,7 +28,7 @@
 <h2>Kilojoules to Therms conversion table</h2>
 <table class="ref"><thead><tr><th>Kilojoules</th><th>Therms</th></tr></thead><tbody><tr><td>1 kJ</td><td>9.48043e-06 therms</td></tr><tr><td>2 kJ</td><td>1.89609e-05 therms</td></tr><tr><td>5 kJ</td><td>4.74022e-05 therms</td></tr><tr><td>10 kJ</td><td>9.48043e-05 therms</td></tr><tr><td>20 kJ</td><td>0.00018960869 therms</td></tr><tr><td>25 kJ</td><td>0.00023701086 therms</td></tr><tr><td>50 kJ</td><td>0.00047402171 therms</td></tr><tr><td>100 kJ</td><td>0.00094804343 therms</td></tr><tr><td>250 kJ</td><td>0.0023701086 therms</td></tr><tr><td>500 kJ</td><td>0.0047402171 therms</td></tr><tr><td>1,000 kJ</td><td>0.0094804343 therms</td></tr></tbody></table>
 <h2>Therms to Kilojoules conversion table</h2>
-<table class="ref"><thead><tr><th>Therms</th><th>Kilojoules</th></tr></thead><tbody><tr><td>1 therms</td><td>105,480.4 kJ</td></tr><tr><td>2 therms</td><td>210,960.8 kJ</td></tr><tr><td>5 therms</td><td>527,402 kJ</td></tr><tr><td>10 therms</td><td>1,054,804 kJ</td></tr><tr><td>20 therms</td><td>2,109,608 kJ</td></tr><tr><td>25 therms</td><td>2,637,010 kJ</td></tr><tr><td>50 therms</td><td>5,274,020 kJ</td></tr><tr><td>100 therms</td><td>10,548,040 kJ</td></tr><tr><td>250 therms</td><td>26,370,100 kJ</td></tr><tr><td>500 therms</td><td>52,740,200 kJ</td></tr><tr><td>1,000 therms</td><td>105,480,400 kJ</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Therms</th><th>Kilojoules</th></tr></thead><tbody><tr><td>1 therm</td><td>105,480.4 kJ</td></tr><tr><td>2 therms</td><td>210,960.8 kJ</td></tr><tr><td>5 therms</td><td>527,402 kJ</td></tr><tr><td>10 therms</td><td>1,054,804 kJ</td></tr><tr><td>20 therms</td><td>2,109,608 kJ</td></tr><tr><td>25 therms</td><td>2,637,010 kJ</td></tr><tr><td>50 therms</td><td>5,274,020 kJ</td></tr><tr><td>100 therms</td><td>10,548,040 kJ</td></tr><tr><td>250 therms</td><td>26,370,100 kJ</td></tr><tr><td>500 therms</td><td>52,740,200 kJ</td></tr><tr><td>1,000 therms</td><td>105,480,400 kJ</td></tr></tbody></table>
 <h2>About energy units</h2>
 <p>Energy is measured in joules in the SI system. Calories describe food energy, kilowatt hours appear on electricity bills, and BTU is used for heating and cooling.</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=9.480434279733486e-06;const r=v*F;return [[SF(v)+' kJ =',SF(r)+' therms'],['Formula','therms = kJ × '+SF(F)],['Reverse','1 therms = '+SF(1/F)+' kJ'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' kJ',SF(x*F)+' therms'])];
+const F=9.480434279733486e-06;const r=v*F;return [[SF(v)+' '+(v===1?'kJ':'kJ')+' =',SF(r)+' '+(r===1?'therm':'therms')],['Formula','therms = kJ × '+SF(F)],['Reverse','1 kJ = '+SF(1/F)+' therms'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'kJ':'kJ'),SF(x*F)+' therms'])];
 });</script>
 </body></html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coffee to Water Ratio Calculator | CalcHub</title>
+<meta name="description" content="Find how much coffee to use for a given amount of water.">
+<link rel="canonical" href="https://YOURDOMAIN.com/coffee-ratio-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What ratio does a French press use?", "acceptedAnswer": {"@type": "Answer", "text": "Around 1:12 to 1:15."}}, {"@type": "Question", "name": "Why weigh coffee?", "acceptedAnswer": {"@type": "Answer", "text": "Scoops vary with grind and roast; weight is consistent."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Coffee to Water Ratio Calculator</h1>
+<p class="muted">Find how much coffee to use for a given amount of water.</p>
+<form class="card" data-calc="1">
+<label for="water">Water (ml)</label><input id="water" type="number" step="any" value="500">
+<label for="ratio">Ratio (1 g coffee : X g water)</label><select id="ratio"><option value="15">1:15 (stronger)</option><option value="16" selected>1:16 (balanced)</option><option value="17">1:17 (lighter)</option><option value="18">1:18 (mild)</option></select>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Coffee weight = water weight / ratio (1 ml of water weighs about 1 g). The Specialty Coffee Association recommends roughly 1:15 to 1:18. One level tablespoon of ground coffee is about 5 g.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What ratio does a French press use?</summary><p>Around 1:12 to 1:15.</p></details>
+<details><summary>Why weigh coffee?</summary><p>Scoops vary with grind and roast; weight is consistent.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="party-drink-calculator.html"><b>Party Drink Calculator</b></a><a href="born-in-1930-how-old-am-i.html"><b>Born in 1930: How Old Am I?</b></a><a href="born-in-1931-how-old-am-i.html"><b>Born in 1931: How Old Am I?</b></a><a href="born-in-1932-how-old-am-i.html"><b>Born in 1932: How Old Am I?</b></a><a href="born-in-1933-how-old-am-i.html"><b>Born in 1933: How Old Am I?</b></a><a href="born-in-1934-how-old-am-i.html"><b>Born in 1934: How Old Am I?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({water,ratio}){
+const g=water/ratio;return [['Coffee needed',N(g,1)+' g'],['Tablespoons (approx.)',N(g/5,1)+' tbsp'],['Water in cups (8 oz)',N(water/236.588,2)],['Water in fl oz',N(water/29.5735,1)]];
+});</script>
+</body></html>

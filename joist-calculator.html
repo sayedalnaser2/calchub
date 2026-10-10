@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Floor Joist Calculator | CalcHub</title>
+<meta name="description" content="Calculate how many joists a floor or deck needs for a given spacing.">
+<link rel="canonical" href="https://YOURDOMAIN.com/joist-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What spacing is most common?", "acceptedAnswer": {"@type": "Answer", "text": "16 inches on center for floors."}}, {"@type": "Question", "name": "How do I size the joists?", "acceptedAnswer": {"@type": "Answer", "text": "Use span tables from your local building code or a span calculator for your lumber species."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Floor Joist Calculator</h1>
+<p class="muted">Calculate how many joists a floor or deck needs for a given spacing.</p>
+<form class="card" data-calc="1">
+<label for="len">Length the joists run across (ft)</label><input id="len" type="number" step="any" value="16">
+<label for="sp">Joist spacing (inches on center)</label><input id="sp" type="number" step="any" value="16">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Joists = floor(length x 12 / spacing) + 1, which includes the first and last joist. Standard spacings are 12, 16 and 24 inches on center. Joist size and span depend on lumber species and code tables.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What spacing is most common?</summary><p>16 inches on center for floors.</p></details>
+<details><summary>How do I size the joists?</summary><p>Use span tables from your local building code or a span calculator for your lumber species.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="plywood-sheet-calculator.html"><b>Plywood Sheet Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a><a href="flooring-calculator.html"><b>Flooring Calculator</b></a><a href="tile-calculator.html"><b>Tile Calculator</b></a><a href="gravel-calculator.html"><b>Gravel Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({len,sp}){
+const n=Math.floor(len*12/sp)+1;return [['Joists needed',n],['Spacing',sp+' in on center'],['Extra joist for end if not aligned',len*12%sp>0?'Add 1 to finish the edge ('+(n+1)+' total)':'None needed']];
+});</script>
+</body></html>

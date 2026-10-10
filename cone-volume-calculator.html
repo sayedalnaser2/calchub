@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cone Volume and Surface Area Calculator | CalcHub</title>
+<meta name="description" content="Calculate volume, slant height and surface area of a cone.">
+<link rel="canonical" href="https://YOURDOMAIN.com/cone-volume-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is a cone one third of a cylinder?", "acceptedAnswer": {"@type": "Answer", "text": "It follows from integral calculus and can be shown by filling a cone with water three times."}}, {"@type": "Question", "name": "What is slant height?", "acceptedAnswer": {"@type": "Answer", "text": "The distance along the surface from the apex to the base edge."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Cone Volume and Surface Area Calculator</h1>
+<p class="muted">Calculate volume, slant height and surface area of a cone.</p>
+<form class="card" data-calc="1">
+<label for="r">Base radius</label><input id="r" type="number" step="any" value="4">
+<label for="h">Height</label><input id="h" type="number" step="any" value="9">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Volume = pi x r^2 x h / 3, one third of a cylinder with the same base and height. Slant height = sqrt(r^2 + h^2). Lateral area = pi x r x slant height.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why is a cone one third of a cylinder?</summary><p>It follows from integral calculus and can be shown by filling a cone with water three times.</p></details>
+<details><summary>What is slant height?</summary><p>The distance along the surface from the apex to the base edge.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="pyramid-volume-calculator.html"><b>Pyramid Volume Calculator</b></a><a href="trapezoid-area-calculator.html"><b>Trapezoid Area Calculator</b></a><a href="parallelogram-area-calculator.html"><b>Parallelogram Area Calculator</b></a><a href="ellipse-area-calculator.html"><b>Ellipse Area and Perimeter Calculator</b></a><a href="rhombus-area-calculator.html"><b>Rhombus Area Calculator</b></a><a href="sector-area-calculator.html"><b>Circle Sector Area and Arc Length Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({r,h}){
+const s=Math.hypot(r,h);return [['Volume',N(Math.PI*r*r*h/3,4)],['Slant height',N(s,4)],['Lateral surface area',N(Math.PI*r*s,4)],['Total surface area',N(Math.PI*r*(r+s),4)]];
+});</script>
+</body></html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Average Speed Calculator (Two Legs) | CalcHub</title>
+<meta name="description" content="Calculate the true average speed for a trip made at two different speeds.">
+<link rel="canonical" href="https://YOURDOMAIN.com/average-speed-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why isn't it just (30+60)/2?", "acceptedAnswer": {"@type": "Answer", "text": "Because you spend more time at the lower speed."}}, {"@type": "Question", "name": "What if times are equal instead?", "acceptedAnswer": {"@type": "Answer", "text": "Then the simple average of the speeds is correct."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Average Speed Calculator (Two Legs)</h1>
+<p class="muted">Calculate the true average speed for a trip made at two different speeds.</p>
+<form class="card" data-calc="1">
+<label for="d1">Distance of leg 1</label><input id="d1" type="number" step="any" value="60">
+<label for="v1">Speed on leg 1</label><input id="v1" type="number" step="any" value="30">
+<label for="d2">Distance of leg 2</label><input id="d2" type="number" step="any" value="60">
+<label for="v2">Speed on leg 2</label><input id="v2" type="number" step="any" value="60">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Average speed is total distance divided by total time, not the average of the speeds. Driving the same distance at 30 and 60 gives 40 average, because more time is spent at the slow speed.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why isn&#x27;t it just (30+60)/2?</summary><p>Because you spend more time at the lower speed.</p></details>
+<details><summary>What if times are equal instead?</summary><p>Then the simple average of the speeds is correct.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="circumference-calculator.html"><b>Circumference Calculator</b></a><a href="number-to-words-calculator.html"><b>Number to Words Converter</b></a><a href="leap-year-calculator.html"><b>Leap Year Calculator</b></a><a href="mixed-number-calculator.html"><b>Mixed Number to Improper Fraction Calculator</b></a><a href="cube-calculator.html"><b>Cube Volume and Diagonal Calculator</b></a><a href="1-2-as-a-decimal.html"><b>1/2 as a Decimal and Percent</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({d1,v1,d2,v2}){
+if(v1<=0||v2<=0)return 'Speeds must be positive.';const t1=d1/v1,t2=d2/v2;return [['Average speed',N((d1+d2)/(t1+t2),4)],['Simple average of speeds',N((v1+v2)/2,4)],['Total distance',N(d1+d2,4)],['Total time',N(t1+t2,4)+' (in time units)']];
+});</script>
+</body></html>

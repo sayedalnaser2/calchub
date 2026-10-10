@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Road Trip Cost Calculator | CalcHub</title>
+<meta name="description" content="Estimate fuel and total cost of a road trip and the cost per traveler.">
+<link rel="canonical" href="https://YOURDOMAIN.com/road-trip-cost-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need to include wear and tear?", "acceptedAnswer": {"@type": "Answer", "text": "For a fuller cost, add about 10-20 cents per mile for maintenance and depreciation."}}, {"@type": "Question", "name": "Does highway driving change mpg?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Speeds above 65 mph reduce efficiency."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Road Trip Cost Calculator</h1>
+<p class="muted">Estimate fuel and total cost of a road trip and the cost per traveler.</p>
+<form class="card" data-calc="1">
+<label for="dist">Distance one way (miles)</label><input id="dist" type="number" step="any" value="350">
+<label for="rt">Trip type</label><select id="rt"><option value="1">One way</option><option value="2" selected>Round trip</option></select>
+<label for="mpg">Vehicle fuel economy (mpg)</label><input id="mpg" type="number" step="any" value="28">
+<label for="gas">Gas price ($/gallon)</label><input id="gas" type="number" step="any" value="3.5">
+<label for="oth">Tolls, parking, other ($)</label><input id="oth" type="number" step="any" value="40">
+<label for="ppl">Travelers sharing cost</label><input id="ppl" type="number" step="any" value="2">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Gallons = miles / mpg. Fuel cost = gallons x price. Add tolls and other expenses, then divide by travelers.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Do I need to include wear and tear?</summary><p>For a fuller cost, add about 10-20 cents per mile for maintenance and depreciation.</p></details>
+<details><summary>Does highway driving change mpg?</summary><p>Yes. Speeds above 65 mph reduce efficiency.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="reading-time-calculator.html"><b>Reading Time Calculator</b></a><a href="speech-length-calculator.html"><b>Speech Length Calculator</b></a><a href="typing-speed-calculator.html"><b>Typing Speed (WPM) Calculator</b></a><a href="days-alive-calculator.html"><b>How Many Days Old Am I? Calculator</b></a><a href="birthday-countdown-calculator.html"><b>Birthday Countdown Calculator</b></a><a href="work-hours-calculator.html"><b>Work Hours Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({dist,rt,mpg,gas,oth,ppl}){
+if(mpg<=0||ppl<1)return 'Check mpg and travelers.';const mi=dist*rt,gal=mi/mpg,fuel=gal*gas,tot=fuel+oth;return [['Total trip cost',M(tot)],['Fuel cost',M(fuel)],['Gallons used',N(gal,1)],['Cost per traveler',M(tot/ppl)],['Total miles',N(mi,0)]];
+});</script>
+</body></html>

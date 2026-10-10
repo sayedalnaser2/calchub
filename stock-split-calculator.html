@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stock Split Calculator | CalcHub</title>
+<meta name="description" content="Calculate your new share count and price after a stock split.">
+<link rel="canonical" href="https://YOURDOMAIN.com/stock-split-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does a split change my wealth?", "acceptedAnswer": {"@type": "Answer", "text": "Not by itself; the share count rises and the price falls proportionally."}}, {"@type": "Question", "name": "What is a reverse split?", "acceptedAnswer": {"@type": "Answer", "text": "It reduces the share count and raises the price, e.g. 1-for-10."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Stock Split Calculator</h1>
+<p class="muted">Calculate your new share count and price after a stock split.</p>
+<form class="card" data-calc="1">
+<label for="sh">Shares you own</label><input id="sh" type="number" step="any" value="100">
+<label for="price">Price per share before split ($)</label><input id="price" type="number" step="any" value="200">
+<label for="a">Split ratio: new shares</label><input id="a" type="number" step="any" value="4">
+<label for="b">Split ratio: for every old shares</label><input id="b" type="number" step="any" value="1">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>In an a-for-b split each b old shares become a new shares and the price is divided by a/b, so total value does not change at the moment of the split.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does a split change my wealth?</summary><p>Not by itself; the share count rises and the price falls proportionally.</p></details>
+<details><summary>What is a reverse split?</summary><p>It reduces the share count and raises the price, e.g. 1-for-10.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="freelance-rate-calculator.html"><b>Freelance Hourly Rate Calculator</b></a><a href="margin-to-markup-calculator.html"><b>Margin to Markup Converter</b></a><a href="doubling-time-calculator.html"><b>Doubling Time Calculator</b></a><a href="real-rate-of-return-calculator.html"><b>Real Rate of Return Calculator</b></a><a href="cost-per-mile-calculator.html"><b>Car Cost per Mile Calculator</b></a><a href="inventory-turnover-calculator.html"><b>Inventory Turnover Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({sh,price,a,b}){
+if(b===0)return 'The old-share number cannot be zero.';const ns=sh*a/b,np=price*b/a;return [['New number of shares',N(ns,4)],['New price per share',M(np)],['Total value (unchanged)',M(ns*np)],['Split',a+'-for-'+b+(a<b?' (reverse split)':'')]];
+});</script>
+</body></html>

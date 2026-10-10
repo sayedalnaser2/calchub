@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cylinder Volume and Surface Area Calculator | CalcHub</title>
+<meta name="description" content="Calculate volume, lateral and total surface area of a cylinder.">
+<link rel="canonical" href="https://YOURDOMAIN.com/cylinder-volume-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many gallons does a cylinder hold?", "acceptedAnswer": {"@type": "Answer", "text": "Compute the volume in cubic inches and divide by 231."}}, {"@type": "Question", "name": "What if I know the diameter?", "acceptedAnswer": {"@type": "Answer", "text": "Halve it to get the radius."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Cylinder Volume and Surface Area Calculator</h1>
+<p class="muted">Calculate volume, lateral and total surface area of a cylinder.</p>
+<form class="card" data-calc="1">
+<label for="r">Radius</label><input id="r" type="number" step="any" value="3">
+<label for="h">Height</label><input id="h" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Volume = pi x r^2 x h. Lateral area = 2 x pi x r x h. Total surface area adds two circular bases: 2 x pi x r x (r + h).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How many gallons does a cylinder hold?</summary><p>Compute the volume in cubic inches and divide by 231.</p></details>
+<details><summary>What if I know the diameter?</summary><p>Halve it to get the radius.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="cone-volume-calculator.html"><b>Cone Volume and Surface Area Calculator</b></a><a href="pyramid-volume-calculator.html"><b>Pyramid Volume Calculator</b></a><a href="trapezoid-area-calculator.html"><b>Trapezoid Area Calculator</b></a><a href="parallelogram-area-calculator.html"><b>Parallelogram Area Calculator</b></a><a href="ellipse-area-calculator.html"><b>Ellipse Area and Perimeter Calculator</b></a><a href="rhombus-area-calculator.html"><b>Rhombus Area Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({r,h}){
+return [['Volume',N(Math.PI*r*r*h,4)],['Lateral surface area',N(2*Math.PI*r*h,4)],['Total surface area',N(2*Math.PI*r*(r+h),4)],['Base area',N(Math.PI*r*r,4)]];
+});</script>
+</body></html>

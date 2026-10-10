@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inventory Turnover Calculator | CalcHub</title>
+<meta name="description" content="Calculate how often inventory sells through and the average days to sell it.">
+<link rel="canonical" href="https://YOURDOMAIN.com/inventory-turnover-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good turnover ratio?", "acceptedAnswer": {"@type": "Answer", "text": "It varies by industry: grocers turn inventory many times a year, car dealers far fewer."}}, {"@type": "Question", "name": "Can turnover be too high?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it can signal stockouts and lost sales."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Inventory Turnover Calculator</h1>
+<p class="muted">Calculate how often inventory sells through and the average days to sell it.</p>
+<form class="card" data-calc="1">
+<label for="cogs">Cost of goods sold for the year ($)</label><input id="cogs" type="number" step="any" value="500000">
+<label for="beg">Beginning inventory ($)</label><input id="beg" type="number" step="any" value="90000">
+<label for="end">Ending inventory ($)</label><input id="end" type="number" step="any" value="110000">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Inventory turnover = cost of goods sold / average inventory. Days sales of inventory = 365 / turnover. Higher turnover generally means less cash tied up in stock.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a good turnover ratio?</summary><p>It varies by industry: grocers turn inventory many times a year, car dealers far fewer.</p></details>
+<details><summary>Can turnover be too high?</summary><p>Yes, it can signal stockouts and lost sales.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="customer-lifetime-value-calculator.html"><b>Customer Lifetime Value Calculator</b></a><a href="roas-calculator.html"><b>ROAS Calculator (Return on Ad Spend)</b></a><a href="ad-metrics-calculator.html"><b>CTR, CPC and CPM Calculator</b></a><a href="website-ad-revenue-calculator.html"><b>Website Ad Revenue Calculator (RPM)</b></a><a href="8-dollars-an-hour-is-how-much-a-year.html"><b>$8 an Hour Is How Much a Year?</b></a><a href="9-dollars-an-hour-is-how-much-a-year.html"><b>$9 an Hour Is How Much a Year?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({cogs,beg,end}){
+const avg=(beg+end)/2;if(avg<=0)return 'Average inventory must be positive.';const t=cogs/avg;return [['Inventory turnover',N(t,2)+'x'],['Days to sell inventory',N(365/t,1)],['Average inventory',M(avg)]];
+});</script>
+</body></html>

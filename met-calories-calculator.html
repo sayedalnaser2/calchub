@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calories Burned by Activity (MET) Calculator | CalcHub</title>
+<meta name="description" content="Estimate calories burned for walking, cycling, swimming, yoga and more using MET values.">
+<link rel="canonical" href="https://YOURDOMAIN.com/met-calories-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a MET?", "acceptedAnswer": {"@type": "Answer", "text": "A metabolic equivalent; sitting quietly is 1 MET."}}, {"@type": "Question", "name": "Why do results differ from my watch?", "acceptedAnswer": {"@type": "Answer", "text": "Wearables use heart rate and personal data, so they may differ."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Calories Burned by Activity (MET) Calculator</h1>
+<p class="muted">Estimate calories burned for walking, cycling, swimming, yoga and more using MET values.</p>
+<form class="card" data-calc="1">
+<label for="act">Activity</label><select id="act"><option value="2.3">Walking slowly (2 mph)</option><option value="3.5" selected>Walking (3 mph)</option><option value="5">Walking briskly (4 mph)</option><option value="9.8">Running (6 mph)</option><option value="11.8">Running (7.5 mph)</option><option value="4">Cycling leisurely</option><option value="10">Cycling vigorously</option><option value="5.8">Swimming laps</option><option value="2.5">Yoga</option><option value="3.5" selected>Weight training (light)</option><option value="6">Weight training (vigorous)</option><option value="8">HIIT / circuit training</option><option value="3.3">Housework</option><option value="4">Gardening</option><option value="4.5">Dancing</option></select>
+<label for="kg">Body weight (kg)</label><input id="kg" type="number" step="any" value="70">
+<label for="min">Duration (minutes)</label><input id="min" type="number" step="any" value="45">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Calories = MET x body weight (kg) x hours. A MET is the ratio of the activity&#x27;s energy use to resting energy use (1 MET at rest). Values are from the Compendium of Physical Activities and are averages.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a MET?</summary><p>A metabolic equivalent; sitting quietly is 1 MET.</p></details>
+<details><summary>Why do results differ from my watch?</summary><p>Wearables use heart rate and personal data, so they may differ.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="pace-converter.html"><b>Running Pace Converter (min/mile, min/km, mph)</b></a><a href="swim-pace-calculator.html"><b>Swim Pace Calculator (per 100m)</b></a><a href="bmi-for-4-ft-8-in.html"><b>BMI for 4 ft 8 in (142 cm)</b></a><a href="bmi-for-4-ft-9-in.html"><b>BMI for 4 ft 9 in (145 cm)</b></a><a href="bmi-for-4-ft-10-in.html"><b>BMI for 4 ft 10 in (147 cm)</b></a><a href="bmi-for-4-ft-11-in.html"><b>BMI for 4 ft 11 in (150 cm)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({act,kg,min}){
+const k=act*kg*min/60;return [['Calories burned',N(k,0)+' kcal'],['Per hour',N(act*kg,0)+' kcal'],['MET value',act],['Equivalent in kJ',N(k*4.184,0)]];
+});</script>
+</body></html>

@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.2521644007217973;const r=v*F;return [[SF(v)+' BTU =',SF(r)+' kcal'],['Formula','kcal = BTU × '+SF(F)],['Reverse','1 kcal = '+SF(1/F)+' BTU'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' BTU',SF(x*F)+' kcal'])];
+const F=0.2521644007217973;const r=v*F;return [[SF(v)+' '+(v===1?'BTU':'BTU')+' =',SF(r)+' '+(r===1?'kcal':'kcal')],['Formula','kcal = BTU × '+SF(F)],['Reverse','1 BTU = '+SF(1/F)+' kcal'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'BTU':'BTU'),SF(x*F)+' kcal'])];
 });</script>
 </body></html>

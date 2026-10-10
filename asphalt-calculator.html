@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Asphalt Calculator (Tons Needed) | CalcHub</title>
+<meta name="description" content="Estimate the tons of asphalt needed for a driveway or parking area.">
+<link rel="canonical" href="https://YOURDOMAIN.com/asphalt-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How thick should a driveway be?", "acceptedAnswer": {"@type": "Answer", "text": "2-3 inches over a compacted gravel base for residential driveways."}}, {"@type": "Question", "name": "Does it include the base?", "acceptedAnswer": {"@type": "Answer", "text": "No. Calculate the gravel base separately."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Asphalt Calculator (Tons Needed)</h1>
+<p class="muted">Estimate the tons of asphalt needed for a driveway or parking area.</p>
+<form class="card" data-calc="1">
+<label for="l">Length (ft)</label><input id="l" type="number" step="any" value="50">
+<label for="w">Width (ft)</label><input id="w" type="number" step="any" value="12">
+<label for="d">Compacted thickness (inches)</label><input id="d" type="number" step="any" value="3">
+<label for="den">Density (lb per cubic foot)</label><input id="den" type="number" step="any" value="145">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Volume = length x width x thickness. Hot-mix asphalt weighs about 145 lb per cubic foot compacted, so tons = cubic feet x 145 / 2000. Add a margin for compaction and edges.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How thick should a driveway be?</summary><p>2-3 inches over a compacted gravel base for residential driveways.</p></details>
+<details><summary>Does it include the base?</summary><p>No. Calculate the gravel base separately.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="rafter-length-calculator.html"><b>Rafter Length Calculator</b></a><a href="retaining-wall-block-calculator.html"><b>Retaining Wall Block Calculator</b></a><a href="baluster-calculator.html"><b>Baluster Spacing Calculator</b></a><a href="joist-calculator.html"><b>Floor Joist Calculator</b></a><a href="plywood-sheet-calculator.html"><b>Plywood Sheet Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,d,den}){
+const cf=l*w*d/12,t=cf*den/2000;return [['Asphalt needed',N(t,2)+' tons'],['With 5% extra',N(t*1.05,2)+' tons'],['Volume',N(cf,1)+' cu ft ('+N(cf/27,2)+' cu yd)'],['Area',N(l*w,0)+' sq ft']];
+});</script>
+</body></html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Car Cost per Mile Calculator | CalcHub</title>
+<meta name="description" content="Calculate the true cost per mile of owning and driving a car.">
+<link rel="canonical" href="https://YOURDOMAIN.com/cost-per-mile-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does this compare to mileage reimbursement?", "acceptedAnswer": {"@type": "Answer", "text": "The IRS standard mileage rate is a useful benchmark for business driving."}}, {"@type": "Question", "name": "Which costs dominate?", "acceptedAnswer": {"@type": "Answer", "text": "For many cars depreciation and insurance outweigh fuel."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Car Cost per Mile Calculator</h1>
+<p class="muted">Calculate the true cost per mile of owning and driving a car.</p>
+<form class="card" data-calc="1">
+<label for="mi">Miles driven per year</label><input id="mi" type="number" step="any" value="12000">
+<label for="gas">Fuel price ($/gallon)</label><input id="gas" type="number" step="any" value="3.5">
+<label for="mpg">Fuel economy (mpg)</label><input id="mpg" type="number" step="any" value="28">
+<label for="ins">Insurance per year ($)</label><input id="ins" type="number" step="any" value="1500">
+<label for="mnt">Maintenance and tires per year ($)</label><input id="mnt" type="number" step="any" value="900">
+<label for="dep">Depreciation per year ($)</label><input id="dep" type="number" step="any" value="2500">
+<label for="oth">Registration, parking, other per year ($)</label><input id="oth" type="number" step="any" value="400">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Total yearly cost is fuel (miles / mpg x price) plus insurance, maintenance, depreciation and other costs. Dividing by miles driven gives the cost per mile.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How does this compare to mileage reimbursement?</summary><p>The IRS standard mileage rate is a useful benchmark for business driving.</p></details>
+<details><summary>Which costs dominate?</summary><p>For many cars depreciation and insurance outweigh fuel.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="inventory-turnover-calculator.html"><b>Inventory Turnover Calculator</b></a><a href="customer-lifetime-value-calculator.html"><b>Customer Lifetime Value Calculator</b></a><a href="roas-calculator.html"><b>ROAS Calculator (Return on Ad Spend)</b></a><a href="ad-metrics-calculator.html"><b>CTR, CPC and CPM Calculator</b></a><a href="website-ad-revenue-calculator.html"><b>Website Ad Revenue Calculator (RPM)</b></a><a href="8-dollars-an-hour-is-how-much-a-year.html"><b>$8 an Hour Is How Much a Year?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({mi,gas,mpg,ins,mnt,dep,oth}){
+if(mi<=0||mpg<=0)return 'Miles and mpg must be positive.';const fuel=mi/mpg*gas,tot=fuel+ins+mnt+dep+oth;return [['Cost per mile',M(tot/mi)],['Total per year',M(tot)],['Per month',M(tot/12)],['Fuel cost per mile',M(fuel/mi)],['Fixed cost per mile',M((ins+dep+oth)/mi)]];
+});</script>
+</body></html>

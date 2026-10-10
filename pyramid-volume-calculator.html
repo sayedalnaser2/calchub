@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pyramid Volume Calculator | CalcHub</title>
+<meta name="description" content="Calculate the volume and slant heights of a rectangular pyramid.">
+<link rel="canonical" href="https://YOURDOMAIN.com/pyramid-volume-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What if the base is a square?", "acceptedAnswer": {"@type": "Answer", "text": "Enter the same number for length and width."}}, {"@type": "Question", "name": "Does this work for the Great Pyramid?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with base 230.4 m and original height 146.6 m the volume is about 2.6 million cubic meters."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Pyramid Volume Calculator</h1>
+<p class="muted">Calculate the volume and slant heights of a rectangular pyramid.</p>
+<form class="card" data-calc="1">
+<label for="l">Base length</label><input id="l" type="number" step="any" value="6">
+<label for="w">Base width</label><input id="w" type="number" step="any" value="4">
+<label for="h">Height</label><input id="h" type="number" step="any" value="9">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Volume = base area x height / 3. The four triangular faces have slant heights sqrt(h^2 + (w/2)^2) and sqrt(h^2 + (l/2)^2).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What if the base is a square?</summary><p>Enter the same number for length and width.</p></details>
+<details><summary>Does this work for the Great Pyramid?</summary><p>Yes, with base 230.4 m and original height 146.6 m the volume is about 2.6 million cubic meters.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="trapezoid-area-calculator.html"><b>Trapezoid Area Calculator</b></a><a href="parallelogram-area-calculator.html"><b>Parallelogram Area Calculator</b></a><a href="ellipse-area-calculator.html"><b>Ellipse Area and Perimeter Calculator</b></a><a href="rhombus-area-calculator.html"><b>Rhombus Area Calculator</b></a><a href="sector-area-calculator.html"><b>Circle Sector Area and Arc Length Calculator</b></a><a href="right-triangle-calculator.html"><b>Right Triangle Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({l,w,h}){
+const sl=Math.hypot(h,w/2),sw=Math.hypot(h,l/2);return [['Volume',N(l*w*h/3,4)],['Base area',N(l*w,4)],['Lateral surface area',N(l*sl+w*sw,4)],['Total surface area',N(l*w+l*sl+w*sw,4)]];
+});</script>
+</body></html>

@@ -127,7 +127,7 @@ def slugify(s):
 
 
 def tc(s):
-    t = s.title().replace("Mmhg", "mmHg").replace("Btu", "BTU").replace(" Per ", " per ").replace("Psi", "PSI")
+    t = s.title().replace("Mmhg", "mmHg").replace("Btu", "BTU").replace(" Per ", " per ").replace("Psi", "PSI").replace(" Of ", " of ")
     return t
 
 
@@ -174,8 +174,8 @@ def pair_extra(kind, a, b, units):
     F = fa / fb
     label, general, blurb = KIND_INFO[kind]
     vals = [1, 2, 5, 10, 20, 25, 50, 100, 250, 500, 1000]
-    fwd = _tbl([(f"{v:,} {aa}", f"{fmt(v * F)} {ab}") for v in vals], na.title(), nb.title())
-    rev = _tbl([(f"{v:,} {ab}", f"{fmt(v / F)} {aa}") for v in vals], nb.title(), na.title())
+    fwd = _tbl([(f"{v:,} {ulab(a, v)}", f"{fmt(v * F)} {ab}") for v in vals], na.title(), nb.title())
+    rev = _tbl([(f"{v:,} {ulab(b, v)}", f"{fmt(v / F)} {aa}") for v in vals], nb.title(), na.title())
     ex = 12.5
     out = (f"<h2>{tc(na)} to {tc(nb)} formula</h2>\n"
            f"<p><b>{nb.capitalize()} = {na} &times; {fmt(F)}</b></p>\n"
@@ -195,16 +195,22 @@ def pair_related(kind, a, b, units):
     return ([general] if general else []) + rel
 
 
+def ulab(u, v):
+    """Unit label: use the singular name for 1 when the abbreviation is just the plural name."""
+    return u[3] if (v == 1 and u[2] == u[1]) else u[2]
+
+
 def pair_spec(kind, a, b, units=None):
     ka, na, aa, sa, fa = a
     kb, nb, ab, sb, fb = b
     F = fa / fb
     title = f"{tc(na)} to {tc(nb)} Converter"
     slug = f"{slugify(na)}-to-{slugify(nb)}"
-    desc = f"Convert {na} to {nb} instantly. 1 {aa} = {fmt(F)} {ab}."
-    body = ("const F=%r;const r=v*F;return [[SF(v)+' %s =',SF(r)+' %s'],"
-            "['Formula','%s = %s × '+SF(F)],['Reverse','1 %s = '+SF(1/F)+' %s']," % (F, aa, ab, ab, aa, ab, aa)
-            + "...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' %s',SF(x*F)+' %s'])];" % (aa, ab))
+    desc = f"Convert {na} to {nb} instantly. 1 {ulab(a, 1)} = {fmt(F)} {ulab(b, fmt(F) == '1' and 1 or 2)}."
+    one_a, one_b = ulab(a, 1), ulab(b, 1)
+    body = ("const F=%r;const r=v*F;return [[SF(v)+' '+(v===1?'%s':'%s')+' =',SF(r)+' '+(r===1?'%s':'%s')],"
+            "['Formula','%s = %s × '+SF(F)],['Reverse','1 %s = '+SF(1/F)+' %s']," % (F, one_a, aa, one_b, ab, ab, aa, one_a, ab)
+            + "...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'%s':'%s'),SF(x*F)+' %s'])];" % (one_a, aa, ab))
     about = (f"To convert {na} to {nb}, multiply the number of {na} by {fmt(F)}. One {sa} equals {fmt(F)} {nb}, "
              f"and one {sb} equals {fmt(1 / F)} {na}. The table shows common values.")
     faqs = [(f"How many {nb} are in one {sa}?", f"There are {fmt(F)} {nb} in one {sa}."),
@@ -253,11 +259,25 @@ def temp_specs():
     return out
 
 
+NICHE = {"slug", "grain", "mil", "fathom", "furlong", "dyn", "kip", "amin", "asec", "ozin", "Nmm", "lbin3", "ftlbs", "cuyd", "ipt", "iqt"}
+LY_OK = {"m", "km", "mi"}
+
+
+def keep_pair(a, b):
+    import math
+    if a[0] in NICHE and b[0] in NICHE:
+        return False
+    ratio = abs(math.log10(a[4] / b[4]))
+    if "ly" in (a[0], b[0]):
+        return (a[0] if b[0] == "ly" else b[0]) in LY_OK
+    return ratio <= 9
+
+
 PAIRS = []
 for kind, (base, units) in TABLES.items():
     for a in units:
         for b in units:
-            if a[0] != b[0]:
+            if a[0] != b[0] and keep_pair(a, b):
                 PAIRS.append(pair_spec(kind, a, b, units))
 PAIRS += temp_specs()
 
@@ -358,7 +378,7 @@ C("everyday", "test-grade-calculator", "Test Grade Calculator",
   r"""const p=c/t*100;const L=p>=97?'A+':p>=93?'A':p>=90?'A-':p>=87?'B+':p>=83?'B':p>=80?'B-':p>=77?'C+':p>=73?'C':p>=70?'C-':p>=67?'D+':p>=60?'D':'F';return [['Percentage',PCT(p,2)],['Letter grade',L],['Points missed',t-c]];""",
   "Percentage = points earned / total points x 100, mapped to a standard letter scale.",
   [("Are letter scales the same everywhere?", "No. Schools differ, so check your syllabus.")]),
-C("everyday", "recipe-scaler", "Recipe Scaler",
+C("everyday", "recipe-scaler", "Recipe Scaler Calculator",
   "Scale a recipe up or down for a different number of servings.",
   [("o", "Original servings", 4), ("n", "Desired servings", 10), ("amt", "Ingredient amount", 1.5)],
   r"""const f=n/o;return [['Scaled amount',N(amt*f,3)],['Scale factor','×'+N(f,3)],['Note','Adjust cooking time and pan size for big changes']];""",

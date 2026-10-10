@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Many Days Until New Year&#x27;s Day? | CalcHub</title>
+<meta name="description" content="Live countdown showing the days, weeks and hours left until New Year&#x27;s Day.">
+<link rel="canonical" href="https://YOURDOMAIN.com/days-until-new-year.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is New Year's Day next year?", "acceptedAnswer": {"@type": "Answer", "text": "See the table above for dates over the coming years."}}, {"@type": "Question", "name": "Does the countdown update daily?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it uses the date on your device each time you load the page."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a> › <a href="holiday-countdowns.html">Holiday Countdown Calculators</a></p>
+<h1>How Many Days Until New Year&#x27;s Day?</h1>
+<p class="muted">Live countdown showing the days, weeks and hours left until New Year&#x27;s Day.</p>
+<form class="card" data-calc="1">
+
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The countdown compares today&#x27;s date with the next occurrence of New Year&#x27;s Day. If the holiday has passed this year it counts to next year&#x27;s date. Moving holidays such as Easter or Thanksgiving are calculated from their calendar rules.</p>
+<h2>New Year's Day dates for the next several years</h2>
+<table class="ref"><thead><tr><th>Year</th><th>Date</th></tr></thead><tbody><tr><td>2026</td><td>Thursday, January 1</td></tr><tr><td>2027</td><td>Friday, January 1</td></tr><tr><td>2028</td><td>Saturday, January 1</td></tr><tr><td>2029</td><td>Monday, January 1</td></tr><tr><td>2030</td><td>Tuesday, January 1</td></tr><tr><td>2031</td><td>Wednesday, January 1</td></tr><tr><td>2032</td><td>Thursday, January 1</td></tr></tbody></table>
+<h2>Frequently asked questions</h2>
+<details><summary>When is New Year&#x27;s Day next year?</summary><p>See the table above for dates over the coming years.</p></details>
+<details><summary>Does the countdown update daily?</summary><p>Yes, it uses the date on your device each time you load the page.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="days-until-valentines-day.html"><b>How Many Days Until Valentine&#x27;s Day?</b></a><a href="days-until-st-patricks-day.html"><b>How Many Days Until St. Patrick&#x27;s Day?</b></a><a href="days-until-april-fools-day.html"><b>How Many Days Until April Fools&#x27; Day?</b></a><a href="days-until-easter.html"><b>How Many Days Until Easter?</b></a><a href="days-until-earth-day.html"><b>How Many Days Until Earth Day?</b></a><a href="days-until-cinco-de-mayo.html"><b>How Many Days Until Cinco de Mayo?</b></a><a href="days-until-mothers-day.html"><b>How Many Days Until Mother&#x27;s Day (US)?</b></a><a href="days-until-memorial-day.html"><b>How Many Days Until Memorial Day?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({}){
+const nth=(y,m,w,n)=>{const d=new Date(y,m,1);d.setDate(1+(w-d.getDay()+7)%7+7*(n-1));return d;};const last=(y,m,w)=>{const d=new Date(y,m+1,0);d.setDate(d.getDate()-(d.getDay()-w+7)%7);return d;};const easter=y=>{const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=(h+l-7*m+114)%31+1;return new Date(y,mo-1,da);};const f=y=>new Date(y,0,1);const t=new Date();t.setHours(0,0,0,0);let d=f(t.getFullYear());if(d<t)d=f(t.getFullYear()+1);const days=Math.round((d-t)/864e5);return [['Days until New Year\'s Day',days===0?'It is today!':N(days,0)],['Date',DS(d)],['Weeks',N(days/7,1)],['Hours',N(days*24,0)],['Minutes',N(days*1440,0)]];
+});</script>
+</body></html>

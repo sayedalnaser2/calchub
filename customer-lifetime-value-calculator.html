@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Customer Lifetime Value Calculator | CalcHub</title>
+<meta name="description" content="Estimate how much profit an average customer brings over their lifetime.">
+<link rel="canonical" href="https://YOURDOMAIN.com/customer-lifetime-value-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a healthy LTV:CAC ratio?", "acceptedAnswer": {"@type": "Answer", "text": "3:1 or better is a common benchmark."}}, {"@type": "Question", "name": "Should I use revenue or profit?", "acceptedAnswer": {"@type": "Answer", "text": "Profit (margin-adjusted) gives a truer picture."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Customer Lifetime Value Calculator</h1>
+<p class="muted">Estimate how much profit an average customer brings over their lifetime.</p>
+<form class="card" data-calc="1">
+<label for="aov">Average order value ($)</label><input id="aov" type="number" step="any" value="60">
+<label for="freq">Purchases per year</label><input id="freq" type="number" step="any" value="4">
+<label for="yrs">Customer lifespan (years)</label><input id="yrs" type="number" step="any" value="3">
+<label for="mar">Profit margin (%)</label><input id="mar" type="number" step="any" value="30">
+<label for="cac">Customer acquisition cost ($)</label><input id="cac" type="number" step="any" value="40">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Lifetime value = average order value x purchases per year x lifespan x profit margin. Comparing it with the cost of acquiring a customer shows whether growth is profitable; many businesses target an LTV:CAC of at least 3:1.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a healthy LTV:CAC ratio?</summary><p>3:1 or better is a common benchmark.</p></details>
+<details><summary>Should I use revenue or profit?</summary><p>Profit (margin-adjusted) gives a truer picture.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="roas-calculator.html"><b>ROAS Calculator (Return on Ad Spend)</b></a><a href="ad-metrics-calculator.html"><b>CTR, CPC and CPM Calculator</b></a><a href="website-ad-revenue-calculator.html"><b>Website Ad Revenue Calculator (RPM)</b></a><a href="8-dollars-an-hour-is-how-much-a-year.html"><b>$8 an Hour Is How Much a Year?</b></a><a href="9-dollars-an-hour-is-how-much-a-year.html"><b>$9 an Hour Is How Much a Year?</b></a><a href="10-dollars-an-hour-is-how-much-a-year.html"><b>$10 an Hour Is How Much a Year?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({aov,freq,yrs,mar,cac}){
+const rev=aov*freq*yrs,clv=rev*mar/100;return [['Customer lifetime value (profit)',M(clv)],['Lifetime revenue',M(rev)],['Profit after acquisition cost',M(clv-cac)],['LTV : CAC ratio',cac>0?N(clv/cac,2)+' : 1':'n/a']];
+});</script>
+</body></html>

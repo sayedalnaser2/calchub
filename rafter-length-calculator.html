@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rafter Length Calculator | CalcHub</title>
+<meta name="description" content="Calculate common rafter length and cut angle from run and roof pitch.">
+<link rel="canonical" href="https://YOURDOMAIN.com/rafter-length-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a 6/12 pitch?", "acceptedAnswer": {"@type": "Answer", "text": "The roof rises 6 inches for every 12 inches of horizontal run, about 26.57 degrees."}}, {"@type": "Question", "name": "Is this the ridge length?", "acceptedAnswer": {"@type": "Answer", "text": "No, it is the length of one common rafter along the slope."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="construction.html">Construction</a></p>
+<h1>Rafter Length Calculator</h1>
+<p class="muted">Calculate common rafter length and cut angle from run and roof pitch.</p>
+<form class="card" data-calc="1">
+<label for="run">Run - half the building span (ft)</label><input id="run" type="number" step="any" value="12">
+<label for="rise">Pitch: rise per 12 inches of run</label><input id="rise" type="number" step="any" value="6">
+<label for="ovh">Overhang (ft, horizontal)</label><input id="ovh" type="number" step="any" value="1">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Rafter length = run x sqrt(1 + (rise/12)^2). The overhang is added to the run before multiplying. Deduct half the ridge board thickness and add for any birdsmouth detail as your plans require.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a 6/12 pitch?</summary><p>The roof rises 6 inches for every 12 inches of horizontal run, about 26.57 degrees.</p></details>
+<details><summary>Is this the ridge length?</summary><p>No, it is the length of one common rafter along the slope.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="retaining-wall-block-calculator.html"><b>Retaining Wall Block Calculator</b></a><a href="baluster-calculator.html"><b>Baluster Spacing Calculator</b></a><a href="joist-calculator.html"><b>Floor Joist Calculator</b></a><a href="plywood-sheet-calculator.html"><b>Plywood Sheet Calculator</b></a><a href="paint-calculator.html"><b>Paint Calculator</b></a><a href="concrete-calculator.html"><b>Concrete Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({run,rise,ovh}){
+const k=Math.sqrt(1+Math.pow(rise/12,2));const L=(run+ovh)*k;return [['Rafter length (with overhang)',N(L,3)+' ft ('+Math.floor(L)+' ft '+N((L%1)*12,1)+' in)'],['Rafter length to wall line',N(run*k,3)+' ft'],['Roof angle',N(Math.atan(rise/12)*180/Math.PI,2)+' degrees'],['Total rise',N(run*rise/12,2)+' ft']];
+});</script>
+</body></html>

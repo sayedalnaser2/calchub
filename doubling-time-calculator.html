@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doubling Time Calculator | CalcHub</title>
+<meta name="description" content="Find how many years it takes money (or anything growing) to double.">
+<link rel="canonical" href="https://YOURDOMAIN.com/doubling-time-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate is the rule of 72?", "acceptedAnswer": {"@type": "Answer", "text": "Very close for rates between about 4% and 12%."}}, {"@type": "Question", "name": "Does it work for inflation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. At 3% inflation prices double in about 23 years."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Doubling Time Calculator</h1>
+<p class="muted">Find how many years it takes money (or anything growing) to double.</p>
+<form class="card" data-calc="1">
+<label for="rate">Annual growth rate (%)</label><input id="rate" type="number" step="any" value="7">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Exact doubling time is ln(2) / ln(1 + r). The rule of 72 approximates it as 72 divided by the percentage rate.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How accurate is the rule of 72?</summary><p>Very close for rates between about 4% and 12%.</p></details>
+<details><summary>Does it work for inflation?</summary><p>Yes. At 3% inflation prices double in about 23 years.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="real-rate-of-return-calculator.html"><b>Real Rate of Return Calculator</b></a><a href="cost-per-mile-calculator.html"><b>Car Cost per Mile Calculator</b></a><a href="inventory-turnover-calculator.html"><b>Inventory Turnover Calculator</b></a><a href="customer-lifetime-value-calculator.html"><b>Customer Lifetime Value Calculator</b></a><a href="roas-calculator.html"><b>ROAS Calculator (Return on Ad Spend)</b></a><a href="ad-metrics-calculator.html"><b>CTR, CPC and CPM Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({rate}){
+if(rate<=0)return 'Enter a positive growth rate.';const g=1+rate/100;return [['Years to double',N(Math.log(2)/Math.log(g),2)],['Rule of 72 estimate',N(72/rate,2)],['Years to triple',N(Math.log(3)/Math.log(g),2)],['Years to grow 10x',N(Math.log(10)/Math.log(g),2)]];
+});</script>
+</body></html>

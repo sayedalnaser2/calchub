@@ -28,7 +28,7 @@
 <h2>Milligrams to Slugs conversion table</h2>
 <table class="ref"><thead><tr><th>Milligrams</th><th>Slugs</th></tr></thead><tbody><tr><td>1 mg</td><td>6.85218e-08 slugs</td></tr><tr><td>2 mg</td><td>1.37044e-07 slugs</td></tr><tr><td>5 mg</td><td>3.42609e-07 slugs</td></tr><tr><td>10 mg</td><td>6.85218e-07 slugs</td></tr><tr><td>20 mg</td><td>1.37044e-06 slugs</td></tr><tr><td>25 mg</td><td>1.71304e-06 slugs</td></tr><tr><td>50 mg</td><td>3.42609e-06 slugs</td></tr><tr><td>100 mg</td><td>6.85218e-06 slugs</td></tr><tr><td>250 mg</td><td>1.71304e-05 slugs</td></tr><tr><td>500 mg</td><td>3.42609e-05 slugs</td></tr><tr><td>1,000 mg</td><td>6.85218e-05 slugs</td></tr></tbody></table>
 <h2>Slugs to Milligrams conversion table</h2>
-<table class="ref"><thead><tr><th>Slugs</th><th>Milligrams</th></tr></thead><tbody><tr><td>1 slugs</td><td>14,593,903 mg</td></tr><tr><td>2 slugs</td><td>29,187,806 mg</td></tr><tr><td>5 slugs</td><td>72,969,515 mg</td></tr><tr><td>10 slugs</td><td>145,939,030 mg</td></tr><tr><td>20 slugs</td><td>291,878,060 mg</td></tr><tr><td>25 slugs</td><td>364,847,570 mg</td></tr><tr><td>50 slugs</td><td>729,695,150 mg</td></tr><tr><td>100 slugs</td><td>1,459,390,300 mg</td></tr><tr><td>250 slugs</td><td>3,648,475,700 mg</td></tr><tr><td>500 slugs</td><td>7,296,951,500 mg</td></tr><tr><td>1,000 slugs</td><td>14,593,903,000 mg</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Slugs</th><th>Milligrams</th></tr></thead><tbody><tr><td>1 slug</td><td>14,593,903 mg</td></tr><tr><td>2 slugs</td><td>29,187,806 mg</td></tr><tr><td>5 slugs</td><td>72,969,515 mg</td></tr><tr><td>10 slugs</td><td>145,939,030 mg</td></tr><tr><td>20 slugs</td><td>291,878,060 mg</td></tr><tr><td>25 slugs</td><td>364,847,570 mg</td></tr><tr><td>50 slugs</td><td>729,695,150 mg</td></tr><tr><td>100 slugs</td><td>1,459,390,300 mg</td></tr><tr><td>250 slugs</td><td>3,648,475,700 mg</td></tr><tr><td>500 slugs</td><td>7,296,951,500 mg</td></tr><tr><td>1,000 slugs</td><td>14,593,903,000 mg</td></tr></tbody></table>
 <h2>About weight and mass units</h2>
 <p>Mass measures the amount of matter in an object. The kilogram is the SI base unit; ounces, pounds and stone are customary units defined exactly in terms of the kilogram (1 lb = 0.45359237 kg).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=6.852176584367498e-08;const r=v*F;return [[SF(v)+' mg =',SF(r)+' slugs'],['Formula','slugs = mg × '+SF(F)],['Reverse','1 slugs = '+SF(1/F)+' mg'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' mg',SF(x*F)+' slugs'])];
+const F=6.852176584367498e-08;const r=v*F;return [[SF(v)+' '+(v===1?'mg':'mg')+' =',SF(r)+' '+(r===1?'slug':'slugs')],['Formula','slugs = mg × '+SF(F)],['Reverse','1 mg = '+SF(1/F)+' slugs'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'mg':'mg'),SF(x*F)+' slugs'])];
 });</script>
 </body></html>

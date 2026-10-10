@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bill Split Calculator with Tip | CalcHub</title>
+<meta name="description" content="Split a restaurant bill and tip evenly between any number of people.">
+<link rel="canonical" href="https://YOURDOMAIN.com/bill-split-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much should I tip?", "acceptedAnswer": {"@type": "Answer", "text": "15-20% is customary for table service in the US."}}, {"@type": "Question", "name": "Should I tip on the pre-tax amount?", "acceptedAnswer": {"@type": "Answer", "text": "Many people do, but tipping on the post-tax total is also common."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Bill Split Calculator with Tip</h1>
+<p class="muted">Split a restaurant bill and tip evenly between any number of people.</p>
+<form class="card" data-calc="1">
+<label for="bill">Bill before tip ($)</label><input id="bill" type="number" step="any" value="120">
+<label for="tip">Tip (%)</label><input id="tip" type="number" step="any" value="18">
+<label for="ppl">Number of people</label><input id="ppl" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The tip is the bill times the tip percentage. Add it to the bill and divide the total by the number of people.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How much should I tip?</summary><p>15-20% is customary for table service in the US.</p></details>
+<details><summary>Should I tip on the pre-tax amount?</summary><p>Many people do, but tipping on the post-tax total is also common.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="extra-payment-loan-calculator.html"><b>Extra Loan Payment Calculator</b></a><a href="credit-card-interest-calculator.html"><b>Credit Card Interest Calculator</b></a><a href="dollar-cost-averaging-calculator.html"><b>Dollar Cost Averaging Calculator</b></a><a href="stock-split-calculator.html"><b>Stock Split Calculator</b></a><a href="freelance-rate-calculator.html"><b>Freelance Hourly Rate Calculator</b></a><a href="margin-to-markup-calculator.html"><b>Margin to Markup Converter</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({bill,tip,ppl}){
+if(ppl<1)return 'Enter at least one person.';const t=bill*tip/100,tot=bill+t;return [['Each person pays',M(tot/ppl)],['Total tip',M(t)],['Total with tip',M(tot)],['Tip per person',M(t/ppl)]];
+});</script>
+</body></html>

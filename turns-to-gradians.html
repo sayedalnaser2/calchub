@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Turns to Gradians Converter | CalcHub</title>
-<meta name="description" content="Convert turns to gradians instantly. 1 turns = 400 grad.">
+<meta name="description" content="Convert turns to gradians instantly. 1 turn = 400 grad.">
 <link rel="canonical" href="https://YOURDOMAIN.com/turns-to-gradians.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many gradians are in one turn?", "acceptedAnswer": {"@type": "Answer", "text": "There are 400 gradians in one turn."}}, {"@type": "Question", "name": "How many turns are in one gradian?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.0025 turns in one gradian."}}]}</script>
@@ -13,7 +13,7 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="angle-conversions.html">Angle Conversions</a></p>
 <h1>Turns to Gradians Converter</h1>
-<p class="muted">Convert turns to gradians instantly. 1 turns = 400 grad.</p>
+<p class="muted">Convert turns to gradians instantly. 1 turn = 400 grad.</p>
 <form class="card" data-calc="1">
 <label for="v">Value in turns (turns)</label><input id="v" type="number" step="any" value="1">
 <button type="submit">Calculate</button>
@@ -26,7 +26,7 @@
 <p><b>Gradians = turns &times; 400</b></p>
 <p>Worked example: convert 12.5 turns to gradians. Multiply 12.5 &times; 400 = <b>5,000 grad</b>. To go the other way, multiply gradians by 0.0025 (or divide by 400).</p>
 <h2>Turns to Gradians conversion table</h2>
-<table class="ref"><thead><tr><th>Turns</th><th>Gradians</th></tr></thead><tbody><tr><td>1 turns</td><td>400 grad</td></tr><tr><td>2 turns</td><td>800 grad</td></tr><tr><td>5 turns</td><td>2,000 grad</td></tr><tr><td>10 turns</td><td>4,000 grad</td></tr><tr><td>20 turns</td><td>8,000 grad</td></tr><tr><td>25 turns</td><td>10,000 grad</td></tr><tr><td>50 turns</td><td>20,000 grad</td></tr><tr><td>100 turns</td><td>40,000 grad</td></tr><tr><td>250 turns</td><td>100,000 grad</td></tr><tr><td>500 turns</td><td>200,000 grad</td></tr><tr><td>1,000 turns</td><td>400,000 grad</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Turns</th><th>Gradians</th></tr></thead><tbody><tr><td>1 turn</td><td>400 grad</td></tr><tr><td>2 turns</td><td>800 grad</td></tr><tr><td>5 turns</td><td>2,000 grad</td></tr><tr><td>10 turns</td><td>4,000 grad</td></tr><tr><td>20 turns</td><td>8,000 grad</td></tr><tr><td>25 turns</td><td>10,000 grad</td></tr><tr><td>50 turns</td><td>20,000 grad</td></tr><tr><td>100 turns</td><td>40,000 grad</td></tr><tr><td>250 turns</td><td>100,000 grad</td></tr><tr><td>500 turns</td><td>200,000 grad</td></tr><tr><td>1,000 turns</td><td>400,000 grad</td></tr></tbody></table>
 <h2>Gradians to Turns conversion table</h2>
 <table class="ref"><thead><tr><th>Gradians</th><th>Turns</th></tr></thead><tbody><tr><td>1 grad</td><td>0.0025 turns</td></tr><tr><td>2 grad</td><td>0.005 turns</td></tr><tr><td>5 grad</td><td>0.0125 turns</td></tr><tr><td>10 grad</td><td>0.025 turns</td></tr><tr><td>20 grad</td><td>0.05 turns</td></tr><tr><td>25 grad</td><td>0.0625 turns</td></tr><tr><td>50 grad</td><td>0.125 turns</td></tr><tr><td>100 grad</td><td>0.25 turns</td></tr><tr><td>250 grad</td><td>0.625 turns</td></tr><tr><td>500 grad</td><td>1.25 turns</td></tr><tr><td>1,000 grad</td><td>2.5 turns</td></tr></tbody></table>
 <h2>About angle units</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=399.99999999999994;const r=v*F;return [[SF(v)+' turns =',SF(r)+' grad'],['Formula','grad = turns × '+SF(F)],['Reverse','1 grad = '+SF(1/F)+' turns'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' turns',SF(x*F)+' grad'])];
+const F=399.99999999999994;const r=v*F;return [[SF(v)+' '+(v===1?'turn':'turns')+' =',SF(r)+' '+(r===1?'grad':'grad')],['Formula','grad = turns × '+SF(F)],['Reverse','1 turn = '+SF(1/F)+' grad'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'turn':'turns'),SF(x*F)+' grad'])];
 });</script>
 </body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Freelance Hourly Rate Calculator | CalcHub</title>
+<meta name="description" content="Work out the hourly rate you need to charge to hit an income goal.">
+<link rel="canonical" href="https://YOURDOMAIN.com/freelance-rate-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why billable hours instead of 40?", "acceptedAnswer": {"@type": "Answer", "text": "Freelancers spend time on admin, marketing and gaps between projects that cannot be billed."}}, {"@type": "Question", "name": "Should I add benefits?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Include health insurance and retirement savings in expenses or income goals."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Freelance Hourly Rate Calculator</h1>
+<p class="muted">Work out the hourly rate you need to charge to hit an income goal.</p>
+<form class="card" data-calc="1">
+<label for="inc">Desired take-home income per year ($)</label><input id="inc" type="number" step="any" value="80000">
+<label for="exp">Business expenses per year ($)</label><input id="exp" type="number" step="any" value="12000">
+<label for="tx">Estimated tax rate (%)</label><input id="tx" type="number" step="any" value="25">
+<label for="hrs">Billable hours per week</label><input id="hrs" type="number" step="any" value="25">
+<label for="off">Weeks off per year</label><input id="off" type="number" step="any" value="5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Revenue must cover business expenses plus enough pre-tax income to leave your desired take-home pay after tax. Dividing by billable hours (not total hours, since you also do admin and sales) gives the rate.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why billable hours instead of 40?</summary><p>Freelancers spend time on admin, marketing and gaps between projects that cannot be billed.</p></details>
+<details><summary>Should I add benefits?</summary><p>Yes. Include health insurance and retirement savings in expenses or income goals.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="margin-to-markup-calculator.html"><b>Margin to Markup Converter</b></a><a href="doubling-time-calculator.html"><b>Doubling Time Calculator</b></a><a href="real-rate-of-return-calculator.html"><b>Real Rate of Return Calculator</b></a><a href="cost-per-mile-calculator.html"><b>Car Cost per Mile Calculator</b></a><a href="inventory-turnover-calculator.html"><b>Inventory Turnover Calculator</b></a><a href="customer-lifetime-value-calculator.html"><b>Customer Lifetime Value Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({inc,exp,tx,hrs,off}){
+if(tx>=100)return 'Tax rate must be below 100%.';const rev=exp+inc/(1-tx/100),h=hrs*(52-off);if(h<=0)return 'Check your hours and weeks off.';return [['Hourly rate needed',M(rev/h)],['Revenue needed per year',M(rev)],['Billable hours per year',N(h,0)],['Day rate (8 h)',M(rev/h*8)]];
+});</script>
+</body></html>

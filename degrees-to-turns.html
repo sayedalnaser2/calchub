@@ -28,7 +28,7 @@
 <h2>Degrees to Turns conversion table</h2>
 <table class="ref"><thead><tr><th>Degrees</th><th>Turns</th></tr></thead><tbody><tr><td>1 °</td><td>0.0027777778 turns</td></tr><tr><td>2 °</td><td>0.0055555556 turns</td></tr><tr><td>5 °</td><td>0.013888889 turns</td></tr><tr><td>10 °</td><td>0.027777778 turns</td></tr><tr><td>20 °</td><td>0.055555556 turns</td></tr><tr><td>25 °</td><td>0.069444444 turns</td></tr><tr><td>50 °</td><td>0.13888889 turns</td></tr><tr><td>100 °</td><td>0.27777778 turns</td></tr><tr><td>250 °</td><td>0.69444444 turns</td></tr><tr><td>500 °</td><td>1.3888889 turns</td></tr><tr><td>1,000 °</td><td>2.7777778 turns</td></tr></tbody></table>
 <h2>Turns to Degrees conversion table</h2>
-<table class="ref"><thead><tr><th>Turns</th><th>Degrees</th></tr></thead><tbody><tr><td>1 turns</td><td>360 °</td></tr><tr><td>2 turns</td><td>720 °</td></tr><tr><td>5 turns</td><td>1,800 °</td></tr><tr><td>10 turns</td><td>3,600 °</td></tr><tr><td>20 turns</td><td>7,200 °</td></tr><tr><td>25 turns</td><td>9,000 °</td></tr><tr><td>50 turns</td><td>18,000 °</td></tr><tr><td>100 turns</td><td>36,000 °</td></tr><tr><td>250 turns</td><td>90,000 °</td></tr><tr><td>500 turns</td><td>180,000 °</td></tr><tr><td>1,000 turns</td><td>360,000 °</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Turns</th><th>Degrees</th></tr></thead><tbody><tr><td>1 turn</td><td>360 °</td></tr><tr><td>2 turns</td><td>720 °</td></tr><tr><td>5 turns</td><td>1,800 °</td></tr><tr><td>10 turns</td><td>3,600 °</td></tr><tr><td>20 turns</td><td>7,200 °</td></tr><tr><td>25 turns</td><td>9,000 °</td></tr><tr><td>50 turns</td><td>18,000 °</td></tr><tr><td>100 turns</td><td>36,000 °</td></tr><tr><td>250 turns</td><td>90,000 °</td></tr><tr><td>500 turns</td><td>180,000 °</td></tr><tr><td>1,000 turns</td><td>360,000 °</td></tr></tbody></table>
 <h2>About angle units</h2>
 <p>Angles can be measured in degrees (360 per full turn), radians (2π per full turn) or gradians (400 per full turn).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.002777777777777778;const r=v*F;return [[SF(v)+' ° =',SF(r)+' turns'],['Formula','turns = ° × '+SF(F)],['Reverse','1 turns = '+SF(1/F)+' °'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' °',SF(x*F)+' turns'])];
+const F=0.002777777777777778;const r=v*F;return [[SF(v)+' '+(v===1?'°':'°')+' =',SF(r)+' '+(r===1?'turn':'turns')],['Formula','turns = ° × '+SF(F)],['Reverse','1 ° = '+SF(1/F)+' turns'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'°':'°'),SF(x*F)+' turns'])];
 });</script>
 </body></html>

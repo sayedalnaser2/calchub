@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rhombus Area Calculator | CalcHub</title>
+<meta name="description" content="Calculate area, side length and perimeter of a rhombus from its diagonals.">
+<link rel="canonical" href="https://YOURDOMAIN.com/rhombus-area-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a square a rhombus?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with equal diagonals."}}, {"@type": "Question", "name": "How else can I find area?", "acceptedAnswer": {"@type": "Answer", "text": "Base x height or side^2 x sin(angle)."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Rhombus Area Calculator</h1>
+<p class="muted">Calculate area, side length and perimeter of a rhombus from its diagonals.</p>
+<form class="card" data-calc="1">
+<label for="d1">Diagonal 1</label><input id="d1" type="number" step="any" value="10">
+<label for="d2">Diagonal 2</label><input id="d2" type="number" step="any" value="6">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Area = d1 x d2 / 2. The diagonals bisect each other at right angles, so each side is sqrt((d1/2)^2 + (d2/2)^2).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is a square a rhombus?</summary><p>Yes, with equal diagonals.</p></details>
+<details><summary>How else can I find area?</summary><p>Base x height or side^2 x sin(angle).</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="sector-area-calculator.html"><b>Circle Sector Area and Arc Length Calculator</b></a><a href="right-triangle-calculator.html"><b>Right Triangle Calculator</b></a><a href="law-of-cosines-calculator.html"><b>Law of Cosines Calculator</b></a><a href="law-of-sines-calculator.html"><b>Law of Sines Calculator</b></a><a href="nth-root-calculator.html"><b>Nth Root Calculator</b></a><a href="percent-to-decimal-calculator.html"><b>Percent to Decimal and Fraction Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({d1,d2}){
+const s=Math.hypot(d1/2,d2/2);return [['Area',N(d1*d2/2,4)],['Side length',N(s,4)],['Perimeter',N(4*s,4)],['Acute angle',N(2*Math.atan(Math.min(d1,d2)/Math.max(d1,d2))*180/Math.PI,2)+' degrees']];
+});</script>
+</body></html>

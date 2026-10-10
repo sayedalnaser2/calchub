@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=307.4431809292429;const r=v*F;return [[SF(v)+' imp gal =',SF(r)+' tbsp'],['Formula','tbsp = imp gal × '+SF(F)],['Reverse','1 tbsp = '+SF(1/F)+' imp gal'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' imp gal',SF(x*F)+' tbsp'])];
+const F=307.4431809292429;const r=v*F;return [[SF(v)+' '+(v===1?'imp gal':'imp gal')+' =',SF(r)+' '+(r===1?'tbsp':'tbsp')],['Formula','tbsp = imp gal × '+SF(F)],['Reverse','1 imp gal = '+SF(1/F)+' tbsp'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'imp gal':'imp gal'),SF(x*F)+' tbsp'])];
 });</script>
 </body></html>

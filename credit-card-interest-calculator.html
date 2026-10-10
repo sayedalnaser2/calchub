@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Credit Card Interest Calculator | CalcHub</title>
+<meta name="description" content="Estimate the interest charged on a credit card balance.">
+<link rel="canonical" href="https://YOURDOMAIN.com/credit-card-interest-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How can I avoid credit card interest?", "acceptedAnswer": {"@type": "Answer", "text": "Pay the full statement balance by the due date every month."}}, {"@type": "Question", "name": "Is APR the same as the rate I pay?", "acceptedAnswer": {"@type": "Answer", "text": "APR is the yearly rate; with daily compounding the effective rate is slightly higher."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Credit Card Interest Calculator</h1>
+<p class="muted">Estimate the interest charged on a credit card balance.</p>
+<form class="card" data-calc="1">
+<label for="bal">Balance ($)</label><input id="bal" type="number" step="any" value="3000">
+<label for="apr">APR (%)</label><input id="apr" type="number" step="any" value="22.99">
+<label for="days">Days in billing cycle</label><input id="days" type="number" step="any" value="30">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Most card issuers compute a daily periodic rate (APR / 365) and charge it on your balance each day. Interest for a cycle is balance x daily rate x days. Compounding daily over a year produces the final figure.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How can I avoid credit card interest?</summary><p>Pay the full statement balance by the due date every month.</p></details>
+<details><summary>Is APR the same as the rate I pay?</summary><p>APR is the yearly rate; with daily compounding the effective rate is slightly higher.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="dollar-cost-averaging-calculator.html"><b>Dollar Cost Averaging Calculator</b></a><a href="stock-split-calculator.html"><b>Stock Split Calculator</b></a><a href="freelance-rate-calculator.html"><b>Freelance Hourly Rate Calculator</b></a><a href="margin-to-markup-calculator.html"><b>Margin to Markup Converter</b></a><a href="doubling-time-calculator.html"><b>Doubling Time Calculator</b></a><a href="real-rate-of-return-calculator.html"><b>Real Rate of Return Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({bal,apr,days}){
+const d=apr/36500;const cyc=bal*d*days;const yr=bal*(Math.pow(1+d,365)-1);return [['Interest this cycle',M(cyc)],['Daily interest',M(bal*d)],['Daily periodic rate',N(d*100,5)+'%'],['Interest after 1 year if unpaid',M(yr)]];
+});</script>
+</body></html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sphere Volume and Surface Area Calculator | CalcHub</title>
+<meta name="description" content="Calculate volume, surface area and diameter of a sphere from its radius.">
+<link rel="canonical" href="https://YOURDOMAIN.com/sphere-volume-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I find the volume from the diameter?", "acceptedAnswer": {"@type": "Answer", "text": "Halve the diameter to get the radius, then use the formula."}}, {"@type": "Question", "name": "What is the volume of a sphere with radius 1?", "acceptedAnswer": {"@type": "Answer", "text": "About 4.18879 cubic units."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Sphere Volume and Surface Area Calculator</h1>
+<p class="muted">Calculate volume, surface area and diameter of a sphere from its radius.</p>
+<form class="card" data-calc="1">
+<label for="r">Radius</label><input id="r" type="number" step="any" value="5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Volume = 4/3 x pi x r^3. Surface area = 4 x pi x r^2. Use any unit; volume is in cubic units and area in square units.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I find the volume from the diameter?</summary><p>Halve the diameter to get the radius, then use the formula.</p></details>
+<details><summary>What is the volume of a sphere with radius 1?</summary><p>About 4.18879 cubic units.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="cylinder-volume-calculator.html"><b>Cylinder Volume and Surface Area Calculator</b></a><a href="cone-volume-calculator.html"><b>Cone Volume and Surface Area Calculator</b></a><a href="pyramid-volume-calculator.html"><b>Pyramid Volume Calculator</b></a><a href="trapezoid-area-calculator.html"><b>Trapezoid Area Calculator</b></a><a href="parallelogram-area-calculator.html"><b>Parallelogram Area Calculator</b></a><a href="ellipse-area-calculator.html"><b>Ellipse Area and Perimeter Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({r}){
+return [['Volume',N(4/3*Math.PI*r*r*r,4)],['Surface area',N(4*Math.PI*r*r,4)],['Diameter',N(2*r,4)],['Circumference',N(2*Math.PI*r,4)]];
+});</script>
+</body></html>

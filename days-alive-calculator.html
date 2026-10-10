@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Many Days Old Am I? Calculator | CalcHub</title>
+<meta name="description" content="Find how many days, weeks, hours and minutes you have been alive.">
+<link rel="canonical" href="https://YOURDOMAIN.com/days-alive-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When will I turn 10,000 days old?", "acceptedAnswer": {"@type": "Answer", "text": "About 27 years and 4 months after birth."}}, {"@type": "Question", "name": "Does it include leap days?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it counts the actual calendar days."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>How Many Days Old Am I? Calculator</h1>
+<p class="muted">Find how many days, weeks, hours and minutes you have been alive.</p>
+<form class="card" data-calc="1">
+<label for="dob">Date of birth</label><input id="dob" type="date" value="1990-06-15">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Days alive is today&#x27;s date minus your birth date. Dividing by 7, 30.4375 (average month) or 365.2425 (average year) gives the other units.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When will I turn 10,000 days old?</summary><p>About 27 years and 4 months after birth.</p></details>
+<details><summary>Does it include leap days?</summary><p>Yes, it counts the actual calendar days.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="birthday-countdown-calculator.html"><b>Birthday Countdown Calculator</b></a><a href="work-hours-calculator.html"><b>Work Hours Calculator</b></a><a href="pizza-calculator.html"><b>Pizza Calculator (How Many Pizzas to Order)</b></a><a href="turkey-cooking-time-calculator.html"><b>Turkey Cooking Time Calculator</b></a><a href="coffee-ratio-calculator.html"><b>Coffee to Water Ratio Calculator</b></a><a href="party-drink-calculator.html"><b>Party Drink Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({dob}){
+const b=D(dob),t=new Date();t.setHours(0,0,0,0);const days=Math.round((t-b)/864e5);if(days<0)return 'Date of birth is in the future.';return [['Days alive',N(days,0)],['Weeks',N(days/7,1)],['Months (approx.)',N(days/30.4375,1)],['Hours',N(days*24,0)],['Minutes',N(days*1440,0)],['Years',N(days/365.2425,2)]];
+});</script>
+</body></html>

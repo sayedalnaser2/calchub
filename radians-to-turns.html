@@ -28,7 +28,7 @@
 <h2>Radians to Turns conversion table</h2>
 <table class="ref"><thead><tr><th>Radians</th><th>Turns</th></tr></thead><tbody><tr><td>1 rad</td><td>0.15915494 turns</td></tr><tr><td>2 rad</td><td>0.31830989 turns</td></tr><tr><td>5 rad</td><td>0.79577472 turns</td></tr><tr><td>10 rad</td><td>1.5915494 turns</td></tr><tr><td>20 rad</td><td>3.1830989 turns</td></tr><tr><td>25 rad</td><td>3.9788736 turns</td></tr><tr><td>50 rad</td><td>7.9577472 turns</td></tr><tr><td>100 rad</td><td>15.915494 turns</td></tr><tr><td>250 rad</td><td>39.788736 turns</td></tr><tr><td>500 rad</td><td>79.577472 turns</td></tr><tr><td>1,000 rad</td><td>159.15494 turns</td></tr></tbody></table>
 <h2>Turns to Radians conversion table</h2>
-<table class="ref"><thead><tr><th>Turns</th><th>Radians</th></tr></thead><tbody><tr><td>1 turns</td><td>6.2831853 rad</td></tr><tr><td>2 turns</td><td>12.566371 rad</td></tr><tr><td>5 turns</td><td>31.415927 rad</td></tr><tr><td>10 turns</td><td>62.831853 rad</td></tr><tr><td>20 turns</td><td>125.66371 rad</td></tr><tr><td>25 turns</td><td>157.07963 rad</td></tr><tr><td>50 turns</td><td>314.15927 rad</td></tr><tr><td>100 turns</td><td>628.31853 rad</td></tr><tr><td>250 turns</td><td>1,570.7963 rad</td></tr><tr><td>500 turns</td><td>3,141.5927 rad</td></tr><tr><td>1,000 turns</td><td>6,283.1853 rad</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Turns</th><th>Radians</th></tr></thead><tbody><tr><td>1 turn</td><td>6.2831853 rad</td></tr><tr><td>2 turns</td><td>12.566371 rad</td></tr><tr><td>5 turns</td><td>31.415927 rad</td></tr><tr><td>10 turns</td><td>62.831853 rad</td></tr><tr><td>20 turns</td><td>125.66371 rad</td></tr><tr><td>25 turns</td><td>157.07963 rad</td></tr><tr><td>50 turns</td><td>314.15927 rad</td></tr><tr><td>100 turns</td><td>628.31853 rad</td></tr><tr><td>250 turns</td><td>1,570.7963 rad</td></tr><tr><td>500 turns</td><td>3,141.5927 rad</td></tr><tr><td>1,000 turns</td><td>6,283.1853 rad</td></tr></tbody></table>
 <h2>About angle units</h2>
 <p>Angles can be measured in degrees (360 per full turn), radians (2π per full turn) or gradians (400 per full turn).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.15915494309189535;const r=v*F;return [[SF(v)+' rad =',SF(r)+' turns'],['Formula','turns = rad × '+SF(F)],['Reverse','1 turns = '+SF(1/F)+' rad'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' rad',SF(x*F)+' turns'])];
+const F=0.15915494309189535;const r=v*F;return [[SF(v)+' '+(v===1?'rad':'rad')+' =',SF(r)+' '+(r===1?'turn':'turns')],['Formula','turns = rad × '+SF(F)],['Reverse','1 rad = '+SF(1/F)+' turns'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'rad':'rad'),SF(x*F)+' turns'])];
 });</script>
 </body></html>

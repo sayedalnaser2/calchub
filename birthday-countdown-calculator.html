@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Birthday Countdown Calculator | CalcHub</title>
+<meta name="description" content="Count the days until your next birthday and see the age you will turn.">
+<link rel="canonical" href="https://YOURDOMAIN.com/birthday-countdown-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What if I was born on February 29?", "acceptedAnswer": {"@type": "Answer", "text": "In non-leap years the date rolls to March 1 in this calculator."}}, {"@type": "Question", "name": "Does it update daily?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it always uses today's date."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Birthday Countdown Calculator</h1>
+<p class="muted">Count the days until your next birthday and see the age you will turn.</p>
+<form class="card" data-calc="1">
+<label for="dob">Date of birth</label><input id="dob" type="date" value="1990-06-15">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The calculator finds the next occurrence of your birth month and day on or after today, then counts the days between.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What if I was born on February 29?</summary><p>In non-leap years the date rolls to March 1 in this calculator.</p></details>
+<details><summary>Does it update daily?</summary><p>Yes, it always uses today&#x27;s date.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="work-hours-calculator.html"><b>Work Hours Calculator</b></a><a href="pizza-calculator.html"><b>Pizza Calculator (How Many Pizzas to Order)</b></a><a href="turkey-cooking-time-calculator.html"><b>Turkey Cooking Time Calculator</b></a><a href="coffee-ratio-calculator.html"><b>Coffee to Water Ratio Calculator</b></a><a href="party-drink-calculator.html"><b>Party Drink Calculator</b></a><a href="born-in-1930-how-old-am-i.html"><b>Born in 1930: How Old Am I?</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({dob}){
+const b=D(dob),t=new Date();t.setHours(0,0,0,0);let nx=new Date(t.getFullYear(),b.getMonth(),b.getDate());if(nx<t)nx=new Date(t.getFullYear()+1,b.getMonth(),b.getDate());const days=Math.round((nx-t)/864e5);return [['Days until birthday',days===0?'Today is your birthday!':N(days,0)],['Next birthday',DS(nx)],['You will turn',nx.getFullYear()-b.getFullYear()],['Weeks left',N(days/7,1)]];
+});</script>
+</body></html>

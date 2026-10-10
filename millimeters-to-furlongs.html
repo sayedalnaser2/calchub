@@ -28,7 +28,7 @@
 <h2>Millimeters to Furlongs conversion table</h2>
 <table class="ref"><thead><tr><th>Millimeters</th><th>Furlongs</th></tr></thead><tbody><tr><td>1 mm</td><td>4.97097e-06 furlongs</td></tr><tr><td>2 mm</td><td>9.94194e-06 furlongs</td></tr><tr><td>5 mm</td><td>2.48548e-05 furlongs</td></tr><tr><td>10 mm</td><td>4.97097e-05 furlongs</td></tr><tr><td>20 mm</td><td>9.94194e-05 furlongs</td></tr><tr><td>25 mm</td><td>0.00012427424 furlongs</td></tr><tr><td>50 mm</td><td>0.00024854848 furlongs</td></tr><tr><td>100 mm</td><td>0.00049709695 furlongs</td></tr><tr><td>250 mm</td><td>0.0012427424 furlongs</td></tr><tr><td>500 mm</td><td>0.0024854848 furlongs</td></tr><tr><td>1,000 mm</td><td>0.0049709695 furlongs</td></tr></tbody></table>
 <h2>Furlongs to Millimeters conversion table</h2>
-<table class="ref"><thead><tr><th>Furlongs</th><th>Millimeters</th></tr></thead><tbody><tr><td>1 furlongs</td><td>201,168 mm</td></tr><tr><td>2 furlongs</td><td>402,336 mm</td></tr><tr><td>5 furlongs</td><td>1,005,840 mm</td></tr><tr><td>10 furlongs</td><td>2,011,680 mm</td></tr><tr><td>20 furlongs</td><td>4,023,360 mm</td></tr><tr><td>25 furlongs</td><td>5,029,200 mm</td></tr><tr><td>50 furlongs</td><td>10,058,400 mm</td></tr><tr><td>100 furlongs</td><td>20,116,800 mm</td></tr><tr><td>250 furlongs</td><td>50,292,000 mm</td></tr><tr><td>500 furlongs</td><td>100,584,000 mm</td></tr><tr><td>1,000 furlongs</td><td>201,168,000 mm</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Furlongs</th><th>Millimeters</th></tr></thead><tbody><tr><td>1 furlong</td><td>201,168 mm</td></tr><tr><td>2 furlongs</td><td>402,336 mm</td></tr><tr><td>5 furlongs</td><td>1,005,840 mm</td></tr><tr><td>10 furlongs</td><td>2,011,680 mm</td></tr><tr><td>20 furlongs</td><td>4,023,360 mm</td></tr><tr><td>25 furlongs</td><td>5,029,200 mm</td></tr><tr><td>50 furlongs</td><td>10,058,400 mm</td></tr><tr><td>100 furlongs</td><td>20,116,800 mm</td></tr><tr><td>250 furlongs</td><td>50,292,000 mm</td></tr><tr><td>500 furlongs</td><td>100,584,000 mm</td></tr><tr><td>1,000 furlongs</td><td>201,168,000 mm</td></tr></tbody></table>
 <h2>About length units</h2>
 <p>Length measures the distance between two points. The meter is the SI base unit; inches, feet, yards and miles are US customary and imperial units, all defined exactly in terms of the meter (1 inch = 2.54 cm exactly).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=4.970969537898672e-06;const r=v*F;return [[SF(v)+' mm =',SF(r)+' furlongs'],['Formula','furlongs = mm × '+SF(F)],['Reverse','1 furlongs = '+SF(1/F)+' mm'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' mm',SF(x*F)+' furlongs'])];
+const F=4.970969537898672e-06;const r=v*F;return [[SF(v)+' '+(v===1?'mm':'mm')+' =',SF(r)+' '+(r===1?'furlong':'furlongs')],['Formula','furlongs = mm × '+SF(F)],['Reverse','1 mm = '+SF(1/F)+' furlongs'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'mm':'mm'),SF(x*F)+' furlongs'])];
 });</script>
 </body></html>

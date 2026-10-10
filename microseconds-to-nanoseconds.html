@@ -35,11 +35,11 @@
 <details><summary>How many nanoseconds are in one microsecond?</summary><p>There are 1,000 nanoseconds in one microsecond.</p></details>
 <details><summary>How many microseconds are in one nanosecond?</summary><p>There are 0.001 microseconds in one nanosecond.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="nanoseconds-to-microseconds.html"><b>Nanoseconds to Microseconds Converter</b></a><a href="microseconds-to-seconds.html"><b>Microseconds to Seconds Converter</b></a><a href="microseconds-to-minutes.html"><b>Microseconds to Minutes Converter</b></a><a href="microseconds-to-hours.html"><b>Microseconds to Hours Converter</b></a><a href="microseconds-to-days.html"><b>Microseconds to Days Converter</b></a><a href="microseconds-to-weeks.html"><b>Microseconds to Weeks Converter</b></a><a href="microseconds-to-months.html"><b>Microseconds to Months Converter</b></a><a href="microseconds-to-years.html"><b>Microseconds to Years Converter</b></a><a href="microseconds-to-milliseconds.html"><b>Microseconds to Milliseconds Converter</b></a><a href="microseconds-to-decades.html"><b>Microseconds to Decades Converter</b></a><a href="microseconds-to-centuries.html"><b>Microseconds to Centuries Converter</b></a></div>
+<div class="grid"><a href="time-converter.html"><b>Time Converter</b></a><a href="nanoseconds-to-microseconds.html"><b>Nanoseconds to Microseconds Converter</b></a><a href="microseconds-to-seconds.html"><b>Microseconds to Seconds Converter</b></a><a href="microseconds-to-minutes.html"><b>Microseconds to Minutes Converter</b></a><a href="microseconds-to-milliseconds.html"><b>Microseconds to Milliseconds Converter</b></a><a href="seconds-to-nanoseconds.html"><b>Seconds to Nanoseconds Converter</b></a><a href="milliseconds-to-nanoseconds.html"><b>Milliseconds to Nanoseconds Converter</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=999.9999999999999;const r=v*F;return [[SF(v)+' µs =',SF(r)+' ns'],['Formula','ns = µs × '+SF(F)],['Reverse','1 ns = '+SF(1/F)+' µs'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' µs',SF(x*F)+' ns'])];
+const F=999.9999999999999;const r=v*F;return [[SF(v)+' '+(v===1?'µs':'µs')+' =',SF(r)+' '+(r===1?'ns':'ns')],['Formula','ns = µs × '+SF(F)],['Reverse','1 µs = '+SF(1/F)+' ns'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'µs':'µs'),SF(x*F)+' ns'])];
 });</script>
 </body></html>

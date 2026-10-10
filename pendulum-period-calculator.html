@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pendulum Period Calculator | CalcHub</title>
+<meta name="description" content="Calculate the period and frequency of a simple pendulum.">
+<link rel="canonical" href="https://YOURDOMAIN.com/pendulum-period-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does mass affect the period?", "acceptedAnswer": {"@type": "Answer", "text": "No."}}, {"@type": "Question", "name": "When is the formula inaccurate?", "acceptedAnswer": {"@type": "Answer", "text": "For swings beyond about 15 degrees, where the period grows slightly."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Pendulum Period Calculator</h1>
+<p class="muted">Calculate the period and frequency of a simple pendulum.</p>
+<form class="card" data-calc="1">
+<label for="L">Length (m)</label><input id="L" type="number" step="any" value="1">
+<label for="g">Gravity (m/s²)</label><input id="g" type="number" step="any" value="9.81">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>For small angles the period is T = 2 x pi x sqrt(L / g), independent of mass and amplitude. A 1 m pendulum has a period of about 2 seconds.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does mass affect the period?</summary><p>No.</p></details>
+<details><summary>When is the formula inaccurate?</summary><p>For swings beyond about 15 degrees, where the period grows slightly.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="hookes-law-calculator.html"><b>Hooke&#x27;s Law Spring Calculator</b></a><a href="buoyancy-calculator.html"><b>Buoyancy Calculator</b></a><a href="pressure-calculator.html"><b>Pressure Calculator (Force over Area)</b></a><a href="efficiency-calculator.html"><b>Efficiency Calculator</b></a><a href="boyles-law-calculator.html"><b>Boyle&#x27;s Law Calculator</b></a><a href="charles-law-calculator.html"><b>Charles&#x27;s Law Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({L,g}){
+const T=2*Math.PI*Math.sqrt(L/g);return [['Period',N(T,4)+' s'],['Frequency',N(1/T,4)+' Hz'],['Swings per minute',N(60/T,2)],['Length for a 1-second period',N(g/(4*Math.PI*Math.PI),4)+' m']];
+});</script>
+</body></html>

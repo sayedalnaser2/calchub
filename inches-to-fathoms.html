@@ -28,7 +28,7 @@
 <h2>Inches to Fathoms conversion table</h2>
 <table class="ref"><thead><tr><th>Inches</th><th>Fathoms</th></tr></thead><tbody><tr><td>1 in</td><td>0.013888889 fathoms</td></tr><tr><td>2 in</td><td>0.027777778 fathoms</td></tr><tr><td>5 in</td><td>0.069444444 fathoms</td></tr><tr><td>10 in</td><td>0.13888889 fathoms</td></tr><tr><td>20 in</td><td>0.27777778 fathoms</td></tr><tr><td>25 in</td><td>0.34722222 fathoms</td></tr><tr><td>50 in</td><td>0.69444444 fathoms</td></tr><tr><td>100 in</td><td>1.3888889 fathoms</td></tr><tr><td>250 in</td><td>3.4722222 fathoms</td></tr><tr><td>500 in</td><td>6.9444444 fathoms</td></tr><tr><td>1,000 in</td><td>13.888889 fathoms</td></tr></tbody></table>
 <h2>Fathoms to Inches conversion table</h2>
-<table class="ref"><thead><tr><th>Fathoms</th><th>Inches</th></tr></thead><tbody><tr><td>1 fathoms</td><td>72 in</td></tr><tr><td>2 fathoms</td><td>144 in</td></tr><tr><td>5 fathoms</td><td>360 in</td></tr><tr><td>10 fathoms</td><td>720 in</td></tr><tr><td>20 fathoms</td><td>1,440 in</td></tr><tr><td>25 fathoms</td><td>1,800 in</td></tr><tr><td>50 fathoms</td><td>3,600 in</td></tr><tr><td>100 fathoms</td><td>7,200 in</td></tr><tr><td>250 fathoms</td><td>18,000 in</td></tr><tr><td>500 fathoms</td><td>36,000 in</td></tr><tr><td>1,000 fathoms</td><td>72,000 in</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Fathoms</th><th>Inches</th></tr></thead><tbody><tr><td>1 fathom</td><td>72 in</td></tr><tr><td>2 fathoms</td><td>144 in</td></tr><tr><td>5 fathoms</td><td>360 in</td></tr><tr><td>10 fathoms</td><td>720 in</td></tr><tr><td>20 fathoms</td><td>1,440 in</td></tr><tr><td>25 fathoms</td><td>1,800 in</td></tr><tr><td>50 fathoms</td><td>3,600 in</td></tr><tr><td>100 fathoms</td><td>7,200 in</td></tr><tr><td>250 fathoms</td><td>18,000 in</td></tr><tr><td>500 fathoms</td><td>36,000 in</td></tr><tr><td>1,000 fathoms</td><td>72,000 in</td></tr></tbody></table>
 <h2>About length units</h2>
 <p>Length measures the distance between two points. The meter is the SI base unit; inches, feet, yards and miles are US customary and imperial units, all defined exactly in terms of the meter (1 inch = 2.54 cm exactly).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.013888888888888888;const r=v*F;return [[SF(v)+' in =',SF(r)+' fathoms'],['Formula','fathoms = in × '+SF(F)],['Reverse','1 fathoms = '+SF(1/F)+' in'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' in',SF(x*F)+' fathoms'])];
+const F=0.013888888888888888;const r=v*F;return [[SF(v)+' '+(v===1?'in':'in')+' =',SF(r)+' '+(r===1?'fathom':'fathoms')],['Formula','fathoms = in × '+SF(F)],['Reverse','1 in = '+SF(1/F)+' fathoms'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'in':'in'),SF(x*F)+' fathoms'])];
 });</script>
 </body></html>

@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=1000000.0;const r=v*F;return [[SF(v)+' MHz =',SF(r)+' Hz'],['Formula','Hz = MHz × '+SF(F)],['Reverse','1 Hz = '+SF(1/F)+' MHz'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' MHz',SF(x*F)+' Hz'])];
+const F=1000000.0;const r=v*F;return [[SF(v)+' '+(v===1?'MHz':'MHz')+' =',SF(r)+' '+(r===1?'Hz':'Hz')],['Formula','Hz = MHz × '+SF(F)],['Reverse','1 MHz = '+SF(1/F)+' Hz'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'MHz':'MHz'),SF(x*F)+' Hz'])];
 });</script>
 </body></html>

@@ -35,11 +35,11 @@
 <details><summary>How many gigabits are in one byte?</summary><p>There are 8e-09 gigabits in one byte.</p></details>
 <details><summary>How many bytes are in one gigabit?</summary><p>There are 125,000,000 bytes in one gigabit.</p></details>
 <h2>Related calculators</h2>
-<div class="grid"><a href="data-storage-converter.html"><b>Data Storage Converter</b></a><a href="gigabits-to-bytes.html"><b>Gigabits to Bytes Converter</b></a><a href="bytes-to-kilobytes.html"><b>Bytes to Kilobytes Converter</b></a><a href="bytes-to-megabytes.html"><b>Bytes to Megabytes Converter</b></a><a href="bytes-to-gigabytes.html"><b>Bytes to Gigabytes Converter</b></a><a href="bytes-to-terabytes.html"><b>Bytes to Terabytes Converter</b></a><a href="bytes-to-bits.html"><b>Bytes to Bits Converter</b></a><a href="bytes-to-kilobits.html"><b>Bytes to Kilobits Converter</b></a><a href="bytes-to-megabits.html"><b>Bytes to Megabits Converter</b></a><a href="bytes-to-petabytes.html"><b>Bytes to Petabytes Converter</b></a><a href="bytes-to-kibibytes.html"><b>Bytes to Kibibytes Converter</b></a><a href="bytes-to-mebibytes.html"><b>Bytes to Mebibytes Converter</b></a></div>
+<div class="grid"><a href="data-storage-converter.html"><b>Data Storage Converter</b></a><a href="gigabits-to-bytes.html"><b>Gigabits to Bytes Converter</b></a><a href="bytes-to-kilobytes.html"><b>Bytes to Kilobytes Converter</b></a><a href="bytes-to-megabytes.html"><b>Bytes to Megabytes Converter</b></a><a href="bytes-to-gigabytes.html"><b>Bytes to Gigabytes Converter</b></a><a href="bytes-to-bits.html"><b>Bytes to Bits Converter</b></a><a href="bytes-to-kilobits.html"><b>Bytes to Kilobits Converter</b></a><a href="bytes-to-megabits.html"><b>Bytes to Megabits Converter</b></a><a href="bytes-to-kibibytes.html"><b>Bytes to Kibibytes Converter</b></a><a href="bytes-to-mebibytes.html"><b>Bytes to Mebibytes Converter</b></a><a href="kilobytes-to-gigabits.html"><b>Kilobytes to Gigabits Converter</b></a><a href="megabytes-to-gigabits.html"><b>Megabytes to Gigabits Converter</b></a></div>
 </main>
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=8e-09;const r=v*F;return [[SF(v)+' B =',SF(r)+' Gb'],['Formula','Gb = B × '+SF(F)],['Reverse','1 Gb = '+SF(1/F)+' B'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' B',SF(x*F)+' Gb'])];
+const F=8e-09;const r=v*F;return [[SF(v)+' '+(v===1?'B':'B')+' =',SF(r)+' '+(r===1?'Gb':'Gb')],['Formula','Gb = B × '+SF(F)],['Reverse','1 B = '+SF(1/F)+' Gb'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'B':'B'),SF(x*F)+' Gb'])];
 });</script>
 </body></html>

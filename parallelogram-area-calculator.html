@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parallelogram Area Calculator | CalcHub</title>
+<meta name="description" content="Calculate parallelogram area from base and height, or from two sides and an angle.">
+<link rel="canonical" href="https://YOURDOMAIN.com/parallelogram-area-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a rectangle a parallelogram?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with a 90 degree angle."}}, {"@type": "Question", "name": "Why use the perpendicular height?", "acceptedAnswer": {"@type": "Answer", "text": "The slanted side is longer than the height, which would overstate the area."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Parallelogram Area Calculator</h1>
+<p class="muted">Calculate parallelogram area from base and height, or from two sides and an angle.</p>
+<form class="card" data-calc="1">
+<label for="b">Base</label><input id="b" type="number" step="any" value="10">
+<label for="h">Perpendicular height</label><input id="h" type="number" step="any" value="6">
+<label for="s">Slanted side</label><input id="s" type="number" step="any" value="7">
+<label for="ang">Angle between sides (degrees)</label><input id="ang" type="number" step="any" value="60">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Area = base x height. If you know two adjacent sides and the angle between them, area = a x b x sin(angle).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Is a rectangle a parallelogram?</summary><p>Yes, with a 90 degree angle.</p></details>
+<details><summary>Why use the perpendicular height?</summary><p>The slanted side is longer than the height, which would overstate the area.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="ellipse-area-calculator.html"><b>Ellipse Area and Perimeter Calculator</b></a><a href="rhombus-area-calculator.html"><b>Rhombus Area Calculator</b></a><a href="sector-area-calculator.html"><b>Circle Sector Area and Arc Length Calculator</b></a><a href="right-triangle-calculator.html"><b>Right Triangle Calculator</b></a><a href="law-of-cosines-calculator.html"><b>Law of Cosines Calculator</b></a><a href="law-of-sines-calculator.html"><b>Law of Sines Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({b,h,s,ang}){
+const a2=b*s*Math.sin(ang*Math.PI/180);return [['Area (base x height)',N(b*h,4)],['Area (base x side x sin angle)',N(a2,4)],['Perimeter',N(2*(b+s),4)]];
+});</script>
+</body></html>

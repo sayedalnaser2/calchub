@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capacitor Energy Calculator | CalcHub</title>
+<meta name="description" content="Calculate the energy and charge stored in a capacitor.">
+<link rel="canonical" href="https://YOURDOMAIN.com/capacitor-energy-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is the voltage squared?", "acceptedAnswer": {"@type": "Answer", "text": "Energy grows with both charge and voltage, giving a squared term."}}, {"@type": "Question", "name": "Is discharged energy fully usable?", "acceptedAnswer": {"@type": "Answer", "text": "Not always; circuits stop working below a minimum voltage."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Capacitor Energy Calculator</h1>
+<p class="muted">Calculate the energy and charge stored in a capacitor.</p>
+<form class="card" data-calc="1">
+<label for="c">Capacitance (µF)</label><input id="c" type="number" step="any" value="470">
+<label for="v">Voltage (V)</label><input id="v" type="number" step="any" value="25">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Energy E = 1/2 C V^2 and charge Q = C V. Capacitance in microfarads is converted to farads by multiplying by 10^-6.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why is the voltage squared?</summary><p>Energy grows with both charge and voltage, giving a squared term.</p></details>
+<details><summary>Is discharged energy fully usable?</summary><p>Not always; circuits stop working below a minimum voltage.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="rc-time-constant-calculator.html"><b>RC Time Constant Calculator</b></a><a href="thin-lens-calculator.html"><b>Thin Lens Equation Calculator</b></a><a href="mole-calculator.html"><b>Mole Calculator (Grams to Moles)</b></a><a href="percent-yield-calculator.html"><b>Percent Yield Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({c,v}){
+const C=c*1e-6;return [['Stored energy',N(.5*C*v*v,5)+' J'],['Charge',N(C*v*1e3,4)+' mC'],['Energy in mWh',N(.5*C*v*v/3.6,5)]];
+});</script>
+</body></html>

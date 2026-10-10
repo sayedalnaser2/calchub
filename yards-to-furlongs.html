@@ -28,7 +28,7 @@
 <h2>Yards to Furlongs conversion table</h2>
 <table class="ref"><thead><tr><th>Yards</th><th>Furlongs</th></tr></thead><tbody><tr><td>1 yd</td><td>0.0045454545 furlongs</td></tr><tr><td>2 yd</td><td>0.0090909091 furlongs</td></tr><tr><td>5 yd</td><td>0.022727273 furlongs</td></tr><tr><td>10 yd</td><td>0.045454545 furlongs</td></tr><tr><td>20 yd</td><td>0.090909091 furlongs</td></tr><tr><td>25 yd</td><td>0.11363636 furlongs</td></tr><tr><td>50 yd</td><td>0.22727273 furlongs</td></tr><tr><td>100 yd</td><td>0.45454545 furlongs</td></tr><tr><td>250 yd</td><td>1.1363636 furlongs</td></tr><tr><td>500 yd</td><td>2.2727273 furlongs</td></tr><tr><td>1,000 yd</td><td>4.5454545 furlongs</td></tr></tbody></table>
 <h2>Furlongs to Yards conversion table</h2>
-<table class="ref"><thead><tr><th>Furlongs</th><th>Yards</th></tr></thead><tbody><tr><td>1 furlongs</td><td>220 yd</td></tr><tr><td>2 furlongs</td><td>440 yd</td></tr><tr><td>5 furlongs</td><td>1,100 yd</td></tr><tr><td>10 furlongs</td><td>2,200 yd</td></tr><tr><td>20 furlongs</td><td>4,400 yd</td></tr><tr><td>25 furlongs</td><td>5,500 yd</td></tr><tr><td>50 furlongs</td><td>11,000 yd</td></tr><tr><td>100 furlongs</td><td>22,000 yd</td></tr><tr><td>250 furlongs</td><td>55,000 yd</td></tr><tr><td>500 furlongs</td><td>110,000 yd</td></tr><tr><td>1,000 furlongs</td><td>220,000 yd</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Furlongs</th><th>Yards</th></tr></thead><tbody><tr><td>1 furlong</td><td>220 yd</td></tr><tr><td>2 furlongs</td><td>440 yd</td></tr><tr><td>5 furlongs</td><td>1,100 yd</td></tr><tr><td>10 furlongs</td><td>2,200 yd</td></tr><tr><td>20 furlongs</td><td>4,400 yd</td></tr><tr><td>25 furlongs</td><td>5,500 yd</td></tr><tr><td>50 furlongs</td><td>11,000 yd</td></tr><tr><td>100 furlongs</td><td>22,000 yd</td></tr><tr><td>250 furlongs</td><td>55,000 yd</td></tr><tr><td>500 furlongs</td><td>110,000 yd</td></tr><tr><td>1,000 furlongs</td><td>220,000 yd</td></tr></tbody></table>
 <h2>About length units</h2>
 <p>Length measures the distance between two points. The meter is the SI base unit; inches, feet, yards and miles are US customary and imperial units, all defined exactly in terms of the meter (1 inch = 2.54 cm exactly).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.004545454545454545;const r=v*F;return [[SF(v)+' yd =',SF(r)+' furlongs'],['Formula','furlongs = yd × '+SF(F)],['Reverse','1 furlongs = '+SF(1/F)+' yd'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' yd',SF(x*F)+' furlongs'])];
+const F=0.004545454545454545;const r=v*F;return [[SF(v)+' '+(v===1?'yd':'yd')+' =',SF(r)+' '+(r===1?'furlong':'furlongs')],['Formula','furlongs = yd × '+SF(F)],['Reverse','1 yd = '+SF(1/F)+' furlongs'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'yd':'yd'),SF(x*F)+' furlongs'])];
 });</script>
 </body></html>

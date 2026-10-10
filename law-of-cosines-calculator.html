@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Law of Cosines Calculator | CalcHub</title>
+<meta name="description" content="Find the third side and all angles of a triangle from two sides and the included angle.">
+<link rel="canonical" href="https://YOURDOMAIN.com/law-of-cosines-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When do I use the law of cosines?", "acceptedAnswer": {"@type": "Answer", "text": "When you know two sides and the included angle (SAS) or all three sides (SSS)."}}, {"@type": "Question", "name": "How does it relate to Pythagoras?", "acceptedAnswer": {"@type": "Answer", "text": "When C = 90 degrees, cos C = 0 and it reduces to a^2 + b^2 = c^2."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Law of Cosines Calculator</h1>
+<p class="muted">Find the third side and all angles of a triangle from two sides and the included angle.</p>
+<form class="card" data-calc="1">
+<label for="a">Side a</label><input id="a" type="number" step="any" value="7">
+<label for="b">Side b</label><input id="b" type="number" step="any" value="9">
+<label for="ang">Angle C between them (degrees)</label><input id="ang" type="number" step="any" value="50">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Law of cosines: c^2 = a^2 + b^2 - 2ab cos(C). Once c is known, the other angles follow from the law of cosines again or the law of sines.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When do I use the law of cosines?</summary><p>When you know two sides and the included angle (SAS) or all three sides (SSS).</p></details>
+<details><summary>How does it relate to Pythagoras?</summary><p>When C = 90 degrees, cos C = 0 and it reduces to a^2 + b^2 = c^2.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="law-of-sines-calculator.html"><b>Law of Sines Calculator</b></a><a href="nth-root-calculator.html"><b>Nth Root Calculator</b></a><a href="percent-to-decimal-calculator.html"><b>Percent to Decimal and Fraction Calculator</b></a><a href="average-speed-calculator.html"><b>Average Speed Calculator (Two Legs)</b></a><a href="circumference-calculator.html"><b>Circumference Calculator</b></a><a href="number-to-words-calculator.html"><b>Number to Words Converter</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,b,ang}){
+const C=ang*Math.PI/180,c=Math.sqrt(a*a+b*b-2*a*b*Math.cos(C));const A=Math.acos((b*b+c*c-a*a)/(2*b*c))*180/Math.PI,B=180-ang-A;return [['Side c',N(c,5)],['Angle A',N(A,3)+' degrees'],['Angle B',N(B,3)+' degrees'],['Area',N(.5*a*b*Math.sin(C),4)]];
+});</script>
+</body></html>

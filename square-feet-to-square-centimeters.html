@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=929.0304;const r=v*F;return [[SF(v)+' ft² =',SF(r)+' cm²'],['Formula','cm² = ft² × '+SF(F)],['Reverse','1 cm² = '+SF(1/F)+' ft²'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' ft²',SF(x*F)+' cm²'])];
+const F=929.0304;const r=v*F;return [[SF(v)+' '+(v===1?'ft²':'ft²')+' =',SF(r)+' '+(r===1?'cm²':'cm²')],['Formula','cm² = ft² × '+SF(F)],['Reverse','1 ft² = '+SF(1/F)+' cm²'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'ft²':'ft²'),SF(x*F)+' cm²'])];
 });</script>
 </body></html>

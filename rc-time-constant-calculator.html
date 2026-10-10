@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RC Time Constant Calculator | CalcHub</title>
+<meta name="description" content="Calculate the time constant, charge time and cutoff frequency of an RC circuit.">
+<link rel="canonical" href="https://YOURDOMAIN.com/rc-time-constant-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a low-pass filter?", "acceptedAnswer": {"@type": "Answer", "text": "An RC circuit that passes low frequencies and attenuates high ones."}}, {"@type": "Question", "name": "How long to fully charge?", "acceptedAnswer": {"@type": "Answer", "text": "In theory never, but 5\u03c4 is practically full."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>RC Time Constant Calculator</h1>
+<p class="muted">Calculate the time constant, charge time and cutoff frequency of an RC circuit.</p>
+<form class="card" data-calc="1">
+<label for="r">Resistance (ohms)</label><input id="r" type="number" step="any" value="10000">
+<label for="c">Capacitance (µF)</label><input id="c" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>The time constant tau = R x C is the time for a capacitor to charge to 63.2% of the supply voltage (or discharge to 36.8%). After five time constants it is about 99.3% charged. The RC filter cutoff is 1 / (2 pi R C).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a low-pass filter?</summary><p>An RC circuit that passes low frequencies and attenuates high ones.</p></details>
+<details><summary>How long to fully charge?</summary><p>In theory never, but 5τ is practically full.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="thin-lens-calculator.html"><b>Thin Lens Equation Calculator</b></a><a href="mole-calculator.html"><b>Mole Calculator (Grams to Moles)</b></a><a href="percent-yield-calculator.html"><b>Percent Yield Calculator</b></a><a href="speed-calculator.html"><b>Speed, Distance and Time Calculator</b></a><a href="ohms-law-calculator.html"><b>Ohm&#x27;s Law Calculator</b></a><a href="kinetic-energy-calculator.html"><b>Kinetic Energy Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({r,c}){
+const tau=r*c*1e-6;return [['Time constant τ = RC',N(tau*1000,4)+' ms'],['Charged to 63.2% in',N(tau*1000,4)+' ms'],['Charged to 99.3% (5τ)',N(5*tau*1000,3)+' ms'],['Cutoff frequency',N(1/(2*Math.PI*tau),3)+' Hz']];
+});</script>
+</body></html>

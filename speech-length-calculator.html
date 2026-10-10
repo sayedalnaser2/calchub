@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Speech Length Calculator | CalcHub</title>
+<meta name="description" content="Estimate how many minutes a speech will take, or how many words you need for a target time.">
+<link rel="canonical" href="https://YOURDOMAIN.com/speech-length-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many words is a 5-minute speech?", "acceptedAnswer": {"@type": "Answer", "text": "About 650 words at 130 wpm."}}, {"@type": "Question", "name": "Should I allow for pauses?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Pauses, slides and audience reactions add time."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="everyday.html">Everyday</a></p>
+<h1>Speech Length Calculator</h1>
+<p class="muted">Estimate how many minutes a speech will take, or how many words you need for a target time.</p>
+<form class="card" data-calc="1">
+<label for="words">Words in your speech</label><input id="words" type="number" step="any" value="1300">
+<label for="wpm">Speaking pace (words per minute)</label><input id="wpm" type="number" step="any" value="130">
+<label for="target">Target length (minutes)</label><input id="target" type="number" step="any" value="10">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Most people speak 120-150 words per minute when presenting. Time = words / pace, and words needed = minutes x pace.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How many words is a 5-minute speech?</summary><p>About 650 words at 130 wpm.</p></details>
+<details><summary>Should I allow for pauses?</summary><p>Yes. Pauses, slides and audience reactions add time.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="typing-speed-calculator.html"><b>Typing Speed (WPM) Calculator</b></a><a href="days-alive-calculator.html"><b>How Many Days Old Am I? Calculator</b></a><a href="birthday-countdown-calculator.html"><b>Birthday Countdown Calculator</b></a><a href="work-hours-calculator.html"><b>Work Hours Calculator</b></a><a href="pizza-calculator.html"><b>Pizza Calculator (How Many Pizzas to Order)</b></a><a href="turkey-cooking-time-calculator.html"><b>Turkey Cooking Time Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({words,wpm,target}){
+if(wpm<=0)return 'Pace must be positive.';return [['Speech length',N(words/wpm,1)+' min'],['Words needed for target',N(target*wpm,0)],['Slow pace (110 wpm)',N(words/110,1)+' min'],['Fast pace (160 wpm)',N(words/160,1)+' min']];
+});</script>
+</body></html>

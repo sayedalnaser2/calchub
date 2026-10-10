@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Law of Sines Calculator | CalcHub</title>
+<meta name="description" content="Solve a triangle from one side and two angles using the law of sines.">
+<link rel="canonical" href="https://YOURDOMAIN.com/law-of-sines-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is the law of sines ambiguous?", "acceptedAnswer": {"@type": "Answer", "text": "In the SSA case, two different triangles can sometimes fit the data."}}, {"@type": "Question", "name": "What is R?", "acceptedAnswer": {"@type": "Answer", "text": "The radius of the circle passing through all three vertices."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Law of Sines Calculator</h1>
+<p class="muted">Solve a triangle from one side and two angles using the law of sines.</p>
+<form class="card" data-calc="1">
+<label for="a">Side a</label><input id="a" type="number" step="any" value="10">
+<label for="A">Angle A opposite a (degrees)</label><input id="A" type="number" step="any" value="40">
+<label for="B">Angle B (degrees)</label><input id="B" type="number" step="any" value="65">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Law of sines: a / sin A = b / sin B = c / sin C = 2R. The angles of a triangle sum to 180 degrees, so the third angle is 180 - A - B.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>When is the law of sines ambiguous?</summary><p>In the SSA case, two different triangles can sometimes fit the data.</p></details>
+<details><summary>What is R?</summary><p>The radius of the circle passing through all three vertices.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="nth-root-calculator.html"><b>Nth Root Calculator</b></a><a href="percent-to-decimal-calculator.html"><b>Percent to Decimal and Fraction Calculator</b></a><a href="average-speed-calculator.html"><b>Average Speed Calculator (Two Legs)</b></a><a href="circumference-calculator.html"><b>Circumference Calculator</b></a><a href="number-to-words-calculator.html"><b>Number to Words Converter</b></a><a href="leap-year-calculator.html"><b>Leap Year Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,A,B}){
+const C=180-A-B;if(C<=0)return 'Angles A and B must add to less than 180 degrees.';const r=a/Math.sin(A*Math.PI/180);const b=r*Math.sin(B*Math.PI/180),c=r*Math.sin(C*Math.PI/180);return [['Side b',N(b,5)],['Side c',N(c,5)],['Angle C',N(C,3)+' degrees'],['Circumradius',N(r/2,5)],['Area',N(.5*a*b*Math.sin(C*Math.PI/180),4)]];
+});</script>
+</body></html>

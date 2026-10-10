@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=2.2369362920544025;const r=v*F;return [[SF(v)+' m/s =',SF(r)+' mph'],['Formula','mph = m/s × '+SF(F)],['Reverse','1 mph = '+SF(1/F)+' m/s'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' m/s',SF(x*F)+' mph'])];
+const F=2.2369362920544025;const r=v*F;return [[SF(v)+' '+(v===1?'m/s':'m/s')+' =',SF(r)+' '+(r===1?'mph':'mph')],['Formula','mph = m/s × '+SF(F)],['Reverse','1 m/s = '+SF(1/F)+' mph'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'m/s':'m/s'),SF(x*F)+' mph'])];
 });</script>
 </body></html>

@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Turns to Degrees Converter | CalcHub</title>
-<meta name="description" content="Convert turns to degrees instantly. 1 turns = 360 °.">
+<meta name="description" content="Convert turns to degrees instantly. 1 turn = 360 °.">
 <link rel="canonical" href="https://YOURDOMAIN.com/turns-to-degrees.html">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many degrees are in one turn?", "acceptedAnswer": {"@type": "Answer", "text": "There are 360 degrees in one turn."}}, {"@type": "Question", "name": "How many turns are in one degree?", "acceptedAnswer": {"@type": "Answer", "text": "There are 0.0027777778 turns in one degree."}}]}</script>
@@ -13,7 +13,7 @@
 <main class="wrap">
 <p class="muted"><a href="index.html">Home</a> › <a href="conversion.html">Unit Converters</a> › <a href="angle-conversions.html">Angle Conversions</a></p>
 <h1>Turns to Degrees Converter</h1>
-<p class="muted">Convert turns to degrees instantly. 1 turns = 360 °.</p>
+<p class="muted">Convert turns to degrees instantly. 1 turn = 360 °.</p>
 <form class="card" data-calc="1">
 <label for="v">Value in turns (turns)</label><input id="v" type="number" step="any" value="1">
 <button type="submit">Calculate</button>
@@ -26,7 +26,7 @@
 <p><b>Degrees = turns &times; 360</b></p>
 <p>Worked example: convert 12.5 turns to degrees. Multiply 12.5 &times; 360 = <b>4,500 °</b>. To go the other way, multiply degrees by 0.0027777778 (or divide by 360).</p>
 <h2>Turns to Degrees conversion table</h2>
-<table class="ref"><thead><tr><th>Turns</th><th>Degrees</th></tr></thead><tbody><tr><td>1 turns</td><td>360 °</td></tr><tr><td>2 turns</td><td>720 °</td></tr><tr><td>5 turns</td><td>1,800 °</td></tr><tr><td>10 turns</td><td>3,600 °</td></tr><tr><td>20 turns</td><td>7,200 °</td></tr><tr><td>25 turns</td><td>9,000 °</td></tr><tr><td>50 turns</td><td>18,000 °</td></tr><tr><td>100 turns</td><td>36,000 °</td></tr><tr><td>250 turns</td><td>90,000 °</td></tr><tr><td>500 turns</td><td>180,000 °</td></tr><tr><td>1,000 turns</td><td>360,000 °</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Turns</th><th>Degrees</th></tr></thead><tbody><tr><td>1 turn</td><td>360 °</td></tr><tr><td>2 turns</td><td>720 °</td></tr><tr><td>5 turns</td><td>1,800 °</td></tr><tr><td>10 turns</td><td>3,600 °</td></tr><tr><td>20 turns</td><td>7,200 °</td></tr><tr><td>25 turns</td><td>9,000 °</td></tr><tr><td>50 turns</td><td>18,000 °</td></tr><tr><td>100 turns</td><td>36,000 °</td></tr><tr><td>250 turns</td><td>90,000 °</td></tr><tr><td>500 turns</td><td>180,000 °</td></tr><tr><td>1,000 turns</td><td>360,000 °</td></tr></tbody></table>
 <h2>Degrees to Turns conversion table</h2>
 <table class="ref"><thead><tr><th>Degrees</th><th>Turns</th></tr></thead><tbody><tr><td>1 °</td><td>0.0027777778 turns</td></tr><tr><td>2 °</td><td>0.0055555556 turns</td></tr><tr><td>5 °</td><td>0.013888889 turns</td></tr><tr><td>10 °</td><td>0.027777778 turns</td></tr><tr><td>20 °</td><td>0.055555556 turns</td></tr><tr><td>25 °</td><td>0.069444444 turns</td></tr><tr><td>50 °</td><td>0.13888889 turns</td></tr><tr><td>100 °</td><td>0.27777778 turns</td></tr><tr><td>250 °</td><td>0.69444444 turns</td></tr><tr><td>500 °</td><td>1.3888889 turns</td></tr><tr><td>1,000 °</td><td>2.7777778 turns</td></tr></tbody></table>
 <h2>About angle units</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=360.0;const r=v*F;return [[SF(v)+' turns =',SF(r)+' °'],['Formula','° = turns × '+SF(F)],['Reverse','1 ° = '+SF(1/F)+' turns'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' turns',SF(x*F)+' °'])];
+const F=360.0;const r=v*F;return [[SF(v)+' '+(v===1?'turn':'turns')+' =',SF(r)+' '+(r===1?'°':'°')],['Formula','° = turns × '+SF(F)],['Reverse','1 turn = '+SF(1/F)+' °'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'turn':'turns'),SF(x*F)+' °'])];
 });</script>
 </body></html>

@@ -12,7 +12,9 @@ from specs_m2 import SPECS as M2
 from specs_c2 import SPECS as C2
 from specs_k2 import SPECS as K2
 from specs_n2 import SPECS as N2
+from specs_p2 import SPECS as P2
 from gen_scale import SPECS as G
+from gen_scale2 import SPECS as G2
 
 DOMAIN = "https://YOURDOMAIN.com"
 SITE = "CalcHub"
@@ -28,7 +30,7 @@ CATS = [
     ("science", "Science", "Physics and science calculators: Ohm's law, energy, density and more."),
 ]
 CAT = {c[0]: c for c in CATS}
-SPECS = F + HM + O + F2 + H2 + M2 + C2 + K2 + N2 + G
+SPECS = F + HM + O + F2 + H2 + M2 + C2 + K2 + N2 + P2 + G + G2
 e = html.escape
 
 
@@ -94,7 +96,8 @@ def calc_page(s):
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in s["faqs"]]}
     ld = f'<script type="application/ld+json">{json.dumps(faq_ld)}</script>\n'
     ids = ",".join(i[0] for i in s["inputs"])
-    p = head(f'{s["title"]} | {SITE}', s["desc"], s["slug"] + ".html", ld)
+    ttl = f'{s["title"]} | {SITE}'
+    p = head(ttl if len(ttl) <= 60 else s["title"], s["desc"], s["slug"] + ".html", ld)
     crumb = f'<a href="index.html">Home</a> › <a href="{cat[0]}.html">{cat[1]}</a>'
     if s.get("group"):
         crumb += f' › <a href="{s["group"][0]}.html">{e(s["group"][1])}</a>'

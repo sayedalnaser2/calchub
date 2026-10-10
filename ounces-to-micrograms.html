@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=28349523.125;const r=v*F;return [[SF(v)+' oz =',SF(r)+' µg'],['Formula','µg = oz × '+SF(F)],['Reverse','1 µg = '+SF(1/F)+' oz'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' oz',SF(x*F)+' µg'])];
+const F=28349523.125;const r=v*F;return [[SF(v)+' '+(v===1?'oz':'oz')+' =',SF(r)+' '+(r===1?'µg':'µg')],['Formula','µg = oz × '+SF(F)],['Reverse','1 oz = '+SF(1/F)+' µg'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'oz':'oz'),SF(x*F)+' µg'])];
 });</script>
 </body></html>

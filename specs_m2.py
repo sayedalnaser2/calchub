@@ -104,7 +104,7 @@ C("math", "dice-roller", "Dice Roller",
 return [['Total',r.reduce((a,b)=>a+b,0)],['Rolls',r.join(', ')],['Average per die',N(r.reduce((a,b)=>a+b,0)/n,2)]];""",
   "Each die is an independent uniform random integer from 1 to the number of sides. Press Calculate to roll again.",
   [("What is the most likely total with two six-sided dice?", "Seven, which can be made in six ways out of 36.")]),
-C("math", "coin-flip", "Coin Flip",
+C("math", "coin-flip", "Coin Flip Simulator",
   "Flip a coin one or many times.",
   [("n", "Number of flips (1-1000)", 1)],
   r"""n=Math.min(Math.max(Math.round(n),1),1000);let h=0;for(let i=0;i<n;i++)if(Math.random()<.5)h++;

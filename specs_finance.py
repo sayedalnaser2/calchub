@@ -122,7 +122,7 @@ return [['Cost of the same goods later',M(amount*g)],['Purchasing power of today
   "At a steady inflation rate, prices grow by that percentage each year, so the same money buys less over time.",
   [("What inflation rate should I use?", "US inflation has averaged roughly 3% over the long term. Use a higher or lower figure to test scenarios.")]),
 
-C("finance", "salary-calculator", "Hourly to Salary Calculator",
+C("finance", "salary-calculator", "Salary Calculator (Hourly, Weekly, Monthly, Annual)",
   "Convert an hourly wage to weekly, monthly and yearly pay.",
   [("hourly", "Hourly rate ($)", 25), ("hours", "Hours per week", 40), ("weeks", "Weeks per year", 52)],
   r"""const y=hourly*hours*weeks;

@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.2777777777777778;const r=v*F;return [[SF(v)+' MJ =',SF(r)+' kWh'],['Formula','kWh = MJ × '+SF(F)],['Reverse','1 kWh = '+SF(1/F)+' MJ'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' MJ',SF(x*F)+' kWh'])];
+const F=0.2777777777777778;const r=v*F;return [[SF(v)+' '+(v===1?'MJ':'MJ')+' =',SF(r)+' '+(r===1?'kWh':'kWh')],['Formula','kWh = MJ × '+SF(F)],['Reverse','1 MJ = '+SF(1/F)+' kWh'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'MJ':'MJ'),SF(x*F)+' kWh'])];
 });</script>
 </body></html>

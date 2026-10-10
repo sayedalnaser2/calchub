@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.028349523027741384;const r=v*F;return [[SF(v)+' ozf =',SF(r)+' kgf'],['Formula','kgf = ozf × '+SF(F)],['Reverse','1 kgf = '+SF(1/F)+' ozf'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' ozf',SF(x*F)+' kgf'])];
+const F=0.028349523027741384;const r=v*F;return [[SF(v)+' '+(v===1?'ozf':'ozf')+' =',SF(r)+' '+(r===1?'kgf':'kgf')],['Formula','kgf = ozf × '+SF(F)],['Reverse','1 ozf = '+SF(1/F)+' kgf'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'ozf':'ozf'),SF(x*F)+' kgf'])];
 });</script>
 </body></html>

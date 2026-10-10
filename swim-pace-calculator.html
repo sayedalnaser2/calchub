@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Swim Pace Calculator (per 100m) | CalcHub</title>
+<meta name="description" content="Calculate your swimming pace per 100 meters and projected race times.">
+<link rel="canonical" href="https://YOURDOMAIN.com/swim-pace-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good 100 m pace?", "acceptedAnswer": {"@type": "Answer", "text": "Beginners often swim 2:30-3:00 per 100 m; competitive swimmers go under 1:30."}}, {"@type": "Question", "name": "Does turning count?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, pool swims include turns and push-offs, making them faster than open water."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="health.html">Health</a></p>
+<h1>Swim Pace Calculator (per 100m)</h1>
+<p class="muted">Calculate your swimming pace per 100 meters and projected race times.</p>
+<form class="card" data-calc="1">
+<label for="dist">Distance swum (meters)</label><input id="dist" type="number" step="any" value="1500">
+<label for="min">Time: minutes</label><input id="min" type="number" step="any" value="28">
+<label for="sec">Time: seconds</label><input id="sec" type="number" step="any" value="0">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Pace per 100 m = total time / distance x 100. Swim pace is quoted per 100 m (pools in meters) or 100 yards.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a good 100 m pace?</summary><p>Beginners often swim 2:30-3:00 per 100 m; competitive swimmers go under 1:30.</p></details>
+<details><summary>Does turning count?</summary><p>Yes, pool swims include turns and push-offs, making them faster than open water.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="bmi-for-4-ft-8-in.html"><b>BMI for 4 ft 8 in (142 cm)</b></a><a href="bmi-for-4-ft-9-in.html"><b>BMI for 4 ft 9 in (145 cm)</b></a><a href="bmi-for-4-ft-10-in.html"><b>BMI for 4 ft 10 in (147 cm)</b></a><a href="bmi-for-4-ft-11-in.html"><b>BMI for 4 ft 11 in (150 cm)</b></a><a href="bmi-for-5-ft-0-in.html"><b>BMI for 5 ft 0 in (152 cm)</b></a><a href="bmi-for-5-ft-1-in.html"><b>BMI for 5 ft 1 in (155 cm)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({dist,min,sec}){
+const t=min*60+sec;if(dist<=0||t<=0)return 'Enter a distance and time.';const p=t/dist*100;const f=x=>Math.floor(x/60)+':'+String(Math.round(x%60)).padStart(2,'0');return [['Pace per 100 m',f(p)],['Pace per 100 yd',f(p*.9144)],['Speed',N(dist/t*3.6,2)+' km/h'],['400 m at this pace',f(p*4)],['1 km at this pace',f(p*10)],['Ironman 3.8 km',Math.floor(p*38/3600)+':'+f(p*38%3600)]];
+});</script>
+</body></html>

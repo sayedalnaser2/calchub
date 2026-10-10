@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boyle&#x27;s Law Calculator | CalcHub</title>
+<meta name="description" content="Calculate the new volume or pressure of a gas at constant temperature.">
+<link rel="canonical" href="https://YOURDOMAIN.com/boyles-law-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need absolute pressure?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use absolute pressure, not gauge pressure."}}, {"@type": "Question", "name": "Which units work?", "acceptedAnswer": {"@type": "Answer", "text": "Any, as long as pressure units match and volume units match."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Boyle&#x27;s Law Calculator</h1>
+<p class="muted">Calculate the new volume or pressure of a gas at constant temperature.</p>
+<form class="card" data-calc="1">
+<label for="p1">Initial pressure</label><input id="p1" type="number" step="any" value="100">
+<label for="v1">Initial volume</label><input id="v1" type="number" step="any" value="5">
+<label for="p2">Final pressure (same unit)</label><input id="p2" type="number" step="any" value="250">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Boyle&#x27;s law: P1 x V1 = P2 x V2 for a fixed amount of gas at constant temperature. Pressure and volume are inversely proportional.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Do I need absolute pressure?</summary><p>Yes. Use absolute pressure, not gauge pressure.</p></details>
+<details><summary>Which units work?</summary><p>Any, as long as pressure units match and volume units match.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="charles-law-calculator.html"><b>Charles&#x27;s Law Calculator</b></a><a href="wave-speed-calculator.html"><b>Wave Speed Calculator</b></a><a href="doppler-effect-calculator.html"><b>Doppler Effect Calculator</b></a><a href="kepler-third-law-calculator.html"><b>Kepler&#x27;s Third Law (Orbital Period) Calculator</b></a><a href="capacitor-energy-calculator.html"><b>Capacitor Energy Calculator</b></a><a href="rc-time-constant-calculator.html"><b>RC Time Constant Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({p1,v1,p2}){
+if(p2<=0)return 'Final pressure must be positive.';return [['Final volume',N(p1*v1/p2,5)+' (same unit as initial volume)'],['Constant P x V',N(p1*v1,4)],['Volume change',PCT((p1/p2-1)*100,2)]];
+});</script>
+</body></html>

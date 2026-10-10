@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dollar Cost Averaging Calculator | CalcHub</title>
+<meta name="description" content="Find your average cost per share when investing a fixed amount at different prices.">
+<link rel="canonical" href="https://YOURDOMAIN.com/dollar-cost-averaging-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does dollar cost averaging guarantee profit?", "acceptedAnswer": {"@type": "Answer", "text": "No. It reduces timing risk but does not remove market risk."}}, {"@type": "Question", "name": "Why is my average cost lower than the average price?", "acceptedAnswer": {"@type": "Answer", "text": "Because you buy more shares at low prices (a harmonic mean effect)."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="finance.html">Finance</a></p>
+<h1>Dollar Cost Averaging Calculator</h1>
+<p class="muted">Find your average cost per share when investing a fixed amount at different prices.</p>
+<form class="card" data-calc="1">
+<label for="amt">Amount invested each period ($)</label><input id="amt" type="number" step="any" value="500">
+<label for="prices">Share price at each purchase (separated by commas)</label><textarea id="prices" rows="5">50, 45, 40, 48, 55, 60</textarea>
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Investing a fixed amount each period buys more shares when prices are low and fewer when high. Your average cost is total invested divided by total shares, which is below the simple average price whenever prices vary.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Does dollar cost averaging guarantee profit?</summary><p>No. It reduces timing risk but does not remove market risk.</p></details>
+<details><summary>Why is my average cost lower than the average price?</summary><p>Because you buy more shares at low prices (a harmonic mean effect).</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="stock-split-calculator.html"><b>Stock Split Calculator</b></a><a href="freelance-rate-calculator.html"><b>Freelance Hourly Rate Calculator</b></a><a href="margin-to-markup-calculator.html"><b>Margin to Markup Converter</b></a><a href="doubling-time-calculator.html"><b>Doubling Time Calculator</b></a><a href="real-rate-of-return-calculator.html"><b>Real Rate of Return Calculator</b></a><a href="cost-per-mile-calculator.html"><b>Car Cost per Mile Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({amt,prices}){
+const p=NUMS(prices).filter(x=>x>0);if(!p.length)return 'Enter at least one price.';const sh=p.reduce((s,x)=>s+amt/x,0),inv=amt*p.length,last=p[p.length-1],mean=p.reduce((s,x)=>s+x,0)/p.length;return [['Average cost per share',M(inv/sh)],['Shares bought',N(sh,4)],['Total invested',M(inv)],['Value at last price',M(sh*last)],['Gain / loss',M(sh*last-inv)],['Simple average price',M(mean)]];
+});</script>
+</body></html>

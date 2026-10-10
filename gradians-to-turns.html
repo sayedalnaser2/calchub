@@ -28,7 +28,7 @@
 <h2>Gradians to Turns conversion table</h2>
 <table class="ref"><thead><tr><th>Gradians</th><th>Turns</th></tr></thead><tbody><tr><td>1 grad</td><td>0.0025 turns</td></tr><tr><td>2 grad</td><td>0.005 turns</td></tr><tr><td>5 grad</td><td>0.0125 turns</td></tr><tr><td>10 grad</td><td>0.025 turns</td></tr><tr><td>20 grad</td><td>0.05 turns</td></tr><tr><td>25 grad</td><td>0.0625 turns</td></tr><tr><td>50 grad</td><td>0.125 turns</td></tr><tr><td>100 grad</td><td>0.25 turns</td></tr><tr><td>250 grad</td><td>0.625 turns</td></tr><tr><td>500 grad</td><td>1.25 turns</td></tr><tr><td>1,000 grad</td><td>2.5 turns</td></tr></tbody></table>
 <h2>Turns to Gradians conversion table</h2>
-<table class="ref"><thead><tr><th>Turns</th><th>Gradians</th></tr></thead><tbody><tr><td>1 turns</td><td>400 grad</td></tr><tr><td>2 turns</td><td>800 grad</td></tr><tr><td>5 turns</td><td>2,000 grad</td></tr><tr><td>10 turns</td><td>4,000 grad</td></tr><tr><td>20 turns</td><td>8,000 grad</td></tr><tr><td>25 turns</td><td>10,000 grad</td></tr><tr><td>50 turns</td><td>20,000 grad</td></tr><tr><td>100 turns</td><td>40,000 grad</td></tr><tr><td>250 turns</td><td>100,000 grad</td></tr><tr><td>500 turns</td><td>200,000 grad</td></tr><tr><td>1,000 turns</td><td>400,000 grad</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Turns</th><th>Gradians</th></tr></thead><tbody><tr><td>1 turn</td><td>400 grad</td></tr><tr><td>2 turns</td><td>800 grad</td></tr><tr><td>5 turns</td><td>2,000 grad</td></tr><tr><td>10 turns</td><td>4,000 grad</td></tr><tr><td>20 turns</td><td>8,000 grad</td></tr><tr><td>25 turns</td><td>10,000 grad</td></tr><tr><td>50 turns</td><td>20,000 grad</td></tr><tr><td>100 turns</td><td>40,000 grad</td></tr><tr><td>250 turns</td><td>100,000 grad</td></tr><tr><td>500 turns</td><td>200,000 grad</td></tr><tr><td>1,000 turns</td><td>400,000 grad</td></tr></tbody></table>
 <h2>About angle units</h2>
 <p>Angles can be measured in degrees (360 per full turn), radians (2π per full turn) or gradians (400 per full turn).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.0025;const r=v*F;return [[SF(v)+' grad =',SF(r)+' turns'],['Formula','turns = grad × '+SF(F)],['Reverse','1 turns = '+SF(1/F)+' grad'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' grad',SF(x*F)+' turns'])];
+const F=0.0025;const r=v*F;return [[SF(v)+' '+(v===1?'grad':'grad')+' =',SF(r)+' '+(r===1?'turn':'turns')],['Formula','turns = grad × '+SF(F)],['Reverse','1 grad = '+SF(1/F)+' turns'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'grad':'grad'),SF(x*F)+' turns'])];
 });</script>
 </body></html>

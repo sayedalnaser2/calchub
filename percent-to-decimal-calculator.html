@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Percent to Decimal and Fraction Calculator | CalcHub</title>
+<meta name="description" content="Convert a percentage into a decimal and a simplified fraction.">
+<link rel="canonical" href="https://YOURDOMAIN.com/percent-to-decimal-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert a decimal to a percent?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply by 100."}}, {"@type": "Question", "name": "What is a basis point?", "acceptedAnswer": {"@type": "Answer", "text": "One hundredth of a percentage point, so 1% = 100 basis points."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Percent to Decimal and Fraction Calculator</h1>
+<p class="muted">Convert a percentage into a decimal and a simplified fraction.</p>
+<form class="card" data-calc="1">
+<label for="p">Percentage (%)</label><input id="p" type="number" step="any" value="37.5">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Divide the percentage by 100 to get the decimal (37.5% = 0.375). The fraction is that decimal expressed over a power of ten and simplified: 0.375 = 3/8.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert a decimal to a percent?</summary><p>Multiply by 100.</p></details>
+<details><summary>What is a basis point?</summary><p>One hundredth of a percentage point, so 1% = 100 basis points.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="average-speed-calculator.html"><b>Average Speed Calculator (Two Legs)</b></a><a href="circumference-calculator.html"><b>Circumference Calculator</b></a><a href="number-to-words-calculator.html"><b>Number to Words Converter</b></a><a href="leap-year-calculator.html"><b>Leap Year Calculator</b></a><a href="mixed-number-calculator.html"><b>Mixed Number to Improper Fraction Calculator</b></a><a href="cube-calculator.html"><b>Cube Volume and Diagonal Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({p}){
+const d=p/100;let bn=0,bd=1;for(let k=1;k<=1000;k++){const n=Math.round(d*k);if(Math.abs(d-n/k)<1e-9){bn=n;bd=k;break;}}const g=GCD(bn,bd)||1;return [['Decimal',N(d,10)],['Fraction',bd===1&&bn!==d?'approx.':(bn/g)+'/'+(bd/g)],['Per 1,000',N(d*1000,4)],['Basis points',N(p*100,2)]];
+});</script>
+</body></html>

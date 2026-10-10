@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=737.5621492772657;const r=v*F;return [[SF(v)+' kW =',SF(r)+' ft-lb/s'],['Formula','ft-lb/s = kW × '+SF(F)],['Reverse','1 ft-lb/s = '+SF(1/F)+' kW'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' kW',SF(x*F)+' ft-lb/s'])];
+const F=737.5621492772657;const r=v*F;return [[SF(v)+' '+(v===1?'kW':'kW')+' =',SF(r)+' '+(r===1?'ft-lb/s':'ft-lb/s')],['Formula','ft-lb/s = kW × '+SF(F)],['Reverse','1 kW = '+SF(1/F)+' ft-lb/s'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'kW':'kW'),SF(x*F)+' ft-lb/s'])];
 });</script>
 </body></html>

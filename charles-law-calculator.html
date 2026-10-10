@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Charles&#x27;s Law Calculator | CalcHub</title>
+<meta name="description" content="Calculate how gas volume changes with temperature at constant pressure.">
+<link rel="canonical" href="https://YOURDOMAIN.com/charles-law-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why use kelvin?", "acceptedAnswer": {"@type": "Answer", "text": "Volume is proportional to absolute temperature, not Celsius."}}, {"@type": "Question", "name": "What happens at 0 K?", "acceptedAnswer": {"@type": "Answer", "text": "The ideal gas model predicts zero volume, but real gases liquefy first."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="science.html">Science</a></p>
+<h1>Charles&#x27;s Law Calculator</h1>
+<p class="muted">Calculate how gas volume changes with temperature at constant pressure.</p>
+<form class="card" data-calc="1">
+<label for="v1">Initial volume</label><input id="v1" type="number" step="any" value="10">
+<label for="t1">Initial temperature (K)</label><input id="t1" type="number" step="any" value="293.15">
+<label for="t2">Final temperature (K)</label><input id="t2" type="number" step="any" value="353.15">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Charles&#x27;s law: V1 / T1 = V2 / T2 at constant pressure, with temperature in kelvin. Add 273.15 to Celsius to get kelvin.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Why use kelvin?</summary><p>Volume is proportional to absolute temperature, not Celsius.</p></details>
+<details><summary>What happens at 0 K?</summary><p>The ideal gas model predicts zero volume, but real gases liquefy first.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="wave-speed-calculator.html"><b>Wave Speed Calculator</b></a><a href="doppler-effect-calculator.html"><b>Doppler Effect Calculator</b></a><a href="kepler-third-law-calculator.html"><b>Kepler&#x27;s Third Law (Orbital Period) Calculator</b></a><a href="capacitor-energy-calculator.html"><b>Capacitor Energy Calculator</b></a><a href="rc-time-constant-calculator.html"><b>RC Time Constant Calculator</b></a><a href="thin-lens-calculator.html"><b>Thin Lens Equation Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({v1,t1,t2}){
+if(t1<=0||t2<=0)return 'Temperatures must be in kelvin and above zero.';return [['Final volume',N(v1*t2/t1,5)],['Volume change',PCT((t2/t1-1)*100,2)],['Initial in °C',N(t1-273.15,2)],['Final in °C',N(t2-273.15,2)]];
+});</script>
+</body></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trapezoid Area Calculator | CalcHub</title>
+<meta name="description" content="Calculate the area and median of a trapezoid from its parallel sides and height.">
+<link rel="canonical" href="https://YOURDOMAIN.com/trapezoid-area-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which sides are a and b?", "acceptedAnswer": {"@type": "Answer", "text": "The two parallel sides (the bases)."}}, {"@type": "Question", "name": "What if I know the legs?", "acceptedAnswer": {"@type": "Answer", "text": "You need the perpendicular height, which can be found with the Pythagorean theorem."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Trapezoid Area Calculator</h1>
+<p class="muted">Calculate the area and median of a trapezoid from its parallel sides and height.</p>
+<form class="card" data-calc="1">
+<label for="a">Parallel side a</label><input id="a" type="number" step="any" value="8">
+<label for="b">Parallel side b</label><input id="b" type="number" step="any" value="5">
+<label for="h">Height</label><input id="h" type="number" step="any" value="4">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Area = (a + b) / 2 x h, the average of the two parallel sides times the perpendicular height.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Which sides are a and b?</summary><p>The two parallel sides (the bases).</p></details>
+<details><summary>What if I know the legs?</summary><p>You need the perpendicular height, which can be found with the Pythagorean theorem.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="parallelogram-area-calculator.html"><b>Parallelogram Area Calculator</b></a><a href="ellipse-area-calculator.html"><b>Ellipse Area and Perimeter Calculator</b></a><a href="rhombus-area-calculator.html"><b>Rhombus Area Calculator</b></a><a href="sector-area-calculator.html"><b>Circle Sector Area and Arc Length Calculator</b></a><a href="right-triangle-calculator.html"><b>Right Triangle Calculator</b></a><a href="law-of-cosines-calculator.html"><b>Law of Cosines Calculator</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({a,b,h}){
+return [['Area',N((a+b)/2*h,4)],['Median (mid-segment)',N((a+b)/2,4)]];
+});</script>
+</body></html>

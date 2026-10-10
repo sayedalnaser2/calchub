@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=7000.000000000001;const r=v*F;return [[SF(v)+' lb =',SF(r)+' gr'],['Formula','gr = lb × '+SF(F)],['Reverse','1 gr = '+SF(1/F)+' lb'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' lb',SF(x*F)+' gr'])];
+const F=7000.000000000001;const r=v*F;return [[SF(v)+' '+(v===1?'lb':'lb')+' =',SF(r)+' '+(r===1?'gr':'gr')],['Formula','gr = lb × '+SF(F)],['Reverse','1 lb = '+SF(1/F)+' gr'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'lb':'lb'),SF(x*F)+' gr'])];
 });</script>
 </body></html>

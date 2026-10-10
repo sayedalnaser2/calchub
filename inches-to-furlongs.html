@@ -28,7 +28,7 @@
 <h2>Inches to Furlongs conversion table</h2>
 <table class="ref"><thead><tr><th>Inches</th><th>Furlongs</th></tr></thead><tbody><tr><td>1 in</td><td>0.00012626263 furlongs</td></tr><tr><td>2 in</td><td>0.00025252525 furlongs</td></tr><tr><td>5 in</td><td>0.00063131313 furlongs</td></tr><tr><td>10 in</td><td>0.0012626263 furlongs</td></tr><tr><td>20 in</td><td>0.0025252525 furlongs</td></tr><tr><td>25 in</td><td>0.0031565657 furlongs</td></tr><tr><td>50 in</td><td>0.0063131313 furlongs</td></tr><tr><td>100 in</td><td>0.012626263 furlongs</td></tr><tr><td>250 in</td><td>0.031565657 furlongs</td></tr><tr><td>500 in</td><td>0.063131313 furlongs</td></tr><tr><td>1,000 in</td><td>0.12626263 furlongs</td></tr></tbody></table>
 <h2>Furlongs to Inches conversion table</h2>
-<table class="ref"><thead><tr><th>Furlongs</th><th>Inches</th></tr></thead><tbody><tr><td>1 furlongs</td><td>7,920 in</td></tr><tr><td>2 furlongs</td><td>15,840 in</td></tr><tr><td>5 furlongs</td><td>39,600 in</td></tr><tr><td>10 furlongs</td><td>79,200 in</td></tr><tr><td>20 furlongs</td><td>158,400 in</td></tr><tr><td>25 furlongs</td><td>198,000 in</td></tr><tr><td>50 furlongs</td><td>396,000 in</td></tr><tr><td>100 furlongs</td><td>792,000 in</td></tr><tr><td>250 furlongs</td><td>1,980,000 in</td></tr><tr><td>500 furlongs</td><td>3,960,000 in</td></tr><tr><td>1,000 furlongs</td><td>7,920,000 in</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Furlongs</th><th>Inches</th></tr></thead><tbody><tr><td>1 furlong</td><td>7,920 in</td></tr><tr><td>2 furlongs</td><td>15,840 in</td></tr><tr><td>5 furlongs</td><td>39,600 in</td></tr><tr><td>10 furlongs</td><td>79,200 in</td></tr><tr><td>20 furlongs</td><td>158,400 in</td></tr><tr><td>25 furlongs</td><td>198,000 in</td></tr><tr><td>50 furlongs</td><td>396,000 in</td></tr><tr><td>100 furlongs</td><td>792,000 in</td></tr><tr><td>250 furlongs</td><td>1,980,000 in</td></tr><tr><td>500 furlongs</td><td>3,960,000 in</td></tr><tr><td>1,000 furlongs</td><td>7,920,000 in</td></tr></tbody></table>
 <h2>About length units</h2>
 <p>Length measures the distance between two points. The meter is the SI base unit; inches, feet, yards and miles are US customary and imperial units, all defined exactly in terms of the meter (1 inch = 2.54 cm exactly).</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=0.00012626262626262626;const r=v*F;return [[SF(v)+' in =',SF(r)+' furlongs'],['Formula','furlongs = in × '+SF(F)],['Reverse','1 furlongs = '+SF(1/F)+' in'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' in',SF(x*F)+' furlongs'])];
+const F=0.00012626262626262626;const r=v*F;return [[SF(v)+' '+(v===1?'in':'in')+' =',SF(r)+' '+(r===1?'furlong':'furlongs')],['Formula','furlongs = in × '+SF(F)],['Reverse','1 in = '+SF(1/F)+' furlongs'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'in':'in'),SF(x*F)+' furlongs'])];
 });</script>
 </body></html>

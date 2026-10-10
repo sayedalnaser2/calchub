@@ -28,7 +28,7 @@
 <h2>Megabytes to Bits conversion table</h2>
 <table class="ref"><thead><tr><th>Megabytes</th><th>Bits</th></tr></thead><tbody><tr><td>1 MB</td><td>8,000,000 bits</td></tr><tr><td>2 MB</td><td>16,000,000 bits</td></tr><tr><td>5 MB</td><td>40,000,000 bits</td></tr><tr><td>10 MB</td><td>80,000,000 bits</td></tr><tr><td>20 MB</td><td>160,000,000 bits</td></tr><tr><td>25 MB</td><td>200,000,000 bits</td></tr><tr><td>50 MB</td><td>400,000,000 bits</td></tr><tr><td>100 MB</td><td>800,000,000 bits</td></tr><tr><td>250 MB</td><td>2,000,000,000 bits</td></tr><tr><td>500 MB</td><td>4,000,000,000 bits</td></tr><tr><td>1,000 MB</td><td>8,000,000,000 bits</td></tr></tbody></table>
 <h2>Bits to Megabytes conversion table</h2>
-<table class="ref"><thead><tr><th>Bits</th><th>Megabytes</th></tr></thead><tbody><tr><td>1 bits</td><td>1.25e-07 MB</td></tr><tr><td>2 bits</td><td>2.5e-07 MB</td></tr><tr><td>5 bits</td><td>6.25e-07 MB</td></tr><tr><td>10 bits</td><td>1.25e-06 MB</td></tr><tr><td>20 bits</td><td>2.5e-06 MB</td></tr><tr><td>25 bits</td><td>3.125e-06 MB</td></tr><tr><td>50 bits</td><td>6.25e-06 MB</td></tr><tr><td>100 bits</td><td>1.25e-05 MB</td></tr><tr><td>250 bits</td><td>3.125e-05 MB</td></tr><tr><td>500 bits</td><td>6.25e-05 MB</td></tr><tr><td>1,000 bits</td><td>0.000125 MB</td></tr></tbody></table>
+<table class="ref"><thead><tr><th>Bits</th><th>Megabytes</th></tr></thead><tbody><tr><td>1 bit</td><td>1.25e-07 MB</td></tr><tr><td>2 bits</td><td>2.5e-07 MB</td></tr><tr><td>5 bits</td><td>6.25e-07 MB</td></tr><tr><td>10 bits</td><td>1.25e-06 MB</td></tr><tr><td>20 bits</td><td>2.5e-06 MB</td></tr><tr><td>25 bits</td><td>3.125e-06 MB</td></tr><tr><td>50 bits</td><td>6.25e-06 MB</td></tr><tr><td>100 bits</td><td>1.25e-05 MB</td></tr><tr><td>250 bits</td><td>3.125e-05 MB</td></tr><tr><td>500 bits</td><td>6.25e-05 MB</td></tr><tr><td>1,000 bits</td><td>0.000125 MB</td></tr></tbody></table>
 <h2>About digital storage units</h2>
 <p>These conversions use decimal (SI) prefixes where 1 KB = 1,000 bytes. Some operating systems use binary multiples of 1,024 instead, so reported sizes can differ slightly.</p>
 <h2>Frequently asked questions</h2>
@@ -40,6 +40,6 @@
 <footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
 <script src="calc.js"></script>
 <script>CalcPage(function({v}){
-const F=8000000.0;const r=v*F;return [[SF(v)+' MB =',SF(r)+' bits'],['Formula','bits = MB × '+SF(F)],['Reverse','1 bits = '+SF(1/F)+' MB'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' MB',SF(x*F)+' bits'])];
+const F=8000000.0;const r=v*F;return [[SF(v)+' '+(v===1?'MB':'MB')+' =',SF(r)+' '+(r===1?'bit':'bits')],['Formula','bits = MB × '+SF(F)],['Reverse','1 MB = '+SF(1/F)+' bits'],...[1,2,5,10,25,50,100,1000].map(x=>[SF(x)+' '+(x===1?'MB':'MB'),SF(x*F)+' bits'])];
 });</script>
 </body></html>

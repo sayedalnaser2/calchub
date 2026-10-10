@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Circle Sector Area and Arc Length Calculator | CalcHub</title>
+<meta name="description" content="Calculate the area, arc length and chord of a circular sector.">
+<link rel="canonical" href="https://YOURDOMAIN.com/sector-area-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a sector?", "acceptedAnswer": {"@type": "Answer", "text": "A pie-slice portion of a circle between two radii."}}, {"@type": "Question", "name": "How do I use radians?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply by 180/pi to convert to degrees first."}}]}</script>
+<!-- ADSENSE: after approval, uncomment and add your publisher id
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>-->
+</head><body>
+<header><div class="wrap"><a class="logo" href="index.html">CalcHub</a><nav><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="math.html">Math</a><a href="conversion.html">Unit Converters</a><a href="everyday.html">Everyday</a><a href="construction.html">Construction</a><a href="science.html">Science</a></nav></div></header>
+<main class="wrap">
+<p class="muted"><a href="index.html">Home</a> › <a href="math.html">Math</a></p>
+<h1>Circle Sector Area and Arc Length Calculator</h1>
+<p class="muted">Calculate the area, arc length and chord of a circular sector.</p>
+<form class="card" data-calc="1">
+<label for="r">Radius</label><input id="r" type="number" step="any" value="10">
+<label for="ang">Central angle (degrees)</label><input id="ang" type="number" step="any" value="60">
+<button type="submit">Calculate</button>
+<div class="result" id="out" aria-live="polite"></div>
+</form>
+<div class="ad"><!-- ad slot --></div>
+<h2>How it works</h2>
+<p>Sector area = (angle/360) x pi x r^2. Arc length = (angle/360) x 2 x pi x r. The chord is 2 x r x sin(angle/2).</p>
+<h2>Frequently asked questions</h2>
+<details><summary>What is a sector?</summary><p>A pie-slice portion of a circle between two radii.</p></details>
+<details><summary>How do I use radians?</summary><p>Multiply by 180/pi to convert to degrees first.</p></details>
+<h2>Related calculators</h2>
+<div class="grid"><a href="right-triangle-calculator.html"><b>Right Triangle Calculator</b></a><a href="law-of-cosines-calculator.html"><b>Law of Cosines Calculator</b></a><a href="law-of-sines-calculator.html"><b>Law of Sines Calculator</b></a><a href="nth-root-calculator.html"><b>Nth Root Calculator</b></a><a href="percent-to-decimal-calculator.html"><b>Percent to Decimal and Fraction Calculator</b></a><a href="average-speed-calculator.html"><b>Average Speed Calculator (Two Legs)</b></a></div>
+</main>
+<footer><div class="wrap">&copy; CalcHub · <a href="privacy.html">Privacy</a> · Results are estimates for information only, not financial, medical or professional advice.</div></footer>
+<script src="calc.js"></script>
+<script>CalcPage(function({r,ang}){
+const t=ang*Math.PI/180;return [['Sector area',N(.5*r*r*t,4)],['Arc length',N(r*t,4)],['Chord length',N(2*r*Math.sin(t/2),4)],['Fraction of circle',N(ang/360*100,3)+'%']];
+});</script>
+</body></html>

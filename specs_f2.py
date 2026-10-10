@@ -372,7 +372,7 @@ C("finance", "loan-comparison-calculator", "Loan Comparison Calculator",
   r"""const m1=PMT(a1,r1,t1),m2=PMT(a2,r2,t2),c1=m1*t1-a1,c2=m2*t2-a2;return [['Cheaper overall',c1<c2?'Loan A':c2<c1?'Loan B':'Same'],['Loan A payment',M(m1)],['Loan B payment',M(m2)],['Loan A total interest',M(c1)],['Loan B total interest',M(c2)]];""",
   "Each loan is amortized with the standard payment formula so you can compare monthly cost and total interest side by side.",
   [("Lowest payment vs lowest cost?", "A longer term lowers the payment but usually raises total interest.")]),
-C("finance", "tax-refund-estimator", "Tax Refund Estimator",
+C("finance", "tax-refund-estimator", "Tax Refund Calculator",
   "Estimate whether you will get a federal refund or owe tax.",
   [("inc", "Annual income ($)", 70000), ("st", "Filing status", 1, FILING), ("wh", "Federal tax already withheld ($)", 8000), ("cr", "Tax credits ($)", 0)],
   r"""const ti=Math.max(inc-STD[st],0),tax=Math.max(FEDTAX(ti,st)-cr,0),d=wh-tax;
